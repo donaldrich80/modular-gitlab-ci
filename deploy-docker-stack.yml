@@ -1,6 +1,6 @@
 deploy_docker_stack:
   image: ubuntu
-  type: deploy
+  type: deploy_docker_stack
   environment:
     name: staging
   script:
