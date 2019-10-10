@@ -1,4 +1,4 @@
-.docker-compose-dummy-variables:
+.docker_compose_dummy_variables:
   - export CONTAINER_DATA=/home
   - export FORWARD_AUTH_URL=http://auth
   - export DOMAIN_NAME=example.com
