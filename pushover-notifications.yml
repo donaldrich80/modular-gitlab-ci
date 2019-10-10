@@ -1,0 +1,31 @@
+notify_success:
+  extends: .pushover_notify
+  script:
+    - curl -s --form-string "token=$PUSHOVER_API_TOKEN" --form-string "user=$PUSHOVER_USER_TOKEN" --form-string "priority=-1" --form-string "message=$CI_PROJECT_NAME built successfully!" https://api.pushover.net/1/messages.json
+
+notify_failure:
+  extends: .pushover_notify
+  script:
+    - curl -s --form-string "token=$PUSHOVER_API_TOKEN" --form-string "user=$PUSHOVER_USER_TOKEN" --form-string "priority=-1" --form-string "message=$CI_PROJECT_NAME failed." https://api.pushover.net/1/messages.json
+  when: on_failure
+
+#######################################################################################################
+###########################################EXTENSIONS##################################################
+#######################################################################################################
+
+.lint_dockerfile:
+  stage: validate_dockerfiles
+  allow_failure: true
+  script:
+    - docker pull hadolint/hadolint:latest
+    - docker run --rm -i hadolint/hadolint hadolint - < ./$DOCKER
+
+.pushover_notify:
+  image: ubuntu:latest
+  stage: notify
+  allow_failure: true
+  only:
+    - master
+  before_script:
+    - apt-get update -qq
+    - apt-get install -qq curl
