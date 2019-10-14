@@ -1,0 +1,6 @@
+.lint_dockerfile:
+  stage: validate_dockerfiles
+  allow_failure: true
+  script:
+    - docker pull hadolint/hadolint:latest
+    - docker run --rm -i hadolint/hadolint hadolint - < ./$DOCKER
