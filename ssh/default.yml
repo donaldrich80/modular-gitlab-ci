@@ -1,0 +1,17 @@
+.ssh-provision: &ssh-provision
+- git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@$SECRET_REPO ~/secrets
+- mkdir -p ~/.ssh
+- chmod 700 ~/.ssh
+- cp -r ~/secrets/ssh/. ~/.ssh
+- chmod 0600 -R ~/.ssh
+- chmod 700 ~/.ssh
+- eval $(ssh-agent -s)
+- '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+.ssh-runner:
+  image: donaldrich/ubuntu-runner:latest
+  variables:
+    GIT_STRATEGY: none
+    SSH_LOGIN_COMMAND: "ssh $SSH_USER@$SSH_ADDRESS -p $SSH_PORT"
+  before_script:
+    - *ssh-provision
