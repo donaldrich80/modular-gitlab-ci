@@ -1,0 +1,122 @@
+
+.job-template: &job-template
+  # rules:
+  #   - if: '$TRIGGER_VAR1 != "ansible"'
+  #     when: never
+  #   - if: '$TRIGGER_VAR1 == "ansible"'
+  #     when: on_success
+  stage: debug
+  variables:
+    GIT_STRATEGY: none
+    TARGET_VAR1: foo
+    TARGET_VAR2: bar
+    TARGET_ALL: "$TARGET_VAR1:$TARGET_VAR2"
+    TRIGGER_ALL: "$TRIGGER_VAR1:$TRIGGER_VAR2"
+  script:
+    - echo $TRIGGER_VAR1
+    - echo $TRIGGER_VAR2
+    - echo $TRIGGER_ALL
+    - echo $TARGET_VAR1
+    - echo $TARGET_VAR2
+    - echo $TARGET_ALL
+    - echo $CI_PIPELINE_SOURCE
+
+Success:
+  <<: *job-template
+  rules:
+    - if: '"$TRIGGER_VAR1" == "$TARGET_ALL"'
+      when: always
+
+
+Success9:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 == $TARGET_VAR1'
+      when: always
+
+Success3:
+  <<: *job-template
+  rules:
+    - if: '"$TRIGGER_VAR1" == "$TARGET_VAR1:$TARGET_VAR2"'
+      when: always
+
+Success7:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 == "$TARGET_VAR1:$TARGET_VAR2"'
+      when: always
+
+Success2:
+  <<: *job-template
+  rules:
+    - if: '"$TRIGGER_ALL" == "$TARGET_ALL"'
+      when: always
+
+Success4:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_ALL == $TARGET_ALL'
+      when: always
+
+LOGICAL AND:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 == $TARGET_VAR1 && $TRIGGER_VAR2 == $TARGET_VAR2'
+      when: always
+
+LOGICAL OR:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 == $TARGET_VAR1 || $TRIGGER_VAR2 == $TARGET_VAR2'
+      when: always
+
+regex AND:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 =~ /^foo.*/ && $TRIGGER_VAR2 =~ /bar$/'
+      when: always
+
+regex 1var AND:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 =~ /^foo.*/ && $TRIGGER_VAR1 =~ /bar$/'
+      when: always
+
+variable alike 2/10:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 =~ /thing$/'
+      when: always
+
+
+
+
+variable not empty:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 != ""'
+      when: always
+
+variable empty:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 == ""'
+      when: always
+
+variable undefined:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 == null'
+      when: always
+
+no-var:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 !~ /^yoohoo.*/'
+      when: never
+
+no-var 7/8:
+  <<: *job-template
+  rules:
+    - if: '$TRIGGER_VAR1 !~ /thing$/'
+      when: never

@@ -1,0 +1,26 @@
+dockerhub:login:
+  image: donaldrich/docker-runner:latest
+  stage: debug 
+  script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
+
+dockerhub:pull:
+  image: donaldrich/docker-runner:latest
+  stage: debug 
+  script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
+
+dockerhub:push:
+  image: donaldrich/docker-runner:latest
+  stage: debug 
+  script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
+  variables:
+    REGISTRY_USER: gitlab-ci-token
+    REGISTRY_PASS: $CI_JOB_TOKEN
+    REGISTRY: ${CI_REGISTRY}
+
+list-env-variables:
+  stage: debug
+  script:
+    - export

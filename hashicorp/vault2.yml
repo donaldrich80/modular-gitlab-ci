@@ -1,0 +1,15 @@
+get_credentials:
+  stage: get_credentials
+  image: donaldrich/ubuntu-runner:amd64
+  script:
+    - echo "Checking if we can reach Vault @ ${VAULT_ADDR}"
+    - curl ${VAULT_ADDR}/v1/sys/health
+    - echo "Looking up token"
+    - >
+      curl
+      --header X-Vault-Token: ${VAULT_TOKEN}
+      ${VAULT_ADDR}/v1/auth/token/lookup-self
+    - >
+      curl
+      --header X-Vault-Token: ${VAULT_TOKEN}
+      ${VAULT_ADDR}/v1/gitlab-projects/vault-import | jq -r

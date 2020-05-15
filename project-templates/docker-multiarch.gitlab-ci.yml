@@ -1,0 +1,94 @@
+# include:
+#   - project: 'donaldrich/gitlab-ci-templates'
+#     file: '/pushover-notifications.yml'
+
+#   - project: 'donaldrich/secrets'
+#     file: '/gitlab-ci/global-secrets.yml'
+
+#   - project: 'donaldrich/gitlab-ci-templates'
+#     file: '/docker.yml'
+
+#   - project: 'donaldrich/gitlab-ci-templates'
+#     file: '/linters.yml'
+
+# stages:
+#   - lint
+#   - build
+#   - manifest
+#   - notify
+
+.test-image:
+  stage: build
+  variables:
+    IMAGE_NAME: "cidi-test-push"
+    AUTO_BUILD: "disabled"
+    IMAGE_TAG: $BASE_TAG-$ARCH_TAG
+    BASE_TAG: "multiarch"
+    DOCKERFILE: "Dockerfile.test"
+    DOCKER_BUILD_DIR: "project-templates"
+    DEBUG_PIPELINE: "full"
+
+build:test-image:armv7:
+  extends: 
+  - .dockerfile:multiarch:dockerhub
+  - .test-image
+  variables:
+    CI_BUILD_ARCHS: "linux/arm/v7"
+    ARCH_TAG: "armv7"
+
+build:test-image:amd64:
+  extends: 
+  - .dockerfile:multiarch:dockerhub
+  - .test-image
+  variables: 
+    CI_BUILD_ARCHS: "linux/amd64"
+    ARCH_TAG: "arm64"
+
+build:test-image:arm64:
+  extends: 
+  - .dockerfile:multiarch:dockerhub
+  - .test-image
+  variables: 
+    CI_BUILD_ARCHS: "linux/amd64"
+    ARCH_TAG: "arm64"
+
+
+build:test-image:arm64:
+  extends: 
+  - .dockerfile:multiarch:self
+  - .test-image
+  variables:
+    CI_BUILD_ARCHS: "linux/arm64"
+    ARCH_TAG: "arm64"
+
+self:test-image:armv7:
+  extends: 
+  - .dockerfile:multiarch:self
+  - .test-image
+  variables:
+    CI_BUILD_ARCHS: "linux/arm/v7"
+    ARCH_TAG: "armv7"
+
+self:test-image:amd64:
+  extends: 
+   - .dockerfile:multiarch:self
+   - .test-image
+  variables: 
+    CI_BUILD_ARCHS: "linux/amd64"
+    ARCH_TAG: "arm64"
+
+self:test-image:arm64:
+  extends: 
+  - .dockerfile:multiarch:self
+  - .test-image
+  variables:
+    CI_BUILD_ARCHS: "linux/arm64"
+    ARCH_TAG: "arm64"
+
+self:manifest:test-image:
+  extends: 
+  - .docker:manifest:self
+
+dockerhub:manifest:test-image:
+  extends: 
+  - .docker:manifest:dockerhub

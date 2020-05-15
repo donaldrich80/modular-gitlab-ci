@@ -1,0 +1,12 @@
+logging:
+  stage: debug
+  script:
+  - echo -e "section_start:`date +%s`:my_first_section\rHeader of the 1st collapsible section"
+  - echo $CI_REGISTRY_IMAGE
+  - echo -e "section_end:`date +%s`:my_first_section\r"
+  - echo -e "section_start:`date +%s`:my_first_section2\r\e[0KHeader of the 1st collapsible section"
+  - echo $CI_REGISTRY_IMAGE
+  - echo -e "section_end:`date +%s`:my_first_section2\r\e[0K"
+  # - echo -e "section_start:`date +%s`:my_first_section2\r\e[0KHeader of the 1st collapsible section"
+  # - echo $CI_REGISTRY_IMAGE
+  # - echo -e "section_end:`date +%s`:my_first_section2\r\e[0K"

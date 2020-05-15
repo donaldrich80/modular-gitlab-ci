@@ -1,0 +1,98 @@
+.pushover:notify:
+  image: donaldrich/ubuntu-runner:latest
+  stage: notify
+  variables:
+    GIT_STRATEGY: none
+
+pushover:success:loud:
+  extends: .pushover:notify:success
+  variables:
+    PUSHOVER_PRIORITY: '1'
+    PUSHOVER_SOUND: 'cashregister'
+  rules:
+    - if: '$DEBUG_PIPELINE'
+      when: on_success
+    - when: never
+
+pushover:success:quiet:
+  extends: .pushover:notify:success
+  variables:
+    PUSHOVER_PRIORITY: '-2'
+    PUSHOVER_SOUND: 'none'
+  rules:
+    - if: '$DEBUG_PIPELINE'
+      when: never
+    - when: on_success
+
+pushover:failure:loud:
+  extends: .pushover:notify:failure
+  variables:
+    PUSHOVER_PRIORITY: '1'
+    PUSHOVER_SOUND: 'mechanical'
+  rules:
+#     - if: '$DEBUG_PIPELINE != null'
+#       when: on_failure
+    - when: on_failure
+
+.pushover:failure:quiet:
+  extends: .pushover:notify:failure
+  variables:
+    PUSHOVER_PRIORITY: '1'
+    PUSHOVER_SOUND: 'none'
+  rules:
+    - if: '$DEBUG_PIPELINE == null'
+      when: on_failure
+#     - when: always
+
+.pushover:notify:success:
+  extends: .pushover:notify
+  script:
+    - >
+      curl -s
+      --form-string "url=$CI_PIPELINE_URL"
+      --form-string "token=$PUSHOVER_API_TOKEN"
+      --form-string "user=$PUSHOVER_USER_TOKEN"
+      --form-string "priority=$PUSHOVER_PRIORITY"
+      --form-string "sound=$PUSHOVER_SOUND"
+      --form-string "message=$CI_PROJECT_NAME built successfully!"
+      https://api.pushover.net/1/messages.json
+
+.pushover:notify:failure:
+  extends: .pushover:notify
+  script:
+    - >
+      curl -s
+      --form-string "url=$CI_PIPELINE_URL"
+      --form-string "url_title=Pipeline"
+      --form-string "token=$PUSHOVER_API_TOKEN"
+      --form-string "user=$PUSHOVER_USER_TOKEN"
+      --form-string "priority=$PUSHOVER_PRIORITY"
+      --form-string "sound=$PUSHOVER_SOUND"
+      --form-string "message=$CI_PROJECT_NAME failed."
+      https://api.pushover.net/1/messages.json
+
+
+
+# pushover - Pushover (default)
+# bike - Bike
+# bugle - Bugle
+# cashregister - Cash Register
+# classical - Classical
+# cosmic - Cosmic
+# falling - Falling
+# gamelan - Gamelan
+# incoming - Incoming
+# intermission - Intermission
+# magic - Magic
+# mechanical - Mechanical
+# pianobar - Piano Bar
+# siren - Siren
+# spacealarm - Space Alarm
+# tugboat - Tug Boat
+# alien - Alien Alarm (long)
+# climb - Climb (long)
+# persistent - Persistent (long)
+# echo - Pushover Echo (long)
+# updown - Up Down (long)
+# vibrate - Vibrate Only
+# none - None (silent)

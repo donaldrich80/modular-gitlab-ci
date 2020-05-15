@@ -1,0 +1,177 @@
+.var-print: &var-print
+- echo $REGISTRY
+- echo $REGISTRY_IMAGE
+- echo $CI_REGISTRY_IMAGE
+- echo $IMAGE_TAG
+- echo $CI_BUILD_ARCHS
+- echo $DOCKERFILE
+- echo $DOCKER_BUILD_DIR
+- echo $REPO_URL
+- echo $DOCKER_HOST
+- echo $DOCKER_TLS_CERTDIR
+- echo $DOCKER_CLI_EXPERIMENTAL
+- echo $DOCKER_DRIVER
+
+.registry-login: &registry-login
+# - export VAULT_TOKEN="$(vault write -field=token auth/$AUTH_SUBLINK/login role=vault-reader jwt=$CI_JOB_JWT)"
+# - export DOCKERHUB_USER="$(vault kv get -field=DOCKERHUB_USER /secret/$AUTH_SUBLINK/$CI_PROJECT_NAME)"
+# - export DOCKERHUB_PASS="$(vault kv get -field=DOCKERHUB_PASS /secret/$AUTH_SUBLINK/$CI_PROJECT_NAME)"
+- echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+
+.buildx-prebuild: &buildx-prebuild
+# - echo -e "section_start:`date +%s`:my_first_section\r\e[0KHeader of the 1st collapsible section"
+- docker context create default_tls
+    # - docker buildx create --driver docker-container --use
+- docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+- docker buildx inspect --bootstrap
+- docker buildx ls
+# - docker pull $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG || true
+# - echo -e "section_end:`date +%s`:my_first_section\r\e[0K"
+
+
+.buildx:script:
+  script:
+    - *var-print
+    - *registry-login
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --load
+      --progress auto
+      --cache-from $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+    - *var-print
+    - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+
+.buildx:script:url:
+  script:
+    - *var-print
+    - *registry-login
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --load
+      --progress auto
+      --cache-from $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKERFILE
+      $REPO_URL
+    - *var-print
+    - docker push $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+
+.buildx:multiarch:concurrent:push:
+  script:
+    - *var-print
+    - *registry-login
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --load
+      --progress plain
+      --cache-from $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+    - *var-print
+    - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+
+.buildx:script-push:
+  script:
+    - *var-print
+    - *registry-login
+    - *buildx-prebuild
+    - >
+      docker build
+      --push
+      --progress plain
+      --cache-from $REGISTRY_IMAGE:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $REGISTRY_IMAGE:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE $DOCKER_BUILD_DIR
+    # - docker push $REGISTRY_IMAGE:$IMAGE_TAG
+
+.buildx-multiarch-tag:
+  script:
+    - *var-print
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - *registry-login
+    - *buildx-prebuild
+    - >
+      docker build 
+        --push
+        --platform $CI_BUILD_ARCHS
+        --cache-from $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+        --build-arg BUILDKIT_INLINE_CACHE=1
+        --tag $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+        --file $DOCKER_BUILD_DIR/$DOCKERFILE
+        $DOCKER_BUILD_DIR
+  # - docker push $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+
+.buildx:multiarch-concurrent:push:url:
+  script:
+    - *var-print
+    - *registry-login
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --platform $CI_BUILD_ARCHS
+      --cache-from $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR$DOCKERFILE
+      $REPO_URL
+
+
+.buildx:multiarch:concurrent:push:self:
+  script:
+    - *var-print
+    - *registry-login
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --cache-from $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$(date -u +'%Y-%m-%d')
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+    - *var-print
+
+.dotfiles:
+  script:
+    - *var-print
+    - *registry-login
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --cache-from $CI_REGISTRY_IMAGE:$IMAGE_TAG
+      --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE:$IMAGE_TAG
+      --tag $CI_REGISTRY_IMAGE:$(date -u +'%Y-%m-%d')
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+    - *var-print

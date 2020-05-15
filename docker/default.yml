@@ -1,0 +1,62 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/registry.yml'
+
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/manifest.yml'
+
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/builder.yml'
+
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/builder-scripts.yml'
+
+# variables:
+#   IMAGE_TAG: latest
+#   # CI_BUILD_ARCHS: "linux/arm/v7,linux/amd64"
+#   DOCKERFILE: "Dockerfile"
+#   DOCKER_BUILD_DIR: "."
+
+.push:to:dockerhub:
+  image: donaldrich/docker-runner:latest
+  stage: push
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - name: donaldrich/docker-runner:dind
+  script:
+    # - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN ${CI_REGISTRY}
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+    - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
+    - docker push $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+
+.docker:dockerfile:dockerhub:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .buildx:script
+
+.docker:url:dockerhub:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .buildx:script:url
+
+.docker:multiarch:url:dockerhub:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .buildx:multiarch-concurrent:push:url
+
+.docker:manifest:self:
+  extends:
+    - .docker:manifest:base
+    - .self:registry
+
+.docker:manifest:dockerhub:
+  extends:
+    - .docker:manifest:base
+    - .dockerhub:registry

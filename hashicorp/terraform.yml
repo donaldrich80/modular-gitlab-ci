@@ -1,0 +1,6 @@
+terraform:
+  image: hashicorp/terraform:full
+  stage: terraform
+  script:
+    - terraform init
+    - terraform apply

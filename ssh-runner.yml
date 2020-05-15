@@ -1,0 +1,51 @@
+.ssh-runner:
+  image: donaldrich/ubuntu-runner:latest
+  variables:
+    GIT_STRATEGY: none
+    SSH_LOGIN_COMMAND: "ssh $SSH_USER@$SSH_ADDRESS -p $SSH_PORT"
+  before_script:
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@$SECRET_REPO ~/secrets
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    # - ssh-keyscan -H "$CI_SERVER_HOST" >> ~/.ssh/known_hosts
+    - which ssh-agent
+    - eval $(ssh-agent -s)
+    # - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - echo "$SSH_PRIVATE_KEY" | ssh-add - > /dev/null
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+.ssh-runner:old:
+  image: donaldrich/ubuntu-runner:latest
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - export
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@$SECRET_REPO ~/secrets
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - cp ~/secrets/ssh/$DEPLOYMENT_KEY ~/.ssh
+    - chmod 0600 ~/.ssh/$DEPLOYMENT_KEY
+    - which ssh-agent
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - ssh-keyscan -H $SSH_PRIVATE_KEY >> ~/.ssh/known_hosts
+    # - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  after_script:
+    - rm -r ~/secrets
+    - rm -r ~/.ssh
+
+
+    # - apt-get update -y && apt-get install -y rsync
+    # - mkdir -p ~/.ssh
+    # - echo "$DEPLOY_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    # - chmod 600 ~/.ssh/id_rsa
+    # - eval "$(ssh-agent -s)"
+    # - ssh-add ~/.ssh/id_rsa
+    # - ssh-keyscan -H $DEPLOYMENT_SERVER_IP >> ~/.ssh/known_hosts
+    # - chmod +x ./setup_env.sh
+    # - ./setup_env.sh
+    # - chmod +x ./start_docker.sh
+
+  # script:
+  #   - rsync -avzP --no-p --omit-dir-times --exclude='.git/' . $SSH_USER@$DEPLOYMENT_SERVER_IP:/home/$DEPLOYMENT_SERVER_USER
+  #   - ssh $SSH_USER@$DEPLOYMENT_SERVER_IP "/bin/bash -s" < start_docker.sh $DEPLOYMENT_SERVER_USER

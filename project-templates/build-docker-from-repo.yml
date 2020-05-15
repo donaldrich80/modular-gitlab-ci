@@ -1,0 +1,36 @@
+include:
+
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/pushover-notifications.yml'
+
+  - project: 'donaldrich/secrets'
+    file: 'gitlab-ci/global-secrets.yml'
+
+  - project: 'donaldrich/secrets'
+    file: '/gitlab-ci-secrets.yml'
+
+stages:
+  - lint
+  - build
+  - notify
+
+variables:
+  CI_BUILD_ARCHS: "linux/arm/v7,linux/arm64,linux/amd64"
+
+dockerhub-multiarch-git:
+#   when: manual
+  extends: .dockerhub-multiarch-git
+  variables:
+    IMAGE_TAG: latest
+    # EXTRA_COMMAND: "ls"
+    REPO_URL: "repo"
+    IMAGE_NAME: image-name
+
+dockerhub-build-git:
+#   when: manual
+  extends: .dockerhub-build-git
+  variables:
+    IMAGE_TAG: latest
+    # EXTRA_COMMAND: "ls"
+    REPO_URL: "repo"
+    IMAGE_NAME: image-name

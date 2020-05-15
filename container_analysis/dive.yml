@@ -1,0 +1,9 @@
+scan-ubuntu:
+  image: 
+    name: wagoodman/dive:latest
+    entrypoint: [""]
+  stage: build
+  variables:
+    CI: "true"
+  script:
+    - dive version

@@ -1,0 +1,13 @@
+# example of deploying to S3
+deploytos3:
+  image: mikesir87/aws-cli # or another arbitrary docker image
+  stage: deploytos3
+  script:
+    - aws s3 sync . s3://example.com/ --delete # or another arbitrary command
+
+# example of deploying to Elastic Beanstalk
+deploytoelasticbeanstalk:
+  image: lciel/eb-cli # or another arbitrary docker image
+  stage: deploytoelasticbeanstalk
+  script:
+    - eb deploy # or another arbitrary command
