@@ -15,9 +15,7 @@
     - cp -r ~/secrets/ssh/. ~/.ssh
     - chmod 0600 -R ~/.ssh
     - chmod 700 ~/.ssh
-    # - ssh-keyscan -H "$CI_SERVER_HOST" >> ~/.ssh/known_hosts
     - eval $(ssh-agent -s)
-    # - ssh-add <(echo "$SSH_PRIVATE_KEY")
     # - echo "$SSH_PRIVATE_KEY" | ssh-add - > /dev/null
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
