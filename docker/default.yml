@@ -30,6 +30,11 @@ include:
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
     - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
     - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
+    - export VAULT_ADDR=$VAULT_ADDR
+    - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-ci/login role=vault-reader jwt=$CI_JOB_JWT)"
+    - export DOCKERHUB_USER="$(vault kv get -field=DOCKERHUB_USER /secret/gitlab-ci/global)"
+    - export DOCKERHUB_PASS="$(vault kv get -field=DOCKERHUB_PASS /secret/gitlab-ci/global)"
+    - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
     - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
     - docker push $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
 
