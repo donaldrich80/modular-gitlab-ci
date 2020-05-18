@@ -1,18 +1,15 @@
 include:
 
-  - project: 'donaldrich/secrets'
-    file: '/gitlab-ci/global-secrets.yml'
-
   - local: '/notifications/pushover.yml'
 
   - local: '/lint/default.yml'
 
   - local: '/docker/default.yml'
 
-  - local: '/debug/variable_match.yml'
+  # - local: '/debug/variable_match.yml'
 
-variables:
-  DEBUG_PIPELINE: "true"
+# variables:
+#   DEBUG_PIPELINE: "true"
 #   CI_DEBUG_TRACE: "true"
 
 stages:
