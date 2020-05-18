@@ -4,7 +4,8 @@
     GIT_STRATEGY: none
   before_script:
     - export VAULT_ADDR=$VAULT_ADDR
-    - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-ci/login role=vault-reader jwt=$CI_JOB_JWT)"
+    - export VAULT_TOKEN=$VAULT_TOKEN
+    # - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-ci/login role=vault-reader jwt=$CI_JOB_JWT)"
     - export SECRET_REPO="$(vault kv get -field=SECRET_REPO /secret/gitlab-ci/global)"
     - export SSH_LOGIN_COMMAND="$(vault kv get -field=SSH_LOGIN_COMMAND /secret/gitlab-ci/webserver)"
     - export PROJECT_FOLDER="$(vault kv get -field=$CI_PROJECT_NAME /secret/gitlab-ci/project-folder)"
