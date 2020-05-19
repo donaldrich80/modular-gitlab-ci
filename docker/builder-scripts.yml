@@ -29,17 +29,16 @@
     # - export DOCKERHUB_PASS="$(vault kv get -field=DOCKERHUB_PASS /secret/gitlab-ci/global)"
     # - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN ${CI_REGISTRY}
     # - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
-
     # - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
     # - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
 
 .buildx-prebuild: &buildx-prebuild
 - docker context create default_tls
-    # - docker buildx create --driver docker-container --use
 - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
 - docker buildx inspect --bootstrap
 - docker buildx ls
-- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+# - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+    # - docker buildx create --driver docker-container --use
 
 .build:monoarch:push:
   script:
@@ -60,8 +59,11 @@
     # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
 .build:monoarch:load:  # for runners!!!!!
+  artifacts:
+    paths:
+      - env_vars.txt
   script:
-    - export > env.txt
+    - export > env_vars.txt
     - *var-print
     # - *registry-login
     - *buildx-prebuild
@@ -74,8 +76,6 @@
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
-    # - *var-print
-
 
 .build:monoarch-cross:push:
   script:
