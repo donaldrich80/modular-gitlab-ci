@@ -61,7 +61,7 @@
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
-    - *var-print
+    # - *var-print
 
 
 .build:monoarch-cross:push:
