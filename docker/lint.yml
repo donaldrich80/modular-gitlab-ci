@@ -5,12 +5,12 @@
   rules:
     # - if: '$DEBUG_PIPELINE'
     #   when: never
-    - changes:
-      - "**/Dockerfile"
-      when: always
+    # - changes:
+    #   - "**/Dockerfile"
+    #   when: always
     - exists:
       - "**/Dockerfile"
-      when: on_failure
+      when: always
     - when: never
 
 .hadolint:lint:

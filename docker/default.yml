@@ -3,6 +3,9 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/manifest.yml'
 
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/lint.yml'
+
   # - project: 'donaldrich/gitlab-ci-templates'
   #   file: '/docker/builder.yml'
 
