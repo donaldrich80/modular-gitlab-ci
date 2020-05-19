@@ -1,6 +1,6 @@
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/docker/registry.yml'
+  # - project: 'donaldrich/gitlab-ci-templates'
+  #   file: '/docker/registry.yml'
 
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/manifest.yml'
@@ -18,23 +18,23 @@ include:
 #   DOCKER_BUILD_DIR: "."
 
 
-.docker:dockerfile:dockerhub:
+.docker:monoarch:dockerhub:
   extends:
     - .buildx:base
     - .dockerhub:registry
-    - .buildx:script
-
-.docker:url:dockerhub:
-  extends:
-    - .buildx:base
-    - .dockerhub:registry
-    - .buildx:script:url
+    - .build:monoarch:push
 
 .docker:multiarch-concurrent:dockerhub:
   extends:
     - .buildx:base
     - .dockerhub:registry
-    - .buildx:multiarch-concurrent:
+    - .build:multiarch-concurrent:load
+
+.docker:multiarch-manifest:dockerhub:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:multiarch-manifest:load
 
 .docker:manifest:self:
   extends:
@@ -45,3 +45,17 @@ include:
   extends:
     - .docker:manifest:base
     - .dockerhub:registry
+
+
+.self:registry:
+  variables:
+    # REGISTRY_USER: gitlab-ci-token
+    # REGISTRY_PASS: $CI_JOB_TOKEN
+    # REGISTRY: ${CI_REGISTRY}
+    REGISTRY_IMAGE: $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+
+.dockerhub:registry:
+  variables:
+    # REGISTRY_USER: $DOCKERHUB_USER
+    # REGISTRY_PASS: $DOCKERHUB_PASS
+    REGISTRY_IMAGE: $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
