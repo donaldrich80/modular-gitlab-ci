@@ -6,6 +6,7 @@
 - echo $CI_BUILD_ARCHS
 - echo $DOCKERFILE
 - echo $DOCKER_BUILD_DIR
+- echo $DOCKERHUB_USER
 - echo $REPO_URL
 - echo $DOCKER_HOST
 - echo $DOCKER_TLS_CERTDIR
@@ -34,9 +35,9 @@
       --pull
       --push
       --progress auto
-      --cache-from $REGISTRY_IMAGE
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY_IMAGE
+      --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
 
@@ -53,7 +54,7 @@
       docker build
       --push
       --progress auto
-      --cache-from donaldrich/$IMAGE_NAME:$IMAGE_TAG
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
