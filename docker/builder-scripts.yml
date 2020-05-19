@@ -47,9 +47,9 @@
 
 .build:monoarch:load:  # for runners!!!!!
   script:
-    - export
+    - export > env.txt
     - *var-print
-    - *registry-login
+    # - *registry-login
     - *buildx-prebuild
     - >
       docker build
