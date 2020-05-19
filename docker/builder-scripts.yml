@@ -45,6 +45,24 @@
     - *var-print
     # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
+.build:monoarch:load:
+  script:
+    - *var-print
+    # - *registry-login
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --push
+      --progress auto
+      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+    - *var-print
+
+
 .build:monoarch-cross:push:
   script:
     - *var-print

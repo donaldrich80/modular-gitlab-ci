@@ -16,7 +16,11 @@ include:
 #   # CI_BUILD_ARCHS: "linux/arm/v7,linux/amd64"
 #   DOCKERFILE: "Dockerfile"
 #   DOCKER_BUILD_DIR: "."
-
+.dockerhub:monoarch:load:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:load
 
 .dockerhub:monoarch:push:
   extends:
