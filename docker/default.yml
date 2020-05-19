@@ -17,27 +17,6 @@ include:
 #   DOCKERFILE: "Dockerfile"
 #   DOCKER_BUILD_DIR: "."
 
-.push:to:dockerhub:
-  image: donaldrich/docker-runner:latest
-  stage: push
-  # services:
-  #   - name: docker:stable-dind
-  #     command: ["--experimental"]
-  services:
-    - name: donaldrich/docker-runner:dind
-  script:
-    - export VAULT_ADDR=$VAULT_ADDR
-    - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-ci/login role=vault-reader jwt=$CI_JOB_JWT)"
-    - export DOCKERHUB_USER="$(vault kv get -field=DOCKERHUB_USER /secret/gitlab-ci/global)"
-    - export DOCKERHUB_PASS="$(vault kv get -field=DOCKERHUB_PASS /secret/gitlab-ci/global)"
-    # - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN ${CI_REGISTRY}
-    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
-    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
-    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
-
-    - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-    # - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASS
-    - docker push $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
 
 .docker:dockerfile:dockerhub:
   extends:
