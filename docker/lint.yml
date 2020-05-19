@@ -21,6 +21,14 @@
   script:
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
+hadolint:lint:
+  extends: .lint:docker:base
+  image: hadolint/hadolint
+  before_script:
+    - hadolint --version
+  script:
+    - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
+
 projectatomic:lint:
   extends: .lint:docker:base
   image: projectatomic/dockerfile-lint
@@ -33,7 +41,7 @@ dockerfilelint:
   extends: .lint:docker:base
   image:
     name: replicated/dockerfilelint
-    entrypoint: [""]
+    # entrypoint: [""]
   before_script:
     - dockerfilelint --version
   script:
