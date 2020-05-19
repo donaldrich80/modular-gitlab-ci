@@ -82,6 +82,23 @@
     # - *var-print
     # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
+.build:multiarch-concurrent:push:
+  script:
+    - *var-print
+    # - *registry-login
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    - *buildx-prebuild
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --cache-from $CACHE_IMAGE
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $REGISTRY_IMAGE
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+
 # .buildx:script-push:
 #   script:
 #     - *var-print
