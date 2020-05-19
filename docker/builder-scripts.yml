@@ -81,7 +81,7 @@
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
 
-.build:multiarch-concurrent:load:
+.build:multiarch-concurrent:load: # for runners!!!!!
   script:
     - *var-print
     # - *registry-login
@@ -92,11 +92,11 @@
       --pull
       --load
       --progress plain
-      --cache-from $CACHE_IMAGE
+      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY_IMAGE
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
-      $DOCKER_BUILD_CONTEXT
+      $DOCKER_BUILD_DIR
     # - *var-print
     # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
