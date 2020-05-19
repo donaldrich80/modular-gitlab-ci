@@ -13,7 +13,7 @@
       when: always
     - when: never
 
-.hadolint:lint:
+.hadolint:
   extends: .lint:docker:base
   image: hadolint/hadolint
   before_script:
