@@ -76,11 +76,11 @@
       --progress plain
       --cache-from $CACHE_IMAGE
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
+      --tag $REGISTRY_IMAGE
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
-    - *var-print
-    - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    # - *var-print
+    # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
 # .buildx:script-push:
 #   script:

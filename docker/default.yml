@@ -18,30 +18,30 @@ include:
 #   DOCKER_BUILD_DIR: "."
 
 
-.docker:monoarch:dockerhub:
+.dockerhub:monoarch:push:
   extends:
     - .buildx:base
     - .dockerhub:registry
     - .build:monoarch:push
 
-.docker:multiarch-concurrent:dockerhub:
+.dockerhub:multiarch-concurrent:push:
   extends:
     - .buildx:base
     - .dockerhub:registry
-    - .build:multiarch-concurrent:load
+    - .build:multiarch-concurrent:push
 
-.docker:multiarch-manifest:dockerhub:
+.dockerhub:multiarch-manifest:dockerhub:
   extends:
     - .buildx:base
     - .dockerhub:registry
     - .build:multiarch-manifest:load
 
-.docker:manifest:self:
+.dockerhub:manifest:self:
   extends:
     - .docker:manifest:base
     - .self:registry
 
-.docker:manifest:dockerhub:
+.dockerhub:manifest:dockerhub:
   extends:
     - .docker:manifest:base
     - .dockerhub:registry
