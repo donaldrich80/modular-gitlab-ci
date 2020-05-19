@@ -53,8 +53,7 @@
     - *buildx-prebuild
     - >
       docker build
-      --pull
-      --load
+      --push
       --progress auto
       --cache-from donaldrich/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
