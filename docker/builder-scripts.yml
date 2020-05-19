@@ -27,7 +27,7 @@
 - docker buildx inspect --bootstrap
 - docker buildx ls
 
-.buildx:script:
+.buildx:monoarch:
   script:
     - *var-print
     # - *registry-login
@@ -37,33 +37,15 @@
       --pull
       --load
       --progress auto
-      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
+      --cache-from $CACHE_IMAGE
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
-      $DOCKER_BUILD_DIR
+      $DOCKER_BUILD_CONTEXT
     - *var-print
     - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
-.buildx:script:url:
-  script:
-    - *var-print
-    # - *registry-login
-    - *buildx-prebuild
-    - >
-      docker build
-      --pull
-      --load
-      --progress auto
-      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
-      --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
-      --file $DOCKERFILE
-      $REPO_URL
-    - *var-print
-    - docker push $DOCKERHUB_USER/$IMAGE_NAME:$IMAGE_TAG
-
-.buildx:multiarch:concurrent:push:
+.buildx:multiarch-concurrent:
   script:
     - *var-print
     # - *registry-login
@@ -74,30 +56,31 @@
       --pull
       --load
       --progress plain
-      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
+      --cache-from $CACHE_IMAGE
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
-      $DOCKER_BUILD_DIR
+      $DOCKER_BUILD_CONTEXT
     - *var-print
     - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
 
-.buildx:script-push:
-  script:
-    - *var-print
-    # - *registry-login
-    - *buildx-prebuild
-    - >
-      docker build
-      --push
-      --progress plain
-      --cache-from $REGISTRY_IMAGE:$IMAGE_TAG
-      --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY_IMAGE:$IMAGE_TAG
-      --file $DOCKER_BUILD_DIR/$DOCKERFILE $DOCKER_BUILD_DIR
-    # - docker push $REGISTRY_IMAGE:$IMAGE_TAG
+# .buildx:script-push:
+#   script:
+#     - *var-print
+#     # - *registry-login
+#     - *buildx-prebuild
+#     - >
+#       docker build
+#       --push
+#       --progress plain
+#       --cache-from $REGISTRY_IMAGE:$IMAGE_TAG
+#       --build-arg BUILDKIT_INLINE_CACHE=1
+#       --tag $REGISTRY_IMAGE:$IMAGE_TAG
+#       --file $DOCKER_BUILD_DIR/$DOCKERFILE
+#       $DOCKER_BUILD_CONTEXT
+#     # - docker push $REGISTRY_IMAGE:$IMAGE_TAG
 
-.buildx-multiarch-tag:
+.buildx:multiarch-manifest:
   script:
     - *var-print
     - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
@@ -107,14 +90,14 @@
       docker build
         --push
         --platform $CI_BUILD_ARCHS
-        --cache-from $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+        --cache-from $CACHE_IMAGE-$ARCH_TAG
         --build-arg BUILDKIT_INLINE_CACHE=1
         --tag $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
         --file $DOCKER_BUILD_DIR/$DOCKERFILE
-        $DOCKER_BUILD_DIR
+        $DOCKER_BUILD_CONTEXT
   # - docker push $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
 
-.buildx:multiarch-concurrent:push:url:
+.buildx:monoarch-cross:
   script:
     - *var-print
     # - *registry-login
@@ -126,14 +109,14 @@
       --push
       --progress plain
       --platform $CI_BUILD_ARCHS
-      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
+      --cache-from $CACHE_IMAGE
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
-      --file $DOCKER_BUILD_DIR$DOCKERFILE
-      $REPO_URL
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
 
 
-.buildx:multiarch:concurrent:push:self:
+.buildx:multiarch-concurrent:version:
   script:
     - *var-print
     # - *registry-login
@@ -144,7 +127,7 @@
       --pull
       --push
       --progress plain
-      --cache-from $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --cache-from $CACHE_IMAGE
       --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
