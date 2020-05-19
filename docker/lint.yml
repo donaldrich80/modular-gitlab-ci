@@ -21,7 +21,6 @@
   script:
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
-
 .projectatomic:lint:
   extends: .lint:docker:base
   image: projectatomic/dockerfile-lint
