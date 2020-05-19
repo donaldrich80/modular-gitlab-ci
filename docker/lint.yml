@@ -27,6 +27,7 @@ hadolint:lint:
   before_script:
     - hadolint --version
   script:
+    - cat $DOCKER_BUILD_DIR/$DOCKERFILE
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
 projectatomic:lint:
