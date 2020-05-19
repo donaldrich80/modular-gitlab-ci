@@ -13,7 +13,7 @@
       when: always
     - when: never
 
-.hadolint:
+hadolint:
   extends: .lint:docker:base
   image: hadolint/hadolint
   before_script:
@@ -21,7 +21,7 @@
   script:
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
-.projectatomic:lint:
+projectatomic:lint:
   extends: .lint:docker:base
   image: projectatomic/dockerfile-lint
   # before_script:
@@ -29,7 +29,7 @@
   script:
     - dockerfile_lint --permissive "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
-.dockerfilelint:
+dockerfilelint:
   extends: .lint:docker:base
   image:
     name: replicated/dockerfilelint
