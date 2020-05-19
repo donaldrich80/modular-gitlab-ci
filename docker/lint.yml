@@ -1,0 +1,41 @@
+.lint:docker:base:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  rules:
+    # - if: '$DEBUG_PIPELINE'
+    #   when: never
+    - changes:
+      - "**/Dockerfile"
+      when: always
+    - exists:
+      - "**/Dockerfile"
+      when: on_failure
+    - when: never
+
+.hadolint:lint:
+  extends: .lint:docker:base
+  image: hadolint/hadolint
+  before_script:
+    - hadolint --version
+  script:
+    - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
+
+
+.projectatomic:lint:
+  extends: .lint:docker:base
+  image: projectatomic/dockerfile-lint
+  # before_script:
+  #   - hadolint --version
+  script:
+    - dockerfile_lint --permissive "$DOCKER_BUILD_DIR/$DOCKERFILE"
+
+.dockerfilelint:
+  extends: .lint:docker:base
+  image:
+    name: replicated/dockerfilelint
+    entrypoint: [""]
+  before_script:
+    - dockerfilelint --version
+  script:
+    - dockerfilelint "$DOCKER_BUILD_DIR/$DOCKERFILE"

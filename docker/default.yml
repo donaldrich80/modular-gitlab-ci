@@ -1,15 +1,22 @@
 include:
-  # - project: 'donaldrich/gitlab-ci-templates'
-  #   file: '/docker/registry.yml'
 
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/manifest.yml'
 
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/docker/builder.yml'
+  # - project: 'donaldrich/gitlab-ci-templates'
+  #   file: '/docker/builder.yml'
 
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/builder-scripts.yml'
+
+.buildx:base:
+  image: donaldrich/docker-runner:latest
+  stage: build
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - donaldrich/docker-runner:dind
 
 # variables:
 #   IMAGE_TAG: latest

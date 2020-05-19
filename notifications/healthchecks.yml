@@ -1,0 +1,14 @@
+.healthcheck:notify:
+  image: donaldrich/ubuntu-runner:latest
+  stage: notify
+  variables:
+    GIT_STRATEGY: none
+  rules:
+    - when: on_success
+  script:
+    - export VAULT_ADDR=$VAULT_ADDR
+    - export VAULT_TOKEN=$VAULT_TOKEN
+    # - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-ci/login role=vault-reader jwt=$CI_JOB_JWT)"
+    - export HEALTHCHECK_URL="$(vault kv get -field=HEALTHCHECK_URL /secret/gitlab-ci/global)"
+    - export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$CI_PROJECT_NAME /secret/gitlab-ci/healthchecks)"
+    - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT

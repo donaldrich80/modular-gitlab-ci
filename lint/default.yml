@@ -23,30 +23,6 @@
       when: manual
     - when: never
 
-.dockerfilelint:
-  extends: .linter:base
-  image:
-    name: replicated/dockerfilelint
-    entrypoint: [""]
-  before_script:
-    - dockerfilelint --version
-#   script:
-#     - dockerfilelint *
-#   rules:
-#     # - if: '$DEBUG_PIPELINE == $CI_JOB_STAGE'
-#     #   when: manual
-#     #   allow_failure: true
-#     - if: '$DEBUG_PIPELINE'
-#       when: never
-#     # - if: '$DEBUG_PIPELINE == "FULL"'
-#     - changes:
-#       - Dockerfile
-#       when: always
-#     - exists:
-#       - Dockerfile
-#       when: manual
-#     - when: never
-
 .markdownlint:
   extends: .linter:base
   stage: lint
@@ -144,22 +120,5 @@
       when: manual
     - when: never
 
-.hadolint:
-  extends: .linter:base
-  image: hadolint/hadolint
-  before_script:
-    - hadolint --version
-  script:
-    - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
-  rules:
-    - if: '$DEBUG_PIPELINE'
-      when: never
-    - changes:
-      - "**/Dockerfile"
-      when: always
-    - exists:
-      - "**/Dockerfile"
-      when: manual
-    - when: never
 
 # docker run --rm -v $(pwd):/data -t wata727/tflint

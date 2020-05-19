@@ -1,13 +1,11 @@
 .buildx:base:
   image: donaldrich/docker-runner:latest
   stage: build
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
   services:
     - donaldrich/docker-runner:dind
-  # variables:
-  #   DOCKER_TLS_CERTDIR: /certs
-    # DOCKER_BUILDKIT: 1
-    # BUILDKIT_HOST: tcp://buildkit:1234
-    # DOCKER_CLI_EXPERIMENTAL: enabled
 
 .buildx:base:nontls:
   image: donaldrich/docker-runner:latest
