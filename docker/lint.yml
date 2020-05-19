@@ -35,6 +35,7 @@ projectatomic:lint:
   # before_script:
   #   - hadolint --version
   script:
+    - cat "$DOCKER_BUILD_DIR/$DOCKERFILE"
     - dockerfile_lint --permissive "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
 dockerfilelint:
@@ -45,4 +46,5 @@ dockerfilelint:
   before_script:
     - dockerfilelint --version
   script:
+    - cat $DOCKER_BUILD_DIR/$DOCKERFILE
     - dockerfilelint "$DOCKER_BUILD_DIR/$DOCKERFILE"
