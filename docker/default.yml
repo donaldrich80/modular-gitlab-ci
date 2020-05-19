@@ -30,7 +30,7 @@ include:
     - .dockerhub:registry
     - .build:multiarch-concurrent:push
 
-.dockerhub:multiarch-manifest:dockerhub:
+.dockerhub:multiarch-manifest:load:
   extends:
     - .buildx:base
     - .dockerhub:registry
