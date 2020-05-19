@@ -133,7 +133,22 @@
         $DOCKER_BUILD_CONTEXT
   # - docker push $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
 
-
+.build:multiarch-manifest:load:
+  script:
+    - *var-print
+    - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+    # - *registry-login
+    - *buildx-prebuild
+    - >
+      docker build
+        --pull
+        --load
+        --platform $CI_BUILD_ARCHS
+        --cache-from $CACHE_IMAGE-$ARCH_TAG
+        --build-arg BUILDKIT_INLINE_CACHE=1
+        --tag $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+        --file $DOCKER_BUILD_DIR/$DOCKERFILE
+        $DOCKER_BUILD_CONTEXT
 
 
 .build:multiarch-concurrent:version:
