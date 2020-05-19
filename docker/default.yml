@@ -30,7 +30,7 @@ include:
     - .dockerhub:registry
     - .buildx:script:url
 
-.docker:multiarch:concurrent:dockerhub:
+.docker:multiarch-concurrent:dockerhub:
   extends:
     - .buildx:base
     - .dockerhub:registry
