@@ -90,10 +90,9 @@
     - *buildx-prebuild
     - >
       docker build
-      --pull
       --push
       --progress plain
-      --cache-from $CACHE_IMAGE
+      --cache-from $REGISTRY_IMAGE
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $REGISTRY_IMAGE
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
