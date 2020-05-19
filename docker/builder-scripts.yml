@@ -99,7 +99,7 @@
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
     # - *var-print
-    # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    # - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG ###
 
 .build:multiarch-concurrent:push:
   script:
