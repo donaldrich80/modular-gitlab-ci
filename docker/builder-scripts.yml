@@ -3,6 +3,7 @@
 - echo $REGISTRY_IMAGE
 - echo $CI_REGISTRY_IMAGE
 - echo $IMAGE_TAG
+- echo $IMAGE_NAME
 - echo $CI_BUILD_ARCHS
 - echo $DOCKERFILE
 - echo $DOCKER_BUILD_DIR
