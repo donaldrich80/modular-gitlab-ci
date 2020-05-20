@@ -21,6 +21,17 @@ include:
   services:
     - donaldrich/docker-runner:dind
 
+.build:functions:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:push:no-cache
+
+.dockerhub:monoarch:push:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:push
 # variables:
 #   IMAGE_TAG: latest
 #   # CI_BUILD_ARCHS: "linux/arm/v7,linux/amd64"

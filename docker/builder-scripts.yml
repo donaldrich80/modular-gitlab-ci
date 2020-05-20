@@ -26,6 +26,22 @@
 
     # - docker buildx create --driver docker-container --use
 
+.build:monoarch:push:no-cache:
+  script:
+    - *var-print
+    # - *registry-login
+    - *buildx-prebuild
+    - *var-print
+    - >
+      docker build
+      --pull
+      --push
+      --progress auto
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+
 .build:monoarch:push:
   script:
     - *var-print
