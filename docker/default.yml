@@ -27,11 +27,6 @@ include:
     - .dockerhub:registry
     - .build:monoarch:push:no-cache
 
-# variables:
-#   IMAGE_TAG: latest
-#   # CI_BUILD_ARCHS: "linux/arm/v7,linux/amd64"
-#   DOCKERFILE: "Dockerfile"
-#   DOCKER_BUILD_DIR: "."
 .dockerhub:monoarch:load:
   extends:
     - .buildx:base
