@@ -28,6 +28,7 @@
 
 .build:monoarch:push:no-cache:
   script:
+    - export > env_vars.txt
     - *var-print
     # - *registry-login
     - *buildx-prebuild
