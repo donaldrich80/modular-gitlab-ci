@@ -17,6 +17,8 @@
   extends: .lint:docker:base
   image: hadolint/hadolint
   before_script:
+    - echo $DOCKERFILE
+    - echo $DOCKER_BUILD_DIR
     - hadolint --version
   script:
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
@@ -25,6 +27,8 @@ hadolint:lint:
   extends: .lint:docker:base
   image: hadolint/hadolint
   before_script:
+    - echo $DOCKERFILE
+    - echo $DOCKER_BUILD_DIR
     - hadolint --version
   script:
     - cat $DOCKER_BUILD_DIR/$DOCKERFILE
@@ -33,8 +37,9 @@ hadolint:lint:
 projectatomic:lint:
   extends: .lint:docker:base
   image: projectatomic/dockerfile-lint
-  # before_script:
-  #   - hadolint --version
+  before_script:
+    - echo $DOCKERFILE
+    - echo $DOCKER_BUILD_DIR
   script:
     - cat "$DOCKER_BUILD_DIR/$DOCKERFILE"
     - dockerfile_lint --permissive "$DOCKER_BUILD_DIR/$DOCKERFILE"
@@ -46,6 +51,8 @@ dockerfilelint:
     # entrypoint: [""]
   before_script:
     - dockerfilelint --version
+    - echo $DOCKERFILE
+    - echo $DOCKER_BUILD_DIR
   script:
     - cat $DOCKER_BUILD_DIR/$DOCKERFILE
     - dockerfilelint "$DOCKER_BUILD_DIR/$DOCKERFILE"
