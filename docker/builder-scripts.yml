@@ -31,6 +31,7 @@
     - *var-print
     # - *registry-login
     - *buildx-prebuild
+    - *var-print
     - >
       docker build
       --pull
@@ -48,9 +49,9 @@
       - env_vars.txt
   script:
     - export > env_vars.txt
-    - *var-print
     # - *registry-login
     - *buildx-prebuild
+    - *var-print
     - >
       docker build
       --push
@@ -63,10 +64,10 @@
 
 .build:monoarch-cross:push:
   script:
-    - *var-print
     # - *registry-login
     - *multiarch-prebuild
     - *buildx-prebuild
+    - *var-print
     - >
       docker build
       --pull
@@ -81,10 +82,10 @@
 
 .build:multiarch-concurrent:load:
   script:
-    - *var-print
     # - *registry-login
     - *multiarch-prebuild
     - *buildx-prebuild
+    - *var-print
     - >
       docker build
       --pull
