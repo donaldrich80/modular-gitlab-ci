@@ -13,7 +13,7 @@ include:
     file: '/docker/builder-scripts.yml'
 
 .buildx:base:
-  image: donaldrich/docker-runner:latest
+  image: donaldrich/private:docker-runner
   stage: build
   # services:
   #   - name: docker:stable-dind
