@@ -8,4 +8,4 @@ https://github.com/Artemmkin/infrastructure-as-code-tutorial
 https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
 
 
-CI_PROJECT_NAMESPACE
+CI_PROJECT_NAMESPACE hhh
