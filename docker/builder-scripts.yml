@@ -69,6 +69,7 @@
     # - *registry-login
     - *buildx-prebuild
     - *var-print
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
     - >
       docker build
       --push
