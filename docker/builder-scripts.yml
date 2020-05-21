@@ -42,6 +42,7 @@
       --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
+    - cat /root/.docker/config.json
 
 .build:monoarch:push:
   script:
@@ -59,6 +60,7 @@
       --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
+    - cat /root/.docker/config.json
 
 .build:monoarch:load:  # for runners!!!!!
   artifacts:
@@ -79,6 +81,7 @@
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
+    - cat /root/.docker/config.json
 
 .build:monoarch-cross:push:
   script:
