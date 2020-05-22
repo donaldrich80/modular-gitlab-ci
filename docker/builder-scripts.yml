@@ -84,7 +84,7 @@
     - cat /root/.docker/config.json
 
 .push:to:dockerhub:
-  image: donaldrich/docker-runner:latest
+  image: donaldrich/private:docker-runner
   stage: push
   # services:
   #   - name: docker:stable-dind
@@ -102,7 +102,7 @@
     # - docker rmi donaldrich/$IMAGE_NAME:$IMAGE_TAG
 
 remove-old-images:
-  image: donaldrich/docker-runner:latest
+  image: donaldrich/private:docker-runner
   stage: .post
   # services:
   #   - name: docker:stable-dind
