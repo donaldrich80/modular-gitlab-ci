@@ -1,8 +1,8 @@
-build image:
+build:
   extends:
     - .dockerhub:monoarch:load
 
-validate image:
+validate:
   image: donaldrich/private:docker-runner
   variables:
     GIT_STRATEGY: none
@@ -11,7 +11,7 @@ validate image:
     - docker run $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG validate
   needs: ["build"]
 
-push image:
+push:
   variables:
     GIT_STRATEGY: none
   extends:
