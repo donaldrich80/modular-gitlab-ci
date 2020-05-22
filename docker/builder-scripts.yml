@@ -94,7 +94,7 @@
   script:
     - *var-print
     # - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
-    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+#     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
     - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
     - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - docker push donaldrich/$IMAGE_NAME:$IMAGE_TAG
