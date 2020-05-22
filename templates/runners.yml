@@ -8,11 +8,11 @@
 #   - project: 'donaldrich/gitlab-ci-templates'
 #     file: '/docker/default.yml'
 
-build:
+build image:
   extends:
     - .dockerhub:monoarch:load
 
-test:
+validate image:
   image: donaldrich/private:docker-runner
   variables:
     GIT_STRATEGY: none
@@ -21,7 +21,7 @@ test:
     - docker run $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG validate
   needs: ["build"]
 
-push:
+push image:
   variables:
     GIT_STRATEGY: none
   extends:
