@@ -11,3 +11,15 @@ docker-cleanup:
     - ssh $SSH_USER@$SSH_ADDRESS -i ~/.ssh/$DEPLOYMENT_KEY -p $SSH_PORT "docker run --rm --read-only -e maxSecondsOld=10 --tmpfs /tmp:rw,nosuid,nodev -v /var/run/docker.sock:/var/run/docker.sock konstruktoid/docker-garby"
 
 # docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+remove-old-images:
+  image: donaldrich/private:docker-runner
+  stage: .post
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - name: donaldrich/docker-runner:dind
+  script:
+    - docker rmi $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    - docker rmi donaldrich/$IMAGE_NAME:$IMAGE_TAG

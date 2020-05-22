@@ -101,18 +101,6 @@
     # - docker rmi $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_BUILD_REF_NAME
     # - docker rmi donaldrich/$IMAGE_NAME:$IMAGE_TAG
 
-remove-old-images:
-  image: donaldrich/private:docker-runner
-  stage: .post
-  # services:
-  #   - name: docker:stable-dind
-  #     command: ["--experimental"]
-  services:
-    - name: donaldrich/docker-runner:dind
-  script:
-    - docker rmi $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
-    - docker rmi donaldrich/$IMAGE_NAME:$IMAGE_TAG
-
 
 .build:monoarch-cross:push:
   script:
