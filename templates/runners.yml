@@ -16,4 +16,4 @@ push:
     GIT_STRATEGY: none
   extends:
     - .push:to:dockerhub
-  needs: ["test"]
+  needs: ["validate"]
