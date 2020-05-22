@@ -1,0 +1,29 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/manifest.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/lint.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/builder-scripts.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/default.yml'
+
+build:
+  extends:
+    - .dockerhub:monoarch:load
+
+test:
+  image: donaldrich/private:docker-runner
+  variables:
+    GIT_STRATEGY: none
+  stage: test
+  script:
+    - docker run $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG validate
+  needs: ["build"]
+
+push:
+  variables:
+    GIT_STRATEGY: none
+  extends:
+    - .push:to:dockerhub
+  needs: ["test"]
