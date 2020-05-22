@@ -1,10 +1,10 @@
 .pushover:notify:
   image: donaldrich/ubuntu-runner:latest
-  stage: notify
+  stage: .post
   variables:
     GIT_STRATEGY: none
 
-pushover:success:loud:
+.pushover:success:loud:
   extends: .pushover:notify:success
   variables:
     PUSHOVER_PRIORITY: '1'
@@ -14,7 +14,7 @@ pushover:success:loud:
       when: on_success
     - when: never
 
-pushover:success:quiet:
+.pushover:success:quiet:
   extends: .pushover:notify:success
   variables:
     PUSHOVER_PRIORITY: '-2'
