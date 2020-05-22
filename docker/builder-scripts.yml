@@ -78,7 +78,7 @@
       --progress auto
       --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_BUILD_REF_NAME
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
     - cat /root/.docker/config.json
@@ -95,8 +95,8 @@
     - *var-print
     # - echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
     # - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
-    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_BUILD_REF_NAME
-    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_BUILD_REF_NAME donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - docker push donaldrich/$IMAGE_NAME:$IMAGE_TAG
     # - docker rmi $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_BUILD_REF_NAME
     # - docker rmi donaldrich/$IMAGE_NAME:$IMAGE_TAG
