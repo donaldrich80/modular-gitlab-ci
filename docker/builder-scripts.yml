@@ -80,7 +80,7 @@
     - >
       docker build
       --push
-      --progress auto
+      --progress tty
       --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
@@ -99,8 +99,8 @@
     - name: donaldrich/docker-runner:dind
   script:
     - *var-print
-    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
-    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_PIPELINE_ID
+    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG-$CI_PIPELINE_ID donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - docker push donaldrich/$IMAGE_NAME:$IMAGE_TAG
 
 .build:monoarch-cross:push:
@@ -210,6 +210,5 @@
       --tag $CI_REGISTRY_IMAGE:$(date -u +'%Y-%m-%d')
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
-    - *var-print
 
 
