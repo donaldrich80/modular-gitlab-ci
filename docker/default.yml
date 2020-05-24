@@ -12,15 +12,6 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/builder-scripts.yml'
 
-.buildx:base:
-  image: donaldrich/private:docker-runner
-  stage: build
-  # services:
-  #   - name: docker:stable-dind
-  #     command: ["--experimental"]
-  services:
-    - donaldrich/docker-runner:dind
-
 .build:functions:
   extends:
     - .buildx:base
