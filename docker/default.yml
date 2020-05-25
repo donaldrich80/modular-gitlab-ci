@@ -6,9 +6,6 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/lint.yml'
 
-  # - project: 'donaldrich/gitlab-ci-templates'
-  #   file: '/docker/builder.yml'
-
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/builder-scripts.yml'
 
