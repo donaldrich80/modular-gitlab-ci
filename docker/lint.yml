@@ -45,6 +45,7 @@ projectatomic:
 
 dockerfilelint:
   # extends: .lint:docker:base
+  stage: lint
   allow_failure: true
   interruptible: true
   image:
