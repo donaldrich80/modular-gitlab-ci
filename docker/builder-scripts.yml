@@ -134,14 +134,15 @@
     - *var-print
     - >
       docker build
-      --load
+      --pull
+      --push
       --progress plain
       --cache-from $REGISTRY_IMAGE
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $REGISTRY_IMAGE
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
-    - docker push $REGISTRY_IMAGE
+    # - docker push $REGISTRY_IMAGE
 
 .build:multiarch-manifest:push:
   script:
