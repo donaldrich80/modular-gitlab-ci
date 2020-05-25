@@ -39,12 +39,12 @@ projectatomic:lint:
   # extends: .lint:docker:base
   stage: lint
   image: projectatomic/dockerfile-lint
-  before_script:
-    - echo $DOCKERFILE
-    - echo $DOCKER_BUILD_DIR
+  # before_script:
+  #   - echo $DOCKERFILE
+  #   - echo $DOCKER_BUILD_DIR
   script:
-    - cat "$DOCKER_BUILD_DIR/$DOCKERFILE"
-    - dockerfile_lint --permissive "$DOCKER_BUILD_DIR/$DOCKERFILE"
+    # - cat "$DOCKER_BUILD_DIR/$DOCKERFILE"
+    - dockerfile_lint --permissive -f $DOCKER_BUILD_DIR/$DOCKERFILE
 
 .dockerfilelint:
   extends: .lint:docker:base
