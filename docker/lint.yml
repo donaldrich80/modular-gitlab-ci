@@ -23,7 +23,7 @@
   script:
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
-.hadolint:lint:
+hadolint:lint:
   extends: .lint:docker:base
   image: hadolint/hadolint
   before_script:
@@ -34,7 +34,7 @@
     - cat $DOCKER_BUILD_DIR/$DOCKERFILE
     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
-.projectatomic:lint:
+projectatomic:lint:
   extends: .lint:docker:base
   image: projectatomic/dockerfile-lint
   before_script:
