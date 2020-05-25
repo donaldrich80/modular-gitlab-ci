@@ -27,6 +27,8 @@ hadolint:lint:
   # extends: .lint:docker:base
   stage: lint
   image: hadolint/hadolint
+  allow_failure: true
+  interruptible: true
   before_script:
     - echo $DOCKERFILE
     - echo $DOCKER_BUILD_DIR
