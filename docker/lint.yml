@@ -23,34 +23,27 @@
 #   script:
 #     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
-hadolint:lint:
+hadolint:
   # extends: .lint:docker:base
   stage: lint
   image: hadolint/hadolint
   allow_failure: true
   interruptible: true
   before_script:
-    - echo $DOCKERFILE
-    - echo $DOCKER_BUILD_DIR
     - hadolint --version
   script:
-    # - cat $DOCKER_BUILD_DIR/$DOCKERFILE
     - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE
 
-projectatomic:lint:
+projectatomic:
   # extends: .lint:docker:base
   stage: lint
   allow_failure: true
   interruptible: true
   image: projectatomic/dockerfile-lint
-  # before_script:
-  #   - echo $DOCKERFILE
-  #   - echo $DOCKER_BUILD_DIR
   script:
-    # - cat "$DOCKER_BUILD_DIR/$DOCKERFILE"
     - dockerfile_lint --permissive -f $DOCKER_BUILD_DIR/$DOCKERFILE
 
-.dockerfilelint:
+dockerfilelint:
   # extends: .lint:docker:base
   allow_failure: true
   interruptible: true
@@ -63,4 +56,4 @@ projectatomic:lint:
     # - echo $DOCKER_BUILD_DIR
   script:
     # - cat $DOCKER_BUILD_DIR/$DOCKERFILE
-    - dockerfilelint "$DOCKER_BUILD_DIR/$DOCKERFILE"
+    - dockerfilelint $DOCKER_BUILD_DIR/$DOCKERFILE
