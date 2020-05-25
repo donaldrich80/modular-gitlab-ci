@@ -13,26 +13,26 @@
       when: always
     - when: never
 
-.hadolint:
-  extends: .lint:docker:base
-  image: hadolint/hadolint
-  before_script:
-    - echo $DOCKERFILE
-    - echo $DOCKER_BUILD_DIR
-    - hadolint --version
-  script:
-    - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
+# .hadolint:
+#   extends: .lint:docker:base
+#   image: hadolint/hadolint
+#   before_script:
+#     - echo $DOCKERFILE
+#     - echo $DOCKER_BUILD_DIR
+#     - hadolint --version
+#   script:
+#     - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
 
 hadolint:lint:
-  extends: .lint:docker:base
+  # extends: .lint:docker:base
   image: hadolint/hadolint
   before_script:
     - echo $DOCKERFILE
     - echo $DOCKER_BUILD_DIR
     - hadolint --version
   script:
-    - cat $DOCKER_BUILD_DIR/$DOCKERFILE
-    - hadolint "$DOCKER_BUILD_DIR/$DOCKERFILE"
+    # - cat $DOCKER_BUILD_DIR/$DOCKERFILE
+    - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE
 
 projectatomic:lint:
   extends: .lint:docker:base
