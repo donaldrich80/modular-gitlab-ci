@@ -25,6 +25,7 @@
 
 hadolint:lint:
   # extends: .lint:docker:base
+  stage: lint
   image: hadolint/hadolint
   before_script:
     - echo $DOCKERFILE
@@ -35,7 +36,8 @@ hadolint:lint:
     - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE
 
 projectatomic:lint:
-  extends: .lint:docker:base
+  # extends: .lint:docker:base
+  stage: lint
   image: projectatomic/dockerfile-lint
   before_script:
     - echo $DOCKERFILE
