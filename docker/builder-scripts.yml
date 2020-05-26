@@ -193,10 +193,6 @@
 
 .dotfiles:
   script:
-    - *var-print
-    # - *registry-login
-    - *multiarch-prebuild
-    - *buildx-prebuild
     - >
       docker build
       --pull
