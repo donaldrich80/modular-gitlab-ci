@@ -13,7 +13,8 @@ include:
   extends:
     - .buildx:base
     - .dockerhub:registry
-    - .build:monoarch:push:no-cache
+    - .build:monoarch:push
+    # - .build:monoarch:push:no-cache
 
 .dockerhub:monoarch:load:
   extends:
