@@ -53,13 +53,8 @@ include:
 
 .self:registry:
   variables:
-    # REGISTRY_USER: gitlab-ci-token
-    # REGISTRY_PASS: $CI_JOB_TOKEN
-    # REGISTRY: ${CI_REGISTRY}
     REGISTRY: $CI_REGISTRY_IMAGE
 
 .dockerhub:registry:
   variables:
-    # REGISTRY_USER: $DOCKERHUB_USER
-    # REGISTRY_PASS: $DOCKERHUB_PASS
     REGISTRY: $DOCKERHUB_USER

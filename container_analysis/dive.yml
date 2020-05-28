@@ -1,8 +1,8 @@
-scan-ubuntu:
-  image: 
+scan-image:
+  image:
     name: wagoodman/dive:latest
     entrypoint: [""]
-  stage: build
+  stage: validate
   variables:
     CI: "true"
   script:
