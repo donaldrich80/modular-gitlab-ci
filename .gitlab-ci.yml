@@ -17,7 +17,6 @@ stages:
   - debug
   - lint
   - build
-  - manifest
   - notify
 
 
