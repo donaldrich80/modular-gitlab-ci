@@ -9,9 +9,6 @@ include:
 
   # - local: '/debug/variable_match.yml'
 
-# variables:
-#   DEBUG_PIPELINE: "true"
-#   CI_DEBUG_TRACE: "true"
 
 stages:
   - debug
