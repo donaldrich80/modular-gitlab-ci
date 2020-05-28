@@ -1,4 +1,4 @@
-include 
+include:
 
   - local: '/notifications/healthchecks-repo.yml'
   - local: '/notifications/pushover.yml'
