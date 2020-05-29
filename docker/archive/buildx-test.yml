@@ -1,0 +1,30 @@
+variables:
+  BUILDKIT_HOST: "tcp://buildkit:1234"
+
+services:
+- name: moby/buildkit:buildx-stable-1
+  command: [" --addr tcp://0.0.0.0:1234"]
+  alias: buildkit
+- docker:dind
+
+
+stages:
+#   - get_credentials
+  - buildx
+# before_install:
+# #   - sudo docker run -d --privileged -p 1234:1234 --name buildkit moby/buildkit:latest --addr tcp://0.0.0.0:1234
+# #   - sudo docker cp buildkit:/usr/bin/buildctl /usr/bin/
+#   - export BUILD_HOST=tcp://0.0.0.0:1234
+#   - echo $BUILD_HOST
+
+jobs:
+  image: docker:latest
+  before_script:
+    - docker run -d --privileged -p 1234:1234 --name buildkit moby/buildkit:latest --addr tcp://0.0.0.0:1234
+    - docker cp buildkit:/usr/bin/buildctl /usr/bin/
+    - echo $BUILDKIT_HOST
+  stage: buildx
+  script:
+    - docker cp buildkit:/usr/bin/buildctl /usr/local/bin/ # For OS X and Windows, download from https://github.com/moby/buildkit/releases
+    - buildctl build --help
+    # - buildctl build --frontend dockerfile.v0 --local context=. --local dockerfile=. --opt target=ci

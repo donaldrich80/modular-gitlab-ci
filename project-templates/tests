@@ -1,0 +1,86 @@
+# .test-image:
+#   stage: build
+#   variables:
+#     IMAGE_NAME: "new-whoami"
+#     AUTO_BUILD: "disabled"
+#     IMAGE_TAG: "latest"
+#     DOCKERFILE: "Dockerfile.test"
+#     DEBUG_PIPELINE: "full"
+#     DOCKER_BUILD_DIR: "."
+
+# .tls-test:
+#   stage: debug
+#   variables:
+#     IMAGE_NAME: "cidi-test-push"
+#     IMAGE_TAG: $BASE_TAG-$ARCH_TAG
+#     BASE_TAG: "tls"
+#     DOCKERFILE: "Dockerfile.test"
+#     DOCKER_BUILD_DIR: "project-templates"
+#     DEBUG_PIPELINE: "full"
+
+# tls:tls-test:amd64:
+#   extends:
+#   - .dockerfile:multiarch:dockerhub
+#   - .tls-test
+#   variables:
+#     CI_BUILD_ARCHS: "linux/amd64"
+#     ARCH_TAG: "yes"
+#   tags:
+#     - tls
+
+# nontls:tls-test:amd64:
+#   extends:
+#   - .dockerfile:multiarch:dockerhub
+#   - .tls-test
+#   variables:
+#     CI_BUILD_ARCHS: "linux/amd64"
+#     ARCH_TAG: "no"
+#   tags:
+#     - non-tls
+
+
+
+# test:
+#   stage: debug
+#   image: donaldrich/docker-runner
+#   variables:
+#     DOCKER_HOST: tcp://docker:2375/
+#     DOCKER_TLS_CERTDIR: ""
+# #   script:
+#     - echo $DOCKER_HOST
+#     - echo $DOCKER_TLS_VERIFY
+#     - echo $DOCKER_CERT_PATH
+#     - echo $DOCKER_TLS_VERIFY
+#     - docker pull ubuntu:latest
+#     - docker run -e DOCKER_HOST=tcp://$(grep docker /etc/hosts | cut -f1):2375 dslim/docker-slim build --http-probe=false ubuntu:latest
+#     - mkdir slim
+#     - cp -r /bin/.docker-slim-state slim
+#   tags:
+#     - non-tls
+#   artifacts:
+#     expire_in: 1 week
+#     name: "docker-slim"
+#     paths:
+#       - "slim/*"
+
+# testwg:
+#   stage: debug
+#   image: donaldrich/docker-runner
+#   script:
+#     - echo $DOCKER_HOST
+#     - echo $DOCKER_TLS_VERIFY
+#     - echo $DOCKER_CERT_PATH
+#     - echo $DOCKER_TLS_VERIFY
+#     - docker pull ubuntu:latest
+#     - docker run -e DOCKER_HOST=tcp://$(grep docker /etc/hosts | cut -f1):2376 dslim/docker-slim --tls=true build --http-probe=false ubuntu:latest
+#   tags:
+#     - tls
+# docker.dockerfile:dockerhub:
+#   variables:
+#     CI_BUILD_ARCHS: "linux/amd64"
+#     ARCH_TAG: "arm64"
+#   extends:
+#     - .multiarch:base
+#     - .dockerhub:registry
+#     - .test-script
+#     - .test-image

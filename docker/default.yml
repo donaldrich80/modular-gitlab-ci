@@ -1,0 +1,60 @@
+include:
+
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/manifest.yml'
+
+  # - project: 'donaldrich/gitlab-ci-templates'
+  #   file: '/docker/lint.yml'
+
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/builder-scripts.yml'
+
+.build:functions:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:push
+    # - .build:monoarch:push:no-cache
+
+.dockerhub:monoarch:load:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:load
+
+.dockerhub:monoarch:push:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:push
+
+.dockerhub:multiarch-concurrent:push:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:multiarch-concurrent:push
+
+.dockerhub:multiarch-manifest:load:
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:multiarch-manifest:load
+
+.dockerhub:manifest:self:
+  extends:
+    - .docker:manifest:base
+    - .self:registry
+
+.dockerhub:manifest:dockerhub:
+  extends:
+    - .docker:manifest:base
+    - .dockerhub:registry
+
+
+.self:registry:
+  variables:
+    REGISTRY: $CI_REGISTRY_IMAGE
+
+.dockerhub:registry:
+  variables:
+    REGISTRY: $DOCKERHUB_USER

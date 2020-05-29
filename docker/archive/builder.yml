@@ -1,0 +1,23 @@
+.buildx:base:
+  image: donaldrich/docker-runner:latest
+  stage: build
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - donaldrich/docker-runner:dind
+
+.buildx:base:nontls:
+  image: donaldrich/docker-runner:latest
+  stage: build
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - name: donaldrich/docker-runner:dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375/
+    DOCKER_TLS_CERTDIR: ""
+    DOCKER_CLI_EXPERIMENTAL: enabled
+    DOCKER_DRIVER: overlay2
+

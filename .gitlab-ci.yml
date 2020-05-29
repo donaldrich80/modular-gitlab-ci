@@ -1,0 +1,19 @@
+include:
+
+  - local: '/notifications/healthchecks-repo.yml'
+  - local: '/notifications/pushover.yml'
+
+  - local: '/lint/default.yml'
+
+  - local: '/docker/default.yml'
+
+  # - local: '/debug/variable_match.yml'
+
+
+stages:
+  - debug
+  - lint
+  - build
+  - notify
+
+

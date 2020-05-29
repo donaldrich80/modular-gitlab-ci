@@ -1,0 +1,29 @@
+
+.docker:manifest:base:
+  stage: manifest
+  image: donaldrich/docker-runner:latest
+  script:
+    - docker pull $REGISTRY_IMAGE:$IMAGE_TAG-amd64
+    # - docker pull $REGISTRY_IMAGE:arm64
+    - docker pull $REGISTRY_IMAGE:$IMAGE_TAG-armv7
+    - docker manifest create $REGISTRY_IMAGE:$IMAGE_TAG
+        $REGISTRY_IMAGE:$IMAGE_TAG-amd64
+        $REGISTRY_IMAGE:$IMAGE_TAG-armv7
+    - docker manifest annotate --os linux --arch amd64
+        $REGISTRY_IMAGE:$IMAGE_TAG
+        $REGISTRY_IMAGE:$IMAGE_TAG-amd64
+    # - docker manifest annotate --os linux --arch arm64
+    #     $REGISTRY_IMAGE:latest
+    #     $REGISTRY_IMAGE:arm64
+    - docker manifest annotate --os linux --arch arm --variant v7
+        $REGISTRY_IMAGE:$IMAGE_TAG
+        $REGISTRY_IMAGE:$IMAGE_TAG-armv7
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
+    - docker manifest push $REGISTRY_IMAGE:$IMAGE_TAG
+  rules:
+    - if: '$DEBUG_PIPELINE == $CI_JOB_STAGE'
+      when: manual 
+    - if: '$DEBUG_PIPELINE != $CI_JOB_STAGE'
+      when: never 
+    # - if: '$DEBUG_PIPELINE'
+    #   when: manual

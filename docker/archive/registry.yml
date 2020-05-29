@@ -1,0 +1,7 @@
+.self:registry:
+  variables:
+    REGISTRY_IMAGE: $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+
+.dockerhub:registry:
+  variables:
+    REGISTRY_IMAGE: $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG

@@ -1,0 +1,9 @@
+scan-image:
+  image:
+    name: wagoodman/dive:latest
+    entrypoint: [""]
+  stage: validate
+  variables:
+    CI: "true"
+  script:
+    - dive version

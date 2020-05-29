@@ -1,0 +1,200 @@
+.var-print: &var-print
+- echo $REGISTRY
+- echo $REGISTRY_IMAGE
+- echo $CI_REGISTRY_IMAGE
+- echo $IMAGE_TAG
+- echo $IMAGE_NAME
+- echo $CI_BUILD_ARCHS
+- echo $DOCKERFILE
+- echo $DOCKER_BUILD_DIR
+- echo $DOCKERHUB_USER
+- echo $REPO_URL
+- echo $DOCKER_HOST
+- echo $DOCKER_TLS_CERTDIR
+- echo $DOCKER_CLI_EXPERIMENTAL
+- echo $DOCKER_DRIVER
+
+.multiarch-prebuild: &multiarch-prebuild
+- docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+# docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+.buildx-prebuild: &buildx-prebuild
+- docker context create default_tls
+- docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
+- docker buildx inspect --bootstrap
+- docker buildx ls
+
+    # - docker buildx create --driver docker-container --use
+
+.buildx:base:
+  image: donaldrich/private:docker-runner
+  stage: build
+  artifacts:
+    paths:
+      - env_vars.txt
+  before_script:
+    - *multiarch-prebuild
+    - *buildx-prebuild
+    # - *registry-login
+    - export > env_vars.txt
+  services:
+    - donaldrich/docker-runner:dind
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+
+
+.build:monoarch:push:no-cache:
+  script:
+    - >
+      docker build
+      --pull
+      --push
+      --progress auto
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+
+.build:monoarch:push:
+  script:
+    - >
+      docker build
+      --pull
+      --push
+      --progress auto
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+
+.build:monoarch:load:  # for runners!!!!!
+  script:
+    - >
+      docker build
+      --push
+      --progress tty
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.donavanaldrich.com/donaldrich
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+
+.push:to:dockerhub:
+  image: donaldrich/private:docker-runner
+  stage: push
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - name: donaldrich/docker-runner:dind
+  script:
+    - *var-print
+    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
+    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    - docker push donaldrich/$IMAGE_NAME:$IMAGE_TAG
+
+.build:monoarch-cross:push:
+  script:
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --platform $CI_BUILD_ARCHS
+      --cache-from $REGISTRY_IMAGE
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $REGISTRY_IMAGE
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+
+.build:multiarch-concurrent:load:
+  script:
+    - >
+      docker build
+      --pull
+      --load
+      --progress plain
+      --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+
+.build:multiarch-concurrent:push:
+  script:
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --cache-from $REGISTRY_IMAGE
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $REGISTRY_IMAGE
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_CONTEXT
+    # - docker push $REGISTRY_IMAGE
+
+.build:multiarch-manifest:push:
+  script:
+    - >
+      docker build
+        --pull
+        --push
+        --platform $CI_BUILD_ARCHS
+        --cache-from $CACHE_IMAGE-$ARCH_TAG
+        --build-arg BUILDKIT_INLINE_CACHE=1
+        --tag $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+        --file $DOCKER_BUILD_DIR/$DOCKERFILE
+        $DOCKER_BUILD_CONTEXT
+  # - docker push $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+
+.build:multiarch-manifest:load:
+  script:
+    - >
+      docker build
+        --pull
+        --load
+        --platform $CI_BUILD_ARCHS
+        --cache-from $CACHE_IMAGE-$ARCH_TAG
+        --build-arg BUILDKIT_INLINE_CACHE=1
+        --tag $REGISTRY_IMAGE:$IMAGE_TAG-$ARCH_TAG
+        --file $DOCKER_BUILD_DIR/$DOCKERFILE
+        $DOCKER_BUILD_CONTEXT
+
+
+.build:multiarch-concurrent:version:
+  script:
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --cache-from $CACHE_IMAGE
+      --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$(date -u +'%Y-%m-%d')
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+    - *var-print
+
+.dotfiles:
+  script:
+    - >
+      docker build
+      --pull
+      --push
+      --progress plain
+      --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
+      --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.donavanaldrich.com/donaldrich
+      --tag $CI_REGISTRY_IMAGE:$IMAGE_TAG
+      --tag $CI_REGISTRY_IMAGE:$(date -u +'%Y-%m-%d')
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+
+    #   --build-arg BUILDKIT_INLINE_CACHE=1
+    #   --cache-from $CI_REGISTRY_IMAGE:$IMAGE_TAG
+

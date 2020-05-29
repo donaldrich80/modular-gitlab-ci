@@ -1,0 +1,12 @@
+
+deploytos3:
+  image: donaldrich/aws
+  stage: deploy
+  script:
+    - aws s3 sync . s3://minio.$S3_URL.com/ --delete
+
+deploytoelasticbeanstalk:
+  image: donaldrich/aws
+  stage: deploy
+  script:
+    - eb deploy

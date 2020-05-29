@@ -1,0 +1,6 @@
+validate:docker-compose:
+  stage: validate
+  image: donaldrich/docker-runner:latest
+  script:
+    - docker-compose -f docker-compose.yml config
+
