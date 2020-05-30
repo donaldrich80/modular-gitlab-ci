@@ -34,27 +34,27 @@ hadolint:
   script:
     - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE
 
-projectatomic:
-  # extends: .lint:docker:base
-  stage: lint
-  allow_failure: true
-  interruptible: true
-  image: projectatomic/dockerfile-lint
-  script:
-    - dockerfile_lint --permissive -f $DOCKER_BUILD_DIR/$DOCKERFILE
+# projectatomic:
+#   # extends: .lint:docker:base
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   image: projectatomic/dockerfile-lint
+#   script:
+#     - dockerfile_lint --permissive -f $DOCKER_BUILD_DIR/$DOCKERFILE
 
-dockerfilelint:
-  # extends: .lint:docker:base
-  stage: lint
-  allow_failure: true
-  interruptible: true
-  image:
-    name: replicated/dockerfilelint
-    entrypoint: [""]
-  before_script:
-    - dockerfilelint --version
-    # - echo $DOCKERFILE
-    # - echo $DOCKER_BUILD_DIR
-  script:
-    # - cat $DOCKER_BUILD_DIR/$DOCKERFILE
-    - dockerfilelint $DOCKER_BUILD_DIR/$DOCKERFILE
+# dockerfilelint:
+#   # extends: .lint:docker:base
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   image:
+#     name: replicated/dockerfilelint
+#     entrypoint: [""]
+#   before_script:
+#     - dockerfilelint --version
+#     # - echo $DOCKERFILE
+#     # - echo $DOCKER_BUILD_DIR
+#   script:
+#     # - cat $DOCKER_BUILD_DIR/$DOCKERFILE
+#     - dockerfilelint $DOCKER_BUILD_DIR/$DOCKERFILE
