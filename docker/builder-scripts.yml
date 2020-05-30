@@ -82,6 +82,19 @@
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
 
+.build:docker-runner:
+  script:
+    - >
+      docker build
+      --push
+      --progress tty
+      --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.donavanaldrich.com/donaldrich
+      --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
+      --file $DOCKER_BUILD_DIR/$DOCKERFILE
+      $DOCKER_BUILD_DIR
+
 .push:to:dockerhub:
   image: $CI_REGISTRY_IMAGE/secrets/private/docker-runner:latest
   stage: push
