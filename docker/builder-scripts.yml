@@ -27,7 +27,7 @@
     # - docker buildx create --driver docker-container --use
 
 .buildx:base:
-  image: donaldrich/private:docker-runner
+  image: $CI_REGISTRY_IMAGE/secrets/private/docker-runner:latest
   stage: build
   artifacts:
     paths:
@@ -83,7 +83,7 @@
       $DOCKER_BUILD_DIR
 
 .push:to:dockerhub:
-  image: donaldrich/private:docker-runner
+  image: $CI_REGISTRY_IMAGE/secrets/private/docker-runner:latest
   stage: push
   # services:
   #   - name: docker:stable-dind
@@ -97,7 +97,7 @@
     - docker push donaldrich/$IMAGE_NAME:$IMAGE_TAG
 
 .push:to:gitlab:
-  image: donaldrich/private:docker-runner
+  image: $CI_REGISTRY_IMAGE/secrets/private/docker-runner:latest
   stage: push
   # services:
   #   - name: docker:stable-dind
