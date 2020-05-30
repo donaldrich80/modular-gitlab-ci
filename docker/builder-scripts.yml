@@ -37,11 +37,11 @@
     - *buildx-prebuild
     # - *registry-login
     - export > env_vars.txt
-  services:
-    - donaldrich/docker-runner:dind
   # services:
-  #   - name: docker:stable-dind
-  #     command: ["--experimental"]
+  #   - donaldrich/docker-runner:dind
+  services:
+    - name: docker:stable-dind
+      command: ["--experimental"]
 
 
 .build:monoarch:push:no-cache:
