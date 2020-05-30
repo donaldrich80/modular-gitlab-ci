@@ -96,6 +96,20 @@
     - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - docker push donaldrich/$IMAGE_NAME:$IMAGE_TAG
 
+.push:to:gitlab:
+  image: donaldrich/private:docker-runner
+  stage: push
+  # services:
+  #   - name: docker:stable-dind
+  #     command: ["--experimental"]
+  services:
+    - name: donaldrich/docker-runner:dind
+  script:
+    - *var-print
+    - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
+    - docker tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG
+    - docker push $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG
+
 .build:monoarch-cross:push:
   script:
     - >
