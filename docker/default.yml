@@ -22,6 +22,12 @@ include:
     - .dockerhub:registry
     - .build:monoarch:load
 
+.gitlab:monoarch:load:
+  extends:
+    - .buildx:base
+    - .gitlab:registry
+    - .build:monoarch:load
+
 .dockerhub:monoarch:push:
   extends:
     - .buildx:base
@@ -52,6 +58,10 @@ include:
 
 
 .self:registry:
+  variables:
+    REGISTRY: $CI_REGISTRY_IMAGE
+
+.gitlab:registry:
   variables:
     REGISTRY: $CI_REGISTRY_IMAGE
 
