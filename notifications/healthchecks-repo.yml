@@ -1,9 +1,8 @@
 .healthcheck-repo: &healthcheck-repo
 - export VAULT_ADDR=$VAULT_ADDR
-# - export VAULT_TOKEN=$VAULT_TOKEN
 - export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
-- export HEALTHCHECK_URL="$(vault kv get -field=HEALTHCHECK_URL /secret/gitlab-ci/global)"
-- export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$CI_PROJECT_NAME /secret/gitlab-ci/repos)"
+- export HEALTHCHECK_URL="$(vault kv get -field=HEALTHCHECK_URL /secret/$JWT_LOGIN/global)"
+- export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$CI_PROJECT_NAME /secret/$JWT_LOGIN/repos)"
 
 healthcheck:start:
   image: donaldrich/ubuntu-runner:latest
