@@ -5,6 +5,7 @@ scan-image:
   stage: scan
   variables:
     CI: "true"
+  allow_failure: true
   script:
     - dive version
     - dive $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
