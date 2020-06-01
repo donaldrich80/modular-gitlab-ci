@@ -1,7 +1,7 @@
 scan-image:
-  image:
-    name: wagoodman/dive:latest
-    entrypoint: [""]
+  # image:
+  #   name: wagoodman/dive:latest
+  #   entrypoint: [""]
   stage: scan
   variables:
     CI: "true"
