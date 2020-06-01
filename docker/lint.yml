@@ -26,7 +26,7 @@
 hadolint:
   # extends: .lint:docker:base
   stage: lint
-  image: hadolint/hadolint
+  # image: hadolint/hadolint
   allow_failure: true
   interruptible: true
   before_script:
