@@ -1,0 +1,5 @@
+deploytoelasticbeanstalk:
+  image: donaldrich/aws
+  stage: deploy
+  script:
+    - eb deploy
