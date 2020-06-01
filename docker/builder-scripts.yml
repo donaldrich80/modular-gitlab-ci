@@ -170,9 +170,9 @@
       --pull
       --push
       --progress plain
-      --cache-from $REGISTRY_IMAGE
+      --cache-from $REGISTRY/$IMAGE_NAME:IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $REGISTRY_IMAGE
+      --tag $REGISTRY/$IMAGE_NAME:IMAGE_TAG
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
     # - docker push $REGISTRY_IMAGE
