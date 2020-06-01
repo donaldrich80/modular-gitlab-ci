@@ -1,6 +1,3 @@
-stages:
-    - test
-
 postman_tests:
     stage: test
     image:

@@ -1,0 +1,8 @@
+strest_tests:
+    stage: test
+    image:
+        name: eykrehbein/strest:latest
+        # entrypoint: [""]
+    script:
+        - strest
+
