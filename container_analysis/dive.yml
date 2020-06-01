@@ -7,4 +7,4 @@ scan-image:
     CI: "true"
   script:
     - dive version
-    - dive $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
+    - dive $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
