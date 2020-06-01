@@ -2,8 +2,9 @@ scan-image:
   image:
     name: wagoodman/dive:latest
     entrypoint: [""]
-  stage: validate
+  stage: scan
   variables:
     CI: "true"
   script:
     - dive version
+    - dive $REGISTRY/$IMAGE_NAME:$IMAGE_TAG

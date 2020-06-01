@@ -1,8 +1,0 @@
-.analyze-image-layers:
-  image: 
-    name: wagoodman/dive:latest
-    entrypoint: [""]
-  variables:
-    CI: "true"
-  before_script:
-    - dive version
