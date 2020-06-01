@@ -1,11 +1,12 @@
 scan-image:
-  # image:
-  #   name: wagoodman/dive:latest
-  #   entrypoint: [""]
+  image:
+    name: wagoodman/dive:latest
+    entrypoint: [""]
   stage: scan
   variables:
     CI: "true"
   allow_failure: true
   script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
     - dive version
     - dive $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
