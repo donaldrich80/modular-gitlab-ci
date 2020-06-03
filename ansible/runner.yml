@@ -14,6 +14,7 @@
     - *ssh-provision
     - cp -r ~/secrets/ansible-inventory inventory
     - ansible-galaxy install --roles-path .ansible/roles -r requirements.yml
+    - ansible-config list
   after_script:
     - rm -r ~/secrets
     - rm -r ~/.ssh
@@ -22,7 +23,7 @@
       - $CI_PROJECT_DIR/logs/
   variables:
     ANSIBLE_CONFIG: "ansible.cfg"
-    ANSIBLE_LOG_PATH: "${CI_PROJECT_DIR}/logs/ansible.log"
+    ANSIBLE_LOG_PATH: "$CI_PROJECT_DIR/logs/ansible.log"
     # ANSIBLE_HOST_KEY_CHECKING: "false"
     # ANSIBLE_RETRY_FILES_ENABLED: "false"
     # ANSIBLE_FORCE_COLOR: "true"
