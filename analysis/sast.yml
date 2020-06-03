@@ -1,5 +1,5 @@
 sast:
-  stage: test
+  stage: validate
   image:
     name: appthreat/sast-scan
   script:
