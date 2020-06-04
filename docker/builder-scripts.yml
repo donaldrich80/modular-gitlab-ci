@@ -157,6 +157,7 @@
       --pull
       --load
       --progress plain
+      --platform $CI_BUILD_ARCHS
       --cache-from $CI_PROJECT_NAMESPACE/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
@@ -170,6 +171,7 @@
       --pull
       --push
       --progress plain
+      --platform $CI_BUILD_ARCHS
       --cache-from $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
       --build-arg BUILDKIT_INLINE_CACHE=1
       --tag $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
