@@ -1,7 +1,8 @@
 sast:
   stage: validate
   image:
-    name: appthreat/sast-scan
+#     name: appthreat/sast-scan
+    name: shiftleft/sast-scan
   script:
     - scan --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
   artifacts:
