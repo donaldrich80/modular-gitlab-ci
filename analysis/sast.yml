@@ -1,5 +1,5 @@
 sast:
-  stage: validate
+  stage: .pre
   image:
 #     name: appthreat/sast-scan
     name: shiftleft/sast-scan
