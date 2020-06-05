@@ -1,0 +1,8 @@
+hadolint:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  before_script:
+    - hadolint --version
+  script:
+    - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE

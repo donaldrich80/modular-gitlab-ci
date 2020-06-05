@@ -1,0 +1,17 @@
+ansible-lint:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image: sdesbure/ansible-lint
+  script:
+    - ansible-lint playbooks/*.yml
+  rules:
+    - if: '$DEBUG_PIPELINE'
+      when: never
+    - changes:
+      - "**/playbooks/*.yml"
+      when: always
+    - exists:
+      - "**/playbooks/*.yml"
+      when: manual
+    - when: never

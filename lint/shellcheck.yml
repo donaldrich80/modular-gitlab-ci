@@ -1,0 +1,32 @@
+shellcheck:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: koalaman/shellcheck-alpine:stable
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+    - apk --no-cache add grep
+  script:
+    - |
+      for file in $(grep -IRl "#\!\(/usr/bin/env \|/bin/\)" --exclude-dir ".git,custom_components" .); do
+        if ! shellcheck -x $file; then
+          export FAILED=1
+        else
+          echo "$file OK"
+        fi
+      done
+      if [ "${FAILED}" = "1" ]; then
+        exit 1
+      fi
+  rules:
+    - if: '$DEBUG_PIPELINE'
+      when: never
+    - changes:
+      - "**/*/*.sh"
+      when: always
+    - exists:
+      - "**/*/*.sh"
+      when: manual
+    - when: never

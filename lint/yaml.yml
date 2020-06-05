@@ -1,0 +1,21 @@
+yamllint:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image: sdesbure/yamllint
+  before_script:
+    - yamllint --version
+  script:
+    - yamllint .
+  rules:
+    - if: '$DEBUG_PIPELINE'
+      when: never
+    - changes:
+      - "**/*/*.yaml"
+      - "**/*/*.yml"
+      when: always
+    - exists:
+      - "**/*/*.yaml"
+      - "**/*/*.yml"
+      when: manual
+    - when: never
