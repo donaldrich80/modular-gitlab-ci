@@ -3,20 +3,21 @@ markdownlint:
   interruptible: true
   stage: lint
   image:
-    name: ruby:alpine
-    entrypoint: [""]
-  before_script:
-    - gem install mdl
-    - mdl --version
+    # name: ruby:alpine
+    name: donaldrich/function:mdl
+  #   entrypoint: [""]
+  # before_script:
+  #   - gem install mdl
+  #   - mdl --version
   script:
     - mdl --style all --warnings .
-  rules:
-    - if: '$DEBUG_PIPELINE'
-      when: never
-    - changes:
-      - "**/*/*.md"
-      when: manual
-    - exists:
-      - "**/*/*.md"
-      when: manual
-    - when: never
+  # rules:
+  #   - if: '$DEBUG_PIPELINE'
+  #     when: never
+  #   - changes:
+  #     - "**/*/*.md"
+  #     when: manual
+  #   - exists:
+  #     - "**/*/*.md"
+  #     when: manual
+  #   - when: never
