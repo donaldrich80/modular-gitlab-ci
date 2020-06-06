@@ -11,11 +11,11 @@ yamllint:
     - if: '$DEBUG_PIPELINE'
       when: never
     - changes:
-      - "**/*/*.yaml"
-      - "**/*/*.yml"
+        - "**/*/*.yaml"
+        - "**/*/*.yml"
       when: always
     - exists:
-      - "**/*/*.yaml"
-      - "**/*/*.yml"
+        - "**/*/*.yaml"
+        - "**/*/*.yml"
       when: manual
     - when: never
