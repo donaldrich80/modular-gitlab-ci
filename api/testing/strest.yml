@@ -3,4 +3,5 @@ strest_tests:
   image:
     name: eykrehbein/strest:latest
   script:
+    - echo "https://github.com/eykrehbein/strest"
     - strest

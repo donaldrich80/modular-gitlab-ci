@@ -1,6 +1,6 @@
 # gitlab-ci-templates
 
-[https://github.com/eykrehbein/strest]
+
 
 ## Reference
 [https://github.com/Artemmkin/infrastructure-as-code-tutorial]
