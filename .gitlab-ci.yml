@@ -6,7 +6,6 @@ include:
   - local: '/docker/default.yml'
   # - local: '/debug/variable_match.yml'
 
-
 stages:
   - debug
   - lint
