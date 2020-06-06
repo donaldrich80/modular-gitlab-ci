@@ -20,13 +20,13 @@ shellcheck:
       if [ "${FAILED}" = "1" ]; then
         exit 1
       fi
-  rules:
-    - if: '$DEBUG_PIPELINE'
-      when: never
-    - changes:
-      - "**/*/*.sh"
-      when: always
-    - exists:
-      - "**/*/*.sh"
-      when: manual
-    - when: never
+  # rules:
+  #   - if: '$DEBUG_PIPELINE'
+  #     when: never
+  #   - changes:
+  #     - "**/*/*.sh"
+  #     when: always
+  #   - exists:
+  #     - "**/*/*.sh"
+  #     when: manual
+  #   - when: never
