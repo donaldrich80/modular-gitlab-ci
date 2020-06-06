@@ -29,7 +29,7 @@
     DEBUG_PIPELINE: "full"
 
 build:test-image:armv7:
-  extends: 
+  extends:
   - .dockerfile:multiarch:dockerhub
   - .test-image
   variables:
@@ -37,24 +37,24 @@ build:test-image:armv7:
     ARCH_TAG: "armv7"
 
 build:test-image:amd64:
-  extends: 
+  extends:
   - .dockerfile:multiarch:dockerhub
   - .test-image
-  variables: 
+  variables:
     CI_BUILD_ARCHS: "linux/amd64"
     ARCH_TAG: "arm64"
 
 build:test-image:arm64:
-  extends: 
+  extends:
   - .dockerfile:multiarch:dockerhub
   - .test-image
-  variables: 
+  variables:
     CI_BUILD_ARCHS: "linux/amd64"
     ARCH_TAG: "arm64"
 
 
-build:test-image:arm64:
-  extends: 
+build:test-image:arm64:self:
+  extends:
   - .dockerfile:multiarch:self
   - .test-image
   variables:
@@ -62,7 +62,7 @@ build:test-image:arm64:
     ARCH_TAG: "arm64"
 
 self:test-image:armv7:
-  extends: 
+  extends:
   - .dockerfile:multiarch:self
   - .test-image
   variables:
@@ -70,15 +70,15 @@ self:test-image:armv7:
     ARCH_TAG: "armv7"
 
 self:test-image:amd64:
-  extends: 
+  extends:
    - .dockerfile:multiarch:self
    - .test-image
-  variables: 
+  variables:
     CI_BUILD_ARCHS: "linux/amd64"
     ARCH_TAG: "arm64"
 
 self:test-image:arm64:
-  extends: 
+  extends:
   - .dockerfile:multiarch:self
   - .test-image
   variables:
@@ -86,9 +86,9 @@ self:test-image:arm64:
     ARCH_TAG: "arm64"
 
 self:manifest:test-image:
-  extends: 
+  extends:
   - .docker:manifest:self
 
 dockerhub:manifest:test-image:
-  extends: 
+  extends:
   - .docker:manifest:dockerhub
