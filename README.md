@@ -1,6 +1,8 @@
 # gitlab-ci-templates
 
+https://github.com/analysis-tools-dev/static-analysis
 
+https://github.com/analysis-tools-dev/dynamic-analysis/blob/master/README.md
 
 ## Reference
 [https://github.com/Artemmkin/infrastructure-as-code-tutorial]
