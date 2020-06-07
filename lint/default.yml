@@ -1,15 +1,9 @@
 include:
-
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/yaml.yml'
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/markdown.yml'
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/json.yml'
+  # - project: 'donaldrich/gitlab-ci-templates'
+  #   file: '/lint/json.yml'
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/shellcheck.yml'
-
-# .linter:base:
-#   stage: lint
-#   allow_failure: true
-#   interruptible: true

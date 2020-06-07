@@ -5,13 +5,13 @@ ansible-lint:
   image: sdesbure/ansible-lint
   script:
     - ansible-lint playbooks/*.yml
-  rules:
-    - if: '$DEBUG_PIPELINE'
-      when: never
-    - changes:
-      - "**/playbooks/*.yml"
-      when: always
-    - exists:
-      - "**/playbooks/*.yml"
-      when: manual
-    - when: never
+  # rules:
+  #   - if: '$DEBUG_PIPELINE'
+  #     when: never
+  #   - changes:
+  #     - "**/playbooks/*.yml"
+  #     when: always
+  #   - exists:
+  #     - "**/playbooks/*.yml"
+  #     when: manual
+  #   - when: never
