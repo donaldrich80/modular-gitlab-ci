@@ -21,15 +21,15 @@ shellcheck:
         exit 1
       fi
 
-shellcheck-glob:
-  stage: lint
-  allow_failure: true
-  interruptible: true
-  image:
-    name: koalaman/shellcheck-alpine:stable
-    entrypoint: [""]
-  script:
-    - shellcheck **/*.{sh,bash}
+# shellcheck-glob:
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   image:
+#     name: koalaman/shellcheck-alpine:stable
+#     entrypoint: [""]
+#   script:
+#     - shellcheck **/*.{sh,bash}
 #     - apk --no-cache add grep
 
 # /**/*.{sh,bash}
