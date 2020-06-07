@@ -29,7 +29,7 @@ shellcheck-glob:
     name: koalaman/shellcheck-alpine:stable
     entrypoint: [""]
   script:
-    - shellcheck /**/*.{sh,bash}
+    - shellcheck **/*.{sh,bash}
 #     - apk --no-cache add grep
 
 # /**/*.{sh,bash}
