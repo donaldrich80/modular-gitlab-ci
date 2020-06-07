@@ -20,6 +20,19 @@ shellcheck:
       if [ "${FAILED}" = "1" ]; then
         exit 1
       fi
+
+shellcheck-glob:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: koalaman/shellcheck-alpine:stable
+    entrypoint: [""]
+  script:
+    - shellcheck /**/*.{sh,bash}
+#     - apk --no-cache add grep
+
+# /**/*.{sh,bash}
   # rules:
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
