@@ -29,6 +29,18 @@
 .buildx:base:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   stage: build
+  before_script:
+    - *buildx-prebuild
+    # - *registry-login
+  # services:
+  #   - donaldrich/docker-runner:dind
+  services:
+    - name: docker:stable-dind
+      command: ["--experimental"]
+
+.buildx:multiarch:base:
+  image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+  stage: build
   # artifacts:
   #   paths:
   #     - env_vars.txt
@@ -42,7 +54,6 @@
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
-
 
 .build:monoarch:push:no-cache:
   script:
@@ -81,19 +92,6 @@
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_CONTEXT
-
-# .build:monoarch:load:  # for runners!!!!!
-#   script:
-#     - >
-#       docker build
-#       --push
-#       --progress tty
-#       --cache-from $CI_REGISTRY_IMAGE/$IMAGE_NAME:$IMAGE_TAG
-#       --build-arg BUILDKIT_INLINE_CACHE=1
-#       --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.donavanaldrich.com/donaldrich
-#       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
-#       --file $DOCKER_BUILD_DIR/$DOCKERFILE
-#       $DOCKER_BUILD_DIR
 
 .build:docker-runner:
   script:
