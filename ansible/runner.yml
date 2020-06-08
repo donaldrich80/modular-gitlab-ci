@@ -19,6 +19,7 @@
     - rm -r ~/secrets
     - rm -r ~/.ssh
   artifacts:
+    when: always
     paths:
       - $CI_PROJECT_DIR/ansible.log
   variables:
