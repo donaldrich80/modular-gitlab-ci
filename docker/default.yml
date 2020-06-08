@@ -1,11 +1,6 @@
 include:
-
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/manifest.yml'
-
-  # - project: 'donaldrich/gitlab-ci-templates'
-  #   file: '/docker/lint.yml'
-
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/docker/builder-scripts.yml'
 
@@ -14,7 +9,6 @@ include:
     - .buildx:base
     - .dockerhub:registry
     - .build:monoarch:push
-    # - .build:monoarch:push:no-cache
 
 .dockerhub:monoarch:load:
   extends:
@@ -36,13 +30,13 @@ include:
 
 .dockerhub:multiarch-concurrent:push:
   extends:
-    - .buildx:base
+    - .buildx:multiarch:base
     - .dockerhub:registry
     - .build:multiarch-concurrent:push
 
 .dockerhub:multiarch-manifest:load:
   extends:
-    - .buildx:base
+    - .buildx:multiarch:base
     - .dockerhub:registry
     - .build:multiarch-manifest:load
 
