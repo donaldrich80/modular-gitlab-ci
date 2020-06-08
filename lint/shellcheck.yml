@@ -10,7 +10,7 @@ shellcheck:
     - apk --no-cache add grep
   script:
     - |
-      for file in $(grep -IRl "#\!\(/usr/bin/env \|/bin/\)" --exclude-dir ".git,custom_components" .); do
+      for file in $(grep -IRl "#\!\(/usr/bin/env \|/bin/\)" --exclude-dir ".git,templates,custom_components" .); do
         if ! shellcheck -x $file; then
           export FAILED=1
         else
