@@ -80,7 +80,7 @@
       --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.donavanaldrich.com/donaldrich
       --tag $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
-      $DOCKER_BUILD_DIR
+      $DOCKER_BUILD_CONTEXT
 
 # .build:monoarch:load:  # for runners!!!!!
 #   script:
