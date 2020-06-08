@@ -8,7 +8,7 @@ validate:
     GIT_STRATEGY: none
   stage: test
   script:
-    - docker run $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID info
+    - docker run $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID validate
   needs: ["build"]
 
 push:
