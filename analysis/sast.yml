@@ -6,5 +6,6 @@ sast:
     - scan --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
     # - cat ${CI_PROJECT_DIR}/reports/scan-full-report.json | jq "."
   artifacts:
+    name: "SAST"
     paths:
       - $CI_PROJECT_DIR/reports/
