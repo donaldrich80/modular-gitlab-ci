@@ -1,4 +1,4 @@
-ansible-lint:
+ansible:
   extends: .ansible-runner
   stage: lint
   script:
