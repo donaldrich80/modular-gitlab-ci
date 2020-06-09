@@ -25,6 +25,8 @@ https://github.com/analysis-tools-dev/dynamic-analysis/blob/master/README.md
 
 [https://github.com/Grayda/gitlab-doc-builder]
 
+[https://github.com/bregman-arie/devops-exercises](https://github.com/bregman-arie/devops-exercises)
+
 
 
 
