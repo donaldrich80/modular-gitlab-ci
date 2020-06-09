@@ -228,14 +228,15 @@
       --pull
       --push
       --progress plain
-      --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
+      --build-arg BUILDKIT_INLINE_CACHE=1
       --build-arg BASE_IMAGE=$CI_REGISTRY_IMAGE:base
       --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.donavanaldrich.com/donaldrich
+      --cache-from $CI_REGISTRY_IMAGE:$IMAGE_TAG
       --tag $CI_REGISTRY_IMAGE:$IMAGE_TAG
       --tag $CI_REGISTRY_IMAGE:$(date -u +'%Y-%m-%d')
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
 
-    #   --build-arg BUILDKIT_INLINE_CACHE=1
-    #   --cache-from $CI_REGISTRY_IMAGE:$IMAGE_TAG
+    # --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
+
 
