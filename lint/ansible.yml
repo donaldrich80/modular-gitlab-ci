@@ -1,10 +1,20 @@
 ansible-lint:
+  extends: .ansible-runner
   stage: lint
+  script:
+    - ansible-lint -x 204 -x 702 playbooks/*.yml
   allow_failure: true
   interruptible: true
-  image: sdesbure/ansible-lint
-  script:
-    - ansible-lint playbooks/*.yml
+  when: on_success
+
+# ansible-lint:
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   # image: sdesbure/ansible-lint
+#   image: donaldrich/ansible
+#   script:
+#     - ansible-lint playbooks/*.yml
   # rules:
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
