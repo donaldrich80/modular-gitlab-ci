@@ -4,12 +4,15 @@ Modular templates for use in GitLab-CI pipelines.
 
 In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml
 
-## Contents (WIP)
+## Sections
   * [Analysis](analysis/README.md)
-  * [Ansible](ansible)
+  * [Ansible](ansible/README.md)
   * [API](api/README.md)
+  * [AWS](aws/README.md)
+  * [Docker](docker)
   * [Hashicorp](hashicorp/README.md)
   * [Lint](lint/README.md)
+  * [Notifications](notifications)
 
 ## Examples
 
@@ -31,6 +34,12 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file:    '/lint/shellcheck.yml'
 ```
+### Syntax Linters
+```
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file:    '/lint/default.yml'
+```
 ### Ansible Playbook
 ```
 include:
@@ -41,7 +50,7 @@ include:
 ```
 include:
   - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/ansible/runner.yml'
+    file:    '/api/postman.yml'
 ```
 
 ## DevOps & GitLab-CI References/Links

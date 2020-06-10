@@ -3,12 +3,6 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/pushover-notifications.yml'
 
-  - project: 'donaldrich/secrets'
-    file: 'gitlab-ci/global-secrets.yml'
-
-  - project: 'donaldrich/secrets'
-    file: '/gitlab-ci-secrets.yml'
-
 stages:
   - lint
   - build
