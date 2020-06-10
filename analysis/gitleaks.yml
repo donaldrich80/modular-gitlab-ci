@@ -1,0 +1,7 @@
+gitleaks:
+  stage: .pre
+  # image:
+  #   name: image
+  script:
+    - gitleaks --verbose --redact --pretty
+
