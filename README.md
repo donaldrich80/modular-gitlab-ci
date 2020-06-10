@@ -4,6 +4,13 @@ Modular templates for use in GitLab-CI pipelines.
 
 In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml
 
+## Contents (WIP)
+  * [Analysis](analysis/README.md)
+  * [Ansible](ansible)
+  * [API](api/README.md)
+  * [Hashicorp](hashicorp/README.md)
+  * [Lint](lint/README.md)
+
 ## Examples
 
 ### Pushover Notification
@@ -30,7 +37,7 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file:    '/ansible/runner.yml'
 ```
-### Postman
+### Postman API Test
 ```
 include:
   - project: 'donaldrich/gitlab-ci-templates'
