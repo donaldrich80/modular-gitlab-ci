@@ -4,5 +4,6 @@ scan-image:
     CI: "true"
   allow_failure: true
   script:
+    - echo "https://github.com/wagoodman/dive"
     - dive version
     - dive $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG

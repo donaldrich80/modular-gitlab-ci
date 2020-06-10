@@ -1,8 +1,41 @@
-# gitlab-ci-templates
+# GitLab-CI Templates
 
-https://github.com/analysis-tools-dev/static-analysis
+Modular templates for use in GitLab-CI pipelines.
 
-https://github.com/analysis-tools-dev/dynamic-analysis/blob/master/README.md
+In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml
+
+## Examples
+
+### Pushover Notification
+```
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file:    '/notifications/pushover.yml'
+```
+### SAST Analysis
+```
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file:    '/analysis/sast.yml'
+```
+### Shellcheck
+```
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file:    '/lint/shellcheck.yml'
+```
+### Ansible Playbook
+```
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file:    '/ansible/runner.yml'
+```
+### Postman
+```
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file:    '/ansible/runner.yml'
+```
 
 ## Reference
 [https://github.com/Artemmkin/infrastructure-as-code-tutorial]
@@ -27,6 +60,9 @@ https://github.com/analysis-tools-dev/dynamic-analysis/blob/master/README.md
 
 [https://github.com/bregman-arie/devops-exercises](https://github.com/bregman-arie/devops-exercises)
 
+https://github.com/analysis-tools-dev/static-analysis
+
+https://github.com/analysis-tools-dev/dynamic-analysis/blob/master/README.md
 
 
 
