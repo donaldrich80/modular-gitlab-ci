@@ -19,3 +19,5 @@ yamllint:
         - "**/*/*.yml"
       when: manual
     - when: never
+
+# yamllint --strict -f parsable

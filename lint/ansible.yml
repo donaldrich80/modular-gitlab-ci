@@ -7,6 +7,8 @@ ansible:
   interruptible: true
   when: on_success
 
+# ansible-lint --force-color -p -v
+
 # ansible-lint:
 #   stage: lint
 #   allow_failure: true
