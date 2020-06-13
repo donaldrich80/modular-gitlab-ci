@@ -2,7 +2,7 @@ yamllint:
   stage: lint
   allow_failure: true
   interruptible: true
-  image: sdesbure/yamllint
+  image: donaldrich/function:yamllint
   before_script:
     - yamllint --version
   script:
@@ -24,7 +24,7 @@ yamllint:parsable:
   stage: lint
   allow_failure: true
   interruptible: true
-  image: sdesbure/yamllint
+  image: donaldrich/function:yamllint
   before_script:
     - yamllint --version
   script:
