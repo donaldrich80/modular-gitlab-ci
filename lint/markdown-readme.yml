@@ -5,7 +5,7 @@ markdownlint-readme:
   image:
     name: donaldrich/function:mdl
   script:
-    - mdl --style all --warnings .
+    - mdl --style all --warnings README.md
   # rules:
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
