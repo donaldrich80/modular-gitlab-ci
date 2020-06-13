@@ -43,7 +43,7 @@ include:
 
 ### Syntax Linters
 
-```
+```yaml
 include:
   - project: 'donaldrich/gitlab-ci-templates'
     file:    '/lint/default.yml'
@@ -51,7 +51,7 @@ include:
 
 ### Ansible Playbook
 
-```
+```yaml
 include:
   - project: 'donaldrich/gitlab-ci-templates'
     file:    '/ansible/runner.yml'
@@ -59,7 +59,7 @@ include:
 
 ### Postman API Test
 
-```
+```yaml
 include:
   - project: 'donaldrich/gitlab-ci-templates'
     file:    '/api/postman.yml'

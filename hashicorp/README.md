@@ -10,25 +10,20 @@
 
 [https://github.com/PaloAltoNetworks/terraform-templates](https://github.com/PaloAltoNetworks/terraform-templates)
 
+## Lint
+
+* [tfsec](https://github.com/liamg/tfsec)
+* [tflint](https://github.com/terraform-linters/tflint)
+
 ## Providers
 
-https://github.com/Telmate/terraform-provider-proxmox
-
-https://github.com/terraform-linters/tflint
-
-https://github.com/terraform-providers/terraform-provider-cloudflare
-
-https://github.com/terraform-providers/terraform-provider-gitlab
-
-https://github.com/mrparkers/terraform-provider-keycloak
-
-https://github.com/terraform-providers/terraform-provider-docker
-
-https://github.com/radekg/terraform-provisioner-ansible
-
-https://github.com/jonmorehouse/terraform-provisioner-ansible
-
-https://github.com/liamg/tfsec/releases/download/v0.19.0/tfsec-linux-amd64
+[terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
+[terraform-provider-cloudflare](https://github.com/terraform-providers/terraform-provider-cloudflare)
+[terraform-provider-gitlab](https://github.com/terraform-providers/terraform-provider-gitlab)
+[terraform-provider-keycloak](https://github.com/mrparkers/terraform-provider-keycloak)
+[terraform-provider-docker](https://github.com/terraform-providers/terraform-provider-docker)
+[terraform-provisioner-ansible](https://github.com/radekg/terraform-provisioner-ansible)
+[terraform-provisioner-ansible](https://github.com/jonmorehouse/terraform-provisioner-ansible)
 
 [https://github.com/in4it/terraform-modules](https://github.com/in4it/terraform-modules)
 
