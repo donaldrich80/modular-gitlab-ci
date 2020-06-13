@@ -1,4 +1,4 @@
-markdownlint:
+markdownlint-readme:
   allow_failure: true
   interruptible: true
   stage: lint
