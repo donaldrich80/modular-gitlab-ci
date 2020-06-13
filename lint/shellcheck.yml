@@ -18,6 +18,17 @@ shellcheck:
       if [ "${FAILED}" = "1" ]; then
         exit 1
       fi
+      
+shellcheck-fix:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/lint:shellcheck
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck -f diff **/*.sh
 
 # shellcheck-glob:
 #   stage: lint
