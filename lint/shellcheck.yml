@@ -18,7 +18,7 @@ shellcheck:
       if [ "${FAILED}" = "1" ]; then
         exit 1
       fi
-      
+
 shellcheck-fix:
   stage: lint
   allow_failure: true
@@ -29,6 +29,11 @@ shellcheck-fix:
     - shellcheck --version
   script:
     - shellcheck -f diff **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
 
 # shellcheck-glob:
 #   stage: lint
