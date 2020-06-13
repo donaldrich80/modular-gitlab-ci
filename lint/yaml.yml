@@ -6,34 +6,14 @@ yamllint:
   before_script:
     - yamllint --version
   script:
-    - yamllint .
-  rules:
-    - exists:
-        - "**/*/*.yaml"
-        - "**/*/*.yml"
-      when: manual
-    - when: never
-    # - if: '$DEBUG_PIPELINE'
-    #   when: never
-    # - changes:
-    #     - "**/*/*.yaml"
-    #     - "**/*/*.yml"
-    #   when: always
-
-yamllint:parsable:
-  stage: lint
-  allow_failure: true
-  interruptible: true
-  image: donaldrich/function:yamllint
-  before_script:
-    - yamllint --version
-  script:
     - yamllint -f colored .
   rules:
+    - changes:
+        - "**/*/*.yaml"
+        - "**/*/*.yml"
+      when: always
     - exists:
         - "**/*/*.yaml"
         - "**/*/*.yml"
       when: manual
     - when: never
-
-# yamllint --strict -f parsable

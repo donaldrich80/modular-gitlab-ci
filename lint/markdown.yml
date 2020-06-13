@@ -6,13 +6,11 @@ markdownlint:
     name: donaldrich/function:mdl
   script:
     - mdl --style all --warnings .
-  # rules:
-  #   - if: '$DEBUG_PIPELINE'
-  #     when: never
-  #   - changes:
-  #     - "**/*/*.md"
-  #     when: manual
-  #   - exists:
-  #     - "**/*/*.md"
-  #     when: manual
-  #   - when: never
+  rules:
+    - changes:
+        - "**/*/*.md"
+      when: always
+    - exists:
+        - "**/*/*.md"
+      when: manual
+    - when: never
