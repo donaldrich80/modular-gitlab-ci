@@ -8,12 +8,28 @@ yamllint:
   script:
     - yamllint .
   rules:
-    - if: '$DEBUG_PIPELINE'
-      when: never
-    - changes:
+    - exists:
         - "**/*/*.yaml"
         - "**/*/*.yml"
-      when: always
+      when: manual
+    - when: never
+    # - if: '$DEBUG_PIPELINE'
+    #   when: never
+    # - changes:
+    #     - "**/*/*.yaml"
+    #     - "**/*/*.yml"
+    #   when: always
+
+yamllint:parsable:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image: sdesbure/yamllint
+  before_script:
+    - yamllint --version
+  script:
+    - yamllint -f parsable .
+  rules:
     - exists:
         - "**/*/*.yaml"
         - "**/*/*.yml"
