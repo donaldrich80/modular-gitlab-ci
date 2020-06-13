@@ -11,5 +11,3 @@ stages:
   - lint
   - build
   - notify
-
-
