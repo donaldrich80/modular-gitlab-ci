@@ -28,7 +28,7 @@ yamllint:parsable:
   before_script:
     - yamllint --version
   script:
-    - yamllint -f parsable .
+    - yamllint -f colored .
   rules:
     - exists:
         - "**/*/*.yaml"
