@@ -19,6 +19,7 @@
 # docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 .buildx-prebuild: &buildx-prebuild
+- export DOCKERHUB_USER="$(vault kv get -field=DOCKERHUB_USER /secret/gitlab-ci/global)"
 - docker context create default_tls
 - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
 - docker buildx inspect --bootstrap
@@ -220,23 +221,5 @@
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
     - *var-print
-
-# .dotfiles:
-#   script:
-#     - >
-#       docker build
-#       --pull
-#       --push
-#       --progress plain
-#       --build-arg BUILDKIT_INLINE_CACHE=1
-#       --build-arg BASE_IMAGE=$CI_REGISTRY_IMAGE:base
-#       --build-arg REPO_URL=https://gitlab-ci-token:${CI_JOB_TOKEN}@$CI_SERVER_HOST/$CI_PROJECT_NAMESPACE
-#       --cache-from $CI_REGISTRY_IMAGE:$IMAGE_TAG
-#       --tag $CI_REGISTRY_IMAGE:$IMAGE_TAG
-#       --tag $CI_REGISTRY_IMAGE:$(date -u +'%Y-%m-%d')
-#       --file $DOCKER_BUILD_DIR/$DOCKERFILE
-#       $DOCKER_BUILD_DIR
-
-    # --build-arg BUILD_DATE=$(date -u +'%Y-%m-%d')
 
 
