@@ -35,8 +35,7 @@
   before_script:
     - *buildx-prebuild
     # - *registry-login
-  # services:
-  #   - donaldrich/docker-runner:dind
+  interruptible: true
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -44,16 +43,11 @@
 .buildx:multiarch:base:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   stage: build
-  # artifacts:
-  #   paths:
-  #     - env_vars.txt
   before_script:
     - *multiarch-prebuild
     - *buildx-prebuild
     # - *registry-login
-    # - export > env_vars.txt
-  # services:
-  #   - donaldrich/docker-runner:dind
+  interruptible: true
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
@@ -112,11 +106,9 @@
 .push:to:dockerhub:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   stage: push
-  # services:
-  #   - name: docker:stable-dind
-  #     command: ["--experimental"]
   services:
-    - name: donaldrich/docker-runner:dind
+    - name: docker:stable-dind
+      command: ["--experimental"]
   script:
     - *var-print
     - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
@@ -126,11 +118,9 @@
 .push:to:gitlab:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   stage: push
-  # services:
-  #   - name: docker:stable-dind
-  #     command: ["--experimental"]
   services:
-    - name: donaldrich/docker-runner:dind
+    - name: docker:stable-dind
+      command: ["--experimental"]
   script:
     - *var-print
     - docker pull $CI_REGISTRY_IMAGE/$IMAGE_NAME/$IMAGE_TAG:$CI_PIPELINE_ID
