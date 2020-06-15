@@ -19,6 +19,8 @@
 # docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
 .buildx-prebuild: &buildx-prebuild
+- export VAULT_ADDR=$VAULT_ADDR
+- export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
 - export DOCKERHUB_USER="$(vault kv get -field=DOCKERHUB_USER /secret/gitlab-ci/global)"
 - docker context create default_tls
 - docker buildx create --driver docker-container --driver-opt image=moby/buildkit:master,network=host --use default_tls
