@@ -2,21 +2,10 @@ ansible:
   extends: .ansible-runner
   stage: lint
   script:
-    - ansible-lint -x 204 -x 702 playbooks/*.yml
+    - ansible-lint --force-color -x 204 -x 702 *.yml
   allow_failure: true
   interruptible: true
   when: on_success
-
-# ansible-lint --force-color -p -v
-
-# ansible-lint:
-#   stage: lint
-#   allow_failure: true
-#   interruptible: true
-#   # image: sdesbure/ansible-lint
-#   image: donaldrich/ansible
-#   script:
-#     - ansible-lint playbooks/*.yml
   # rules:
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
@@ -27,3 +16,6 @@ ansible:
   #     - "**/playbooks/*.yml"
   #     when: manual
   #   - when: never
+
+# ansible-lint  -p -v
+
