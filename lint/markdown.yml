@@ -4,6 +4,7 @@ markdownlint:
   stage: lint
   image:
     name: donaldrich/function:mdl
+    entrypoint: [""]
   script:
     - mdl --style all --warnings .
   rules:

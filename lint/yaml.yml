@@ -2,7 +2,9 @@ yamllint:
   stage: lint
   allow_failure: true
   interruptible: true
-  image: donaldrich/function:yamllint
+  image:
+    name: donaldrich/function:yamllint
+    entrypoint: [""]
   before_script:
     - yamllint --version
   script:

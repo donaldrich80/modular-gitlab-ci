@@ -4,6 +4,7 @@ shellcheck:
   interruptible: true
   image:
     name: donaldrich/lint:shellcheck
+    entrypoint: [""]
   before_script:
     - shellcheck --version
   script:
