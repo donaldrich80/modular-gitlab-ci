@@ -80,5 +80,3 @@ include:
 * [bregman-arie/devops-exercises](https://github.com/bregman-arie/devops-exercises)
 * [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis)
 * [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis)
-
-https://github.com/mvdan/sh
