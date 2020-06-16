@@ -13,5 +13,5 @@ bashate:
   rules:
     - exists:
       - "**/*.sh"
-      when: always
+      when: on_success
     - when: never
