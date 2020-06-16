@@ -3,7 +3,7 @@ shellcheck:
   allow_failure: true
   interruptible: true
   image:
-    name: donaldrich/lint:shellcheck
+    name: donaldrich/function:shellcheck
     entrypoint: [""]
   before_script:
     - shellcheck --version
