@@ -4,6 +4,6 @@ include:
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/markdown.yml'
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/bashate.yml'
+    file: '/lint/shell/bashate.yml'
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/shellcheck.yml'
+    file: '/lint/shell/shellcheck.yml'

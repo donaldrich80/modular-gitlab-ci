@@ -22,8 +22,8 @@
     - docker manifest push $REGISTRY_IMAGE:$IMAGE_TAG
   rules:
     - if: '$DEBUG_PIPELINE == $CI_JOB_STAGE'
-      when: manual 
+      when: manual
     - if: '$DEBUG_PIPELINE != $CI_JOB_STAGE'
-      when: never 
+      when: never
     # - if: '$DEBUG_PIPELINE'
     #   when: manual

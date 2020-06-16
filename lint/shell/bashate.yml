@@ -8,4 +8,10 @@ bashate:
   before_script:
     - bashate --version
   script:
-    - bashate **/*.sh || true
+    # - bashate **/*.sh || true
+    - bashate **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never

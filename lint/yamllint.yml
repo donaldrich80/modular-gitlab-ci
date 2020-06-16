@@ -10,12 +10,12 @@ yamllint:
   script:
     - yamllint --format colored --no-warnings .
   rules:
-    - changes:
-        - "**/*/*.yaml"
-        - "**/*/*.yml"
-      when: always
+    # - changes:
+    #     - "**/*/*.yaml"
+    #     - "**/*/*.yml"
+    #   when: always
     - exists:
-        - "**/*/*.yaml" 
-        - "**/*/*.yml"
-      when: manual
+        - "**/*.yaml"
+        - "**/*.yml"
+      when: on_success
     - when: never
