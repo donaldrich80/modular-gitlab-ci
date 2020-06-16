@@ -65,6 +65,15 @@ include:
     file:    '/api/postman.yml'
 ```
 
+## GitLab-CI Reference
+
+### CI_PIPELINE_SOURCE
+
+| CI_PIPELINE_SOURCE | Description |
+| :----------------: | :---------: |
+| trigger | API Call |
+| push | git push |
+
 ## DevOps & GitLab-CI References/Links
 
 * [Artemmkin/infrastructure-as-code-tutorial](https://github.com/Artemmkin/infrastructure-as-code-tutorial)

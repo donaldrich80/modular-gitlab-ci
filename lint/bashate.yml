@@ -1,0 +1,11 @@
+bashate:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/lint:bashate
+    entrypoint: [""]
+  # before_script:
+  #   - bashate --version
+  script:
+    - bashate --error . --verbose
