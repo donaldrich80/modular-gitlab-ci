@@ -8,10 +8,10 @@ markdownlint:
   script:
     - mdl --style all --warnings .
   rules:
-    - changes:
-        - "**/*/*.md"
-      when: always
+    # - changes:
+    #     - "**/*/*.md"
+    #   when: always
     - exists:
         - "**/*/*.md"
-      when: manual
+      when: on_success
     - when: never
