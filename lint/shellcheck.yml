@@ -22,6 +22,126 @@ shellcheck:
       when: always
     - when: never
 
+shellcheckcheckstyle:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=checkstyle **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+shellcheckdiff:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=diff **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+shellcheckgcc:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=gcc **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+shellcheckjson:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=json **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+shellcheckjson1:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=json1 **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+shellcheckquiet:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=quiet **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+shellchecktty:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always --format=tty **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: always
+    - when: never
+
+
 # shellcheck:
 #   stage: lint
 #   allow_failure: true
