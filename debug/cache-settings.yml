@@ -2,6 +2,7 @@
 variables:
   CARGO_HOME: $CI_PROJECT_DIR/.cargo
   APT_CACHE_DIR: $CI_PROJECT_DIR/apt
+  RUST_BACKTRACE: "FULL"
 #   PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
 #   PIP_CACHE_DIR: "$CI_PROJECT_DIR/pip-cache"
 #   GIT_CLONE_PATH: $CI_BUILDS_DIR/project-name
@@ -9,23 +10,15 @@ variables:
 cache:
   paths:
     - "$CI_PROJECT_DIR/pip-cache"
+    - .cargo
+    - $HOME/.cargo/
+    - target/
   key: "$CI_PROJECT_ID"
+  untracked: true
 
 before_script:
   - apt-get update -yq
   - apt-get install -o dir::cache::archives="$APT_CACHE_DIR" -y {{ DEPENDENCIES }}
-
-
-  cache:
-    paths:
-      - .cargo
-
-cache:
-    key: "$CI_JOB_NAME"
-    untracked: true
-    paths:
-    - $HOME/.cargo/
-    - target/
 
 # Define a yaml template for running a build and then running your tests
 .cargo_test_template: &cargo_test
@@ -35,9 +28,8 @@ cache:
   - cargo test --verbose
 
 # Set any required environment variables here
-variables:
-  RUST_BACKTRACE: "FULL"
+
 
 # Do any pre-flight requirements here, such as updating $PATH installing dependencies
-before_script:
-  - export PATH="/root/.cargo/bin:$PATH"
+# before_script:
+#   - export PATH="/root/.cargo/bin:$PATH"

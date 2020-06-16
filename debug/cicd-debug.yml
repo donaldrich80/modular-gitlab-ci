@@ -1,18 +1,18 @@
 dockerhub:login:
   image: donaldrich/docker-runner:latest
-  stage: debug 
+  stage: debug
   script:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
 
 dockerhub:pull:
   image: donaldrich/docker-runner:latest
-  stage: debug 
+  stage: debug
   script:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
 
 dockerhub:push:
   image: donaldrich/docker-runner:latest
-  stage: debug 
+  stage: debug
   script:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
   variables:
