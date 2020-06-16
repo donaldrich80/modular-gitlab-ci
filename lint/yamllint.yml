@@ -8,14 +8,14 @@ yamllint:
   before_script:
     - yamllint --version
   script:
-    - yamllint -f colored .
+    - yamllint --format colored --no-warnings .
   rules:
     - changes:
         - "**/*/*.yaml"
         - "**/*/*.yml"
       when: always
     - exists:
-        - "**/*/*.yaml"
+        - "**/*/*.yaml" 
         - "**/*/*.yml"
       when: manual
     - when: never
