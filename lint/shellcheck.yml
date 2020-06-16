@@ -8,14 +8,14 @@ shellcheck:
   before_script:
     - shellcheck --version
   script:
-    - shellcheck --color[=always] **/*.sh
-    - shellcheck --color[=always] --format=checkstyle **/*.sh
-    - shellcheck --color[=always] --format=diff **/*.sh
-    - shellcheck --color[=always] --format=gcc **/*.sh
-    - shellcheck --color[=always] --format=json **/*.sh
-    - shellcheck --color[=always] --format=json1 **/*.sh
-    - shellcheck --color[=always] --format=quiet **/*.sh
-    - shellcheck --color[=always] --format=tty **/*.sh
+    - shellcheck --color=always **/*.sh
+    - shellcheck --color=always --format=checkstyle **/*.sh
+    - shellcheck --color=always --format=diff **/*.sh
+    - shellcheck --color=always --format=gcc **/*.sh
+    - shellcheck --color=always --format=json **/*.sh
+    - shellcheck --color=always --format=json1 **/*.sh
+    - shellcheck --color=always --format=quiet **/*.sh
+    - shellcheck --color=always --format=tty **/*.sh
   rules:
     - exists:
       - "**/*.sh"
