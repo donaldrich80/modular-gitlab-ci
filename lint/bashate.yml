@@ -5,7 +5,7 @@ bashate:
   image:
     name: donaldrich/function:bashate
     entrypoint: [""]
-  # before_script:
-  #   - bashate --version
+  before_script:
+    - bashate --version
   script:
-    - bashate --error . --verbose
+    - bashate .
