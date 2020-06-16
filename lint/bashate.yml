@@ -8,4 +8,4 @@ bashate:
   before_script:
     - bashate --version
   script:
-    - bashate .
+    - bashate **/*.sh
