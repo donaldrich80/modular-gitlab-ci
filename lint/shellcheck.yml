@@ -7,33 +7,49 @@ shellcheck:
   before_script:
     - shellcheck --version
   script:
-    - |
-      for file in $(grep -IRl "#\!\(/usr/bin/env \|/bin/\)" --exclude-dir ".git,templates,custom_components" .); do
-        if ! shellcheck -x $file; then
-          export FAILED=1
-        else
-          echo "$file OK"
-        fi
-      done
-      if [ "${FAILED}" = "1" ]; then
-        exit 1
-      fi
-
-shellcheck-fix:
-  stage: lint
-  allow_failure: true
-  interruptible: true
-  image:
-    name: donaldrich/lint:shellcheck
-  before_script:
-    - shellcheck --version
-  script:
-    - shellcheck -f diff **/*.sh
+    - shellcheck **/*.sh
   rules:
     - exists:
       - "**/*.sh"
       when: always
     - when: never
+
+# shellcheck:
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   image:
+#     name: donaldrich/lint:shellcheck
+#   before_script:
+#     - shellcheck --version
+#   script:
+#     - |
+#       for file in $(grep -IRl "#\!\(/usr/bin/env \|/bin/\)" --exclude-dir ".git,templates,custom_components" .); do
+#         if ! shellcheck -x $file; then
+#           export FAILED=1
+#         else
+#           echo "$file OK"
+#         fi
+#       done
+#       if [ "${FAILED}" = "1" ]; then
+#         exit 1
+#       fi
+
+# shellcheck-fix:
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   image:
+#     name: donaldrich/lint:shellcheck
+#   before_script:
+#     - shellcheck --version
+#   script:
+#     - shellcheck -f diff **/*.sh
+#   rules:
+#     - exists:
+#       - "**/*.sh"
+#       when: always
+#     - when: never
 
 # shellcheck-glob:
 #   stage: lint
