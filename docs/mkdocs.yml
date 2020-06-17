@@ -1,0 +1,12 @@
+pages:
+  image:
+    name: donaldrich/function:mkdocs
+    entrypoint: [""]
+  script:
+  - mkdocs build
+  - mv site public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
