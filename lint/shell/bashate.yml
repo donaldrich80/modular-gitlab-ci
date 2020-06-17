@@ -52,7 +52,7 @@ bashate-bin:
       when: on_success
     - when: never
 
-bashate-bin:
+bashate-scripts:
   stage: lint
   allow_failure: true
   interruptible: true
