@@ -9,11 +9,12 @@ bashate:
     - bashate --version
   script:
     # ignore line too long
-    - bashate --ignore E006 --verbose **/*.sh
-    # - bashate **/*/*.sh
+    - bashate --ignore E006 --verbose **/*.sh || true
+    - bashate --ignore E006 --verbose **/*/*.sh || true
   rules:
     - exists:
       - "**/*/*.sh"
+      - "**/*.sh"
       when: on_success
     - when: never
 

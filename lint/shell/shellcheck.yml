@@ -8,10 +8,12 @@ shellcheck:
   before_script:
     - shellcheck --version
   script:
-    - shellcheck --color=always **/*.sh
+    - shellcheck --color=always **/*.sh || true
+    - shellcheck --color=always **/*/*.sh || true
   rules:
     - exists:
       - "**/*/*.sh"
+      - "**/*.sh"
       when: on_success
     - when: never
 
