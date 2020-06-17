@@ -6,16 +6,26 @@ nav:
     - Ansible: ansible.md
     - API: api.md
     - AWS: aws.md
+    - Docs: docs.md
     - Hashicorp: hashicorp.md
     - Lint: lint.md
 theme:
   name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: red
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
   features:
     - tabs
     - instant
   icon:
     repo: fontawesome/brands/gitlab
     # logo: material/cloud
+repo_name: donaldrich/gitlab-ci-templates
+repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
 extra:
   social:
     - icon: fontawesome/brands/gitlab
