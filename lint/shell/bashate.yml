@@ -9,9 +9,9 @@ bashate:
     - bashate --version
   script:
     # - bashate **/*.sh || true
-    - bashate **/*.sh
+    - bashate **/*/*.sh
   rules:
     - exists:
-      - "**/*.sh"
+      - "**/*/*.sh"
       when: on_success
     - when: never
