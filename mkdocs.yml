@@ -8,4 +8,5 @@ nav:
     - AWS: aws.md
     - Hashicorp: hashicorp.md
     - Lint: lint.md
-theme: readthedocs
+theme:
+  name: material
