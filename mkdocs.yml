@@ -1,6 +1,7 @@
 site_name: GitLab-CI Templates
 site_url: https://pages.gitlab.io/mkdocs
 nav:
+    - Home: index.md
     - Analysis: analysis.md
     - Ansible: ansible.md
     - API: api.md
