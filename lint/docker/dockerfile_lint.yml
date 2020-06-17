@@ -1,6 +1,6 @@
 dockerfile_lint:
   stage: lint
-  image: donaldrich/function:dockerfile_lint
+  image: donaldrich/function:dockerfile-lint
   allow_failure: true
   interruptible: true
   # before_script:
