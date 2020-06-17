@@ -8,12 +8,27 @@ shellcheck:
   before_script:
     - shellcheck --version
   script:
-    - shellcheck --color=always **/*.sh || true
-    - shellcheck --color=always **/*/*.sh || true
+    - shellcheck --color=always **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: on_success
+    - when: never
+
+shellcheck-dir:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always **/*/*.sh
   rules:
     - exists:
       - "**/*/*.sh"
-      - "**/*.sh"
       when: on_success
     - when: never
 
@@ -31,6 +46,23 @@ shellcheck-bin:
   rules:
     - exists:
       - "bin/*"
+      when: on_success
+    - when: never
+
+shellcheck-scripts:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:shellcheck
+    entrypoint: [""]
+  before_script:
+    - shellcheck --version
+  script:
+    - shellcheck --color=always scripts/*
+  rules:
+    - exists:
+      - "scripts/*"
       when: on_success
     - when: never
 

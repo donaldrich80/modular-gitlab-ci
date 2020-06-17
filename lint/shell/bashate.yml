@@ -9,12 +9,28 @@ bashate:
     - bashate --version
   script:
     # ignore line too long
-    - bashate --ignore E006 --verbose **/*.sh || true
-    - bashate --ignore E006 --verbose **/*/*.sh || true
+    - bashate --ignore E006 --verbose **/*.sh
+  rules:
+    - exists:
+      - "**/*.sh"
+      when: on_success
+    - when: never
+
+bashate-dir:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:bashate
+    entrypoint: [""]
+  before_script:
+    - bashate --version
+  script:
+    # ignore line too long
+    - bashate --ignore E006 --verbose **/*/*.sh
   rules:
     - exists:
       - "**/*/*.sh"
-      - "**/*.sh"
       when: on_success
     - when: never
 
@@ -30,9 +46,26 @@ bashate-bin:
   script:
     # ignore line too long
     - bashate --ignore E006 --verbose bin/*
-    # - bashate **/*/*.sh
   rules:
     - exists:
       - "bin/*"
+      when: on_success
+    - when: never
+
+bashate-bin:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:bashate
+    entrypoint: [""]
+  before_script:
+    - bashate --version
+  script:
+    # ignore line too long
+    - bashate --ignore E006 --verbose scripts/*
+  rules:
+    - exists:
+      - "scripts/*"
       when: on_success
     - when: never
