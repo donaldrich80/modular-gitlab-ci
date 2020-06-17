@@ -10,3 +10,19 @@ nav:
     - Lint: lint.md
 theme:
   name: material
+  features:
+    - tabs
+    - instant
+  icon:
+    repo: fontawesome/brands/gitlab
+    # logo: material/cloud
+extra:
+  social:
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+plugins:
+  - search:
+      prebuild_index: true
+  - minify:
+      minify_html: true
+  - awesome-pages
