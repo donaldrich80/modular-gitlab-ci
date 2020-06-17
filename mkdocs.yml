@@ -1,0 +1,10 @@
+site_name: GitLab-CI Templates
+# site_url: https://pages.gitlab.io/mkdocs
+nav:
+    - Analysis: analysis.md
+    - Ansible: ansible.md
+    - API: api.md
+    - AWS: aws.md
+    - Hashicorp: hashicorp.md
+    - Lint: lint.md
+theme: readthedocs

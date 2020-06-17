@@ -6,13 +6,13 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ## Sections
 
-* [Analysis](analysis/README.md)
-* [Ansible](ansible/README.md)
-* [API](api/README.md)
+* [Analysis](docs/analysis.md)
+* [Ansible](docs/ansible.md)
+* [API](docs/api.md)
 * [AWS](aws/README.md)
 * [Docker](docker)
-* [Hashicorp](hashicorp/README.md)
-* [Lint](lint/README.md)
+* [Hashicorp](docs/hashicorp.md)
+* [Lint](docs/lint.md)
 * [Notifications](notifications)
 
 ## Examples
