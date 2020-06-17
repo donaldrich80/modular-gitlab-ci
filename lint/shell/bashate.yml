@@ -8,7 +8,8 @@ bashate:
   before_script:
     - bashate --version
   script:
-    - bashate **/*.sh
+    # ignore line too long
+    - bashate --ignore E006 --verbose **/*.sh
     # - bashate **/*/*.sh
   rules:
     - exists:
@@ -26,7 +27,8 @@ bashate-bin:
   before_script:
     - bashate --version
   script:
-    - bashate bin/*
+    # ignore line too long
+    - bashate --ignore E006 --verbose bin/*
     # - bashate **/*/*.sh
   rules:
     - exists:
