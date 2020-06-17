@@ -15,3 +15,21 @@ bashate:
       - "**/*/*.sh"
       when: on_success
     - when: never
+
+bashate-bin:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:bashate
+    entrypoint: [""]
+  before_script:
+    - bashate --version
+  script:
+    - bashate bin/*
+    # - bashate **/*/*.sh
+  rules:
+    - exists:
+      - "bin/*"
+      when: on_success
+    - when: never
