@@ -1,10 +1,11 @@
 include:
-  - local: '/analysis/sast.yml'
-  - local: '/notifications/healthchecks-repo.yml'
+  # - local: '/analysis/sast.yml'
+  # - local: '/notifications/healthchecks-repo.yml'
   - local: '/notifications/pushover.yml'
   - local: '/lint/default.yml'
   - local: '/docker/default.yml'
   # - local: '/debug/variable_match.yml'
+  - local: '/pentest/sniper.yml'
 
 stages:
   - debug
