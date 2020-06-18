@@ -1,15 +1,21 @@
 site_name: Modular GitLab-CI
 site_url: https://donaldrich.donavanaldrich.com/gitlab-ci-templates
-# nav:
-#     - Home: index.md
-#     - Examples: examples.md
-#     - Analysis: analysis.md
-#     - Ansible: ansible.md
-#     - API: api.md
-#     - AWS: aws.md
-#     - Docs: docs.md
-#     - Hashicorp: hashicorp.md
-#     - Lint: lint.md
+
+repo_name: donaldrich/gitlab-ci-templates
+repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+
+nav:
+    - Home: index.md
+    - Example Usage: examples.md
+    - Linters: lint.md
+    - Documentation Generation: docs.md
+    - Analysis: analysis.md
+    - Ansible: ansible.md
+    - API: api.md
+    - AWS: aws.md
+    - Hashicorp: hashicorp.md
+
+
 theme:
   name: material
   palette:
@@ -25,25 +31,26 @@ theme:
   icon:
     repo: fontawesome/brands/gitlab
     logo: material/cloud
-repo_name: donaldrich/gitlab-ci-templates
-repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+
 extra:
   social:
     - icon: fontawesome/brands/gitlab
       link: https://gitlab.donavanaldrich.com/donaldrich
+
 plugins:
   # - search:
       # prebuild_index: true
   - minify:
       minify_html: true
   - awesome-pages
+
 markdown_extensions:
   - admonition
   - codehilite
   - footnotes
   - meta
   - toc:
-      permalink: Link
+      permalink: true
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
