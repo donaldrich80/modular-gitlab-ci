@@ -1,49 +1,49 @@
 # Examples
 
-### Pushover Notification
+## Pushover Notification
 
-```yaml
+``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file:    ‘/notifications/pushover.yml’
+    file: ‘/notifications/pushover.yml’
 ```
 
-### SAST Analysis
+## SAST Analysis
 
-```yaml
+``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file:    ‘/analysis/sast.yml’
+    file: ‘/analysis/sast.yml’
 ```
 
-### Shellcheck
+## Shellcheck
 
-```yaml
+``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file:    ‘/lint/shellcheck.yml’
+    file: ‘/lint/shellcheck.yml’
 ```
 
-### Syntax Linters
+## Syntax Linters
 
-```yaml
+``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file:    ‘/lint/default.yml’
+    file: ‘/lint/default.yml’
 ```
 
-### Ansible Playbook
+## Ansible Playbook
 
-```yaml
+``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file:    ‘/ansible/runner.yml’
+    file: ‘/ansible/runner.yml’
 ```
 
-### Postman API Test
+## Postman API Test
 
-```yaml
+``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file:    ‘/api/postman.yml’
+    file: ‘/api/postman.yml’
 ```
