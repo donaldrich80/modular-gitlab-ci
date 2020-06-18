@@ -5,9 +5,14 @@ pages:
     entrypoint: [""]
   script:
   - mkdocs build
-  - mv site public
+  - mv site pages
   artifacts:
     paths:
-    - public
+    - pages
   only:
   - master
+  rules:
+    - exists:
+      - "mkdocs.yml"
+      when: on_success
+    - when: never
