@@ -32,8 +32,8 @@ extra:
     - icon: fontawesome/brands/gitlab
       link: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
 plugins:
-  - search:
-      prebuild_index: true
+  # - search:
+      # prebuild_index: true
   - minify:
       minify_html: true
   - awesome-pages
