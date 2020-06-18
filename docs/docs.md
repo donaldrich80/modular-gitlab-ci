@@ -2,22 +2,29 @@
 
 ## mkdocs
 
-[https://www.mkdocs.org](https://www.mkdocs.org)
+[mkdocs](https://www.mkdocs.org)
+
+### Theme
 
 [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
-[https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
+#### Design
 
-## Design
+* [colors](https://www.materialui.co/colors)
 
-### Colors
+* [fonts](https://fonts.google.com/)
 
-[colors](https://www.materialui.co/colors)
+* [materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
 
-### Fonts
+### Plugins
 
-[fonts](https://fonts.google.com/)
+[Plugin List](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
 
-### Icons
+* [https://github.com/athackst/mkdocs-simple-plugin](https://github.com/athackst/mkdocs-simple-plugin)
+* [http://www.lyonthackston.com/mkdocs-simple-plugin](http://www.lyonthackston.com/mkdocs-simple-plugin/)
+* [https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin](https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin)
+* [https://mkdocs-macros-plugin.readthedocs.io/en/latest](https://mkdocs-macros-plugin.readthedocs.io/en/latest)
+* [https://github.com/fralau/mkdocs_macros_plugin](https://github.com/fralau/mkdocs_macros_plugin)
+* [https://github.com/rosscdh/mkdocs-markdownextradata-plugin](https://github.com/rosscdh/mkdocs-markdownextradata-plugin)
 
-[materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
+
