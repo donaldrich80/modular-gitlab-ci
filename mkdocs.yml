@@ -30,7 +30,7 @@ theme:
     - instant
   icon:
     repo: fontawesome/brands/gitlab
-    logo: material/mdi-gitlab
+    logo: fontawesome/brands/gitlab
 
 extra:
   social:
