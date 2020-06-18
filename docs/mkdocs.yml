@@ -5,10 +5,10 @@ pages:
     entrypoint: [""]
   script:
   - mkdocs build
-  - mv site pages
+  - mv site public
   artifacts:
     paths:
-    - pages
+    - public
   # only:
   # - master
   rules:
