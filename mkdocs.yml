@@ -50,6 +50,8 @@ markdown_extensions:
   - codehilite
   - footnotes
   - meta
+  - simple:
+      ignore_folders: ["tests"]
   - toc:
       permalink: true
   - pymdownx.arithmatex
