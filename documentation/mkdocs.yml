@@ -16,3 +16,6 @@ pages:
       - "mkdocs.yml"
       when: on_success
     - when: never
+    
+    
+    # http://domain.com/__purge_cache?zone=%5Bzone_id%5D
