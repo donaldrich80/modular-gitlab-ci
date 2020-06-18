@@ -9,8 +9,8 @@ pages:
   artifacts:
     paths:
     - pages
-  only:
-  - master
+  # only:
+  # - master
   rules:
     - exists:
       - "mkdocs.yml"
