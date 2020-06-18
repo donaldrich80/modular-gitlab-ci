@@ -15,7 +15,7 @@ nav:
     - AWS: aws.md
     - Hashicorp: hashicorp.md
     - Me learning how to use Markdown: lorem.md
-    - 'User Guide': 
+    - 'User Guide':
       - "Rich Markdown Pages": lorem.md
       - "Git information": lorem.md
       - "Writing macros and filters": lorem.md
@@ -48,14 +48,14 @@ plugins:
       minify_html: true
   - awesome-pages
   - pdf-export
+  - simple:
+      ignore_folders: ["tests"]
 
 markdown_extensions:
   - admonition
   - codehilite
   - footnotes
   - meta
-  - simple:
-      ignore_folders: ["tests"]
   - toc:
       permalink: true
   - pymdownx.arithmatex
