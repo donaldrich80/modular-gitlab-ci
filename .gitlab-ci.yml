@@ -4,7 +4,7 @@ include:
   - local: '/notifications/pushover.yml'
   - local: '/lint/default.yml'
   - local: '/docker/default.yml'
-  - local: '/docs/mkdocs.yml'
+  - local: '/documentation/mkdocs.yml'
 
 stages:
   - debug

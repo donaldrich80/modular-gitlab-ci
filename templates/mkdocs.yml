@@ -1,15 +1,15 @@
 site_name: Modular GitLab-CI
-site_url: https://donaldrich.donavanaldrich.com/gitlab-ci-templates
-nav:
-    - Home: index.md
-    - Examples: examples.md
-    - Analysis: analysis.md
-    - Ansible: ansible.md
-    - API: api.md
-    - AWS: aws.md
-    - Docs: docs.md
-    - Hashicorp: hashicorp.md
-    - Lint: lint.md
+site_url: https://pages.gitlab.io/mkdocs
+# nav:
+#     - Home: index.md
+#     - Examples: examples.md
+#     - Analysis: analysis.md
+#     - Ansible: ansible.md
+#     - API: api.md
+#     - AWS: aws.md
+#     - Docs: docs.md
+#     - Hashicorp: hashicorp.md
+#     - Lint: lint.md
 theme:
   name: material
   palette:
@@ -20,7 +20,7 @@ theme:
     text: Ubuntu
     code: Ubuntu Mono
   features:
-    # - tabs
+    - tabs
     - instant
   icon:
     repo: fontawesome/brands/gitlab
@@ -30,7 +30,7 @@ repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
 extra:
   social:
     - icon: fontawesome/brands/gitlab
-      link: https://gitlab.donavanaldrich.com/donaldrich
+      link: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
 plugins:
   # - search:
       # prebuild_index: true
