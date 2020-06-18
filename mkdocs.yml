@@ -43,6 +43,7 @@ plugins:
   - minify:
       minify_html: true
   - awesome-pages
+  - pdf-export
 
 markdown_extensions:
   - admonition

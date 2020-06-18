@@ -6,6 +6,8 @@
 
 [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
+[https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
+
 ## Design
 
 ### Colors
