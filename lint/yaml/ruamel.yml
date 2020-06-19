@@ -9,7 +9,7 @@ ruamel:
     - yaml --version
     - yaml --help
   script:
-    - yaml round-trip .gitlab-ci.yml --verbose --indent 2
+    - yaml round-trip *.yml --verbose --indent 2
   rules:
     # - changes:
     #     - "**/*/*.yaml"
