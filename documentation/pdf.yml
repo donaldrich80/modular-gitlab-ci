@@ -1,5 +1,5 @@
 build_pdf:
-  image: ubuntu
+  image: ruby
   stage: deploy
   before_script:
     # Download and install pandoc and kramdown before we begin
