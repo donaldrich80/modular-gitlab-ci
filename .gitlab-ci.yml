@@ -1,5 +1,5 @@
 include:
-  # - local: '/analysis/sast.yml'
+  - local: '/analysis/sast.yml'
   - local: '/notifications/healthchecks-repo.yml'
   - local: '/notifications/pushover.yml'
   - local: '/lint/default.yml'
