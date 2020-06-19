@@ -4,7 +4,7 @@ include:
 
 remove-unused-images:
   extends: .ssh-runner
-  type: cleanup
+  stage: .post
   # when: delayed
   # # start_in: 1 minute
   script:
