@@ -6,7 +6,9 @@ variables:
 #   PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
 #   PIP_CACHE_DIR: "$CI_PROJECT_DIR/pip-cache"
 #   GIT_CLONE_PATH: $CI_BUILDS_DIR/project-name
-
+# variables:
+#   ANSIBLE_CACHE: $CI_PROJECT_DIR/.ansible
+  # GIT_DEPTH: "1"
 cache:
   paths:
     - "$CI_PROJECT_DIR/pip-cache"

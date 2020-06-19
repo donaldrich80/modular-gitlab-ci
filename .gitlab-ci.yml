@@ -7,7 +7,6 @@ include:
   - local: '/documentation/mkdocs.yml'
   # - local: '/documentation/pdf.yml'
 
-
 variables:
   PUSHOVER_ID: $CI_PROJECT_TITLE
 
