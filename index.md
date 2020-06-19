@@ -12,4 +12,4 @@ include:
     file: ‘/ansible/runner.yml’
 ```
 
-:::yaml source=“analysis/anchore.yml”:::
+::: yaml source=“analysis/anchore.yml”:::
