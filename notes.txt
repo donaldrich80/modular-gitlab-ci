@@ -5,3 +5,5 @@ https://github.com/mkdocs/mkdocs/issues/304#issuecomment-460058741
 :::code language=“csharp” source=“intro/samples/cu/Controllers/StudentsController.cs”:::
 
 # http://domain.com/__purge_cache?zone=%5Bzone_id%5D
+
+yaml round-trip your_file.yml —verbose
