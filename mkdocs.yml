@@ -14,7 +14,11 @@ nav:
     - API: api.md
     - AWS: aws.md
     - Hashicorp: hashicorp.md
-
+    - Me learning how to use Markdown: lorem.md
+    - 'User Guide':
+      - "Rich Markdown Pages": lorem.md
+      - "Git information": lorem.md
+      - "Writing macros and filters": lorem.md
 
 theme:
   name: material
@@ -38,11 +42,14 @@ extra:
       link: https://gitlab.donavanaldrich.com/donaldrich
 
 plugins:
-  # - search:
+  - search:
       # prebuild_index: true
   - minify:
       minify_html: true
   - awesome-pages
+  - pdf-export
+  - simple:
+      ignore_folders: ["tests"]
 
 markdown_extensions:
   - admonition

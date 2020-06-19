@@ -7,3 +7,5 @@ include:
     file: '/lint/shell/bashate.yml'
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/shell/shellcheck.yml'
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/lint/remark-lint.yml'
