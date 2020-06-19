@@ -19,3 +19,25 @@ yamllint:
         - "**/*.yml"
       when: on_success
     - when: never
+
+yamllint:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:ruamel.lint.cmd
+    entrypoint: [""]
+  # before_script:
+  #   - yamllint --version
+  script:
+    - yaml round-trip your_file.yml —verbose
+  rules:
+    # - changes:
+    #     - "**/*/*.yaml"
+    #     - "**/*/*.yml"
+    #   when: always
+    - exists:
+        - "**/*.yaml"
+        - "**/*.yml"
+      when: on_success
+    - when: never

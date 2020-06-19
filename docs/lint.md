@@ -2,13 +2,19 @@
 
 ## Ansible
 
-[ansible-lint](https://github.com/ansible/ansible-lint)
+### ansible-lint
+
+[repo](https://github.com/ansible/ansible-lint)
 
 ## Docker
 
-[hadolint](https://github.com/hadolint/hadolint)
+### hadolint
 
-[dockerfile_lint](https://github.com/projectatomic/dockerfile_lint)
+[repo](https://github.com/hadolint/hadolint)
+
+### dockerfile_lint
+
+[repo](https://github.com/projectatomic/dockerfile_lint)
 
 ## JSON
 
@@ -21,6 +27,8 @@ Todo
 [repo](https://github.com/markdownlint/markdownlint) | [configuration](https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md) | [rules](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
 
 ### remark-lint
+
+[repo](https://github.com/remarkjs/remark-lint)
 
 <https://medium.com/@lorenzen.jacob/linting-markdown-files-febbfe50167c>
 
@@ -39,6 +47,16 @@ Todo
 ### yamllint
 
 [repo](https://github.com/adrienverge/yamllint)
+
+## Terraform
+
+### tfsec
+
+[repo](https://github.com/liamg/tfsec)
+
+### tflint
+
+[repo](https://github.com/terraform-linters/tflint)
 
 ## Linting Links
 

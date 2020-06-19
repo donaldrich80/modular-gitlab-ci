@@ -1,6 +1,8 @@
 # GitLab-CI Reference
 
-## CI_PIPELINE_SOURCE
+## GitLab-CI
+
+### CI_PIPELINE_SOURCE
 
 | CI_PIPELINE_SOURCE | Description |
 | :----------------: | :---------: |
