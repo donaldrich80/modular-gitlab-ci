@@ -48,10 +48,11 @@ plugins:
   - minify:
       minify_html: true
   - awesome-pages
+  - markdownextradata: {}
   # - pdf-export
   # - simple:
   #     ignore_folders: ["tests"]
-  
+
 extra:
   customer:
     name: Your name here
