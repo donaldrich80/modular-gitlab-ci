@@ -1,0 +1,21 @@
+ruamel:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:ruamel.yaml.cmd
+    entrypoint: [""]
+  # before_script:
+  #   - yamllint --version
+  script:
+    - yaml round-trip .gitlab-ci.yml --verbose
+  rules:
+    # - changes:
+    #     - "**/*/*.yaml"
+    #     - "**/*/*.yml"
+    #   when: always
+    - exists:
+        - "**/*.yaml"
+        - "**/*.yml"
+      when: on_success
+    - when: never

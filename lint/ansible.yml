@@ -5,7 +5,6 @@ ansible:
     - ansible-lint --force-color -x 204 -x 702 *.yml
   allow_failure: true
   interruptible: true
-  when: on_success
   rules:
     - exists:
       - "**/roles/*.yml"

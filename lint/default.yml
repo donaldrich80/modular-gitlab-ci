@@ -1,6 +1,6 @@
 include:
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/yamllint.yml'
+    file: '/lint/yaml/all.yml'
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/shell/all.yml'
   - project: 'donaldrich/gitlab-ci-templates'
