@@ -2,16 +2,16 @@
 
 ## Quickstart
 
-This is a general setting with sane defaults and autodetection linting.
-
 ``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
     file: ‘/default.yml’
 ```
 
-## Linters
+!!! info
+    This is a general setting with sane defaults and autodetection linting.
 
+## Linters
 
 === "Shell"
     ``` yaml

@@ -9,7 +9,8 @@ Example:
 ``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/ansible/runner.yml’
+    file: ‘/lint/shellcheck.yml’
 ```
 
-:::yaml source=“analysis/anchore.yml”:::
+!!! note
+    This documentation serves a double function. To document this repo, as well as to serve as internal reference for me as an aggregate for external reference links to the tools used by it. It is a living document, and life is messy sometimes.
