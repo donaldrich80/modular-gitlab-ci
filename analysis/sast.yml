@@ -1,10 +1,14 @@
+variables:
+  CREDSCAN_DEPTH: 100
+  CREDSCAN_TIMEOUT: 5m
+  DISABLE_TELEMETRY: true
+
 sast:
   stage: .pre
   image:
     name: shiftleft/sast-scan
   before_script:
     - echo $CI_PIPELINE_SOURCE
-    - echo "https://github.com/ShiftLeftSecurity/scan-docs"
   script:
     - scan --build --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
   artifacts:

@@ -4,7 +4,7 @@
 
 ### ShiftLeftSecurity
 
-[repo](https://github.com/ShiftLeftSecurity/sast-scan)
+[github](https://github.com/ShiftLeftSecurity/sast-scan) | [docs](https://slscan.io/en/latest/) | [env vars](https://slscan.io/en/latest/getting-started/#environment-variables)
 
 ## Reference
 

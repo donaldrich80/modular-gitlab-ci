@@ -4,7 +4,7 @@
 
 ### strest
 
-[repo](https://github.com/eykrehbein/strest)
+[github](https://github.com/eykrehbein/strest)
 
 ### Postman
 
