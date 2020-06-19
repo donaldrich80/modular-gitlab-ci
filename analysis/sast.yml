@@ -7,9 +7,9 @@ sast:
   script:
     - scan --build --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
   variables:
-    CREDSCAN_DEPTH: 100
+    CREDSCAN_DEPTH: "100"
     # CREDSCAN_TIMEOUT: "5m"
-    DISABLE_TELEMETRY: true
+    DISABLE_TELEMETRY: "true"
   artifacts:
     name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
     paths:
