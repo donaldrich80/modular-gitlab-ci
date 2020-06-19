@@ -1,0 +1,9 @@
+ping-hosts:
+  extends: .ansible-runner
+  stage: check
+  script:
+    - ansible -i inventory/hosts.yml pingable -m ping
+  allow_failure: true
+  interruptible: true
+  resource_group: production
+  when: on_success

@@ -2,13 +2,19 @@
 
 ## Ansible
 
-[ansible-lint](https://github.com/ansible/ansible-lint)
+### ansible-lint
+
+[github](https://github.com/ansible/ansible-lint)
 
 ## Docker
 
-[hadolint](https://github.com/hadolint/hadolint)
+### hadolint
 
-[dockerfile_lint](https://github.com/projectatomic/dockerfile_lint)
+[github](https://github.com/hadolint/hadolint)
+
+### dockerfile_lint
+
+[github](https://github.com/projectatomic/dockerfile_lint)
 
 ## JSON
 
@@ -18,9 +24,11 @@ Todo
 
 ### mdl
 
-[repo](https://github.com/markdownlint/markdownlint) | [configuration](https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md) | [rules](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
+[github](https://github.com/markdownlint/markdownlint) | [configuration](https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md) | [rules](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
 
 ### remark-lint
+
+[github](https://github.com/remarkjs/remark-lint)
 
 <https://medium.com/@lorenzen.jacob/linting-markdown-files-febbfe50167c>
 
@@ -28,7 +36,7 @@ Todo
 
 ### shellcheck
 
-[repo](https://github.com/koalaman/shellcheck)
+[github](https://github.com/koalaman/shellcheck)
 
 ### Bashate
 
@@ -38,7 +46,19 @@ Todo
 
 ### yamllint
 
-[repo](https://github.com/adrienverge/yamllint)
+[github](https://github.com/adrienverge/yamllint)
+
+<https://github.com/madmuffin1/ruamel.yaml-docker/blob/master/Dockerfile>
+
+## Terraform
+
+### tfsec
+
+[github](https://github.com/liamg/tfsec)
+
+### tflint
+
+[github](https://github.com/terraform-linters/tflint)
 
 ## Linting Links
 

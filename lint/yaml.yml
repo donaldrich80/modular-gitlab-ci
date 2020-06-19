@@ -1,5 +1,5 @@
 include:
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/markdown/markdownlint.yml'
+    file: '/lint/yaml/ruamel.yml'
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/markdown/remark-lint.yml'
+    file: '/lint/yaml/yamllint.yml'

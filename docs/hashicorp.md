@@ -10,11 +10,6 @@
 
 [https://github.com/PaloAltoNetworks/terraform-templates](https://github.com/PaloAltoNetworks/terraform-templates)
 
-## Lint
-
-* [tfsec](https://github.com/liamg/tfsec)
-* [tflint](https://github.com/terraform-linters/tflint)
-
 ## Providers
 
 [terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)

@@ -1,0 +1,17 @@
+markdownlint:
+  allow_failure: true
+  interruptible: true
+  stage: lint
+  image:
+    name: donaldrich/function:mdl
+    entrypoint: [""]
+  script:
+    - mdl --style all --warnings .
+  rules:
+    # - changes:
+    #     - "**/*/*.md"
+    #   when: always
+    - exists:
+        - "**/*/*.md"
+      when: on_success
+    - when: never

@@ -1,7 +1,10 @@
 # Modular GitLab-CI
 
 !!! note
-    This documentation serves a double function. To document this repo, as well as to serve as internal reference for me as an aggregate for external reference links to the tools used by it. It is a living document, and life is messy sometimes.
+    This documentation serves a double function. To document this repo, as well as to serve as internal reference for me as an aggregate for external reference links to the tools used by it.
+
+!!! warning
+    This is a living document, and sometimes life is messy.
 
 ## About
 
