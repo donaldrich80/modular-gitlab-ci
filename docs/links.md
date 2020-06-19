@@ -24,3 +24,9 @@
 * [bregman-arie/devops-exercises](https://github.com/bregman-arie/devops-exercises)
 * [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis)
 * [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis)
+
+``` yaml
+
+# docker image prune --all --force
+# docker run --rm --privileged multiarch/qemu-user-static:register --reset
+```
