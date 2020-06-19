@@ -5,7 +5,7 @@ include:
   - local: '/lint/default.yml'
   - local: '/docker/default.yml'
   - local: '/documentation/mkdocs.yml'
-  - local: '/documentation/pdf.yml'
+  # - local: '/documentation/pdf.yml'
 
 
 variables:

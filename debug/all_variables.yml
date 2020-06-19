@@ -2,7 +2,3 @@ list-env-variables:
   stage: build
   script:
     - export
-list-env-variables3:
-  stage: test
-  script:
-    - export

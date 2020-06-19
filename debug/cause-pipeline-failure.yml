@@ -1,0 +1,4 @@
+cause-failure:
+  stage: .pre
+  script:
+    - i will fail
