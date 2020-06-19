@@ -15,6 +15,7 @@ nav:
       - "AWS": aws.md
       - "Hashicorp": hashicorp.md
     - Documentation Generation: docs.md
+    - Links: links.md
     - Me learning mkdocs usage: lorem.md
 
 theme:
