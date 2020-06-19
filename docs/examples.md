@@ -16,15 +16,21 @@ include:
     file: ‘/analysis/sast.yml’
 ```
 
-## Shellcheck
-
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/lint/shellcheck.yml’
-```
-
 ## Syntax Linters
+
+=== "Shell"
+    ``` yaml
+    include:
+      - project: ‘donaldrich/gitlab-ci-templates’
+        file: ‘/lint/shell/all.yml’
+    ```
+
+=== "YAML"
+    ``` yaml
+    include:
+      - project: ‘donaldrich/gitlab-ci-templates’
+        file: ‘/lint/yamllint.yml’
+    ```
 
 ``` yaml
 include:
