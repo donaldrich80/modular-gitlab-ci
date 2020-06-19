@@ -20,17 +20,17 @@ yamllint:
       when: on_success
     - when: never
 
-yamllint:
+ruamel:
   stage: lint
   allow_failure: true
   interruptible: true
   image:
-    name: donaldrich/function:ruamel.lint.cmd
+    name: donaldrich/function:ruamel.yaml.cmd
     entrypoint: [""]
   # before_script:
   #   - yamllint --version
   script:
-    - yaml round-trip your_file.yml —verbose
+    - yaml round-trip .gitlab-ci.yml —verbose
   rules:
     # - changes:
     #     - "**/*/*.yaml"
