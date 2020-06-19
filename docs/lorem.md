@@ -1,6 +1,8 @@
 # Armarat et confusa interea
 
 {{ customer.name }}
+
+[{{ customer.web }}](customer.web)
 <a href="{{ customer.web }}">{{ customer.web }}</a>
 
 ## Sit aquarum positasque
