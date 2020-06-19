@@ -16,19 +16,25 @@ Todo
 
 ## Markdown
 
-[markdownlint](https://github.com/markdownlint/markdownlint)
+### mdl
+
+[repo](https://github.com/markdownlint/markdownlint) | [configuration](https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md)
 
 ## Shell
 
-[shellcheck](https://github.com/koalaman/shellcheck)
-Bashate
+### shellcheck
+[repo](https://github.com/koalaman/shellcheck)
+
+### Bashate
+
+    !!! todo
 
 ## YAML
 
 [yamllint](https://github.com/adrienverge/yamllint)
 
-## Reference
+## Linting Links
 
-[static-analysis](https://github.com/analysis-tools-dev/static-analysis)
+* [static-analysis](https://github.com/analysis-tools-dev/static-analysis)
 
-[List_of_tools_for_static_code_analysis](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)
+* [wikipedia](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)

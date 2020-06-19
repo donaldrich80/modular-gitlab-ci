@@ -1,4 +1,10 @@
-# Documentation
+# Documentation Generation
+
+GitLab-CI env variables can be passed to mkdocs.yml like so:
+
+``` yaml
+repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
+```
 
 ## mkdocs
 
@@ -19,6 +25,8 @@
 ### Extension Reference
 
 * [admonition](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
+* [codehilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
+* 
 
 ### Plugins Reference
 
