@@ -8,5 +8,5 @@ remark-lint:
    entrypoint: [""]
   script:
     - npm install --save remark-cli remark-preset-lint-recommended
-    # - npm run lint-md
+    - npm run lint-md
 
