@@ -1,22 +1,17 @@
 # Examples
 
-## Pushover Notification
+## Quickstart
+
+This is a general setting with sane defaults and autodetection linting.
 
 ``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/notifications/pushover.yml’
+    file: ‘/default.yml’
 ```
 
-## SAST Analysis
+## Linters
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/analysis/sast.yml’
-```
-
-## Syntax Linters
 
 === "Shell"
     ``` yaml
@@ -32,10 +27,41 @@ include:
         file: ‘/lint/yamllint.yml’
     ```
 
+=== "Dockerfile"
+    ``` yaml
+    include:
+      - project: ‘donaldrich/gitlab-ci-templates’
+        file: ‘/docker/all.yml’
+    ```
+
+=== "Ansible"
+    ``` yaml
+    include:
+      - project: ‘donaldrich/gitlab-ci-templates’
+        file: ‘/lint/ansible.yml’
+    ```
+
+=== "Markdown"
+    ``` yaml
+    include:
+      - project: ‘donaldrich/gitlab-ci-templates’
+        file: ‘/lint/markdown.yml’
+    ```
+
+## Pushover Notification
+
 ``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/lint/default.yml’
+    file: ‘/notifications/pushover.yml’
+```
+
+## SAST Analysis
+
+``` yaml
+include:
+  - project: ‘donaldrich/gitlab-ci-templates’
+    file: ‘/analysis/sast.yml’
 ```
 
 ## Ansible Playbook

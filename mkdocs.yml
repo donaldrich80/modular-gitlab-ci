@@ -14,15 +14,8 @@ nav:
       - "API": api.md
       - "AWS": aws.md
       - "Hashicorp": hashicorp.md
-    # - Linters: lint.md
     - Documentation Generation: docs.md
-    # - Analysis: analysis.md
-    # - Ansible: ansible.md
-    # - API: api.md
-    # - AWS: aws.md
-    # - Hashicorp: hashicorp.md
     - Me learning mkdocs usage: lorem.md
-
 
 theme:
   name: material

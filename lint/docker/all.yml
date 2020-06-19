@@ -1,0 +1,3 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/docker/all.yml'
