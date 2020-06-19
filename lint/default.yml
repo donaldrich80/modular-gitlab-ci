@@ -1,9 +1,9 @@
 include:
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/yaml/all.yml'
+    file: '/lint/yaml.yml'
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/shell/all.yml'
+    file: '/lint/shell.yml'
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/lint/markdown/all.yml'
+    file: '/lint/markdown.yml'
   - project: 'donaldrich/gitlab-ci-templates'
     file: '/lint/json/jsonlint.yml'

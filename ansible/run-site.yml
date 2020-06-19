@@ -1,0 +1,19 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: '/ansible/runner.yml'
+
+ansible:site-yml:
+  extends: .ansible-runner
+  stage: run
+  script:
+    - ansible-playbook site.yml
+  resource_group: production
+  allow_failure: true
+  # retry: 2
+  artifacts:
+    paths:
+      - ansible.log
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+      when: never
+    - when: on_success
