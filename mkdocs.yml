@@ -1,8 +1,12 @@
-site_name: Modular GitLab-CI
+site_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
+repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
+repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
+
+# site_name: Modular GitLab-CI
 site_url: https://donaldrich.donavanaldrich.com/gitlab-ci-templates
 
-repo_name: donaldrich/gitlab-ci-templates
-repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+# repo_name: donaldrich/gitlab-ci-templates
+# repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
 
 nav:
     - Home: index.md
