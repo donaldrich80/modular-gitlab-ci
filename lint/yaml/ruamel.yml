@@ -5,10 +5,11 @@ ruamel:
   image:
     name: donaldrich/function:ruamel.yaml.cmd
     entrypoint: [""]
-  # before_script:
-  #   - yamllint --version
+  before_script:
+    - yaml --version
+    - yaml --help
   script:
-    - yaml round-trip .gitlab-ci.yml --verbose
+    - yaml round-trip .gitlab-ci.yml --verbose --indent 2
   rules:
     # - changes:
     #     - "**/*/*.yaml"
