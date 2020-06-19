@@ -14,6 +14,8 @@ nav:
       - "API": api.md
       - "AWS": aws.md
       - "Hashicorp": hashicorp.md
+      - "Penetration Testing": penetration.md
+      - "Notifications": notifications.md
     - Documentation Generation: docs.md
     - Links: links.md
     - Me learning mkdocs usage: lorem.md
