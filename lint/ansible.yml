@@ -6,16 +6,19 @@ ansible:
   allow_failure: true
   interruptible: true
   when: on_success
-  # rules:
+  rules:
+    - exists:
+      - "**/roles/*.yml"
+      - "**/playbooks/*.yml"
+      - "ansible.cfg"
+      when: on_success
+    - when: never
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
   #   - changes:
   #     - "**/playbooks/*.yml"
   #     when: always
-  #   - exists:
-  #     - "**/playbooks/*.yml"
-  #     when: manual
-  #   - when: never
+
 
 # ansible-lint  -p -v
 

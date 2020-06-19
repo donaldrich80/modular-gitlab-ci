@@ -17,13 +17,13 @@ jsonlint:
       if [ "${FAILED}" = "1" ]; then
         exit 1
       fi
-  # rules:
+  rules:
+    - exists:
+      - "**/*.json"
+      when: on_success
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
   #   - changes:
   #     - "**/*.json"
   #     when: always
-  #   - exists:
-  #     - "**/*.json"
-  #     when: manual
-  #   - when: never
+    - when: never
