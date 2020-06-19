@@ -1,0 +1,1 @@
+https://github.com/squidfunk/mkdocs-material/commit/964fff0b8ad861c91b48e91ff5d8aa6f8f976a2f
