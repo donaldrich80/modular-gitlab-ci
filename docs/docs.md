@@ -26,15 +26,24 @@ repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
 * [admonition](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
 * [codehilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
-* 
 
 ### Plugins Reference
 
 [Master Plugin List](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
 
-* [https://github.com/athackst/mkdocs-simple-plugin](https://github.com/athackst/mkdocs-simple-plugin)
-* [http://www.lyonthackston.com/mkdocs-simple-plugin](http://www.lyonthackston.com/mkdocs-simple-plugin/)
-* [https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin](https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin)
-* [https://mkdocs-macros-plugin.readthedocs.io/en/latest](https://mkdocs-macros-plugin.readthedocs.io/en/latest)
-* [https://github.com/fralau/mkdocs_macros_plugin](https://github.com/fralau/mkdocs_macros_plugin)
-* [https://github.com/rosscdh/mkdocs-markdownextradata-plugin](https://github.com/rosscdh/mkdocs-markdownextradata-plugin)
+#### mkdocs-simple-plugin
+
+Install:
+
+``` sh
+pip install mkdocs-simple-plugin
+```
+
+[repo](https://github.com/athackst/mkdocs-simple-plugin) | [docs](http://www.lyonthackston.com/mkdocs-simple-plugin/)
+
+#### Others
+
+[https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin](https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin)
+[https://mkdocs-macros-plugin.readthedocs.io/en/latest](https://mkdocs-macros-plugin.readthedocs.io/en/latest)
+[https://github.com/fralau/mkdocs_macros_plugin](https://github.com/fralau/mkdocs_macros_plugin)
+[https://github.com/rosscdh/mkdocs-markdownextradata-plugin](https://github.com/rosscdh/mkdocs-markdownextradata-plugin)

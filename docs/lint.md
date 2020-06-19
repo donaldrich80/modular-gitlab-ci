@@ -18,11 +18,12 @@ Todo
 
 ### mdl
 
-[repo](https://github.com/markdownlint/markdownlint) | [configuration](https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md)
+[repo](https://github.com/markdownlint/markdownlint) | [configuration](https://github.com/markdownlint/markdownlint/blob/master/docs/configuration.md) | [rules](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md)
 
 ## Shell
 
 ### shellcheck
+
 [repo](https://github.com/koalaman/shellcheck)
 
 ### Bashate
@@ -31,7 +32,9 @@ Todo
 
 ## YAML
 
-[yamllint](https://github.com/adrienverge/yamllint)
+### yamllint
+
+[repo](https://github.com/adrienverge/yamllint)
 
 ## Linting Links
 

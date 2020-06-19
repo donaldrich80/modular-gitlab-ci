@@ -1,9 +1,7 @@
 https://github.com/DavidWells/markdown-magic
 
-
 https://github.com/mkdocs/mkdocs/issues/304#issuecomment-460058741
 
-
-https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins
-
 :::code language=“csharp” source=“intro/samples/cu/Controllers/StudentsController.cs”:::
+
+# http://domain.com/__purge_cache?zone=%5Bzone_id%5D
