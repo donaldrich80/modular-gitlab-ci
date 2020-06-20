@@ -2,21 +2,22 @@
 
 Extensions used in this documentations.
 
-## admonition @facelessuser/pymdown-extensions
+## admonition
 
-!!! info
-    Callout boxes.
+@facelessuser/pymdown-extensions
+
+!!! info "Callout boxes"
 
 * [documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
 
-??? info "Types"
-    !!! info
-    !!! warning
+??? example "Types of Callouts"
     !!! note
     !!! abstract
+    !!! info
     !!! tip
     !!! success
     !!! question
+    !!! warning
     !!! failure
     !!! danger
     !!! bug
@@ -25,8 +26,7 @@ Extensions used in this documentations.
 
 ## codehilite
 
-!!! info
-    Code blocks
+!!! info "Code blocks"
 
 * [documentation](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
 
@@ -37,14 +37,13 @@ Extensions used in this documentations.
 
 ## [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
 
-!!! info
-    Navigation index built on folder structure
+!!! info "Navigation index built on folder structure"
 
 * [github](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
 
 ## Magiclink
 
-- https://github.com/facelessuser
-- https://github.com/facelessuser/pymdown-extensions
-- https://gitlab.com/pycqa/flake8/issues/385
-- https://bitbucket.org/mrabarnett/mrab-regex/issues/260/extremely-slow-matching-using-ignorecase
+https://github.com/facelessuser
+https://github.com/facelessuser/pymdown-extensions
+https://gitlab.com/pycqa/flake8/issues/385
+https://bitbucket.org/mrabarnett/mrab-regex/issues/260/extremely-slow-matching-using-ignorecase
