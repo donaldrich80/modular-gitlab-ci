@@ -1,6 +1,7 @@
 site_name: !!python/object/apply:os.getenv ["CI_PROJECT_TITLE"]
 site_url: !!python/object/apply:os.getenv ["CI_PAGES_URL"]
 site_description: A Collection of GitLab-CI Snippets
+edit_uri: tree/master/docs
 
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
@@ -79,22 +80,28 @@ markdown_extensions:
   - meta
   - toc:
       permalink: true
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
+  - pymdownx.caret:
+  - pymdownx.critic:
+  - pymdownx.details:
   # - pymdownx.emoji:
   #     emoji_index: !!python/name:materialx.emoji.twemoji
   #     emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.progressbar
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
+  - pymdownx.inlinehilite:
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      social_url_shortener: true
+      user: donaldrich
+      repo: pymdown-extensions
+  - pymdownx.mark:
+  - pymdownx.progressbar:
+  - pymdownx.smartsymbols:
+  - pymdownx.superfences:
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tabbed
-  - pymdownx.tilde
+  - pymdownx.tabbed:
+  - pymdownx.tilde:
