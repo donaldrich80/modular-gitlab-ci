@@ -1,5 +1,5 @@
 ``` yaml
 include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/docker/all.yml’
+  - project: donaldrich/gitlab-ci-templates
+    file: function/lint/dockerfile.yml
 ```
