@@ -6,28 +6,34 @@ repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
 nav:
-    - Home:
-      - About: home/about.md
-      - Quick Start: home/quick_start.md
-      - Example: home/examples.md
-      - Vault Integration: home/vault_integration.md
-    - Functionality:
-      - Analysis: functions/analysis.md
-      - Ansible: functions/ansible.md
-      - Test Indent:
-        - Me learning mkdocs usage: lorem.md
-      - API: functions/api.md
-      - AWS: functions/aws.md
-      - Hashicorp: functions/hashicorp.md
-      - Linters: functions/linters.md
-      - Penetration Testing: functions/penetration_testing.md
-      - Notifications: functions/notifications.md
-    - Documentation Generation:
-      - Mkdocs: mkdocs.md
-      - Extensions: extensions.md
-    - Links:
-      - Links: links.md
+  # - Home:
+  - Home: home/about.md
+  - Quick Start: home/quick_start.md
+  - Examples: home/examples.md
+  - Vault Integration: home/vault_integration.md
+  - Functionality:
+    - Analysis: functions/analysis.md
+    - Ansible: functions/ansible.md
+    - Test Indent:
       - Me learning mkdocs usage: lorem.md
+    - API: functions/api.md
+    - AWS: functions/aws.md
+    - Hashicorp: functions/hashicorp.md
+    - Linters: functions/linters.md
+    - Penetration Testing: functions/penetration_testing.md
+    - Notifications: functions/notifications.md
+  - Documentation Generation:
+    - Mkdocs: mkdocs.md
+    - Extensions: extensions.md
+  - Links:
+    - Links: links.md
+    - Me learning mkdocs usage: lorem.md
+  - About:
+    # - Contributing &amp; Support: about/contributing.md
+    # - Development: about/development.md
+    - Changelog: about/changelog.md
+    - Release Notes: about/release.md
+    - License: about/license.md
 
 theme:
   name: material
