@@ -91,6 +91,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
+  - pymdownx.progressbar
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - pymdownx.tasklist:
