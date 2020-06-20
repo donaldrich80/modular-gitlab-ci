@@ -79,6 +79,8 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/donaldrich80
 #       link: CI_SERVER_URL/GITLAB_USER_LOGIN
+extra_css:
+  - assets/custom.css
 
 # markdown_extensions:
 #   - admonition
