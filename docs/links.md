@@ -30,3 +30,9 @@
 # docker image prune --all --force
 # docker run --rm --privileged multiarch/qemu-user-static:register --reset
 ```
+
+## Linting Links
+
+* [static-analysis](https://github.com/analysis-tools-dev/static-analysis)
+
+* [wikipedia](https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis)

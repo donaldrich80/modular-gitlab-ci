@@ -14,8 +14,14 @@ nav:
   - Functionality:
     - Analysis: functions/analysis.md
     - Ansible: functions/ansible.md
-    - Test Indent:
-      - Me learning mkdocs usage: lorem.md
+    - Linters:
+      - Ansible: functions/linters/ansible.md
+      - Docker: functions/linters/docker.md
+      - JSON: functions/linters/JSON.md
+      - Markdown: functions/linters/markdown.md
+      - Shell: functions/linters/shell.md
+      - Terraform: functions/linters/terraform.md
+      - YAML: functions/linters/yaml.md
     - API: functions/api.md
     - AWS: functions/aws.md
     - Hashicorp: functions/hashicorp.md
@@ -27,6 +33,7 @@ nav:
     - Extensions: extensions.md
   - Links:
     - Links: links.md
+    - Progress: progress.md
     - Me learning mkdocs usage: lorem.md
   - About:
     # - Contributing &amp; Support: about/contributing.md
