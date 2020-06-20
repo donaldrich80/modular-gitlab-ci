@@ -1,36 +1,23 @@
 # Examples
 
-
 ## Linters
 
 === "Shell"
-    --8<-- "lint/shell-all.md"
+    --8<-- "lint/shell/all.md"
 
 === "YAML"
-    ``` yaml
-    include:
-      - project: ‘donaldrich/gitlab-ci-templates’
-        file: ‘/lint/yamllint.yml’
-    ```
+    --8<-- "lint/yaml/all.md"
 
 === "Dockerfile"
-    ``` yaml
-    include:
-      - project: ‘donaldrich/gitlab-ci-templates’
-        file: ‘/docker/all.yml’
-    ```
+    --8<-- "lint/docker/all.md"
 
 === "Ansible"
-    --8<-- "lint/ansible.md"
+    --8<-- "lint/ansible/all.md"
 
 === "Markdown"
-    ``` yaml
-    include:
-      - project: ‘donaldrich/gitlab-ci-templates’
-        file: ‘/lint/markdown.yml’
-    ```
+    --8<-- "lint/markdown/all.md"
 
-## Pushover Notification
+## Notification
 
 ``` yaml
 include:
@@ -38,13 +25,11 @@ include:
     file: ‘/notifications/pushover.yml’
 ```
 
-## SAST Analysis
+## Analysis
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/analysis/sast.yml’
-```
+=== "SAST"
+    --8<-- "analysis/sast.md"
+
 
 ## Ansible Playbook
 

@@ -7,7 +7,7 @@ Neccesary Variables:
 
 ``` yaml
 variables:
-  PUSHOVER_ID: "Message shown in content"
+  PUSHOVER_ID: "Message shown in message"
 ```
 
 Variables provided by Vault

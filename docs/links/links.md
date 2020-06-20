@@ -8,6 +8,7 @@
 | :----------------: | :---------: |
 | trigger | API Call |
 | push | git push |
+| web | dont know |
 
 ## DevOps & GitLab-CI References/Links
 
