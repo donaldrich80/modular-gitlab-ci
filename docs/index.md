@@ -26,3 +26,14 @@ Buxi Achelous probat.
 Certa supposuique salutifer deberi sontibus deum relinquunt, nunc illi corpore
 stant tibi, pro una Neritiaeque licet. Parentes praevertunt cepit patris primus
 in plurima!
+
+[=85% “85%”]{: .candystripe}
+[=100% “100%”]{: .candystripe .candystripe-animate}
+
+[=0%]{: .thin}
+[=5%]{: .thin}
+[=25%]{: .thin}
+[=45%]{: .thin}
+[=65%]{: .thin}
+[=85%]{: .thin}
+[=100%]{: .thin}
