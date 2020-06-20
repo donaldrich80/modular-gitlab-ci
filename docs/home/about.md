@@ -20,13 +20,6 @@ include:
     file: ‘/lint/shellcheck.yml’
 ```
 
-Variables neccesary for Vault:
-
-``` yaml
-VAULT_ADDR:
-VAULT_TOKEN:
-```
-
 ## Todo
 
 - [ ] vault integration

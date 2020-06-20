@@ -6,17 +6,22 @@ repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
 nav:
-    - Home: index.md
-    - Example Usage: examples.md
+    - Home:
+      - About: home/about.md
+      - Quick Start: home/quick_start.md
+      - Example: home/examples.md
+      - Vault Integration: home/vault_integration.md
     - Functionality:
-      - Linters: lint.md
-      - Analysis: analysis.md
-      - Ansible: ansible.md
-      - API: api.md
-      - AWS: aws.md
-      - Hashicorp: hashicorp.md
-      - Penetration Testing: pentest.md
-      - Notifications: notifications.md
+      - Analysis: functions/analysis.md
+      - Ansible: functions/ansible.md
+      - Test Indent:
+        - Me learning mkdocs usage: lorem.md
+      - API: functions/api.md
+      - AWS: functions/aws.md
+      - Hashicorp: functions/hashicorp.md
+      - Linters: functions/linters.md
+      - Penetration Testing: functions/penetration_testing.md
+      - Notifications: functions/notifications.md
     - Documentation Generation: docs.md
     - Links: links.md
     - Me learning mkdocs usage: lorem.md
@@ -32,7 +37,7 @@ theme:
     text: Ubuntu
     code: Ubuntu Mono
   features:
-    # - tabs
+    - tabs
     - instant
   icon:
     repo: fontawesome/brands/gitlab
@@ -49,10 +54,9 @@ plugins:
   #     ignore_folders: ["tests"]
 
 extra:
-  customer:
-    name: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
+  external_links:
+    functions: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
     web: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
-    salt: salt.example.com
   social:
     - icon: fontawesome/brands/gitlab
       link: https://gitlab.com/donaldrich
