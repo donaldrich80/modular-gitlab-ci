@@ -76,7 +76,7 @@ markdown_extensions:
       social_url_shorthand: true
       social_url_shortener: true
       user: !!python/object/apply:os.getenv ["GITLAB_USER_LOGIN"]
-      repo: pymdown-extensions
+      repo: gitlab-ci-templates
   - pymdownx.mark:
   - pymdownx.progressbar:
   - pymdownx.smartsymbols:

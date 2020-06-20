@@ -1,3 +1,6 @@
+!!! note
+    This documentation serves a double function. To document this repo, as well as to serve as internal reference for me as an aggregate for external reference links to the tools used by it.
+
 # GitLab-CI Reference
 
 ## GitLab-CI
