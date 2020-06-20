@@ -1,8 +1,8 @@
 # Armarat et confusa interea
 
-<!-- {{ customer.name }}
+{{ external_links.functions }}
 
-[{{ customer.web }}]<a href="{{ customer.web }}">{{ customer.web }}</a> -->
+[{{ external_links.web }}]<a href="{{ external_links.web }}">{{ external_links.web }}</a>
 
 ## Sit aquarum positasque
 
