@@ -37,14 +37,8 @@ theme:
     repo: fontawesome/brands/gitlab
     logo: fontawesome/brands/gitlab
 
-# extra:
-#   social:
-#     - icon: fontawesome/brands/gitlab
-#       link: CI_SERVER_URL/GITLAB_USER_LOGIN
-
 plugins:
   - search:
-      # prebuild_index: true
   - minify:
       minify_html: true
   - awesome-pages
@@ -58,6 +52,12 @@ extra:
     name: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
     web: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
     salt: salt.example.com
+  social:
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/donaldrich
+    - icon: fontawesome/brands/github
+      link: https://github.com/donaldrich80
+#       link: CI_SERVER_URL/GITLAB_USER_LOGIN
 
 markdown_extensions:
   - admonition

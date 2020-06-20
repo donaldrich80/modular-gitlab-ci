@@ -26,3 +26,12 @@ Variables neccesary for Vault:
 VAULT_ADDR:
 VAULT_TOKEN:
 ```
+
+## Todo
+
+- [ ] vault integration
+- [ ] extensions
+  - [ ] ssh
+  - [ ] terraform
+  - [ ] packer
+  - [ ] ansible
