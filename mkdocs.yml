@@ -79,6 +79,8 @@ markdown_extensions:
   - pymdownx.mark:
   - pymdownx.progressbar:
   - pymdownx.smartsymbols:
+  - pymdownx.snippets:
+      base_path: docs/_snippets
   - pymdownx.superfences:
   - pymdownx.tasklist:
       custom_checkbox: true

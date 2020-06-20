@@ -6,6 +6,8 @@
 !!! warning
     This is a living document, and sometimes life is messy.
 
+--8<-- "test.md"
+
 ## About
 
 Modular templates for use in GitLab-CI pipelines.
