@@ -1,5 +1,5 @@
 path: tree/master
-source: default.yml
+source: templates/default.yml
 
 # Quickstart
 
@@ -10,6 +10,7 @@ source: default.yml
 
 Includes:
 
-- [X] Auto-detect linting for many formats
+- [X] Auto-detect linting for common formats
 - [X] SAST Testing
 - [X] Pushover and Healthcheck notifications (Won't cause pipeline failure)
+- [X] Automatic Gitlab Pages Deployment
