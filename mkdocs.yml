@@ -23,7 +23,8 @@ nav:
       - Penetration Testing: functions/penetration_testing.md
       - Notifications: functions/notifications.md
     - Documentation Generation:
-      - Mkdocs: docs.md
+      - Mkdocs: mkdocs.md
+      - Extensions: extensions.md
     - Links:
       - Links: links.md
       - Me learning mkdocs usage: lorem.md

@@ -22,14 +22,6 @@ repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
 * [materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
 
-### Extension Reference
-
-#### [admonition](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
-
-#### [codehilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
-
-#### [pymdown-extensions](https://facelessuser.github.io/pymdown-extensions/) | [docs](https://facelessuser.github.io/pymdown-extensions/)
-
 ### Plugins Reference
 
 [Master Plugin List](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
