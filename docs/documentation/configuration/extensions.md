@@ -12,7 +12,16 @@ Extensions used in this documentations.
 ??? info "Types"
     !!! info
     !!! warning
-    !!! error
+    !!! note
+    !!! abstract
+    !!! tip
+    !!! success
+    !!! question
+    !!! failure
+    !!! danger
+    !!! bug
+    !!! example
+    !!! quote
 
 ## codehilite
 
