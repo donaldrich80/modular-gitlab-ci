@@ -6,8 +6,7 @@ repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
 nav:
-  # - Home:
-  - Home: home/about.md
+  - Home: index.md
   - Quick Start: home/quick_start.md
   - Examples: home/examples.md
   - Vault Integration: home/vault_integration.md
