@@ -81,7 +81,7 @@ markdown_extensions:
   - pymdownx.progressbar:
   - pymdownx.smartsymbols:
   - pymdownx.snippets:
-      base_path: docs/_snippets
+      base_path: snippets
   - pymdownx.superfences:
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -92,7 +92,6 @@ markdown_extensions:
 #   - markdown.extensions.toc:
 #       slugify: !!python/name:pymdownx.slugs.uslugify
 #       permalink: ""
-#   - markdown.extensions.admonition:
 #   - markdown.extensions.smarty:
 #       smart_quotes: false
 #   - markdown.extensions.attr_list:
@@ -126,14 +125,9 @@ markdown_extensions:
 #         - name: math
 #           class: arithmatex
 #           format: !!python/name:pymdownx.arithmatex.inline_mathjax_format
-#   - pymdownx.smartsymbols:
-
 #   - pymdownx.escapeall:
 #       hardbreak: True
 #       nbsp: True
-#   - pymdownx.progressbar:
 #   - pymdownx.striphtml:
-#   - pymdownx.snippets:
-#       base_path: docs/_snippets
 #   - pymdownx.keys:
 #       separator: "\uff0b"
