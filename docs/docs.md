@@ -47,3 +47,7 @@ pip install mkdocs-simple-plugin
 #### [https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin](https://github.com/midnightprioriem/mkdocs-toc-sidebar-plugin)
 
 #### [mkdocs_macros_plugin](https://github.com/fralau/mkdocs_macros_plugin) | [docs](https://mkdocs-macros-plugin.readthedocs.io/en/latest)
+
+### Misc
+
+<https://stackoverflow.com/questions/49978926/concatenate-multiple-markdown-files-using-pandoc-on-windows>
