@@ -47,7 +47,7 @@ theme:
     code: Ubuntu Mono
   features:
     - tabs
-    - instant
+    # - instant
   icon:
     repo: fontawesome/brands/gitlab
     logo: fontawesome/brands/gitlab
@@ -73,35 +73,103 @@ extra:
       link: https://github.com/donaldrich80
 #       link: CI_SERVER_URL/GITLAB_USER_LOGIN
 
+# markdown_extensions:
+#   - admonition
+#   - codehilite
+#   - footnotes
+#   - meta
+#   - toc:
+#       permalink: true
+#   - pymdownx.arithmatex:
+#   - pymdownx.betterem:
+#       smart_enable: all
+#   - pymdownx.caret:
+#   - pymdownx.critic:
+#   - pymdownx.details:
+#   # - pymdownx.emoji:
+#   #     emoji_index: !!python/name:materialx.emoji.twemoji
+#   #     emoji_generator: !!python/name:materialx.emoji.to_svg
+#   - pymdownx.inlinehilite:
+#   - pymdownx.magiclink:
+#       repo_url_shortener: true
+#       repo_url_shorthand: true
+#       social_url_shorthand: true
+#       social_url_shortener: true
+#       user: donaldrich
+#       repo: pymdown-extensions
+#   - pymdownx.mark:
+#   - pymdownx.progressbar:
+#   - pymdownx.smartsymbols:
+#   - pymdownx.superfences:
+#   - pymdownx.tasklist:
+#       custom_checkbox: true
+#   - pymdownx.tabbed:
+#   - pymdownx.tilde:
+
 markdown_extensions:
-  - admonition
-  - codehilite
-  - footnotes
-  - meta
-  - toc:
-      permalink: true
-  - pymdownx.arithmatex:
+  - markdown.extensions.toc:
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      permalink: ""
+  - markdown.extensions.admonition:
+  - markdown.extensions.smarty:
+      smart_quotes: false
   - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret:
-  - pymdownx.critic:
-  - pymdownx.details:
-  # - pymdownx.emoji:
-  #     emoji_index: !!python/name:materialx.emoji.twemoji
-  #     emoji_generator: !!python/name:materialx.emoji.to_svg
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php-inline
+          lang: php
+          options:
+            startinline: true
+        - name: pycon3
+          lang: pycon
+          options:
+            python3: true
+      linenums_style: pymdownx-inline
   - pymdownx.inlinehilite:
+      custom_inline:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.inline_mathjax_format
   - pymdownx.magiclink:
       repo_url_shortener: true
       repo_url_shorthand: true
       social_url_shorthand: true
       social_url_shortener: true
-      user: donaldrich
+      user: facelessuser
       repo: pymdown-extensions
-  - pymdownx.mark:
-  - pymdownx.progressbar:
+  - pymdownx.tilde:
+  - pymdownx.caret:
   - pymdownx.smartsymbols:
-  - pymdownx.superfences:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.escapeall:
+      hardbreak: True
+      nbsp: True
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.progressbar:
+  - pymdownx.arithmatex:
+  - pymdownx.mark:
+  - pymdownx.striphtml:
+  - pymdownx.snippets:
+      base_path: docs/src/markdown/_snippets
+  - pymdownx.keys:
+      separator: "\uff0b"
+  - pymdownx.details:
   - pymdownx.tabbed:
-  - pymdownx.tilde:
