@@ -1,6 +1,4 @@
-# Notifications
-
-## Pushover
+# Pushover
 
 !!! note
     This function uses [Hashicorp Vault](https://www.vaultproject.io/) to import Pushover credentials.  If you aren't using Vault integration, you must declare them.
@@ -20,7 +18,7 @@ variables:
   PUSHOVER_USER_TOKEN:
 ```
 
-### Sounds
+## Sounds
 
 ``` yaml
 pushover - Pushover (default)

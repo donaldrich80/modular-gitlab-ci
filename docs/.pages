@@ -1,6 +1,10 @@
+title: Home
+
 arrange:
-  - index.md
-  - home
+  - quick_start.md
+  - examples.md
+  - vault_integration.md
   - functions
   - docs
+  - links
   - about
