@@ -1,11 +1,11 @@
 # Modular GitLab-CI
 
-General, reusable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines. 
+General, reusable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
 
-## Benefits 
+## Benefits
 
-Reduced code repetition 
-Faster development 
+Reduced code repetition
+Faster development
 Pipeline debugging
 increase consistency among projects
 Optimized performance
@@ -20,7 +20,7 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ## Example
 
-—8<— “lint/shell/all.yml”
+--8<-- “lint/shell/all.yml”
 
 ## Todo
 
