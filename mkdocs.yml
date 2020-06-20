@@ -22,9 +22,11 @@ nav:
       - Linters: functions/linters.md
       - Penetration Testing: functions/penetration_testing.md
       - Notifications: functions/notifications.md
-    - Documentation Generation: docs.md
-    - Links: links.md
-    - Me learning mkdocs usage: lorem.md
+    - Documentation Generation:
+      - Mkdocs: docs.md
+    - Links:
+      - Links: links.md
+      - Me learning mkdocs usage: lorem.md
 
 theme:
   name: material
