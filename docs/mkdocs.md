@@ -1,4 +1,15 @@
+path: tree/master
+source: documentation/mkdocs.yml
+
 # Documentation Generation
+
+To automatically generate GitLab Pages Docs, create a 'mkdocs.yml' at the root of the project and add the following to '.gitlab-ci.yml'
+
+``` yaml
+include:
+  - project: donaldrich/gitlab-ci-templates
+    file: /documentation/mkdocs.yml
+```
 
 GitLab-CI env variables can be passed to mkdocs.yml like so:
 
