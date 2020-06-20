@@ -1,5 +1,3 @@
-title: Home
-
 arrange:
   - index.md
   - quick_start.md
@@ -9,3 +7,4 @@ arrange:
   - docs
   - links
   - about
+
