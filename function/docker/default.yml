@@ -1,8 +1,8 @@
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/docker/manifest.yml'
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/docker/builder-scripts.yml'
+  - project: donaldrich/gitlab-ci-templates
+    file: function/docker/manifest.yml
+  - project: donaldrich/gitlab-ci-templates
+    file: function/docker/builder-scripts.yml
 
 .build:functions:
   extends:
