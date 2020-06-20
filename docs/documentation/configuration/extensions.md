@@ -2,7 +2,7 @@
 
 Extensions used in this documentations.
 
-## admonition
+## admonition @facelessuser/pymdown-extensions
 
 !!! info
     Callout boxes.
@@ -41,3 +41,10 @@ Extensions used in this documentations.
     Navigation index built on folder structure
 
 * [github](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
+
+## Magiclink
+
+- https://github.com/facelessuser
+- https://github.com/facelessuser/pymdown-extensions
+- https://gitlab.com/pycqa/flake8/issues/385
+- https://bitbucket.org/mrabarnett/mrab-regex/issues/260/extremely-slow-matching-using-ignorecase
