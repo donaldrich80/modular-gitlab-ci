@@ -74,9 +74,15 @@ extra:
     web: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
   social:
     - icon: fontawesome/brands/gitlab
-      link: https://gitlab.com/donaldrich
+      link: https://gitlab.com/donaldrich/
     - icon: fontawesome/brands/github
-      link: https://github.com/donaldrich80
+      link: https://github.com/donaldrich80/
+#    - icon: fontawesome/brands/gitter
+      # link: https://gitter.im/squidfunk/mkdocs-material
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/donaldrich/
+    - icon: fontawesome/brands/linkedin
+      link: linkedin
 #       link: CI_SERVER_URL/GITLAB_USER_LOGIN
 extra_css:
   - assets/custom.css
@@ -158,7 +164,7 @@ markdown_extensions:
       repo_url_shorthand: true
       social_url_shorthand: true
       social_url_shortener: true
-      user: facelessuser
+      user: donaldrich
       repo: pymdown-extensions
   - pymdownx.tilde:
   - pymdownx.caret:
