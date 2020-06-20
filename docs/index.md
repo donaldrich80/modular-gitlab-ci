@@ -4,12 +4,13 @@ General, reusable, stackable templates for a variety of functions specifically b
 
 ## Benefits
 
-Reduced code repetition
-Faster development
-Pipeline debugging
-increase consistency among projects
-Optimized performance
-Pipelines can be altered and adapted quickly
+- [X] Reduced code repetition
+- [X] Faster development
+- [X] Pipeline debugging
+- [X] increased consistency among projects
+- [X] Optimized performance
+- [X] Pipelines can be altered and adapted quickly
+- [X] Security (Vault Integration)
 
 ## How it works
 
@@ -24,7 +25,7 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ## Todo
 
-- [ ] vault integration
+ vault integration
 - [ ] extensions
   - [ ] ssh
   - [ ] terraform
