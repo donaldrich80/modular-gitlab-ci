@@ -1,6 +1,15 @@
 # Modular GitLab-CI
 
-General, reusable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines. Reduces code repetition and increases consistently in your pipelines.
+General, reusable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines. 
+
+## Benefits 
+
+Reduced code repetition 
+Faster development 
+Pipeline debugging
+increase consistency among projects
+Optimized performance
+Pipelines can be altered and adapted quickly
 
 ## How it works
 
