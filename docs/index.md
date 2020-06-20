@@ -1,16 +1,14 @@
 # Modular GitLab-CI
 
---8<-- "test.md"
-
-## About
-
-:thumbsup:
-
 Modular templates for use in GitLab-CI pipelines.
 
-In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml
+## How it works
 
-Example:
+In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml. 
+
+This library includes a wide range of functionality, and will be expanded over time.
+
+## Example
 
 ``` yaml
 include:
