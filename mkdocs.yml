@@ -6,46 +6,46 @@ edit_uri: tree/master/docs
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
-nav:
-  - Home: index.md
-  - Quick Start: home/quick_start.md
-  - Examples: home/examples.md
-  - Vault Integration: home/vault_integration.md
-  - Functionality:
-    - Analysis: functions/analysis.md
-    - Ansible: functions/ansible.md
-    - Linters:
-      - Ansible: functions/linters/ansible.md
-      - Docker: functions/linters/docker.md
-      - JSON: functions/linters/json.md
-      - Markdown: functions/linters/markdown.md
-      - Shell: functions/linters/shell.md
-      - Terraform: functions/linters/terraform.md
-      - YAML: functions/linters/yaml.md
-    - API: functions/api.md
-    - AWS: functions/aws.md
-    - Hashicorp: functions/hashicorp.md
-    - Linters: functions/linters.md
-    - Penetration Testing: functions/penetration_testing.md
-    - Notifications: functions/notifications.md
-  - Documentation Generation:
-    - Mkdocs: mkdocs.md
-    - Extensions: extensions.md
-  - Links:
-    - Links: links.md
-    - Progress: progress.md
-    - Me learning mkdocs usage: lorem.md
-  - About:
-    - Changelog: about/changelog.md
-    - Release Notes: about/release.md
-    - License: about/license.md
+# nav:
+#   - Home: index.md
+#   - Quick Start: home/quick_start.md
+#   - Examples: home/examples.md
+#   - Vault Integration: home/vault_integration.md
+#   - Functionality:
+#     - Analysis: functions/analysis.md
+#     - Ansible: functions/ansible.md
+#     - Linters:
+#       - Ansible: functions/linters/ansible.md
+#       - Docker: functions/linters/docker.md
+#       - JSON: functions/linters/json.md
+#       - Markdown: functions/linters/markdown.md
+#       - Shell: functions/linters/shell.md
+#       - Terraform: functions/linters/terraform.md
+#       - YAML: functions/linters/yaml.md
+#     - API: functions/api.md
+#     - AWS: functions/aws.md
+#     - Hashicorp: functions/hashicorp.md
+#     - Linters: functions/linters.md
+#     - Penetration Testing: functions/penetration_testing.md
+#     - Notifications: functions/notifications.md
+#   - Documentation Generation:
+#     - Mkdocs: mkdocs.md
+#     - Extensions: extensions.md
+#   - Links:
+#     - Links: links.md
+#     - Progress: progress.md
+#     - Me learning mkdocs usage: lorem.md
+#   - About:
+#     - Changelog: about/changelog.md
+#     - Release Notes: about/release.md
+#     - License: about/license.md
 
 theme:
   name: material
   # custom_dir: docs/overrides
-  custom_dir: docs/theme
+  # custom_dir: docs/theme
   palette:
-    scheme: preference
+    scheme: slate
     primary: deep orange
     accent: orange
   font:
@@ -62,7 +62,7 @@ plugins:
   - search:
   - minify:
       minify_html: true
-  - awesome-pages
+  - awesome-pages:
   - markdownextradata: {}
   # - pdf-export
   # - simple:
