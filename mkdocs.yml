@@ -75,8 +75,9 @@ markdown_extensions:
       repo_url_shorthand: true
       social_url_shorthand: true
       social_url_shortener: true
-      user: !!python/object/apply:os.getenv ["GITLAB_USER_LOGIN"]
-      repo: gitlab-ci-templates
+      provider: 'gitlab'
+      user: 'donaldrich'
+      repo: 'gitlab-ci-templates'
   - pymdownx.mark:
   - pymdownx.progressbar:
   - pymdownx.smartsymbols:

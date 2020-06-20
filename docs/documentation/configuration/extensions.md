@@ -4,7 +4,7 @@ Extensions used in this documentations.
 
 ## admonition
 
-@facelessuser/pymdown-extensions
+@donaldrich/gitlab-ci-templates
 
 !!! info "Callout boxes"
 
