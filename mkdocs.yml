@@ -1,5 +1,6 @@
 site_name: !!python/object/apply:os.getenv ["CI_PROJECT_TITLE"]
 site_url: !!python/object/apply:os.getenv ["CI_PAGES_URL"]
+site_description: A Collection of GitLab-CI Snippets
 
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
@@ -7,15 +8,15 @@ repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 nav:
     - Home: index.md
     - Example Usage: examples.md
-    - 'Functionality':
-      - "Linters": lint.md
-      - "Analysis": analysis.md
-      - "Ansible": ansible.md
-      - "API": api.md
-      - "AWS": aws.md
-      - "Hashicorp": hashicorp.md
-      - "Penetration Testing": pentest.md
-      - "Notifications": notifications.md
+    - Functionality:
+      - Linters: lint.md
+      - Analysis: analysis.md
+      - Ansible: ansible.md
+      - API: api.md
+      - AWS: aws.md
+      - Hashicorp: hashicorp.md
+      - Penetration Testing: pentest.md
+      - Notifications: notifications.md
     - Documentation Generation: docs.md
     - Links: links.md
     - Me learning mkdocs usage: lorem.md
