@@ -1,11 +1,11 @@
 include:
-  # - local: '/analysis/sast.yml'
-  - local: '/notifications/healthchecks/repo-ci-pipeline.yml'
-  - local: '/notifications/pushover/repo-ci-pipeline.yml'
-  # - local: '/lint/default.yml'
-  # - local: '/docker/default.yml'
-  - local: '/documentation/mkdocs.yml'
-  # - local: '/documentation/pdf.yml'
+  # - local: '/function/analysis/sast.yml'
+  - local: '/function/notifications/healthchecks/repo-ci-pipeline.yml'
+  - local: '/function/notifications/pushover/repo-ci-pipeline.yml'
+  # - local: '/function/lint/default.yml'
+  # - local: '/function/docker/default.yml'
+  - local: '/function/documentation/mkdocs.yml'
+  # - local: '/function/documentation/pdf.yml'
 
 variables:
   PUSHOVER_ID: $CI_PROJECT_TITLE

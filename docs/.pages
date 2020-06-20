@@ -1,11 +1,7 @@
 arrange:
   - index.md
-  - quick_start.md
-  - examples.md
-  - vault_integration.md
-  - ...
   - documentation
   - functions
   - links
   - about
-
+  - ...
