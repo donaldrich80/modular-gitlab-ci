@@ -1,9 +1,9 @@
 include:
-  - local: '/analysis/sast.yml'
+  # - local: '/analysis/sast.yml'
   - local: '/notifications/healthchecks/repo-ci-pipeline.yml'
   - local: '/notifications/pushover/repo-ci-pipeline.yml'
-  - local: '/lint/default.yml'
-  - local: '/docker/default.yml'
+  # - local: '/lint/default.yml'
+  # - local: '/docker/default.yml'
   - local: '/documentation/mkdocs.yml'
   # - local: '/documentation/pdf.yml'
 
