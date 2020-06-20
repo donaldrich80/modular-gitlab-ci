@@ -6,40 +6,6 @@ edit_uri: tree/master/docs
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
-# nav:
-#   - Home: index.md
-#   - Quick Start: home/quick_start.md
-#   - Examples: home/examples.md
-#   - Vault Integration: home/vault_integration.md
-#   - Functionality:
-#     - Analysis: functions/analysis.md
-#     - Ansible: functions/ansible.md
-#     - Linters:
-#       - Ansible: functions/linters/ansible.md
-#       - Docker: functions/linters/docker.md
-#       - JSON: functions/linters/json.md
-#       - Markdown: functions/linters/markdown.md
-#       - Shell: functions/linters/shell.md
-#       - Terraform: functions/linters/terraform.md
-#       - YAML: functions/linters/yaml.md
-#     - API: functions/api.md
-#     - AWS: functions/aws.md
-#     - Hashicorp: functions/hashicorp.md
-#     - Linters: functions/linters.md
-#     - Penetration Testing: functions/penetration_testing.md
-#     - Notifications: functions/notifications.md
-#   - Documentation Generation:
-#     - Mkdocs: mkdocs.md
-#     - Extensions: extensions.md
-#   - Links:
-#     - Links: links.md
-#     - Progress: progress.md
-#     - Me learning mkdocs usage: lorem.md
-#   - About:
-#     - Changelog: about/changelog.md
-#     - Release Notes: about/release.md
-#     - License: about/license.md
-
 theme:
   name: material
   # custom_dir: docs/overrides
@@ -47,7 +13,7 @@ theme:
   palette:
     scheme: slate
     primary: deep orange
-    accent: red
+    accent: orange
   font:
     text: Ubuntu
     code: Ubuntu Mono
@@ -99,9 +65,9 @@ markdown_extensions:
   - pymdownx.caret:
   - pymdownx.critic:
   - pymdownx.details:
-  # - pymdownx.emoji:
-  #     emoji_index: !!python/name:materialx.emoji.twemoji
-  #     emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.inlinehilite:
   - pymdownx.magiclink:
       repo_url_shortener: true
@@ -126,7 +92,6 @@ markdown_extensions:
 #   - markdown.extensions.admonition:
 #   - markdown.extensions.smarty:
 #       smart_quotes: false
-#   - pymdownx.betterem:
 #   - markdown.extensions.attr_list:
 #   - markdown.extensions.def_list:
 #   - markdown.extensions.tables:
@@ -158,31 +123,14 @@ markdown_extensions:
 #         - name: math
 #           class: arithmatex
 #           format: !!python/name:pymdownx.arithmatex.inline_mathjax_format
-#   - pymdownx.magiclink:
-#       repo_url_shortener: true
-#       repo_url_shorthand: true
-#       social_url_shorthand: true
-#       social_url_shortener: true
-#       user: donaldrich
-#       repo: pymdown-extensions
-#   - pymdownx.tilde:
-#   - pymdownx.caret:
 #   - pymdownx.smartsymbols:
-#   - pymdownx.emoji:
-#       emoji_index: !!python/name:materialx.emoji.twemoji
-#       emoji_generator: !!python/name:materialx.emoji.to_svg
+
 #   - pymdownx.escapeall:
 #       hardbreak: True
 #       nbsp: True
-#   - pymdownx.tasklist:
-#       custom_checkbox: true
 #   - pymdownx.progressbar:
-#   - pymdownx.arithmatex:
-#   - pymdownx.mark:
 #   - pymdownx.striphtml:
 #   - pymdownx.snippets:
 #       base_path: docs/_snippets
 #   - pymdownx.keys:
 #       separator: "\uff0b"
-#   - pymdownx.details:
-#   - pymdownx.tabbed:
