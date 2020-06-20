@@ -7,6 +7,7 @@ repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
 theme:
+  favicon: images/favicon.png
   name: material
   # custom_dir: docs/overrides
   # custom_dir: docs/theme
@@ -21,7 +22,7 @@ theme:
     - tabs
     - instant
   icon:
-    repo: fontawesome/brands/gitlab
+    repo: fontawesome/brands/git-alt
     logo: fontawesome/brands/gitlab
 
 plugins:
