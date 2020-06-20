@@ -4,17 +4,14 @@ General, reusable, stackable templates for a variety of functions specifically b
 
 ## How it works
 
-In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml. 
+In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml. These templates are designed to be simple, intuitive, and as auto-magical as possible.
 
-This library includes a wide range of functionality, and will be expanded over time.
+!!! note
+    This library includes a wide range of functionality, and will be expanded over time.
 
 ## Example
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/lint/shellcheck.yml’
-```
+—8<— “lint/shell/all.yml”
 
 ## Todo
 
