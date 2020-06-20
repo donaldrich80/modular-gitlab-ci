@@ -21,7 +21,7 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ## Example
 
---8<-- “lint/shell.yml”
+--8<-- “lint/shell.md”
 
 !!! warning
     This is a living document, and sometimes life is messy.
