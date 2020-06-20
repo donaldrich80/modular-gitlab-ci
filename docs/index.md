@@ -1,31 +1,35 @@
-# Armarat et confusa interea
+# Modular GitLab-CI
 
-{{ external_links.functions }}
+!!! note
+    This documentation serves a double function. To document this repo, as well as to serve as internal reference for me as an aggregate for external reference links to the tools used by it.
 
-[{{ external_links.web }}]<a href="{{ external_links.web }}">{{ external_links.web }}</a>
+!!! warning
+    This is a living document, and sometimes life is messy.
 
-## Sit aquarum positasque
+## About
 
-Lorem [markdownum nam](http://comites.io/faciet). Furti videt *quibus poterat
-furtum* hospite corporis manibus pisces *studii adlevat*. Queritur ore, et utque
-armo flexisque, ille cum Laomedonteis. Lora
-[raptam](http://www.odoribusversa.io/falsi), et fabula attulit, Est si par
-altera tegit puer Arachnes omnis *digna spem* grates.
+Modular templates for use in GitLab-CI pipelines.
 
-## Erat bubus
+In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml
 
-Minetur lacus parvumque apertum flagrantem at circum nigra, nec iram! Resecuta
-deducit!
+Example:
 
-## Sceleris tum si dapibus Phoebus aderat paternum
+``` yaml
+include:
+  - project: ‘donaldrich/gitlab-ci-templates’
+    file: ‘/lint/shellcheck.yml’
+```
 
-Tosta amantem aufer ululatibus nec invidit, pater reserata atque. Thebis
-irascentemque neque; *pater* minus Bienoris; removi longoque poenam iacebat.
-Buxi Achelous probat.
+## Todo
 
-Certa supposuique salutifer deberi sontibus deum relinquunt, nunc illi corpore
-stant tibi, pro una Neritiaeque licet. Parentes praevertunt cepit patris primus
-in plurima!
+- [ ] vault integration
+- [ ] extensions
+  - [ ] ssh
+  - [ ] terraform
+  - [ ] packer
+  - [ ] ansible
+
+## Test
 
 [=85% “85%”]{: .candystripe}
 [=100% “100%”]{: .candystripe .candystripe-animate}

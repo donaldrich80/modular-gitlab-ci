@@ -17,7 +17,7 @@ nav:
     - Linters:
       - Ansible: functions/linters/ansible.md
       - Docker: functions/linters/docker.md
-      - JSON: functions/linters/JSON.md
+      - JSON: functions/linters/json.md
       - Markdown: functions/linters/markdown.md
       - Shell: functions/linters/shell.md
       - Terraform: functions/linters/terraform.md
@@ -36,8 +36,6 @@ nav:
     - Progress: progress.md
     - Me learning mkdocs usage: lorem.md
   - About:
-    # - Contributing &amp; Support: about/contributing.md
-    # - Development: about/development.md
     - Changelog: about/changelog.md
     - Release Notes: about/release.md
     - License: about/license.md
