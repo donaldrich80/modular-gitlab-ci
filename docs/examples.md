@@ -19,30 +19,28 @@
 
 ## Notification
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/notifications/pushover.yml’
-```
+=== "Pushover"
+    --8<-- "notification/pushover.md"
+
+=== "Healthcheck"
+    --8<-- "notification/healthchecks.md"
 
 ## Analysis
 
 === "SAST"
     --8<-- "analysis/sast.md"
 
-
 ## Ansible Playbook
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/ansible/runner.yml’
-```
+=== "Run site.yml"
+    --8<-- "ansible/run-site-yml.md"
+
+=== "Lint"
+    --8<-- "lint/ansible/all.md"
+
+=== "Molecule"
+    --8<-- "ansible/molecule.md"
 
 ## Postman API Test
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/api/postman.yml’
-```
+--8<-- "api/postman.md"

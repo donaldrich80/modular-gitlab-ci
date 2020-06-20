@@ -1,13 +1,26 @@
-# Extension Reference
+# Extensions
+
+Extensions used in this documentations.
 
 ## admonition
 
-* [admonition](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
+Callout boxes.
+
+* [documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
 
 ## codehilite
 
-* [codehilite](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
+Fenced code
 
-## [pymdown-extensions](https://facelessuser.github.io/pymdown-extensions/) | [docs](https://facelessuser.github.io/pymdown-extensions/)
+* [documentation](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
 
-## [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
+## pymdown-extensions
+
+* [github](https://facelessuser.github.io/pymdown-extensions/)
+* [documentation](https://facelessuser.github.io/pymdown-extensions/)
+
+## mkdocs-awesome-pages-plugin
+
+Navigation index built on folder structure
+
+* [github](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)

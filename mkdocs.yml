@@ -32,7 +32,7 @@ plugins:
   - awesome-pages:
   - markdownextradata: {}
   # - pdf-export
-  - simple:
+  # - simple:
   #     ignore_folders: ["tests"]
 
 extra:

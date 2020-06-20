@@ -10,3 +10,9 @@ https://github.com/mkdocs/mkdocs/issues/304#issuecomment-460058741
 yaml round-trip your_file.yml —verbose
 
 yaml round-trip your_file.yml —save
+
+``` yaml
+
+# docker image prune --all --force
+# docker run --rm --privileged multiarch/qemu-user-static:register --reset
+```
