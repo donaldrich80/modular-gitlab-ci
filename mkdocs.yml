@@ -45,7 +45,7 @@ theme:
   # custom_dir: docs/overrides
   custom_dir: docs/theme
   palette:
-    scheme: slate
+    scheme: preference
     primary: deep orange
     accent: orange
   font:
