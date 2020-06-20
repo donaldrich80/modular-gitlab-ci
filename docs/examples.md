@@ -4,11 +4,7 @@
 ## Linters
 
 === "Shell"
-    ``` yaml
-    include:
-      - project: ‘donaldrich/gitlab-ci-templates’
-        file: ‘/lint/shell/all.yml’
-    ```
+    --8<-- "lint/shell-all.md"
 
 === "YAML"
     ``` yaml
@@ -25,11 +21,7 @@
     ```
 
 === "Ansible"
-    ``` yaml
-    include:
-      - project: ‘donaldrich/gitlab-ci-templates’
-        file: ‘/lint/ansible.yml’
-    ```
+    --8<-- "lint/ansible.md"
 
 === "Markdown"
     ``` yaml
@@ -37,9 +29,6 @@
       - project: ‘donaldrich/gitlab-ci-templates’
         file: ‘/lint/markdown.yml’
     ```
-
-=== "Markdown2"
-    --8<-- "test.md"
 
 ## Pushover Notification
 
