@@ -1,5 +1,3 @@
-## Postman API Test
-
 ``` yaml
 include:
   - project: ‘donaldrich/gitlab-ci-templates’

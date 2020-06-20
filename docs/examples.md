@@ -38,6 +38,9 @@
         file: ‘/lint/markdown.yml’
     ```
 
+=== "Markdown2"
+    --8<-- "test.md"
+
 ## Pushover Notification
 
 ``` yaml
