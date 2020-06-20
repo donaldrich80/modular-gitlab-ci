@@ -9,6 +9,11 @@ Extensions used in this documentations.
 
 * [documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
 
+??? Types
+    !!! info
+    !!! warning
+    !!! error
+
 ## codehilite
 
 !!! info
