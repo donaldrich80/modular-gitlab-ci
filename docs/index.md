@@ -23,5 +23,4 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 --8<-- "lint/shell/all.md"
 
-!!! warning
-    This is a living document, and sometimes life is messy.
+!!! warning "This is a living document, and sometimes life is messy."
