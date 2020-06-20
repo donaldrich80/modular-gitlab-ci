@@ -7,3 +7,5 @@ include:
     file: function/lint/markdown.yml
   - project: donaldrich/gitlab-ci-templates
     file: function/lint/json/jsonlint.yml
+  - project: donaldrich/gitlab-ci-templates
+    file: function/lint/ansible/ansible-lint.yml

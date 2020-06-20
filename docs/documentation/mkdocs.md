@@ -1,5 +1,5 @@
 path: tree/master
-source: documentation/mkdocs.yml
+source: function/documentation/mkdocs.yml
 
 # GitLab Pages Generator
 

@@ -3,7 +3,7 @@ source: templates/default.yml
 
 # Quickstart
 
---8<-- “misc/quick-start.md”
+--8<-- "misc/quick-start.md"
 
 !!! info
     This is a general setting with sane defaults and autodetection linting.
