@@ -20,7 +20,7 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 !!! abstract "This library includes a wide range of functionality, and will be expanded over time."
 
-### Example
+### Example usage (shell linting)
 
 To add a job to check shell scripting, add the following to your .gitlab-ci.yml
 
@@ -28,15 +28,15 @@ To add a job to check shell scripting, add the following to your .gitlab-ci.yml
 
 ### Stacking Templates
 
-Templates can be combined to extend functionality
+Templates can be combined to extend functionality.
 
-Adding SAST scanning and yaml linting:
+Enabling both SAST scanning and yaml linting:
 
 --8<-- "misc/stack-example.md"
 
 ## Quickstart
 
-Quick start is here
+Grtting started guide here.
 
 ## Guide
 
@@ -44,4 +44,4 @@ Check out examples of what can be achieved here.
 
 ## Reference
 
-Detailed usage guide here.
+Detailed usage descriptions here.
