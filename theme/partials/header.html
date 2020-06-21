@@ -66,11 +66,11 @@
     {% include "partials/search.html" %}
     {% endif %}
 
-    {% include "partials/social.html" %}
     <!-- Repository containing source -->
     {% if config.repo_url %}
     <div class="md-header-nav__source">
       {% include "partials/source.html" %}
+      {% include "partials/social.html" %}
     </div>
     {% endif %}
   </nav>
