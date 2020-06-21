@@ -3,6 +3,8 @@ source: templates/default.yml
 
 # Quickstart
 
+# Public Repo with Documentation
+
 Add this clause to your .gitlab-ci.yml
 
 --8<-- "misc/quick-start.md"
@@ -16,4 +18,14 @@ Includes:
 - [X] Pushover and Healthcheck notifications (Won't cause pipeline failure)
 - [X] Automatic Gitlab Pages Deployment
 
+## Private Repo (No Secret scanning)
+
+SAST will cause pipeline failure if credintisls are found.
+
+CREDSCAN: false
+
 !!! info "Linters will not cause pipeline failure (but will provide lint suggestions)"
+
+## No documention
+
+GENERATE_DOCS: false
