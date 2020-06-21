@@ -3,7 +3,7 @@ source: templates/default.yml
 
 # Quickstart
 
-# Public Repo with Documentation
+## Public Repo with Documentation
 
 Add this clause to your .gitlab-ci.yml
 
