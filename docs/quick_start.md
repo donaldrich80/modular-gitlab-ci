@@ -3,10 +3,11 @@ source: templates/default.yml
 
 # Quickstart
 
+Add this clause to your .gitlab-ci.yml
+
 --8<-- "misc/quick-start.md"
 
-!!! info
-    This is a general setting with sane defaults and autodetection linting.
+!!! info "This is a general setting with sane defaults and autodetection linting."
 
 Includes:
 
@@ -15,5 +16,4 @@ Includes:
 - [X] Pushover and Healthcheck notifications (Won't cause pipeline failure)
 - [X] Automatic Gitlab Pages Deployment
 
-!!! info
-    linters will not cause pipeline failure (but will provide lint suggestions)
+!!! info "Linters will not cause pipeline failure (but will provide lint suggestions)"
