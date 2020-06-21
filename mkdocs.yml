@@ -9,7 +9,6 @@ repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 theme:
   favicon: images/favicon.png
   name: material
-  # custom_dir: docs/overrides
   custom_dir: theme
   palette:
     scheme: slate
