@@ -16,3 +16,6 @@ yaml round-trip your_file.yml —save
 # docker image prune --all --force
 # docker run --rm --privileged multiarch/qemu-user-static:register --reset
 ```
+https://survivejs.com/maintenance/documentation/linting/
+
+
