@@ -2,28 +2,34 @@
 
 /* background */
   --md-default-bg-color: rgb(85, 68, 136);
+/* header */
+  --md-primary-fg-color: rgb(226, 67, 41);
+/* header titles */
+  --md-primary-bg-color: rgb(252, 163, 38);
+/* highlighted titles */
+  --md-accent-fg-color: rgb(252, 109, 38);
 /* text */
   /* --md-default-fg-color: rgb(255, 255, 255); */
 
   /* Default color shades */
 
   --md-default-fg-color--light: rgb(231, 20, 231);
-  --md-default-fg-color--lighter: rgb(62, 231, 20);
-  --md-default-fg-color--lightest: rgb(24, 20, 231);
+  --md-default-fg-color--lighter: rgb(20, 59, 231);
+  --md-default-fg-color--lightest: rgb(165, 164, 224);
 
   --md-default-bg-color--light: rgb(66, 105, 61);
   --md-default-bg-color--lighter: rgb(231, 34, 20);
   --md-default-bg-color--lightest: rgb(105, 107, 7);
 
   /* Primary color shades */
-  --md-primary-fg-color: rgb(226, 67, 41);
+
   --md-primary-fg-color--light: rgb(233, 14, 222);
   --md-primary-fg-color--dark: rgb(136, 69, 7);
-  --md-primary-bg-color: rgb(252, 163, 38);
+
   --md-primary-bg-color--light: rgb(7, 136, 56);
 
   /* Accent color shades */
-  --md-accent-fg-color: rgb(252, 109, 38);
+
   --md-accent-fg-color--transparent: rgb(7, 9, 136);
   --md-accent-bg-color: rgb(8, 231, 247);
   --md-accent-bg-color--light: rgb(20, 231, 213);
