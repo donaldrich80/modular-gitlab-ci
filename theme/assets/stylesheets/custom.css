@@ -50,4 +50,5 @@
   /* Code block color shades */
   --md-code-bg-color: rgb(0, 0, 0);
   /* --md-code-fg-color: rgb(7, 9, 136); */
+  --md-footer-bg-color: rgb(33, 255, 3);
 }
