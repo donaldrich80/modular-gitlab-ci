@@ -3,17 +3,17 @@
 /* background */
   --md-default-bg-color: rgb(85, 68, 136);
 /* text */
-  --md-default-fg-color: rgb(255, 255, 255);
+  /* --md-default-fg-color: rgb(255, 255, 255); */
 
   /* Default color shades */
 
-  --md-default-fg-color--light: rgb(228, 231, 20);
-  --md-default-fg-color--lighter: rgb(228, 231, 20);
-  --md-default-fg-color--lightest: rgb(228, 231, 20);
+  --md-default-fg-color--light: rgb(231, 20, 231);
+  --md-default-fg-color--lighter: rgb(62, 231, 20);
+  --md-default-fg-color--lightest: rgb(24, 20, 231);
 
-  --md-default-bg-color--light: rgb(228, 231, 20);
-  --md-default-bg-color--lighter: rgb(228, 231, 20);
-  --md-default-bg-color--lightest: rgb(228, 231, 20);
+  --md-default-bg-color--light: rgb(66, 105, 61);
+  --md-default-bg-color--lighter: rgb(231, 34, 20);
+  --md-default-bg-color--lightest: rgb(105, 107, 7);
 
   /* Primary color shades */
   --md-primary-fg-color: rgb(226, 67, 41);
@@ -26,7 +26,7 @@
   --md-accent-fg-color: rgb(252, 109, 38);
   --md-accent-fg-color--transparent: rgb(7, 9, 136);
   --md-accent-bg-color: rgb(8, 231, 247);
-  --md-accent-bg-color--light: rgb(228, 231, 20);
+  --md-accent-bg-color--light: rgb(20, 231, 213);
 
   /* Code block color shades */
   /* --md-code-bg-color: rgb(11, 136, 7);
