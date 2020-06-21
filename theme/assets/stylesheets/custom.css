@@ -1,11 +1,11 @@
 :root {
 
   /* Default color shades */
-  --md-default-fg-color: rgb(85, 68, 136);
+  /* --md-default-fg-color: rgb(85, 68, 136); */
   /* --md-default-fg-color--light:        ...;
   --md-default-fg-color--lighter:      ...;
   --md-default-fg-color--lightest:     ...; */
-  --md-default-bg-color: rgb(136, 11, 7);
+  --md-default-bg-color: rgb(85, 68, 136);
   /* --md-default-bg-color--light:        ...;
   --md-default-bg-color--lighter:      ...;
   --md-default-bg-color--lightest:     ...; */
