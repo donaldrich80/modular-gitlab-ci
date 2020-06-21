@@ -11,8 +11,8 @@ theme:
   favicon: images/favicon.png
   name: material
   custom_dir: theme
-  palette:
-    scheme: preference
+  # palette:
+  #   scheme: preference
     # primary: deep orange
     # accent: orange
   font:

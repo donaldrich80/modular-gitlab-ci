@@ -1,6 +1,6 @@
 include:
-  - local: templates/default.yml
-  # - local: '/function/documentation/pdf.yml'
+  # - local: templates/default.yml
+  - local: function/documentation/mkdocs.yml
 
 variables:
   PUSHOVER_ID: $CI_PROJECT_TITLE
