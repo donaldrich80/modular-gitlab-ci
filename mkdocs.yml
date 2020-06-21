@@ -6,10 +6,11 @@ edit_uri: tree/master/docs
 repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
+docs_dir: docs
 theme:
   favicon: images/favicon.png
   name: material
-  custom_dir: docs/theme
+  custom_dir: theme
   palette:
     scheme: slate
     primary: deep orange
