@@ -5,6 +5,8 @@ source: templates/default.yml
 
 ## Public Repo with Documentation
 
+!!! warning "mkdocs.yml required. Pipeline will fail without it."
+
 Add this clause to your .gitlab-ci.yml
 
 --8<-- "misc/quick-start.md"
