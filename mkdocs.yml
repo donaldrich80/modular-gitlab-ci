@@ -12,7 +12,7 @@ theme:
   name: material
   custom_dir: theme
   palette:
-    scheme: preference
+    scheme: slate
     # primary: deep orange
     # accent: orange
   font:
