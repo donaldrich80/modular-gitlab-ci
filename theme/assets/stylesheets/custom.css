@@ -3,9 +3,11 @@
   --crimson: rgb(156, 47, 72);
   --red: rgb(226, 67, 41);
   --deep-orange: rgb(252, 109, 38);
-/* purple rgb(85, 68, 136) */
 
 /* light blue rgb(45, 150, 189) */
+/* purple rgb(85, 68, 136) */
+
+
 
   --md-text-color: rgb(255, 255, 255);
 /* background */
@@ -25,7 +27,7 @@
 /* searchbar title */
   --md-primary-bg-color--light: rgb(255, 0, 0);
 /* text */
-  /* --md-default-fg-color: rgb(255, 255, 255); */
+  --md-default-fg-color: rgb(255, 255, 255);
 
   /* Default color shades */
   --md-default-bg-color--light: rgb(33, 255, 3);
