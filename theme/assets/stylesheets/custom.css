@@ -1,7 +1,9 @@
 :root {
 
+/* background */
   --md-default-bg-color: rgb(85, 68, 136);
-  --md-default-fg-color: rgb(67, 236, 33);
+/* text */
+  --md-default-fg-color: rgb(255, 255, 255);
 
   /* Default color shades */
 
@@ -27,6 +29,6 @@
   --md-accent-bg-color--light: rgb(228, 231, 20);
 
   /* Code block color shades */
-  --md-code-bg-color: rgb(11, 136, 7);
-  --md-code-fg-color: rgb(7, 9, 136);
+  /* --md-code-bg-color: rgb(11, 136, 7);
+  --md-code-fg-color: rgb(7, 9, 136); */
 }

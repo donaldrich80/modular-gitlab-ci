@@ -13,8 +13,8 @@ theme:
   custom_dir: theme
   palette:
     scheme: preference
-    primary: deep orange
-    accent: orange
+    # primary: deep orange
+    # accent: orange
   font:
     text: Ubuntu
     code: Ubuntu Mono
