@@ -26,3 +26,15 @@ To add a job to check shell scripting, add the following to your .gitlab-ci.yml
 --8<-- "lint/shell/all.md"
 
 !!! warning "This is a living document, and sometimes life is messy."
+
+## Quickstart
+
+Quick start is here
+
+## Guide
+
+Check out examples of what can be achieved here.
+
+## Reference
+
+Detailed usage guide here.
