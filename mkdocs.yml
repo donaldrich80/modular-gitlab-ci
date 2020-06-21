@@ -9,7 +9,7 @@ repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 theme:
   favicon: images/favicon.png
   name: material
-  custom_dir: theme
+  custom_dir: docs/theme
   palette:
     scheme: slate
     primary: deep orange
@@ -49,8 +49,8 @@ extra:
       link: linkedin
 #       link: CI_SERVER_URL/GITLAB_USER_LOGIN
 
-extra_css:
-  - docs/stylesheets/custom.css
+# extra_css:
+#   - docs/stylesheets/custom.css
 
 markdown_extensions:
   - admonition:
