@@ -1,4 +1,4 @@
-# Modular GitLab-CI :gitlab:
+# Modular GitLab-CI
 
 General, reusable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
 
