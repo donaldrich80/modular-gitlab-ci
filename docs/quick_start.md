@@ -20,14 +20,20 @@ Includes:
 - [X] Pushover and Healthcheck notifications (Won't cause pipeline failure)
 - [X] Automatic Gitlab Pages Deployment
 
-## Private Repo (No Secret scanning)
+## Disable SAST scan
 
-SAST will cause pipeline failure if credintisls are found.
+SAST will cause pipeline failure if credintisls are found. To disable credential scan (for use in a private repo)
+
+include:
 
 CREDSCAN: false
 
 !!! info "Linters will not cause pipeline failure (but will provide lint suggestions)"
 
 ## No documention
+
+Documentation is enabled by default.
+
+To disable Pages generation, this variable is required.
 
 GENERATE_DOCS: false
