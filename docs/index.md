@@ -2,7 +2,7 @@
 
 !!! warning "This is a living document, and sometimes life is messy."
 
-General, reusable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
+Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
 
 ## Benefits
 
