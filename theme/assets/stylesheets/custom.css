@@ -17,15 +17,13 @@
   --md-default-fg-color--light: rgb(226, 67, 41);
 /* paragraph icon */
   --md-default-fg-color--lighter: rgb(226, 67, 41);
+/* sidebar title */
+  --md-default-fg-color--lightest: rgb(226, 67, 41);
+
 /* text */
   /* --md-default-fg-color: rgb(255, 255, 255); */
 
   /* Default color shades */
-
-
-
-  --md-default-fg-color--lightest: rgb(165, 164, 224);
-
   --md-default-bg-color--light: rgb(66, 105, 61);
   --md-default-bg-color--lighter: rgb(231, 34, 20);
   --md-default-bg-color--lightest: rgb(105, 107, 7);
@@ -35,7 +33,7 @@
   /* --md-primary-fg-color--light: rgb(233, 14, 222);
   --md-primary-fg-color--dark: rgb(136, 69, 7); */
 
-  --md-primary-bg-color--light: rgb(7, 136, 56);
+  --md-primary-bg-color--light: rgb(255, 255, 255);
 
   /* Accent color shades */
 
