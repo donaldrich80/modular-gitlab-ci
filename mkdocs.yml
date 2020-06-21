@@ -20,7 +20,6 @@ theme:
     code: Ubuntu Mono
   features:
     - tabs
-    # - instant
   icon:
     repo: fontawesome/brands/git-alt
     logo: fontawesome/brands/gitlab
