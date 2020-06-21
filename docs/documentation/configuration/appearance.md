@@ -4,6 +4,8 @@
 
 [mkdocs-material](https://squidfunk.github.io/mkdocs-material/)
 
+https://hub.docker.com/r/squidfunk/mkdocs-material/tags
+
 ## Design
 
 ### Colors
