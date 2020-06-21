@@ -5,9 +5,9 @@ General, reusable, stackable templates for a variety of functions specifically b
 ## Benefits
 
 - [X] Reduced code repetition
-- [X] Faster development
+- [X] Faster pipeline development and runs
 - [X] Pipeline debugging
-- [X] increased consistency among projects
+- [X] Increased consistency among projects
 - [X] Optimized performance
 - [X] Pipelines can be altered and adapted quickly
 - [X] Security (Vault Integration)
