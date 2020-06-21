@@ -12,16 +12,16 @@
 
   /* Primary color shades */
   --md-primary-fg-color: rgb(252, 109, 38);
-  /* /* --md-primary-fg-color--light:        ...; */
-  /* --md-primary-fg-color--dark: rgb(136, 69, 7); */
-  --md-primary-bg-color: rgb(7, 136, 108);
-  /* --md-primary-bg-color--light: rgb(7, 136, 56); */
+  --md-primary-fg-color--light: rgb(233, 14, 222);
+  --md-primary-fg-color--dark: rgb(136, 69, 7);
+  --md-primary-bg-color: rgb(226, 67, 41);
+  --md-primary-bg-color--light: rgb(7, 136, 56);
 
   /* Accent color shades */
   --md-accent-fg-color: rgb(252, 163, 38);
-  /* --md-accent-fg-color--transparent:   ...; */
+  --md-accent-fg-color--transparent: rgb(7, 9, 136);
   --md-accent-bg-color: rgb(125, 7, 136);
-  /* --md-accent-bg-color--light: rgb(7, 16, 136);
+  --md-accent-bg-color--light: rgb(228, 231, 20);
 
   /* Code block color shades */
   /* --md-code-bg-color: rgb(11, 136, 7); */
