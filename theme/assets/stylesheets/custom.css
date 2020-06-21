@@ -1,8 +1,10 @@
 :root {
 
-/* purple */
-/* rgb(85, 68, 136) */
-/* red rgb(226, 67, 41) */
+  --crimson: rgb(156, 47, 72);
+  --red: rgb(226, 67, 41);
+  --deep-orange: rgb(252, 109, 38);
+/* purple rgb(85, 68, 136) */
+
 /* light blue rgb(45, 150, 189) */
 
 /* background */
