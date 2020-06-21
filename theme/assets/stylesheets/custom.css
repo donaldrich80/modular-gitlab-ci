@@ -7,6 +7,7 @@
 
 /* light blue rgb(45, 150, 189) */
 
+  --md-text-color: rgb(255, 255, 255);
 /* background */
   --md-default-bg-color: rgb(85, 68, 136);
 /* header */
@@ -21,29 +22,30 @@
   --md-default-fg-color--lighter: rgb(226, 67, 41);
 /* sidebar title */
   --md-default-fg-color--lightest: rgb(226, 67, 41);
-
+/* searchbar title */
+  --md-primary-bg-color--light: rgb(255, 0, 0);
 /* text */
   /* --md-default-fg-color: rgb(255, 255, 255); */
 
   /* Default color shades */
-  --md-default-bg-color--light: rgb(66, 105, 61);
-  --md-default-bg-color--lighter: rgb(231, 34, 20);
-  --md-default-bg-color--lightest: rgb(105, 107, 7);
+  --md-default-bg-color--light: rgb(33, 255, 3);
+  --md-default-bg-color--lighter: rgb(33, 255, 3);
+  --md-default-bg-color--lightest: rgb(33, 255, 3);
 
   /* Primary color shades */
 
   /* --md-primary-fg-color--light: rgb(233, 14, 222);
   --md-primary-fg-color--dark: rgb(136, 69, 7); */
 
-  --md-primary-bg-color--light: rgb(255, 255, 255);
+
 
   /* Accent color shades */
 
-  --md-accent-fg-color--transparent: rgb(7, 9, 136);
-  --md-accent-bg-color: rgb(8, 231, 247);
-  --md-accent-bg-color--light: rgb(20, 231, 213);
+  --md-accent-fg-color--transparent: rgb(33, 255, 3);
+  --md-accent-bg-color: rgb(33, 255, 3);
+  --md-accent-bg-color--light: rgb(33, 255, 3);
 
   /* Code block color shades */
-  /* --md-code-bg-color: rgb(11, 136, 7);
-  --md-code-fg-color: rgb(7, 9, 136); */
+  --md-code-bg-color: rgb(0, 0, 0);
+  /* --md-code-fg-color: rgb(7, 9, 136); */
 }
