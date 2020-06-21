@@ -3,19 +3,19 @@
   --crimson: rgb(156, 47, 72);
   --red: rgb(226, 67, 41);
   --deep-orange: rgb(252, 109, 38);
-
+  --yellow: rgb(255, 229, 97);
 /* light blue rgb(45, 150, 189) */
 /* purple rgb(85, 68, 136) */
 
 
 
-  --md-text-color: rgb(255, 255, 255);
+  /* --md-text-color: rgb(255, 255, 255); */
 /* background */
   --md-default-bg-color: rgb(85, 68, 136);
 /* header */
   --md-primary-fg-color: rgb(226, 67, 41);
 /* header titles */
-  --md-primary-bg-color: rgb(252, 163, 38);
+  --md-primary-bg-color: rgb(255, 229, 97);
 /* highlighted titles */
   --md-accent-fg-color: rgb(252, 109, 38);
 /* primary headers */
