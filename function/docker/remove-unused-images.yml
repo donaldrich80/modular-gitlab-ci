@@ -8,4 +8,4 @@ remove-unused-images:
   # when: delayed
   # # start_in: 1 minute
   script:
-    - ssh $SSH_USER@$SSH_ADDRESS "docker image prune --all --force"
+    - ssh SSH_LOGIN_COMMAND "docker image prune --all --force"
