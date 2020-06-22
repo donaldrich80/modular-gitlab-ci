@@ -1,14 +1,7 @@
 :root {
 
-  --crimson: rgb(156, 47, 72);
-  --red: rgb(226, 67, 41);
-  --deep-orange: rgb(252, 109, 38);
-  --yellow: rgb(255, 229, 97);
-/* light blue rgb(45, 150, 189) */
-/* purple rgb(85, 68, 136) */
-  /* --md-text-color: rgb(255, 255, 255); */
 /* background */
-  --md-default-bg-color: rgb(40, 33, 65);
+  --md-default-bg-color: rgb(48, 53, 62);
 /* header */
   --md-primary-fg-color: rgb(252, 109, 38);
 /* header titles */
@@ -56,7 +49,7 @@
     transition: opacity 250ms;
 }
 .md-typeset code {
-    background-color: rgb(48, 53, 62);
+    background-color: rgb(40, 33, 65);
 }
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: rgb(255, 255, 255);
