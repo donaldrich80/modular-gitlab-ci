@@ -56,6 +56,9 @@
 h1 {
   color: blue;
 }
+h2 {
+  color: purple;
+}
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: rgb(255, 255, 255);
     direction: ltr;
