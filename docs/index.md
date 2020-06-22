@@ -4,7 +4,7 @@
 ![OWF-Logo-Color.png](images/logo.png)
 </p>**
 
-# Modular GitLab-CI{: .center}
+# Modular GitLab-CI
 
 !!! warning "This is a living document, and sometimes life is messy."
 
