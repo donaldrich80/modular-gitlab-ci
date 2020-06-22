@@ -26,7 +26,7 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ### Example usage (shell linting)
 
-To add a job to check shell scripting, add the following to your .gitlab-ci.yml
+To add a job to check shell scripting, add the following to your `.gitlab-ci.yml`
 
 --8<-- "lint/shell/all.md"
 
