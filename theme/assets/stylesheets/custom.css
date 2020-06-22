@@ -53,6 +53,9 @@
 .md-typeset code {
     background-color: rgb(28, 28, 28);
 }
+h1 {
+  color: blue;
+}
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: rgb(255, 255, 255);
     direction: ltr;
