@@ -1,11 +1,12 @@
 :root {
 
 /* background */
-  --md-default-bg-color: rgb(28, 28, 28);
+  --md-default-bg-color: rgb(48, 53, 62);
 /* header */
   --md-primary-fg-color: rgb(252, 109, 38);
 /* header titles */
   --md-primary-bg-color: rgb(255, 255, 255);
+  /* --md-text-color: rgb(255, 255, 255); */
 /* selected sidebar titles */
   --md-accent-fg-color: rgb(252, 109, 38);
 /* primary headers */
@@ -15,9 +16,9 @@
 /* sidebar title */
   --md-default-fg-color--lightest: rgb(226, 67, 41);
 /* searchbar title */
-  --md-primary-bg-color--light: rgb(255, 0, 0);
+  --md-primary-bg-color--light: rgb(251, 163, 38);
 /* text */
-  --md-default-fg-color: rgb(251, 163, 38);
+  --md-default-fg-color: rgb(255, 255, 255);
 
   /* Default color shades */
 
@@ -49,7 +50,7 @@
     transition: opacity 250ms;
 }
 .md-typeset code {
-    background-color: rgb(48, 53, 62);
+    background-color: rgb(28, 28, 28);
 }
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: rgb(255, 255, 255);
