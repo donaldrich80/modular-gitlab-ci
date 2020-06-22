@@ -1,28 +1,26 @@
 :root {
 
 /* background */
-  --md-default-bg-color: rgb(48, 53, 62);
+  --md-default-bg-color: rgb(28, 28, 28);
 /* header */
   --md-primary-fg-color: rgb(252, 109, 38);
 /* header titles */
   --md-primary-bg-color: rgb(255, 255, 255);
-/* highlighted titles */
+/* selected sidebar titles */
   --md-accent-fg-color: rgb(252, 109, 38);
 /* primary headers */
   --md-default-fg-color--light: rgb(251, 163, 38);
 /* paragraph icon */
-  --md-default-fg-color--lighter: rgb(226, 67, 41);
+  --md-default-fg-color--lighter: rgb(252, 109, 38);
 /* sidebar title */
   --md-default-fg-color--lightest: rgb(226, 67, 41);
 /* searchbar title */
   --md-primary-bg-color--light: rgb(255, 0, 0);
 /* text */
-  --md-default-fg-color: rgb(255, 255, 255);
+  --md-default-fg-color: rgb(251, 163, 38);
 
   /* Default color shades */
-  --md-default-bg-color--light: rgb(33, 255, 3);
-  --md-default-bg-color--lighter: rgb(33, 255, 3);
-  --md-default-bg-color--lightest: rgb(33, 255, 3);
+
 
   /* Primary color shades */
 
@@ -32,10 +30,12 @@
 
 
   /* Accent color shades */
-
-  --md-accent-fg-color--transparent: rgb(33, 255, 3);
-  --md-accent-bg-color: rgb(33, 255, 3);
-  --md-accent-bg-color--light: rgb(33, 255, 3);
+  --md-default-bg-color--light: rgb(255, 3, 3);
+  --md-default-bg-color--lighter: rgb(53, 255, 3);
+  --md-default-bg-color--lightest: rgb(3, 255, 192);
+  --md-accent-fg-color--transparent: rgb(3, 49, 255);
+  --md-accent-bg-color: rgb(91, 3, 255);
+  --md-accent-bg-color--light: rgb(213, 3, 255);
 
 }
 .md-footer {
@@ -49,7 +49,7 @@
     transition: opacity 250ms;
 }
 .md-typeset code {
-    background-color: rgb(40, 33, 65);
+    background-color: rgb(48, 53, 62);
 }
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: rgb(255, 255, 255);
