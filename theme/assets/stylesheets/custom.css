@@ -55,3 +55,15 @@
     color: rgb(255, 255, 255);
     direction: ltr;
 }
+.md-footer-social {
+    margin: 0 .2rem;
+    margin-top: 0px;
+    margin-right: 0.2rem;
+    margin-bottom: 0px;
+    margin-left: 0.2rem;
+    padding: 0rem 0 0rem;
+    padding-top: 0rem;
+    padding-right: 0px;
+    padding-bottom: 0rem;
+    padding-left: 0px;
+}
