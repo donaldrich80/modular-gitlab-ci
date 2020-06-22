@@ -1,6 +1,6 @@
 ![Logo](images/logo.png){: style=“height:150px;width:150px”}
 
-# Modular GitLab-CI
+# Modular GitLab-CI{: .center}
 
 !!! warning "This is a living document, and sometimes life is messy."
 
