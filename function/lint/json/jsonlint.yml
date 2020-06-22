@@ -1,0 +1,29 @@
+jsonlint:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image: sahsu/docker-jsonlint
+  before_script:
+    - jsonlint --version || true
+  script:
+    - |
+      for file in $(find . -type f -name "*.json"); do
+        if ! jsonlint -q $file; then
+          export FAILED=1
+        else
+          echo "$file OK"
+        fi
+      done
+      if [ "${FAILED}" = "1" ]; then
+        exit 1
+      fi
+  rules:
+    - exists:
+      - "**/*.json"
+      when: on_success
+  #   - if: '$DEBUG_PIPELINE'
+  #     when: never
+  #   - changes:
+  #     - "**/*.json"
+  #     when: always
+    - when: never

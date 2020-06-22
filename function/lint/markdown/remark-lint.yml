@@ -1,0 +1,12 @@
+remark-lint:
+  allow_failure: true
+  interruptible: true
+  stage: lint
+  image:
+  #  name: donaldrich/function:remark-lint
+   name: node
+   entrypoint: [""]
+  script:
+    - npm install --save remark-cli remark-preset-lint-recommended
+    - npm run lint-md
+

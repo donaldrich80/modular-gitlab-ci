@@ -1,91 +1,36 @@
 # GitLab-CI Templates
 
-Modular templates for use in GitLab-CI pipelines.
+Documentation lives at this address:
 
-In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml
+[![Donate via PayPal][donate-image]][donate-link]
+[![Discord][discord-image]][discord-link]
+[![Build][github-ci-image]][github-ci-link]
+[![Coverage Status][codecov-image]][codecov-link]
+[![PyPI Version][pypi-image]][pypi-link]
+[![PyPI - Python Version][python-image]][pypi-link]
+![License][license-image-mit]
 
-## Sections
+# PyMdown Extensions
 
-* [Analysis](docs/analysis.md)
-* [Ansible](docs/ansible.md)
-* [API](docs/api.md)
-* [AWS](aws/README.md)
-* [Docker](docker)
-* [Hashicorp](docs/hashicorp.md)
-* [Lint](docs/lint.md)
-* [Notifications](notifications)
+Extensions for [Python Markdown](https://python-markdown.github.io).
 
-## Examples
+# Documentation
 
-### Pushover Notification
+Extension documentation is found here: https://facelessuser.github.io/pymdown-extensions/.
 
-```yaml
-include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/notifications/pushover.yml'
-```
+# License
 
-### SAST Analysis
+License is MIT except for a few exceptions.  See [LICENSE](https://github.com/facelessuser/pymdown-extensions/blob/master/LICENSE.md) for more info.
 
-```yaml
-include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/analysis/sast.yml'
-```
-
-### Shellcheck
-
-```yaml
-include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/lint/shellcheck.yml'
-```
-
-### Syntax Linters
-
-```yaml
-include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/lint/default.yml'
-```
-
-### Ansible Playbook
-
-```yaml
-include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/ansible/runner.yml'
-```
-
-### Postman API Test
-
-```yaml
-include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file:    '/api/postman.yml'
-```
-
-## GitLab-CI Reference
-
-### CI_PIPELINE_SOURCE
-
-| CI_PIPELINE_SOURCE | Description |
-| :----------------: | :---------: |
-| trigger | API Call |
-| push | git push |
-
-## DevOps & GitLab-CI References/Links
-
-* [Artemmkin/infrastructure-as-code-tutorial](https://github.com/Artemmkin/infrastructure-as-code-tutorial)
-* [https://docs.gitlab.com/ee/ci/variables/predefined_variables.html](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
-* [ekino/docker-buildbox](https://github.com/ekino/docker-buildbox)
-* [nbedos/cistern](https://github.com/nbedos/cistern)
-* [nemonik/hands-on-DevOps](https://github.com/nemonik/hands-on-DevOps)
-* [sobolevn/dump-env](https://github.com/sobolevn/dump-env)
-* [releaseworks/masterclass-codeexamples](https://github.com/releaseworks/masterclass-codeexamples)
-* [firecow/gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
-* [BuBuaBu/gitlab-ci-lint](https://github.com/BuBuaBu/gitlab-ci-lint)
-* [Grayda/gitlab-doc-builder](https://github.com/Grayda/gitlab-doc-builder)
-* [bregman-arie/devops-exercises](https://github.com/bregman-arie/devops-exercises)
-* [analysis-tools-dev/static-analysis](https://github.com/analysis-tools-dev/static-analysis)
-* [analysis-tools-dev/dynamic-analysis](https://github.com/analysis-tools-dev/dynamic-analysis)
+[donate-image]: https://img.shields.io/badge/Donate-PayPal-3fabd1?logo=paypal
+[donate-link]: https://www.paypal.me/facelessuser
+[github-ci-image]: https://github.com/facelessuser/pymdown-extensions/workflows/build/badge.svg
+[github-ci-link]: https://github.com/facelessuser/pymdown-extensions/actions?workflow=build
+[discord-image]: https://img.shields.io/discord/678289859768745989?logo=discord&logoColor=aaaaaa&color=mediumpurple&labelColor=333333
+[discord-link]: https://discord.gg/fqQ7ypS
+[codecov-image]: https://img.shields.io/codecov/c/github/facelessuser/pymdown-extensions/master.svg?logo=codecov&logoColor=aaaaaa&labelColor=333333
+[codecov-link]: https://codecov.io/github/facelessuser/pymdown-extensions
+[pypi-image]: https://img.shields.io/pypi/v/pymdown-extensions.svg?logo=pypi&logoColor=aaaaaa&labelColor=333333
+[pypi-link]: https://pypi.python.org/pypi/pymdown-extensions
+[python-image]: https://img.shields.io/pypi/pyversions/pymdown-extensions?logo=python&logoColor=aaaaaa&labelColor=333333
+[license-image-mit]: https://img.shields.io/badge/license-MIT-blue.svg?labelColor=333333

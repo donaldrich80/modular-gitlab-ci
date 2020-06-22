@@ -1,0 +1,11 @@
+include:
+  - project: 'donaldrich/gitlab-ci-templates'
+    file: 'function/ssh/default.yml'
+
+remove-unused-images:
+  extends: .ssh-runner
+  stage: .post
+  # when: delayed
+  # # start_in: 1 minute
+  script:
+    - ssh $SSH_LOGIN_COMMAND "docker image prune --all --force"

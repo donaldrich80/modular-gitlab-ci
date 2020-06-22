@@ -1,49 +1,48 @@
 # Examples
 
-## Pushover Notification
+Examples of functionality possible with these templates. Some required configuration options which can be found [here](#user_guide)
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/notifications/pushover.yml’
-```
+## Linters
 
-## SAST Analysis
+=== "Shell"
+    --8<-- "lint/shell/all.md"
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/analysis/sast.yml’
-```
+=== "YAML"
+    --8<-- "lint/yaml/all.md"
 
-## Shellcheck
+=== "Dockerfile"
+    --8<-- "lint/docker/all.md"
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/lint/shellcheck.yml’
-```
+=== "Ansible"
+    --8<-- "lint/ansible/all.md"
 
-## Syntax Linters
+=== "Markdown"
+    --8<-- "lint/markdown/all.md"
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/lint/default.yml’
-```
+## Notification
+
+=== "Pushover"
+    --8<-- "notification/pushover.md"
+
+=== "Healthcheck"
+    --8<-- "notification/healthchecks.md"
+
+## Analysis
+
+=== "SAST"
+    --8<-- "analysis/sast.md"
 
 ## Ansible Playbook
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/ansible/runner.yml’
-```
+=== "Run site.yml"
+    --8<-- "ansible/run-site-yml.md"
+
+=== "Lint"
+    --8<-- "lint/ansible/all.md"
+
+=== "Molecule"
+    --8<-- "ansible/molecule.md"
 
 ## Postman API Test
 
-``` yaml
-include:
-  - project: ‘donaldrich/gitlab-ci-templates’
-    file: ‘/api/postman.yml’
-```
+--8<-- "api/postman.md"

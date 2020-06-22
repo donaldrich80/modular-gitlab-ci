@@ -1,0 +1,26 @@
+include:
+  - local: function/ansible/runner.yml
+
+ansible:
+  extends: .ansible-runner
+  stage: lint
+  script:
+    - ansible-lint --force-color -x 204 -x 702 *.yml
+  allow_failure: true
+  interruptible: true
+  rules:
+    - exists:
+      - "**/roles/*.yml"
+      - "**/playbooks/*.yml"
+      - "ansible.cfg"
+      when: on_success
+    - when: never
+  #   - if: '$DEBUG_PIPELINE'
+  #     when: never
+  #   - changes:
+  #     - "**/playbooks/*.yml"
+  #     when: always
+
+
+# ansible-lint  -p -v
+

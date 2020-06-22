@@ -1,0 +1,16 @@
+pages:
+  stage: deploy
+  image:
+    name: donaldrich/function:mkdocs
+    entrypoint: [""]
+  script:
+  - mkdocs build
+  - mv site public
+  artifacts:
+    paths:
+    - public
+  rules:
+    - exists:
+      - "mkdocs.yml"
+      when: on_success
+    - when: never

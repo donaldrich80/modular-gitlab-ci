@@ -1,71 +1,134 @@
-site_name: Modular GitLab-CI
-site_url: https://donaldrich.donavanaldrich.com/gitlab-ci-templates
+site_name: !!python/object/apply:os.getenv ["CI_PROJECT_TITLE"]
+site_url: !!python/object/apply:os.getenv ["CI_PAGES_URL"]
+site_description: A Collection of GitLab-CI Snippets
+edit_uri: tree/master/docs
 
-repo_name: donaldrich/gitlab-ci-templates
-repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+repo_url: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
+repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 
-nav:
-    - Home: index.md
-    - Example Usage: examples.md
-    - Linters: lint.md
-    - Documentation Generation: docs.md
-    - Analysis: analysis.md
-    - Ansible: ansible.md
-    - API: api.md
-    - AWS: aws.md
-    - Hashicorp: hashicorp.md
-    - Me learning how to use Markdown: lorem.md
-
+docs_dir: docs
 theme:
+  favicon: images/favicon.png
   name: material
-  palette:
-    scheme: slate
-    primary: deep orange
-    accent: orange
+  custom_dir: theme
+  # palette:
+  #   scheme: slate
+    # primary: deep orange
+    # accent: orange
   font:
     text: Ubuntu
     code: Ubuntu Mono
   features:
-    # - tabs
-    - instant
+    - tabs
   icon:
-    repo: fontawesome/brands/gitlab
+    repo: fontawesome/brands/git-alt
     logo: fontawesome/brands/gitlab
 
-extra:
-  social:
-    - icon: fontawesome/brands/gitlab
-      link: https://gitlab.donavanaldrich.com/donaldrich
-
 plugins:
-  # - search:
-      # prebuild_index: true
+  - search:
   - minify:
       minify_html: true
-  - awesome-pages
+  - awesome-pages:
+  - markdownextradata: {}
+  # - pdf-export
+  # - simple:
+  #     ignore_folders: ["tests"]
+
+extra:
+  external_links:
+    functions: !!python/object/apply:os.getenv ["CI_PROJECT_URL"]
+    web: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
+  social:
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/donaldrich/
+    - icon: fontawesome/brands/github
+      link: https://github.com/donaldrich80/
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/donaldrich/
+    - icon: fontawesome/brands/linkedin
+      link: linkedin
+#       link: CI_SERVER_URL/GITLAB_USER_LOGIN
+
+extra_css:
+  - assets/stylesheets/custom.css
 
 markdown_extensions:
-  - admonition
-  - codehilite
-  - footnotes
-  - meta
+  - admonition:
+  - codehilite:
+  - footnotes:
+  - attr_list
+  - meta:
   - toc:
       permalink: true
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
+  - pymdownx.caret:
+  - pymdownx.critic:
+  - pymdownx.details:
+  # - pymdownx.emoji:
+  #     emoji_index: !!python/name:materialx.emoji.emojione
+  #     emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite:
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      social_url_shortener: true
+      provider: 'gitlab'
+      user: 'donaldrich'
+      repo: 'gitlab-ci-templates'
+  - pymdownx.mark:
+  - pymdownx.progressbar:
+  - pymdownx.smartsymbols:
+  - pymdownx.snippets:
+      base_path: snippets
+  - pymdownx.superfences:
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.tabbed
-  - pymdownx.tilde
+  - pymdownx.tabbed:
+  - pymdownx.tilde:
+
+# markdown_extensions:
+#   - markdown.extensions.toc:
+#       slugify: !!python/name:pymdownx.slugs.uslugify
+#       permalink: ""
+#   - markdown.extensions.smarty:
+#       smart_quotes: false
+#   - markdown.extensions.attr_list:
+#   - markdown.extensions.def_list:
+#   - markdown.extensions.tables:
+#   - markdown.extensions.abbr:
+#   - markdown.extensions.footnotes:
+#   - markdown.extensions.md_in_html:
+#   - pymdownx.superfences:
+#       preserve_tabs: true
+#       custom_fences:
+#         - name: mermaid
+#           class: mermaid
+#           format: !!python/name:pymdownx.superfences.fence_code_format
+#         - name: math
+#           class: arithmatex
+#           format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+#   - pymdownx.highlight:
+#       extend_pygments_lang:
+#         - name: php-inline
+#           lang: php
+#           options:
+#             startinline: true
+#         - name: pycon3
+#           lang: pycon
+#           options:
+#             python3: true
+#       linenums_style: pymdownx-inline
+#   - pymdownx.inlinehilite:
+#       custom_inline:
+#         - name: math
+#           class: arithmatex
+#           format: !!python/name:pymdownx.arithmatex.inline_mathjax_format
+#   - pymdownx.escapeall:
+#       hardbreak: True
+#       nbsp: True
+#   - pymdownx.striphtml:
+#   - pymdownx.keys:
+#       separator: "\uff0b"

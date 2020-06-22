@@ -1,0 +1,22 @@
+ruamel:
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  image:
+    name: donaldrich/function:ruamel.yaml.cmd
+    entrypoint: [""]
+  before_script:
+    - yaml --version
+    - yaml --help
+  script:
+    - yaml round-trip *.yml --verbose --indent 2
+  rules:
+    # - changes:
+    #     - "**/*/*.yaml"
+    #     - "**/*/*.yml"
+    #   when: always
+    - exists:
+        - "**/*.yaml"
+        - "**/*.yml"
+      when: on_success
+    - when: never

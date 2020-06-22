@@ -3,13 +3,6 @@ site_url: https://pages.gitlab.io/mkdocs
 # nav:
 #     - Home: index.md
 #     - Examples: examples.md
-#     - Analysis: analysis.md
-#     - Ansible: ansible.md
-#     - API: api.md
-#     - AWS: aws.md
-#     - Docs: docs.md
-#     - Hashicorp: hashicorp.md
-#     - Lint: lint.md
 theme:
   name: material
   palette:
@@ -25,12 +18,12 @@ theme:
   icon:
     repo: fontawesome/brands/gitlab
     # logo: material/cloud
-repo_name: donaldrich/gitlab-ci-templates
-repo_url: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+repo_name: repo_name
+repo_url: repo_url
 extra:
   social:
     - icon: fontawesome/brands/gitlab
-      link: https://gitlab.donavanaldrich.com/donaldrich/gitlab-ci-templates
+      link: link
 plugins:
   # - search:
       # prebuild_index: true

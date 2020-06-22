@@ -1,0 +1,21 @@
+sast:
+  stage: .pre
+  image:
+    name: shiftleft/sast-scan
+  before_script:
+    - echo $CI_PIPELINE_SOURCE
+  script:
+    - scan --build --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
+  variables:
+    CREDSCAN_DEPTH: "100"
+    # CREDSCAN_TIMEOUT: "5m"
+    DISABLE_TELEMETRY: "true"
+  artifacts:
+    name: "$CI_JOB_NAME-$CI_COMMIT_REF_NAME"
+    paths:
+      - $CI_PROJECT_DIR/reports/
+    when: always
+
+  # script:
+  #   - scan --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
+  #   # - cat ${CI_PROJECT_DIR}/reports/scan-full-report.json | jq "."

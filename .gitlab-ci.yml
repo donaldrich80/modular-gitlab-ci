@@ -1,10 +1,9 @@
 include:
-  # - local: '/analysis/sast.yml'
-  - local: '/notifications/healthchecks-repo.yml'
-  - local: '/notifications/pushover.yml'
-  - local: '/lint/default.yml'
-  - local: '/docker/default.yml'
-  - local: '/documentation/mkdocs.yml'
+  # - local: templates/default.yml
+  - local: function/documentation/mkdocs.yml
+
+variables:
+  PUSHOVER_ID: $CI_PROJECT_TITLE
 
 stages:
   - debug
