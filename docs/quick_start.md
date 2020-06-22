@@ -26,7 +26,7 @@ SAST will cause pipeline failure if credintisls are found. To disable credential
 
 include:
 
-CREDSCAN: false
+--8<-- "variables/no-dep-scan.md"
 
 !!! info "Linters will not cause pipeline failure (but will provide lint suggestions)"
 
@@ -36,4 +36,4 @@ Documentation is enabled by default.
 
 To disable Pages generation, this variable is required.
 
-GENERATE_DOCS: false
+--8<-- "variables/no-doc-generation.md"

@@ -1,0 +1,4 @@
+``` yaml
+variables:
+  CREDSCAN: false
+```
