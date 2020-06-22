@@ -2,6 +2,8 @@
 
 !!! warning "This is a living document, and sometimes life is messy."
 
+<a href=“https://icon-library.net/icon/gitlab-icon-19.html” title=“Gitlab Icon #292828”><img src=“https://icon-library.net//images/gitlab-icon/gitlab-icon-19.jpg” width=“350” /></a>
+
 ## Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
 
 ## Benefits
