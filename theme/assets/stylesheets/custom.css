@@ -6,9 +6,6 @@
   --yellow: rgb(255, 229, 97);
 /* light blue rgb(45, 150, 189) */
 /* purple rgb(85, 68, 136) */
-
-
-
   /* --md-text-color: rgb(255, 255, 255); */
 /* background */
   --md-default-bg-color: rgb(40, 33, 65);
@@ -51,4 +48,8 @@
   --md-code-bg-color: rgb(0, 0, 0);
   /* --md-code-fg-color: rgb(7, 9, 136); */
   --md-footer-bg-color: rgb(33, 255, 3);
+}
+.md-footer {
+    color: var(--md-footer-fg-color);
+    background-color: rgb(33, 255, 3);
 }
