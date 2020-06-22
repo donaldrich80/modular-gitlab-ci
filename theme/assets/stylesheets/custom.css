@@ -51,5 +51,11 @@
 }
 .md-footer {
     color: var(--md-footer-fg-color);
-    background-color: rgb(33, 255, 3);
+    background-color: var(--md-default-bg-color);
+}
+.md-footer-nav__link {
+    display: flex;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    transition: opacity 250ms;
 }
