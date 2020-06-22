@@ -1,4 +1,4 @@
-![Logo](images/logo.jpg)
+![Logo](images/logo.png)
 
 # Modular GitLab-CI
 
