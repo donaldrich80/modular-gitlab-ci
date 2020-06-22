@@ -44,9 +44,6 @@
   --md-accent-bg-color: rgb(33, 255, 3);
   --md-accent-bg-color--light: rgb(33, 255, 3);
 
-  /* Code block color shades */
-  --md-code-bg-color: rgb(0, 0, 0);
-  --md-code-fg-color: rgb(255, 255, 255);
 }
 .md-footer {
     color: var(--md-footer-fg-color);
@@ -60,4 +57,8 @@
 }
 .md-typeset code {
     background-color: rgb(48, 53, 62);
+}
+.md-typeset code, .md-typeset pre, .md-typeset kbd {
+    color: rgb(255, 255, 255);
+    direction: ltr;
 }
