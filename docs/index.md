@@ -20,6 +20,8 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 !!! abstract "This library includes a wide range of functionality, and will be expanded over time."
 
+[project license](license/change log.md)
+
 ### Example usage (shell linting)
 
 To add a job to check shell scripting, add the following to your .gitlab-ci.yml
