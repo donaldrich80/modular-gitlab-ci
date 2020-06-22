@@ -19,7 +19,8 @@
   --md-primary-bg-color--light: rgb(251, 163, 38);
 /* text */
   --md-default-fg-color: rgb(255, 255, 255);
-
+/* hover search result */
+  --md-accent-fg-color--transparent: rgb(28, 28, 28);
   /* Default color shades */
 
 
@@ -34,7 +35,7 @@
   --md-default-bg-color--light: rgb(255, 3, 3);
   --md-default-bg-color--lighter: rgb(53, 255, 3);
   --md-default-bg-color--lightest: rgb(3, 255, 192);
-  --md-accent-fg-color--transparent: rgb(3, 49, 255);
+
   --md-accent-bg-color: rgb(91, 3, 255);
   --md-accent-bg-color--light: rgb(213, 3, 255);
 
