@@ -1,5 +1,7 @@
 # Examples
 
+Examples of functionality possible with these templates. Some required configuration options which can be found [here](#user_guide)
+
 ## Linters
 
 === "Shell"
