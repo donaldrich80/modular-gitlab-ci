@@ -11,11 +11,11 @@
 
   /* --md-text-color: rgb(255, 255, 255); */
 /* background */
-  --md-default-bg-color: rgb(55, 44, 88);
+  --md-default-bg-color: rgb(40, 33, 65);
 /* header */
-  --md-primary-fg-color: rgb(226, 67, 41);
+  --md-primary-fg-color: rgb(252, 109, 38);
 /* header titles */
-  --md-primary-bg-color: rgb(255, 229, 97);
+  --md-primary-bg-color: rgb(255, 255, 255);
 /* highlighted titles */
   --md-accent-fg-color: rgb(252, 109, 38);
 /* primary headers */
