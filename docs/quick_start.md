@@ -3,7 +3,7 @@ source: templates/default.yml
 
 # Quickstart
 
-## Public Repo with Documentation
+## Public Repo (with Pages)
 
 !!! warning "mkdocs.yml required. Pipeline will fail without it."
 
@@ -17,10 +17,10 @@ Includes:
 
 - [X] Auto-detect linting for common formats
 - [X] SAST Testing
-- [X] Pushover and Healthcheck notifications (Won't cause pipeline failure)
+- [X] Pushover and Healthcheck notifications (Wont cause pipeline failure)
 - [X] Automatic Gitlab Pages Deployment
 
-## Disable SAST scan
+### Disable SAST scan
 
 SAST will cause pipeline failure if credintisls are found. To disable credential scan (for use in a private repo)
 
