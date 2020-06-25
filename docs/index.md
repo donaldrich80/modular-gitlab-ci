@@ -1,4 +1,4 @@
-![Logo](images/logo.png){: style=“height:150px;width:150px”}
+![Logo](images/logo.png){: style=“height:50px;width:50px”}
 
 **<p style="text-align: center;”>
 ![OWF-Logo-Color.png](images/logo.png)
