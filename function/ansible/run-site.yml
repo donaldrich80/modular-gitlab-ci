@@ -1,6 +1,6 @@
 include:
   - project: 'donaldrich/gitlab-ci-templates'
-    file: '/ansible/runner.yml'
+    file: '/function/ansible/runner.yml'
 
 ansible:site-yml:
   extends: .ansible-runner
