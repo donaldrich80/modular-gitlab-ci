@@ -1,8 +1,8 @@
-![Logo](images/logo.png){: style=“height:50px;width:50px”}
+![!Logo](images/logo.png){: style=“height:50px;width:50px”}
 
 ![!Logo](images/logo.png){: width=“400” }
 
-**<p style="text-align: center;”>
+# **<p style="text-align: center;”>
 ![OWF-Logo-Color.png](images/logo.png)
 </p>**
 
