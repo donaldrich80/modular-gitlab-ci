@@ -2,10 +2,6 @@
 
 ![!Logo](images/logo.png){: width=“400” }
 
-# **<p style="text-align: center;”>
-![OWF-Logo-Color.png](images/logo.png)
-</p>**
-
 # Modular GitLab-CI
 
 !!! warning "This is a living document, and sometimes life is messy."
