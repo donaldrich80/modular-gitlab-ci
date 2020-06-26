@@ -10,7 +10,7 @@
 /* selected sidebar titles */
   --md-accent-fg-color: rgb(252, 109, 38);
 /* primary headers */
-  --md-default-fg-color--light: rgb(251, 163, 38);
+  --md-default-fg-color--light: rgb(252, 109, 38);
 /* paragraph icon */
   --md-default-fg-color--lighter: rgb(252, 109, 38);
 /* sidebar title */
@@ -57,7 +57,7 @@ h1 {
   color: rgb(255, 255, 255);
 }
 h2 {
-  color: rgb(252, 109, 38);
+  color: rgb(251, 163, 38);
 }
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: rgb(255, 255, 255);
