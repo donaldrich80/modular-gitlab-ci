@@ -1,6 +1,6 @@
-![!Logo](images/logo.png){: style=“height:50px;width:50px”}
+<!-- ![!Logo](images/logo.png){: style=“height:50px;width:50px”}
 
-![!Logo](images/logo.png){: width=“400” }
+![!Logo](images/logo.png){: width=“400” } -->
 
 # Modular GitLab-CI
 
