@@ -10,7 +10,7 @@ docs_dir: docs
 theme:
   favicon: images/favicon.png
   name: material
-  custom_dir: theme
+  custom_dir: docs/theme
   # palette:
   #   scheme: slate
     # primary: deep orange
