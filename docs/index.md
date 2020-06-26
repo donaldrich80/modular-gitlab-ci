@@ -4,9 +4,7 @@
 
 # Modular GitLab-CI
 
-!!! warning "This is a living document, and sometimes life is messy."
-
-## Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
+## Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines
 
 ## Benefits
 
@@ -51,3 +49,5 @@ Check out examples of what can be achieved here.
 ## Reference
 
 Detailed usage descriptions here.
+
+!!! warning "This is a living document, and sometimes life is messy."
