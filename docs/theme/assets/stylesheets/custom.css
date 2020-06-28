@@ -14,7 +14,7 @@
 /* paragraph icon */
   --md-default-fg-color--lighter: rgb(252, 109, 38);
 /* sidebar title */
-  --md-default-fg-color--lightest: rgb(226, 67, 41);
+  /* --md-default-fg-color--lightest: rgb(226, 67, 41); */
 /* searchbar title */
   --md-primary-bg-color--light: rgb(251, 163, 38);
 /* text */
@@ -81,7 +81,7 @@ h2 {
     color: var(--md-primary-bg-color);
     background-color: rgb(226, 67, 41);
 }
-.md-nav--primary .md-nav__item {
+/* .md-nav--primary .md-nav__item {
     padding: 0;
     /* border-top: .05rem solid var(--md-default-fg-color--lightest); */
-}
+/* } */
