@@ -81,3 +81,7 @@ h2 {
     color: var(--md-primary-bg-color);
     background-color: rgb(226, 67, 41);
 }
+.md-nav--primary .md-nav__item {
+    padding: 0;
+    /* border-top: .05rem solid var(--md-default-fg-color--lightest); */
+}
