@@ -4,7 +4,7 @@
 
 # Modular GitLab-CI
 
-## Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines
+Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines
 
 ## Benefits
 
@@ -18,7 +18,7 @@
 
 ## How it works
 
-In many cases, including functionality is as easy as an include clause in a project's .gitlab-ci.yml. These templates are designed to be simple, intuitive, and as auto-magical as possible.
+In many cases, including functionality is as easy as an include clause in a project's `.gitlab-ci.yml`. These templates are designed to be simple, intuitive, and as auto-magical as possible.
 
 !!! abstract "This library includes a wide range of functionality, and will be expanded over time."
 
