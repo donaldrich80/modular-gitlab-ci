@@ -4,7 +4,9 @@
 
 # Modular GitLab-CI
 
-Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines
+## About
+
+Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
 
 ## Benefits
 
@@ -22,8 +24,6 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 !!! abstract "This library includes a wide range of functionality, and will be expanded over time."
 
-[project license](about/changelog.md)
-
 ### Example usage (shell linting)
 
 To add a job to check shell scripting, add the following to your `.gitlab-ci.yml`
@@ -40,14 +40,14 @@ Enabling both SAST scanning and yaml linting:
 
 ## Quickstart
 
-Grtting started guide here.
+Getting started guide [here](quick_start.md).
 
 ## Guide
 
-Check out examples of what can be achieved here.
+Check out examples of what can be achieved [here](examples.md).
 
 ## Reference
 
-Detailed usage descriptions here.
+Detailed usage descriptions [here](about/changelog.md).
 
 !!! warning "This is a living document, and sometimes life is messy."
