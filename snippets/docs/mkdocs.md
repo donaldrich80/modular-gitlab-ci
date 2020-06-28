@@ -1,5 +1,5 @@
 ``` yaml
 include:
   - project: donaldrich/gitlab-ci-templates
-    file: /documentation/mkdocs.yml
+    file: function/documentation/mkdocs.yml
 ```
