@@ -75,3 +75,9 @@ h2 {
     padding-bottom: 0rem;
     padding-left: 0px;
 }
+.md-nav__source {
+    display: block;
+    padding: 0 .2rem;
+    color: var(--md-primary-bg-color);
+    background-color: rgb(226, 67, 41);
+}
