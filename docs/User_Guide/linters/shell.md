@@ -1,3 +1,6 @@
+path: tree/master
+source: function/lint/shell
+
 # Shell
 
 ## shellcheck
