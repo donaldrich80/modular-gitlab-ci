@@ -30,6 +30,7 @@ plugins:
       minify_html: true
   - awesome-pages:
   - markdownextradata: {}
+  - mkpdfs:
   # - pdf-export
   # - simple:
   #     ignore_folders: ["tests"]
