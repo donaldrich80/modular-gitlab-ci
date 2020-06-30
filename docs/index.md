@@ -50,4 +50,6 @@ Check out examples of what can be achieved [here](examples.md).
 
 Detailed usage descriptions [here](about/changelog.md).
 
+{{ read_csv('docs/test.csv') }}
+
 !!! warning "This is a living document, and sometimes life is messy."

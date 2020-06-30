@@ -2,15 +2,15 @@
 
 Plugins used in this documentations.
 
+## [Master Plugin List]
+
+[List of available mkdocs plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
+
 ## mkdocs-markdownextradata-plugin
 
 Utilize GitLab-CI variables in documentation
 
 * [github](https://github.com/rosscdh/mkdocs-markdownextradata-plugin)
-
-## [Master Plugin List]
-
-[List of available mkdocs plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins)
 
 ## mkdocs-toc-sidebar-plugin
 
@@ -24,6 +24,20 @@ Utilize GitLab-CI variables in documentation
 
 * [github](https://github.com/athackst/mkdocs-simple-plugin)
 * [documentation](http://www.lyonthackston.com/mkdocs-simple-plugin/)
+
+## mkdocs-awesome-pages-plugin
+
+* [github](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin)
+
+## mkdocs-table-reader-plugin
+
+* [github](https://github.com/timvink/mkdocs-table-reader-plugin)
+
+## mkpdfs-mkdocs
+
+## mkdocs-minify-plugin
+
+## mkdocs-git-revision-date-localized-plugin
 
 Install:
 
