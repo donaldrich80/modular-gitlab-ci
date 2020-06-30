@@ -57,7 +57,15 @@ markdown_extensions:
   - admonition:
   - codehilite:
   - footnotes:
-  - attr_list
+  # - attr_list
+  - markdown.extensions.smarty:
+      smart_quotes: false
+  - markdown.extensions.attr_list:
+  - markdown.extensions.def_list:
+  - markdown.extensions.tables:
+  - markdown.extensions.abbr:
+  - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
   - meta:
   - toc:
       permalink: true
