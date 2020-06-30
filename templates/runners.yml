@@ -1,12 +1,12 @@
 include:
-  # - project: 'donaldrich/gitlab-ci-templates'
-  #   file: '/notifications/pushover.yml'
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: 'function/docker/default.yml'
-  # - project: 'donaldrich/gitlab-ci-templates'
-  #   file: '/docker/healthchecks.yml'
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: 'function/docker/lint.yml'
+  - project: donaldrich/gitlab-ci-templates
+    file: function/notifications/pushover/docker-build.yml
+  - project: donaldrich/gitlab-ci-templates
+    file: function/docker/default.yml
+  - project: donaldrich/gitlab-ci-templates
+    file: function/notifications/healthchecks/docker-build.yml
+  - project: donaldrich/gitlab-ci-templates
+    file: function/docker/lint.yml
 
 build:
   extends:
