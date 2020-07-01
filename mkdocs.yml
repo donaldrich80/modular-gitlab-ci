@@ -57,7 +57,6 @@ markdown_extensions:
   - admonition:
   - codehilite:
   - footnotes:
-  # - attr_list
   - markdown.extensions.smarty:
       smart_quotes: false
   - markdown.extensions.attr_list:
@@ -75,9 +74,9 @@ markdown_extensions:
   - pymdownx.caret:
   - pymdownx.critic:
   - pymdownx.details:
-  # - pymdownx.emoji:
-  #     emoji_index: !!python/name:materialx.emoji.emojione
-  #     emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.inlinehilite:
   - pymdownx.magiclink:
       repo_url_shortener: true

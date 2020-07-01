@@ -1,22 +1,28 @@
 :root {
 
+  --palette-color-1: rgb(251, 163, 38);
+  --palette-color-2: rgb(252, 109, 38);
+  --palette-color-3: rgb(226, 67, 41);
+  --palette-color-4: rgb(56, 13, 117);
+  --palette-color-5: rgb(48, 53, 62);
+
 /* background */
-  --md-default-bg-color: rgb(48, 53, 62);
+  --md-default-bg-color: var(--palette-color-5);
 /* header */
-  --md-primary-fg-color: rgb(252, 109, 38);
+  --md-primary-fg-color: var(--palette-color-2);
 /* header titles */
   --md-primary-bg-color: rgb(255, 255, 255);
   /* --md-text-color: rgb(255, 255, 255); */
 /* selected sidebar titles */
-  --md-accent-fg-color: rgb(252, 109, 38);
+  --md-accent-fg-color: var(--palette-color-1);
 /* primary headers */
-  --md-default-fg-color--light: rgb(252, 109, 38);
+  --md-default-fg-color--light: var(--palette-color-2);
 /* paragraph icon */
-  --md-default-fg-color--lighter: rgb(252, 109, 38);
+  --md-default-fg-color--lighter: var(--palette-color-3);
 /* sidebar title */
   /* --md-default-fg-color--lightest: rgb(226, 67, 41); */
 /* searchbar title */
-  --md-primary-bg-color--light: rgb(251, 163, 38);
+  --md-primary-bg-color--light: var(--palette-color-1);
 /* text */
   --md-default-fg-color: rgb(255, 255, 255);
 /* hover search result */
@@ -27,7 +33,7 @@
   /* Primary color shades */
 
   /* --md-primary-fg-color--light: rgb(233, 14, 222); */
-  --md-primary-fg-color--dark: rgb(226, 67, 41);
+  --md-primary-fg-color--dark: var(--palette-color-3);
 
 
 

@@ -19,3 +19,4 @@ https://hub.docker.com/r/squidfunk/mkdocs-material/tags
 ### Icons
 
 * [materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
+* [fontawesome](https://fontawesome.com/icons?d=gallery)
