@@ -6,7 +6,9 @@ markdownlint-readme:
     name: donaldrich/function:mdl
   script:
     - mdl --style all --warnings README.md
-  # rules:
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
   #   - if: '$DEBUG_PIPELINE'
   #     when: never
   #   - changes:

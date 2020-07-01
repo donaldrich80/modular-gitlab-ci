@@ -11,6 +11,8 @@ markdownlint:
     # - changes:
     #     - "**/*/*.md"
     #   when: always
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
         - "**/*/*.md"
       when: on_success

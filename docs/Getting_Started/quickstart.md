@@ -7,6 +7,8 @@ source: templates/default.yml
 
 !!! warning "mkdocs.yml required. Pipeline will fail without it."
 
+This setting is intended for public repos with documentation.
+
 Add this clause to your .gitlab-ci.yml
 
 --8<-- "misc/quick-start.md"
@@ -30,10 +32,18 @@ include:
 
 !!! info "Linters will not cause pipeline failure (but will provide lint suggestions)"
 
-## No documention
+### Disable Pages Generation
 
 Documentation is enabled by default.
 
 To disable Pages generation, this variable is required.
 
 --8<-- "variables/no-doc-generation.md"
+
+### Disable Linting
+
+General linting is enabled by default.
+
+To disable linting, this variable is required.
+
+--8<-- "variables/disable-linting.md"

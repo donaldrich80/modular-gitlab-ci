@@ -9,4 +9,10 @@ remark-lint:
   script:
     - npm install --save remark-cli remark-preset-lint-recommended
     - npm run lint-md
-
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - exists:
+        - "**/*/*.md"
+      when: on_success
+    - when: never

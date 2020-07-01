@@ -18,6 +18,8 @@ jsonlint:
         exit 1
       fi
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "**/*.json"
       when: on_success

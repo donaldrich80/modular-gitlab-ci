@@ -9,6 +9,8 @@ ansible:
   allow_failure: true
   interruptible: true
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "**/roles/*.yml"
       - "**/playbooks/*.yml"

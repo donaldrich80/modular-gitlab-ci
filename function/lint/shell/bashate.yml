@@ -11,6 +11,8 @@ bashate:
     # ignore line too long
     - bashate --ignore E006 --verbose **/*.sh
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "**/*.sh"
       when: on_success
@@ -29,6 +31,8 @@ bashate-dir:
     # ignore line too long
     - bashate --ignore E006 --verbose **/*/*.sh
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "**/*/*.sh"
       when: on_success
@@ -47,6 +51,8 @@ bashate-bin:
     # ignore line too long
     - bashate --ignore E006 --verbose bin/*
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "bin/*"
       when: on_success
@@ -65,6 +71,8 @@ bashate-scripts:
     # ignore line too long
     - bashate --ignore E006 --verbose scripts/*
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "scripts/*"
       when: on_success

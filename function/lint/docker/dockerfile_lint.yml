@@ -7,3 +7,7 @@ dockerfile_lint:
   #   - hadolint --version
   script:
     - dockerfile_lint -f $DOCKER_BUILD_DIR/$DOCKERFILE
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - when: on_success

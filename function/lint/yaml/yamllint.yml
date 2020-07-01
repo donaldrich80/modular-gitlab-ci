@@ -10,6 +10,8 @@ yamllint:
   script:
     - yamllint --format colored --no-warnings .
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     # - changes:
     #     - "**/*/*.yaml"
     #     - "**/*/*.yml"

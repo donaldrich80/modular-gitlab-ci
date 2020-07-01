@@ -6,3 +6,7 @@ hadolint:
     - hadolint --version
   script:
     - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - when: on_success

@@ -1,4 +1,4 @@
-# Hashicorp Vault Integration
+# Hashicorp Vault
 
 security is a top consideration for this project (especially with public runners), which is why secret management is performed by Hashicorp Vault.  However, a few secrets must be input into Gitlab to allow communication with your vault server.
 

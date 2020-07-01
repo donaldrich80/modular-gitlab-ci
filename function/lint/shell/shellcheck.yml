@@ -10,6 +10,8 @@ shellcheck:
   script:
     - shellcheck --color=always **/*.sh
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "**/*.sh"
       when: on_success
@@ -27,6 +29,8 @@ shellcheck-dir:
   script:
     - shellcheck --color=always **/*/*.sh
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "**/*/*.sh"
       when: on_success
@@ -44,6 +48,8 @@ shellcheck-bin:
   script:
     - shellcheck --color=always bin/*
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "bin/*"
       when: on_success
@@ -61,6 +67,8 @@ shellcheck-scripts:
   script:
     - shellcheck --color=always scripts/*
   rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
     - exists:
       - "scripts/*"
       when: on_success
