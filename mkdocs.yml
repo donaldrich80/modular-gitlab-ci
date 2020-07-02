@@ -11,10 +11,6 @@ theme:
   favicon: images/favicon.png
   name: material
   custom_dir: docs/theme
-  # palette:
-  #   scheme: slate
-    # primary: deep orange
-    # accent: orange
   font:
     text: Ubuntu
     code: Ubuntu Mono
@@ -52,6 +48,7 @@ extra:
 
 extra_css:
   - assets/stylesheets/custom.css
+  - assets/stylesheets/color.css
 
 markdown_extensions:
   - admonition:
