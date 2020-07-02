@@ -1,0 +1,3 @@
+include:
+  - local: function/notifications/pushover/repo-ci-pipeline.yml
+  - local: function/docker/default.yml
