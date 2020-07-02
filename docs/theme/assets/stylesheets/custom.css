@@ -12,8 +12,6 @@
   --md-default-fg-color--light: var(--palette-color-3);
 /* paragraph icon */
   --md-default-fg-color--lighter: var(--palette-color-5-mild);
-
-  --md-text-link-color: var(--palette-color-3);
 /* sidebar title */
   /* --md-default-fg-color--lightest: rgb(226, 67, 41); */
 /* searchbar title */
@@ -83,13 +81,7 @@ h3 {
 .md-typeset .md-content__button {
     color: var(--palette-color-5-mild);
 }
-/* .md-nav__source {
-    display: block;
-    padding: 0 .2rem;
-    color: var(--md-primary-bg-color);
-    background-color: rgb(226, 67, 41);
-} */
-/* .md-nav--primary .md-nav__item {
-    padding: 0;
-    /* border-top: .05rem solid var(--md-default-fg-color--lightest); */
-/* } */
+.md-typeset a {
+    color: var(var(--palette-color-3));
+    word-break: break-word;
+}
