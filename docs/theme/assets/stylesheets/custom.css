@@ -85,7 +85,6 @@ h3 {
     color: var(--palette-color-3);
     word-break: break-word;
 }
-.md-nav--primary .md-nav__item {
-    padding: 0;
-    border-top: .05rem solid rgb(3, 255, 192);
+.md-nav__item .md-nav__link--active {
+    color: var(--palette-color-2);
 }
