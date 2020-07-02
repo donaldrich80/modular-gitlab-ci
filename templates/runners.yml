@@ -1,12 +1,8 @@
 include:
-  - project: donaldrich/gitlab-ci-templates
-    file: function/notifications/pushover/docker-build.yml
-  - project: donaldrich/gitlab-ci-templates
-    file: function/docker/default.yml
-  - project: donaldrich/gitlab-ci-templates
-    file: function/notifications/healthchecks/docker-build.yml
-  - project: donaldrich/gitlab-ci-templates
-    file: function/docker/lint.yml
+  - local: function/notifications/pushover/docker-build.yml
+  - local: function/docker/default.yml
+  - local: function/notifications/healthchecks/docker-build.yml
+  - local: function/docker/lint.yml
 
 build:
   extends:

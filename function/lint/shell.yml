@@ -1,5 +1,3 @@
 include:
-  - project: donaldrich/gitlab-ci-templates
-    file: function/lint/shell/bashate.yml
-  - project: donaldrich/gitlab-ci-templates
-    file: function/lint/shell/shellcheck.yml
+  - local: function/lint/shell/bashate.yml
+  - local: function/lint/shell/shellcheck.yml

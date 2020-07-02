@@ -1,3 +1,2 @@
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/docker/all.yml'
+  - local: docker/all.yml

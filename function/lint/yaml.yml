@@ -1,5 +1,3 @@
 include:
-  - project: donaldrich/gitlab-ci-templates
-    file: function/lint/yaml/ruamel.yml
-  - project: donaldrich/gitlab-ci-templates
-    file: function/lint/yaml/yamllint.yml
+  - local: function/lint/yaml/ruamel.yml
+  - local: function/lint/yaml/yamllint.yml

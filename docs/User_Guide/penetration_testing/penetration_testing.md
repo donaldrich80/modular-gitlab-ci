@@ -7,7 +7,7 @@
 
 ``` yaml
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
+  - project: 'donaldrich/modular-gitlab-ci'
   - file: '/pentest/sniper.yml'
 
 variables:

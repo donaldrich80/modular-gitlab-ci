@@ -1,6 +1,5 @@
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: 'function/ssh/default.yml'
+  - local: function/ssh/default.yml
 
 remove-unused-images:
   extends: .ssh-runner

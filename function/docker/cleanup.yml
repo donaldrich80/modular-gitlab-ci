@@ -1,6 +1,5 @@
 include:
-  - project: 'donaldrich/gitlab-ci-templates'
-    file: '/ssh-runner.yml'
+  - local: ssh-runner.yml
 
 docker-cleanup:
   extends: .ssh-runner
