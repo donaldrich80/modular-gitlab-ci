@@ -102,3 +102,8 @@ h3 {
 {.md-nav--primary .md-nav__item--active>.md-nav__link {
     color: var(--palette-color-2);
 }}
+.md-header {
+color:var(--md-text-color);
+background-color:var(--md-header-bg-color);
+border-bottom:.05rem solid rgb(3, 255, 192);
+}
