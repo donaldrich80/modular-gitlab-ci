@@ -5,9 +5,7 @@ source: templates/default.yml
 
 ## Public Repo (with Pages)
 
-!!! warning "mkdocs.yml required. Pipeline will fail without it."
-
-This setting is intended for public repos with documentation.
+This setting is intended for public repos with documentation, but can be customized.
 
 Add this clause to your .gitlab-ci.yml
 
