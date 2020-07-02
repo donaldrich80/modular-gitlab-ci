@@ -1,6 +1,10 @@
 # Common icons
 
-:octicons-octoface-16:
+:octicons-book-16:
+
+:octocons-bookmark-16:
+
+:octicons-mark-github-16:
 
 :fontawesome-regular-laugh-wink:
 
