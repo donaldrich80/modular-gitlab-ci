@@ -2,11 +2,11 @@
 
 :octicons-book-16:
 
-:octocons-bookmark-16:
+:octocons-book-mark-16:
 
 :octicons-mark-github-16:
 
-:fontawesome-regular-laugh-wink:
+:octicons-repo-16:
 
 :fontawesome-brands-gitlab:
 
