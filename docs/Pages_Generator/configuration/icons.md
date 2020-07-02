@@ -8,6 +8,6 @@
 
 :fontawesome-regular-laugh-wink:
 
-:fontawesome-brand-gitlab:
+:fontawesome-brands-gitlab:
 
-:fontawesome-brand-docker:
+:fontawesome-brands-docker:
