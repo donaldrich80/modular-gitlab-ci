@@ -1,4 +1,4 @@
 ``` yaml
 variables:
-  GENERATE_DOCS: false
+  DISABLE_SAST: "true"
 ```

@@ -15,6 +15,10 @@ sast:
     paths:
       - $CI_PROJECT_DIR/reports/
     when: always
+  rules:
+    - if: '$DISABLE_SAST == "true"'
+      when: never
+    - when: on_success
 
   # script:
   #   - scan --src ${CI_PROJECT_DIR} --out_dir ${CI_PROJECT_DIR}/reports
