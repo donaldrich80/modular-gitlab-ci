@@ -88,3 +88,10 @@ h3 {
 .md-nav__item .md-nav__link--active {
     color: var(--palette-color-2);
 }
+.md-tabs {
+    width: 100%;
+    overflow: auto;
+    color: var(--md-primary-bg-color);
+    background-color: var(--palette-color-2);
+    transition: background 250ms;
+}
