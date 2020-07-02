@@ -2,7 +2,7 @@
 
 :octicons-book-16:
 
-:octocons-book-mark-16:
+:octicons-bookmark-16:
 
 :octicons-mark-github-16:
 
