@@ -28,7 +28,7 @@ SAST will cause pipeline failure if credintisls are found. To disable credential
 
 include:
 
---8<-- "variables/no-dep-scan.md"
+--8<-- "variables/disable_sast.md"
 
 !!! info "Linters will not cause pipeline failure (but will provide lint suggestions)"
 
@@ -38,7 +38,7 @@ Documentation is enabled by default.
 
 To disable Pages generation, this variable is required.
 
---8<-- "variables/no-doc-generation.md"
+--8<-- "variables/disable_docs.md"
 
 ### Disable Linting
 
@@ -46,4 +46,6 @@ General linting is enabled by default.
 
 To disable linting, this variable is required.
 
---8<-- "variables/disable-linting.md"
+--8<-- "variables/disable_linting.md"
+
+### Examples

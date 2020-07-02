@@ -1,4 +1,4 @@
 ``` yaml
 variables:
-  CREDSCAN: false
+  DISABLE_DOCS: "true"
 ```
