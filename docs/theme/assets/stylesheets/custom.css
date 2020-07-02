@@ -96,7 +96,7 @@ h3 {
     /* transition: background 250ms; */
 }
 .md-tabs__link {
-    opacity: .1;
+    opacity: .8;
 }
 @media screen and (max-width: 76.1875em)
 {.md-nav--primary .md-nav__item--active>.md-nav__link {
