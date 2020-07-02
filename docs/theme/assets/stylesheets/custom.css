@@ -89,9 +89,12 @@ h3 {
     color: var(--palette-color-2);
 }
 .md-tabs {
-    width: 100%;
+    /* width: 100%;
     overflow: auto;
-    color: var(--md-primary-bg-color);
+    color: var(--md-primary-bg-color); */
     background-color: var(--palette-color-2);
-    transition: background 250ms;
+    /* transition: background 250ms; */
+}
+.md-tabs__link {
+    opacity: .3;
 }
