@@ -13,6 +13,7 @@
 /* paragraph icon */
   --md-default-fg-color--lighter: var(--palette-color-5-mild);
 
+  --md-text-link-color: var(--palette-color-3);
 /* sidebar title */
   /* --md-default-fg-color--lightest: rgb(226, 67, 41); */
 /* searchbar title */

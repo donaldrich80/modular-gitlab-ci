@@ -1,5 +1,0 @@
-include:
-  - local: function/notifications/healthchecks/repo-ci-pipeline.yml
-  - local: function/notifications/pushover/repo-ci-pipeline.yml
-  - local: function/lint/default.yml
-  - local: function/documentation/mkdocs.yml
