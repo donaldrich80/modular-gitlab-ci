@@ -4,9 +4,9 @@
 
 ### mkdocs-material
 
-(https://squidfunk.github.io/mkdocs-material/)
+* [:octicons-mark-github-16: GitHub](https://squidfunk.github.io/mkdocs-material/)
 
-https://hub.docker.com/r/squidfunk/mkdocs-material/tags
+* [:fontawesome-brands-docker:](https://hub.docker.com/r/squidfunk/mkdocs-material)
 
 ## Design
 
