@@ -4,21 +4,21 @@
 
 ### mkdocs-material
 
-* [:octicons-mark-github-16: GitHub](https://squidfunk.github.io/mkdocs-material/)
+* [:octicons-book-16: Docs](https://squidfunk.github.io/mkdocs-material/)
 
-* [:fontawesome-brands-docker:](https://hub.docker.com/r/squidfunk/mkdocs-material)
+* [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/squidfunk/mkdocs-material)
 
 ## Design
 
 ### Colors
 
-<https://www.materialui.co/colors>
+[:octicons-bookmark-16:](https://www.materialui.co/colors)
 
 ### Fonts
 
-<https://fonts.google.com/>
+[:octicons-bookmark-16: Google Fonts](https://fonts.google.com/)
 
 ### Icons
 
-* [materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
-* [fontawesome](https://fontawesome.com/icons?d=gallery)
+* [:octicons-bookmark-16:  materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
+* [:octicons-bookmark-16:  fontawesome](https://fontawesome.com/icons?d=gallery)
