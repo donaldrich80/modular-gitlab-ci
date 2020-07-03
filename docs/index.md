@@ -1,12 +1,11 @@
-<!-- ![!Logo](images/logo.png){: style=“height:50px;width:50px”}
-
-![!Logo](images/logo.png){: width=“400” } -->
+---
+title: Home
+description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
+path: tree/master/docs
+source: README.md
+---
 
 # Modular GitLab-CI
-
-!!! warning "This is a living document, and sometimes life is messy."
-
-## About
 
 Versatile, stackable `.gitlab-ci.yml` templates for modular construction of GitLab-CI pipelines.
 
