@@ -5,15 +5,12 @@
   --md-primary-fg-color: var(--palette-color-4);
 /* header titles */
   --md-primary-bg-color: rgb(255, 255, 255);
-  /* --md-text-color: rgb(255, 255, 255); */
 /* selected sidebar titles */
   --md-accent-fg-color: var(--palette-color-3);
 /* primary headers */
-  --md-default-fg-color--light: var(--palette-color-3);
-/* paragraph icon */
+  --md-default-fg-color--light: var(--palette-color-2);
+/* subtle elements (paragraph,code,edit) */
   --md-default-fg-color--lighter: var(--palette-color-5-mild);
-/* secondary sidebar top color */
-  --md-default-fg-color--lightest: var(--palette-color-5-mild);
 /* searchbar title */
   --md-primary-bg-color--light: var(--palette-color-3);
 /* text */
@@ -53,14 +50,17 @@
 .md-typeset code {
     background-color: var(--md-footer-bg-color--dark);
 }
-h1 {
+/* h1 {
   color: var(--md-primary-bg-color);
-}
+} */
 h2 {
-  color: var(--palette-color-2);
+  color: var(--palette-color-1);
 }
 h3 {
-  color: var(--palette-color-1);
+  color: var(--palette-color-3);
+}
+h4 {
+  color: var(--palette-color-5-mild);
 }
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: var(--md-primary-bg-color);
@@ -89,15 +89,8 @@ h3 {
     color: var(--palette-color-2);
 }
 .md-tabs {
-    /* width: 100%;
-    overflow: auto;
-    color: var(--md-primary-bg-color); */
     background-color: var(--palette-color-2);
-    /* transition: background 250ms; */
 }
-/* .md-tabs__link {
-    opacity: .8;
-} */
 @media screen and (max-width: 76.1875em)
 {.md-nav--primary .md-nav__item--active>.md-nav__link {
     color: var(--palette-color-2);
@@ -110,3 +103,6 @@ border-bottom:.05rem solid var(--palette-color-3);
     color: var(--md-primary-bg-color);
     background-color: var(--palette-color-2);
 }}
+.md-clipboard {
+    color: var(--md-default-fg-color--lightest);
+}
