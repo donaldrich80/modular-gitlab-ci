@@ -1,3 +1,10 @@
+---
+title: Links
+description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
+# path: tree/master
+# source: function/documentation/mkdocs.yml
+---
+
 !!! note
     This documentation serves a double function. To document this repo, as well as to serve as internal reference for me as an aggregate for external reference links to the tools used by it.
 

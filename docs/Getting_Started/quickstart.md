@@ -1,10 +1,14 @@
+---
+title: Quickstart
+description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
 source: templates/default.yml
+---
 
 # Quickstart
 
 This is a general template with sane defaults and autodetection linting.
- 
+
 It's intended for public repos with documentation, but can be customized by disabling unwanted functions (see below)
 
 To get started, and this clause to your `.gitlab-ci.yml`:
@@ -23,7 +27,7 @@ Includes:
 
 ## Disable SAST scan
 
-SAST will cause pipeline failure if credentials are detected. 
+SAST will cause pipeline failure if credentials are detected.
 
 To disable credential scan (for use in a private repo) include this variable:
 
