@@ -6,6 +6,8 @@
 
 * [:octicons-book-16: Docs](https://squidfunk.github.io/mkdocs-material/)
 
+[:octicons-bookmark-16:](https://github.com/squidfunk/mkdocs-material)
+
 * [:fontawesome-brands-docker: Docker](https://hub.docker.com/r/squidfunk/mkdocs-material)
 
 ## Design
