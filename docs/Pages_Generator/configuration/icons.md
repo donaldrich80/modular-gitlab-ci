@@ -1,6 +1,6 @@
 # Common icons
 
-:octicons-book-16:
+# :octicons-book-16:
 
 :octicons-bookmark-16:
 
