@@ -26,3 +26,4 @@ repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 <https://github.com/jgrassler/mkdocs-pando>
 https://daringfireball.net/projects/markdown/
 
+vuepress
