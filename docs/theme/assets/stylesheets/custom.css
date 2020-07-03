@@ -13,7 +13,7 @@
 /* paragraph icon */
   --md-default-fg-color--lighter: var(--palette-color-5-mild);
 /* secondary sidebar top color */
-  --md-default-fg-color--lightest: var(--palette-color-2);
+  --md-default-fg-color--lightest: var(--palette-color-5-mild);
 /* searchbar title */
   --md-primary-bg-color--light: var(--palette-color-3);
 /* text */
@@ -54,7 +54,7 @@
     background-color: var(--md-footer-bg-color--dark);
 }
 h1 {
-  color: rgb(255, 255, 255);
+  color: var(--md-primary-bg-color);
 }
 h2 {
   color: var(--palette-color-2);
@@ -63,7 +63,7 @@ h3 {
   color: var(--palette-color-1);
 }
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
-    color: rgb(255, 255, 255);
+    color: var(--md-primary-bg-color);
     direction: ltr;
 }
 .md-footer-social {
@@ -105,3 +105,8 @@ h3 {
 .md-header {
 border-bottom:.05rem solid var(--palette-color-3);
 }
+@media screen and (max-width: 76.1875em)
+{.md-nav--primary .md-nav__title {
+    color: var(--md-primary-bg-color);
+    background-color: var(--palette-color-2);
+}}

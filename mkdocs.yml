@@ -9,7 +9,7 @@ repo_name: GitLab
 
 docs_dir: docs
 theme:
-  favicon: images/favicon.png
+  favicon: docs/theme/images/favicon.png
   name: material
   custom_dir: docs/theme
   font:
