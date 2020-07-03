@@ -43,8 +43,8 @@ extra:
       link: https://github.com/donaldrich80/
     - icon: fontawesome/brands/docker
       link: !!python/object/apply:os.getenv ["DOCKERHUB_URL"]
-    - icon: fontawesome/brands/linkedin
-      link: !!python/object/apply:os.getenv ["LINKEDIN_URL"]
+  #  - icon: fontawesome/brands/linkedin
+  #    link: !!python/object/apply:os.getenv ["LINKEDIN_URL"]
 #       link: CI_SERVER_URL/GITLAB_USER_LOGIN
 
 extra_css:
