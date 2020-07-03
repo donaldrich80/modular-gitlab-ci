@@ -4,15 +4,17 @@
 
 # Modular GitLab-CI
 
+!!! warning "This is a living document, and sometimes life is messy."
+
 ## About
 
-Customizable, stackable templates for a variety of functions specifically built for use in GitLab-CI pipelines.
+Versatile, stackable `.gitlab-ci.yml` templates for modular construction of GitLab-CI pipelines.
 
 ## Benefits
 
 - [X] Reduced code repetition
 - [X] Faster pipeline development and runs
-- [X] Pipeline debugging
+- [X] Pipeline debugging options
 - [X] Increased consistency among projects
 - [X] Optimized performance
 - [X] Pipelines can be altered and adapted quickly
@@ -22,9 +24,9 @@ Customizable, stackable templates for a variety of functions specifically built 
 
 In many cases, including functionality is as easy as an include clause in a project's `.gitlab-ci.yml`. These templates are designed to be simple, intuitive, and as auto-magical as possible.
 
-!!! abstract "This library includes a wide range of functionality, and will be expanded over time."
+### Example usage
 
-### Example usage (shell linting)
+#### Shell script linting
 
 To add a job to check shell scripting, add the following to your `.gitlab-ci.yml`
 
@@ -32,9 +34,9 @@ To add a job to check shell scripting, add the following to your `.gitlab-ci.yml
 
 ### Stacking Templates
 
-Templates can be combined to extend functionality.
+Modules can be combined to extend functionality.
 
-Enabling both SAST scanning and yaml linting:
+#### SAST scanning and YAML linting
 
 --8<-- "misc/stack-example.md"
 
@@ -44,10 +46,8 @@ Getting started guide [here](quick_start.md).
 
 ## Guide
 
-Check out examples of what can be achieved [here](examples.md).
+Check out more basic module examples [here](examples.md).
 
 ## Reference
 
 Detailed usage descriptions [here](about/changelog.md).
-
-!!! warning "This is a living document, and sometimes life is messy."
