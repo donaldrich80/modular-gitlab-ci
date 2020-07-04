@@ -19,6 +19,12 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 :octicons-book-16:
 ```
 
+### :octicons-book-16: Plugin
+
+```
+:octicons-plug-16:
+```
+
 ### :octicons-bookmark-16: Links
 
 ```
