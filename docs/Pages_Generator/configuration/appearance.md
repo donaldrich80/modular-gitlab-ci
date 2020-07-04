@@ -1,8 +1,7 @@
 ---
-title: Pages
+title: Appearance
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-# path: tree/master
-# source: function/documentation/mkdocs.yml
+
 ---
 
 # Appearance
@@ -26,8 +25,3 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 ### Fonts
 
 [:octicons-bookmark-16: Google Fonts](https://fonts.google.com/)
-
-### Icons
-
-* [:octicons-bookmark-16:  materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
-* [:octicons-bookmark-16:  fontawesome](https://fontawesome.com/icons?d=gallery)
