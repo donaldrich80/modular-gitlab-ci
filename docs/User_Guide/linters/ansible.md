@@ -2,7 +2,7 @@
 title: Ansible
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
-source: README.md
+source: function/lint/ansible
 ---
 
 # Ansible
