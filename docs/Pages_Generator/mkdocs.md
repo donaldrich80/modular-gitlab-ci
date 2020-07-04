@@ -18,16 +18,3 @@ GitLab-CI env variables can be passed to `mkdocs.yml` like so:
 ``` yaml
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 ```
-
-## Mkdocs
-
-[mkdocs](https://www.mkdocs.org)
-
-### Misc
-
-<https://stackoverflow.com/questions/49978926/concatenate-multiple-markdown-files-using-pandoc-on-windows>
-
-<https://github.com/jgrassler/mkdocs-pando>
-https://daringfireball.net/projects/markdown/
-
-vuepress
