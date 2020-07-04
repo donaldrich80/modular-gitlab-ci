@@ -50,9 +50,6 @@ h2 {
 h3 {
   color: var(--palette-color-3);
 }
-h4 {
-  color: var(--palette-color-5-mild);
-}
 .md-typeset code, .md-typeset pre, .md-typeset kbd {
     color: var(--md-primary-bg-color);
     direction: ltr;
@@ -95,7 +92,7 @@ border-bottom:.05rem solid var(--palette-color-3);
     background-color: var(--palette-color-2);
 }}
 .md-clipboard {
-    color: var(--md-default-fg-color--lightest);
+    color: var(--palette-color-5-mild);
 }
 @media screen and (max-width: 76.1875em)
 {.md-nav--primary .md-nav__title[for=__drawer] {
