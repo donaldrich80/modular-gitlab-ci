@@ -39,7 +39,7 @@ Modules can be combined to extend functionality.
 
 ## Quickstart
 
-Getting started guide [here](quick_start.md).
+Getting started guide [here](quickstart.md).
 
 ## Guide
 

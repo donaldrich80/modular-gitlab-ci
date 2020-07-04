@@ -16,12 +16,12 @@ Receive pushover notification for pipeline or job events.
 
 Need to declare:
 
---8<-- "vars/pushover.md"
+--8<-- "notifications/pushover/vars.md"
 
 Provided by Vault
 
---8<-- "vars/vault/pushover.md"
+--8<-- "notifications/pushover/vault_vars.md"
 
 ## Sounds
 
---8<-- "notifications/pushover.md"
+--8<-- "notifications/pushover/sounds.md"
