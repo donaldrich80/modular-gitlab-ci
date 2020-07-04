@@ -12,30 +12,21 @@
 /* subtle elements (paragraph,code,edit) */
   --md-default-fg-color--lighter: var(--palette-color-5-mild);
 /* searchbar title */
-  --md-primary-bg-color--light: var(--palette-color-3);
+  --md-primary-bg-color--light: var(--palette-color-4);
 /* text */
   --md-default-fg-color: rgb(255, 255, 255);
 /* hover search result */
   --md-accent-fg-color--transparent: var(--palette-color-5-mild);
-  /* Default color shades */
-
-
-  /* Primary color shades */
-
-  --md-primary-fg-color--light: rgb(116, 5, 110);
   /* Repo info color */
   --md-primary-fg-color--dark: var(--palette-color-2);
-
-
-
+  /* Primary color shades
+  --md-primary-fg-color--light: rgb(116, 5, 110);
   /* Accent color shades */
-  --md-default-bg-color--light: rgb(255, 3, 3);
+  /* --md-default-bg-color--light: rgb(255, 3, 3);
   --md-default-bg-color--lighter: rgb(53, 255, 3);
   --md-default-bg-color--lightest: rgb(3, 255, 192);
-
   --md-accent-bg-color: rgb(255, 238, 3);
-  --md-accent-bg-color--light: rgb(213, 3, 255);
-
+  --md-accent-bg-color--light: rgb(213, 3, 255); */
 }
 .md-footer {
     color: var(--md-footer-fg-color);
@@ -106,3 +97,7 @@ border-bottom:.05rem solid var(--palette-color-3);
 .md-clipboard {
     color: var(--md-default-fg-color--lightest);
 }
+@media screen and (max-width: 76.1875em)
+{.md-nav--primary .md-nav__title[for=__drawer] {
+    border-bottom:.05rem solid var(--palette-color-3);
+}}
