@@ -7,6 +7,8 @@ source: templates/default.yml
 
 # Quickstart
 
+## General
+
 This is a general template with sane defaults and autodetection linting.
 
 It's intended for public repos with documentation, but can be customized by disabling unwanted functions (see below)
@@ -25,7 +27,7 @@ Includes:
 - [X] Pushover notifications on failure
 - [X] Automatic Gitlab Pages Deployment
 
-## Disable SAST scan
+### Disable SAST scan
 
 SAST will cause pipeline failure if credentials are detected.
 
@@ -33,7 +35,7 @@ To disable credential scan (for use in a private repo) include this variable:
 
 --8<-- "variables/disable_sast.md"
 
-## Disable Pages Generation
+### Disable Pages Generation
 
 Documentation is enabled by default.
 
@@ -41,7 +43,7 @@ To disable Pages generation, this variable is required.
 
 --8<-- "variables/disable_docs.md"
 
-## Disable Linting
+### Disable Linting
 
 General linting is enabled by default.
 
@@ -50,3 +52,23 @@ To disable linting, this variable is required.
 --8<-- "variables/disable_linting.md"
 
 !!! info "Linters will not cause pipeline failure if errors are found (but will provide suggestions to correct them)"
+
+## Extending Functionality
+
+Additional features can be added by 
+
+### Shell script linting
+
+To add a job to check shell scripting, add the following to your `.gitlab-ci.yml`
+
+--8<-- "lint/shell/all.md"
+
+## Stacking Templates
+
+Modules can be combined to extend functionality.
+
+### SAST scanning and YAML linting
+
+--8<-- "misc/stack-example.md"
+
+
