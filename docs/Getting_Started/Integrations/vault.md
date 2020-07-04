@@ -1,8 +1,7 @@
 ---
-title: Examples
+title: Hashicorp Vault
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-# path: tree/master
-# source: templates/default.yml
+
 ---
 
 # Hashicorp Vault
