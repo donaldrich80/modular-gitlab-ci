@@ -90,11 +90,12 @@ border-bottom:.05rem solid var(--palette-color-3);
 {.md-nav--primary .md-nav__title {
     color: var(--md-primary-bg-color);
     background-color: var(--palette-color-2);
+    border-bottom:.05rem solid var(--palette-color-3);
 }}
 .md-clipboard {
     color: var(--palette-color-5-mild);
 }
-@media screen and (max-width: 76.1875em)
+/* @media screen and (max-width: 76.1875em)
 {.md-nav--primary .md-nav__title[for=__drawer] {
     border-bottom:.05rem solid var(--palette-color-3);
-}}
+}} */
