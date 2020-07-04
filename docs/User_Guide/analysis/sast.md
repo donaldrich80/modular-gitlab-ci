@@ -1,11 +1,14 @@
 ---
 title: SAST
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-path: tree/master/docs
+path: tree/master
 source: README.md
+
 ---
 
 # SAST
+
+## Usage
 
 ## ShiftLeftSecurity
 
@@ -15,7 +18,7 @@ source: README.md
 
 * [env vars](https://slscan.io/en/latest/getting-started/#environment-variables)
 
-## Reference
+## Links
 
 * [https://docs.gitlab.com/ee/user/application_security/sast/](https://docs.gitlab.com/ee/user/application_security/sast/)
 

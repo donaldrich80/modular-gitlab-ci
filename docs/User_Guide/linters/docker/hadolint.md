@@ -1,13 +1,19 @@
 ---
-title: Docker
+title: hadolint
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
-source: function/lint/docker
+source: function/lint/docker/hadolint.yml
+
 ---
 
-# Docker
 
-## hadolint
+# hadolint
+
+## Usage
+
+Dockerfile linting
+
+## Reference
 
 [github](https://github.com/hadolint/hadolint)
 
