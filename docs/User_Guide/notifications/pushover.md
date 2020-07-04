@@ -7,6 +7,8 @@ source: function/lint/terraform
 
 # Pushover
 
+## Purpose
+
 Receive pushover notification for pipeline or job events.
 
 ## Variables
