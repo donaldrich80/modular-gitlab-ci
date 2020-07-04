@@ -95,7 +95,3 @@ border-bottom:.05rem solid var(--palette-color-3);
 .md-clipboard {
     color: var(--palette-color-5-mild);
 }
-/* @media screen and (max-width: 76.1875em)
-{.md-nav--primary .md-nav__title[for=__drawer] {
-    border-bottom:.05rem solid var(--palette-color-3);
-}} */
