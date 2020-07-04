@@ -6,7 +6,10 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 ## Icon Lists
 
 [:octicons-bookmark-16:  materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
+
 [:octicons-bookmark-16:  fontawesome](https://fontawesome.com/icons?d=gallery)
+
+[:octicons-bookmark-16:  octicons](https://primer.style/octicons/)
 
 ## Common icons
 

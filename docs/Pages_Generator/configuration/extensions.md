@@ -8,9 +8,7 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 
 Extensions used in this documentations.
 
-## admonition
-
-@donaldrich/gitlab-ci-templates
+## Admonition
 
 !!! info "Callout boxes"
 
@@ -30,22 +28,23 @@ Extensions used in this documentations.
     !!! example
     !!! quote
 
-## codehilite
+## Codehilite
 
 !!! info "Code blocks"
 
-* [documentation](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
+* [:octicons-bookmark-16: mkdocs-material](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
 
-## pymdown-extensions
+## PyMdown Extensions
 
-* [github](https://facelessuser.github.io/pymdown-extensions/)
-* [documentation](https://facelessuser.github.io/pymdown-extensions/)
+* [:octicons-mark-github-16: GitHub](https://github.com/facelessuser/pymdown-extensions)
 
-## [mkdocs-awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
+* [:octicons-book-16: Docs](https://facelessuser.github.io/pymdown-extensions/)
+
+## awesome-pages
 
 !!! info "Navigation index built on folder structure"
 
-* [github](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
+* [:octicons-mark-github-16: GitHub](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
 
 ## Magiclink
 
