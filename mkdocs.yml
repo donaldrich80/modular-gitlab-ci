@@ -26,11 +26,13 @@ plugins:
   - minify:
       minify_html: true
   - awesome-pages:
+      filename: .pages
+      collapse_single_pages: true
   - markdownextradata: {}
   # - mkpdfs:
   # - pdf-export
-  # - simple:
-  #     ignore_folders: ["tests"]
+  - simple:
+      ignore_folders: ["tests"]
 
 extra:
   external_links:
