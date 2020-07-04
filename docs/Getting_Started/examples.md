@@ -1,11 +1,12 @@
 ---
 title: Examples
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-# path: tree/master
-# source: templates/default.yml
+
 ---
 
 # Examples
+
+## Usage
 
 Examples of functionality possible with these templates. Some required configuration options which can be found [here](#user_guide)
 

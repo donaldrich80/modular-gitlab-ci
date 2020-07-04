@@ -7,7 +7,7 @@ source: templates/default.yml
 
 # Quickstart
 
-## General
+## Usage
 
 This is a general template with sane defaults and autodetection linting.
 
