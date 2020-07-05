@@ -52,23 +52,3 @@ To disable linting, this variable is required.
 --8<-- "variables/disable_linting.md"
 
 !!! info "Linters will not cause pipeline failure if errors are found (but will provide suggestions to correct them)"
-
-## Extending Functionality
-
-Additional features can be added by 
-
-### Shell script linting
-
-To add a job to check shell scripting, add the following to your `.gitlab-ci.yml`
-
---8<-- "lint/shell/all.md"
-
-## Stacking Templates
-
-Modules can be combined to extend functionality.
-
-### SAST scanning and YAML linting
-
---8<-- "misc/stack-example.md"
-
-
