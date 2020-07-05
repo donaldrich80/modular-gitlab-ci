@@ -1,3 +1,9 @@
 include:
   - local: function/notifications/pushover/repo-ci-pipeline.yml
   - local: function/docker/default.yml
+
+# include:
+#   - local: function/notifications/pushover/docker-build.yml
+#   - local: function/docker/default.yml
+#   - local: function/notifications/healthchecks/docker-build.yml
+#   - local: function/docker/lint.yml
