@@ -21,19 +21,19 @@ source: function/hashicorp/terraform.yml
 
 ## Providers
 
-* [terraform-provider-dns](https://github.com/hashicorp/terraform-provider-dns)
+* [:octicons-plug-16: terraform-provider-dns](https://github.com/hashicorp/terraform-provider-dns)
 
-* [terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
+* [:octicons-plug-16: terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
 
-* [terraform-provider-cloudflare](https://github.com/terraform-providers/terraform-provider-cloudflare)
+* [:octicons-plug-16: terraform-provider-cloudflare](https://github.com/terraform-providers/terraform-provider-cloudflare)
 
-* [terraform-provider-gitlab](https://github.com/terraform-providers/terraform-provider-gitlab)
+* [:octicons-plug-16: terraform-provider-gitlab](https://github.com/terraform-providers/terraform-provider-gitlab)
 
-* [terraform-provider-keycloak](https://github.com/mrparkers/terraform-provider-keycloak)
+* [:octicons-plug-16: terraform-provider-keycloak](https://github.com/mrparkers/terraform-provider-keycloak)
 
-* [terraform-provider-docker](https://github.com/terraform-providers/terraform-provider-docker)
+* [:octicons-plug-16: terraform-provider-docker](https://github.com/terraform-providers/terraform-provider-docker)
 
-* [terraform-provisioner-ansible](https://github.com/radekg/terraform-provisioner-ansible)
+* [:octicons-plug-16: terraform-provisioner-ansible](https://github.com/radekg/terraform-provisioner-ansible)
 
 * [terraform-provisioner-ansible](https://github.com/jonmorehouse/terraform-provisioner-ansible)
 
