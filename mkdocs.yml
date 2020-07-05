@@ -32,7 +32,7 @@ plugins:
   # - mkpdfs:
   # - pdf-export
   - simple:
-      ignore_folders: ["tests","snippets"]
+      ignore_folders: ["tests","snippets","docs"]
 
 extra:
   external_links:
