@@ -3,6 +3,7 @@ postman:
   image:
     name: postman/newman_alpine33
     entrypoint: [""]
-  script:
+  before_script:
     - newman --version
+  script:
     - newman run $POSTMAN_COLLECTION_JSON
