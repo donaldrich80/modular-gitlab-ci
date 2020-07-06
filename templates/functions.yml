@@ -2,6 +2,25 @@ include:
   - local: function/notifications/pushover/repo-ci-pipeline.yml
   - local: function/docker/default.yml
 
+.generate-function-doc:
+  image: donaldrich/private:docker-runner
+  variables:
+    GIT_STRATEGY: none
+  stage: test
+  script:
+    - mkdir $CI_PROJECT_DIR/doc-test || true
+    - docker pull donaldrich/function:$IMAGE_TAG
+    - docker run --rm donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/doc-test/$IMAGE_TAG.md
+  # artifacts:
+  #   untracked: true
+  #   paths:
+  #     - doc-test/
+  #   when: always
+  cache:
+    untracked: true
+    paths:
+      - doc-test/
+
 # include:
 #   - local: function/notifications/pushover/docker-build.yml
   # # - local: function/docker/default.yml
