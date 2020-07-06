@@ -4,6 +4,12 @@ include:
 
 # include:
 #   - local: function/notifications/pushover/docker-build.yml
-#   - local: function/docker/default.yml
-#   - local: function/notifications/healthchecks/docker-build.yml
-#   - local: function/docker/lint.yml
+  # # - local: function/docker/default.yml
+  # - local: function/notifications/healthchecks/docker-build.yml
+  # - local: function/docker/lint.yml
+
+# build:functions:
+#   extends:
+#     - .buildx:base
+#     - .dockerhub:registry
+#     - .build:monoarch:push
