@@ -9,6 +9,10 @@ pages:
   artifacts:
     paths:
     - public
+  cache:
+    untracked: true
+    paths:
+    - doc-test/
   rules:
     - exists:
       - "mkdocs.yml"
