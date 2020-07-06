@@ -1,8 +1,8 @@
 ---
-title: Postman
+# title: Postman
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
-source: function/api/postman.md
+source: function/api/postman.yml
 
 ---
 
@@ -12,6 +12,22 @@ source: function/api/postman.md
 
 API Testing
 
+## Requirements
+
+### Files
+
+collection test file
+
+### Variables
+
+Specify collection file to test:
+
+```yml
+variables:
+  POSTMAN_COLLECTION_JSON: collection.json
+```
+
 ## Reference
 
-[repo](need link)
+[docs](https://learning.postman.com/)
+[github](https://github.com/postmanlabs/newman)

@@ -5,4 +5,4 @@ postman:
     entrypoint: [""]
   script:
     - newman --version
-    - newman run collection.json
+    - newman run $POSTMAN_COLLECTION_JSON
