@@ -27,4 +27,3 @@ https://thenewstack.io/continuous-documentation-in-a-ci-cd-world/
 [:octicons-bookmark-16: releaseworks/masterclass-codeexamples](https://github.com/releaseworks/masterclass-codeexamples)
 
 [:octicons-bookmark-16: Grayda/gitlab-doc-builder](https://github.com/Grayda/gitlab-doc-builder)
-
