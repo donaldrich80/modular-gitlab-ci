@@ -1,5 +1,5 @@
 pages:
-  stage: deploy
+  stage: .post
   image:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
