@@ -8,8 +8,9 @@ include:
     GIT_STRATEGY: none
   stage: test
   script:
-    - mkdir $CI_PROJECT_DIR/doc-test || true
+    # - mkdir $CI_PROJECT_DIR/doc-test || true
     - docker pull donaldrich/function:$IMAGE_TAG
+    - docker run --rm donaldrich/function:$IMAGE_TAG
     - docker run --rm donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/doc-test/$IMAGE_TAG.md
   # artifacts:
   #   untracked: true
