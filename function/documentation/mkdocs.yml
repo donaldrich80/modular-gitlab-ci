@@ -3,9 +3,9 @@ pages:
   image:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
-  before_script:
+  # before_script:
   # - rm -r site
-  - rm -r public
+  # - rm -r public
   script:
   - mkdocs build
   - mv site public
