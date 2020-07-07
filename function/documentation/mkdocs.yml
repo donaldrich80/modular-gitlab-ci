@@ -7,7 +7,7 @@ pages:
   - rm -r site
   - rm -r public
   - mkdocs build
-  - mv -R site public
+  - mv site public
   # - cp site public
   artifacts:
     paths:
