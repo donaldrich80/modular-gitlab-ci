@@ -4,7 +4,7 @@ pages:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
   before_script:
-  - rm -r site
+  # - rm -r site
   - rm -r public
   script:
   - mkdocs build
