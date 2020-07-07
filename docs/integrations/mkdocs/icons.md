@@ -16,13 +16,13 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 ### :octicons-book-16: Docs
 
 ```
-:octicons-book-16:
+[:octicons-book-16: Docs]
 ```
 
-### :octicons-book-16: Plugin
+### :octicons-book-16: Plug-in
 
 ```
-:octicons-plug-16:
+[:octicons-plug-16:]
 ```
 
 ### :octicons-bookmark-16: Links
@@ -38,7 +38,7 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 ### :octicons-mark-github-16: GitHub
 
 ```
-:octicons-mark-github-16:
+[:octicons-mark-github-16: GitHub]
 ```
 
 ### :octicons-repo-16: Repo
@@ -49,16 +49,18 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 
 ### :fontawesome-solid-puzzle-piece: Piece
 
-:fontawesome-solid-puzzle-piece:
+```
+[:fontawesome-solid-puzzle-piece:]
+```
 
 ### :fontawesome-brands-gitlab: Gitlab
 
 ```
-fontawesome-brands-gitlab:
+[fontawesome-brands-gitlab: Gitlab]
 ```
 
 ### :fontawesome-brands-docker: Docker
 
 ```
-:fontawesome-brands-docker:
+[:fontawesome-brands-docker: Docker]
 ```
