@@ -16,10 +16,10 @@ include:
   #   paths:
   #     - doc-test/
   #   when: always
-  cache:
-    untracked: true
-    paths:
-      - doc-test/
+  # cache:
+  #   untracked: true
+  #   paths:
+  #     - doc-test/
 
 # include:
 #   - local: function/notifications/pushover/docker-build.yml
