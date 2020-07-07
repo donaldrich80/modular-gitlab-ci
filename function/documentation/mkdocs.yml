@@ -4,6 +4,8 @@ pages:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
   script:
+  - rm -r site
+  - rm -r public
   - mkdocs build
   - mv -R site public
   # - cp site public
