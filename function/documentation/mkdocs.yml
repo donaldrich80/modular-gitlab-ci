@@ -1,14 +1,22 @@
 pages:
-  stage: deploy
+  stage: .post
   image:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
+  before_script:
+  # - rm -r site
+  - rm -r public
   script:
   - mkdocs build
   - mv site public
+  # - cp site public
   artifacts:
     paths:
     - public
+  # cache:
+  #   untracked: true
+  #   paths:
+  #   - doc-test/
   rules:
     - exists:
       - "mkdocs.yml"

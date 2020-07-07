@@ -1,0 +1,16 @@
+trigger-playbook:
+  extends: .ansible-runner
+  stage: run
+  script:
+    - echo $CI_PIPELINE_SOURCE
+    - echo $TRIGGER_VAR1
+    - ansible-playbook $TRIGGER_VAR1.yml
+  resource_group: production
+  retry: 2
+  artifacts:
+    paths:
+      - ansible.log
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+      when: on_success
+    - when: never
