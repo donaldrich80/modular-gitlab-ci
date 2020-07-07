@@ -5,7 +5,7 @@ pages:
     entrypoint: [""]
   script:
   - mkdocs build
-  - mv site public
+  - mv -R site public
   # - cp site public
   artifacts:
     paths:
