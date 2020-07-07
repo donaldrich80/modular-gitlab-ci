@@ -6,6 +6,7 @@ include:
   image: donaldrich/private:docker-runner
   variables:
     GIT_STRATEGY: none
+  retry: 2
   stage: test
   script:
     # - mkdir $CI_PROJECT_DIR/doc-test || true

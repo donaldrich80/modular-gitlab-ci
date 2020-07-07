@@ -3,6 +3,7 @@ include:
   - local: function/docker/builder-scripts.yml
 
 .build:functions:
+  retry: 2
   extends:
     - .buildx:base
     - .dockerhub:registry
