@@ -32,6 +32,8 @@ Extensions used in this documentations.
 
 !!! info "Code blocks"
 
+https://pygments.org/languages/
+
 * [:octicons-bookmark-16: mkdocs-material](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
 
 ## PyMdown Extensions
