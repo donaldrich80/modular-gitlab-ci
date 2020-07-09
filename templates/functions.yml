@@ -3,7 +3,7 @@ include:
   - local: function/docker/default.yml
 
 .generate-function-doc:
-  image: donaldrich/private:docker-runner:latest
+  image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   variables:
     GIT_STRATEGY: none
   retry: 2
