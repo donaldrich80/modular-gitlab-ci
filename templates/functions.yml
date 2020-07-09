@@ -16,6 +16,9 @@ include:
     - docker run --rm donaldrich/function:$IMAGE_TAG $VERSION_COMMAND > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-version.md
     - curl https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-github-info.md || true
 
+    # cat my_file.txt | xargs echo
+    
+    
     # - curl https://api.github.com/repos/$REPO_URL | jq ".description" > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-description.md || true
 
 .generate-function-description:
