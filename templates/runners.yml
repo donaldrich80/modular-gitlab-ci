@@ -9,7 +9,7 @@ build:
     - .dockerhub:monoarch:load
 
 validate:
-  image: donaldrich/private:docker-runner
+  image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   variables:
     GIT_STRATEGY: none
   stage: test
