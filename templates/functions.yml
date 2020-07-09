@@ -12,13 +12,16 @@ include:
     - docker pull donaldrich/function:$IMAGE_TAG
     - docker run --rm donaldrich/function:$IMAGE_TAG
     - docker run --rm donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/snippets/$IMAGE_TAG.md
-    - curl https://api.github.com/repos/$REPO_URL | jq ".description" > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-description.md || true
-  # artifacts:
-  #   untracked: true
-  #   paths:
-  #     - doc-test/
-  #   when: always
-  # cache:
-  #   untracked: true
-  #   paths:
-  #     - doc-test/
+    - docker run --rm donaldrich/function:$IMAGE_TAG $VERSION_COMMAND > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-version.md
+    - curl https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-github-info.md || true
+
+    # - curl https://api.github.com/repos/$REPO_URL | jq ".description" > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-description.md || true
+
+.generate-function-description:
+  image: donaldrich/ubuntu-runner:latest
+  variables:
+    GIT_STRATEGY: none
+  retry: 2
+  stage: test
+  script:
+    - curl https://api.github.com/repos/$REPO_URL | jq ".description" > $CI_PROJECT_DIR/snippets/$IMAGE_TAG-github-info.md || true
