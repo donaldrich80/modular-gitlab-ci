@@ -15,7 +15,7 @@ include:
     - docker run --rm donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/snippets/config/$IMAGE_TAG.md
     - docker run --rm donaldrich/function:$IMAGE_TAG $VERSION_COMMAND > $CI_PROJECT_DIR/snippets/version/$IMAGE_TAG-docker.md
     - curl https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/snippets/github-info/$IMAGE_TAG.md || true
-    - curl https://api.github.com/repos/$REPO_URL | jq ".description" > $CI_PROJECT_DIR/snippets/description/$IMAGE_TAG.md || true
+    - curl https://api.github.com/repos/$REPO_URL | jq --raw-output ".description" > $CI_PROJECT_DIR/snippets/description/$IMAGE_TAG.md || true
 
 # .generate-function-description:
 #   image: donaldrich/ubuntu-runner:latest
