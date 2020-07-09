@@ -12,7 +12,7 @@ extra_css:
 
 docs_dir: docs
 theme:
-  favicon: docs/theme/images/favicon.png
+  favicon: docs/theme/assets/images/favicon.png
   name: material
   custom_dir: docs/theme
   font:
