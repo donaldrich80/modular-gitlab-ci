@@ -17,6 +17,7 @@ include:
     - curl https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/snippets/github-info/$IMAGE_TAG.md || true
     - curl https://api.github.com/repos/$REPO_URL | jq --raw-output ".description" > $CI_PROJECT_DIR/snippets/description/$IMAGE_TAG.md || true
     - docker image inspect donaldrich/function:$IMAGE_TAG --format='{{.Size}}' > $CI_PROJECT_DIR/snippets/image-size/$IMAGE_TAG.md
+    - docker image inspect donaldrich/function:$IMAGE_TAG | jq . > $CI_PROJECT_DIR/snippets/image-info/$IMAGE_TAG.md
 # .generate-function-description:
 #   image: donaldrich/ubuntu-runner:latest
 #   variables:
