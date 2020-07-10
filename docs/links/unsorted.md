@@ -10,10 +10,9 @@ https://www.smarthomebeginner.com/google-oauth-with-traefik-docker/
 https://github.com/docker/cli/blob/master/cli/compose/schema/data/config_schema_v3.7.json
 https://github.com/docker/cli/blob/master/cli/compose/schema/data/config_schema_v3.9.json
 https://github.com/maxyermayank/vault-examples/blob/develop/docker-compose.yml
-https://github.com/seatgeek/hashi-helper
 https://github.com/datwiz/cicd-secrets-in-vault
 https://forums.docker.com/t/how-can-i-run-docker-command-inside-a-docker-container/337
-https://dlford.io/docker-vscode-remote-development-server/
+
 https://collabnix.com/building-arm-based-docker-images-on-docker-desktop-made-possible-using-buildx/
 https://forums.docker.com/t/buildx-inside-dind-docker/87156
 https://taoofmac.com/space/blog/2019/04/21/2300
@@ -39,7 +38,7 @@ https://github.com/dimitrijp/Organizr-Nginx/wiki/Configure-nginx-with-letsencrty
 https://github.com/lucaslorentz/caddy-docker-proxy
 https://github.com/dimitrijp/Organizr-Nginx
 https://github.com/veggiemonk/awesome-docker
-https://github.com/firehol/netdata
+
 https://github.com/bee42/traefik-with-docker/tree/master/examples/proxy
 https://github.com/Wonderfall/dockerfiles/tree/master/nextcloud
 https://github.com/craSH/socat
@@ -63,12 +62,11 @@ https://github.com/causefx/Organizr/wiki/Authentication-%7C-Server-Based
 https://github.com/ciotlosm/custom-lovelace
 https://github.com/robmarkcole/Hue-sensors-HASS
 https://github.com/cooperaj/home-assistant-config
-https://github.com/firehol/netdata/wiki/Running-behind-nginx#access-multiple-netdata-servers-via-one-nginx
+
 https://github.com/bee42/traefik-with-docker/blob/master/examples/prometheus/docker-compose.yml
 https://github.com/thomseddon/traefik-forward-auth
 https://github.com/andrey-git/home-assistant-custom-ui
-https://github.com/firehol/netdata/wiki/Install-netdata-with-Docker
-https://github.com/firehol/netdata/wiki/netdata-backends
+
 https://github.com/imthenachoman/How-To-Secure-A-Linux-Server
 https://github.com/jamesboswell/caddy-radius
 https://github.com/ahromis/swarm-elk/tree/master/logstash
