@@ -13,9 +13,9 @@ include:
     - docker pull donaldrich/function:$IMAGE_TAG
     - docker run --rm donaldrich/function:$IMAGE_TAG
     - docker run --rm donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/snippets/config/$IMAGE_TAG.md
-    - docker run --rm donaldrich/function:$IMAGE_TAG $VERSION_COMMAND > $CI_PROJECT_DIR/snippets/version/$IMAGE_TAG-docker.md
+    - docker run --rm donaldrich/function:$IMAGE_TAG $VERSION_COMMAND > $CI_PROJECT_DIR/snippets/version/$IMAGE_TAG-docker.md || true
     - curl -u $GITHUB_ID:$GITHUB_SECRET https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/snippets/github-info/$IMAGE_TAG.md || true
-    # - curl -u my_client_id:my_client_secret https://api.github.com/repos/$REPO_URL | jq --raw-output ".description" > $CI_PROJECT_DIR/snippets/description/$IMAGE_TAG.md || true
-    - docker image inspect donaldrich/function:$IMAGE_TAG --format='{{.Size}}' > $CI_PROJECT_DIR/snippets/image-size/$IMAGE_TAG.md
+    - cat $CI_PROJECT_DIR/snippets/github-info/$IMAGE_TAG.md | jq --raw-output ".description" > $CI_PROJECT_DIR/snippets/description/$IMAGE_TAG.md || true
+    - docker image inspect donaldrich/function:$IMAGE_TAG --format='{{.Size}}' > $CI_PROJECT_DIR/snippets/image-size/$IMAGE_TAG.md || true
     - docker image inspect donaldrich/function:$IMAGE_TAG | jq . > $CI_PROJECT_DIR/snippets/image-info/$IMAGE_TAG.md
     - docker history donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/snippets/layers/$IMAGE_TAG.md || true
