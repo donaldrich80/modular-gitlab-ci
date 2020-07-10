@@ -19,4 +19,6 @@ VAULT_ADDR:
 VAULT_TOKEN:
 ```
 
+https://docs.gitlab.com/ee/integration/vault.html
+
 
