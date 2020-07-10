@@ -13,12 +13,8 @@ pages:
   artifacts:
     paths:
     - public
-  # cache:
-  #   untracked: true
-  #   paths:
-  #   - doc-test/
   rules:
     - exists:
       - "mkdocs.yml"
-      when: on_success
+      when: always
     - when: never
