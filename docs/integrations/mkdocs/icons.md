@@ -1,15 +1,16 @@
 ---
 title: Icons
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
+
 ---
 
 ## Icon Lists
 
 [:octicons-bookmark-16:  materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
 
-[:octicons-bookmark-16:  fontawesome](https://fontawesome.com/icons?d=gallery)
+[:octicons-bookmark-16: fontawesome](https://fontawesome.com/icons?d=gallery)
 
-[:octicons-bookmark-16:  octicons](https://primer.style/octicons/)
+[:octicons-bookmark-16: octicons](https://primer.style/octicons/)
 
 ## Common icons
 
@@ -22,16 +23,16 @@ description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 ### :octicons-book-16: Plug-in
 
 ```
-[:octicons-plug-16:]
+[:octicons-plug-16: Plug-in]
 ```
 
 ### :octicons-bookmark-16: Links
 
 ```
-:octicons-bookmark-16:
+[:octicons-bookmark-16:]
 ```
 
-:mdi-variable:
+### :mdi-variable:
 
 :mdi-variable:
 
