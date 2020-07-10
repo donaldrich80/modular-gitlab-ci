@@ -156,7 +156,7 @@ https://developer.ibm.com/linuxonpower/2017/07/28/travis-multi-architecture-ci-w
 https://blog.ronnyvdb.net/2019/10/02/gitlab-runner-and-docker-in-docker-dind-configuration/
 https://github.com/nicholasdille/docker-lab/tree/f7323c4f0a6d12d3e97a805e7d0c39f469976c55
 https://github.com/qlik-oss/dockerfiles
-https://github.com/alebcay/awesome-shell#readme
+
 https://github.com/docker/docker.github.io/blob/master/develop/develop-images/dockerfile_best-practices.md#using-pipes
 https://github.com/GoogleContainerTools/container-structure-test
 https://github.com/trimstray/the-book-of-secret-knowledge
@@ -169,7 +169,6 @@ https://saasbootstrap.com/how-to-setup-a-vpn-with-wireguard-that-only-routes-tra
 https://www.youtube.com/watch?v=BZ1LOMJqEkM&feature=youtu.be
 https://hackernoon.com/macbook-my-command-line-utilities-f8a121c3b019
 https://github.com/eliangcs/http-prompt
-https://github.com/Trendyol/docker-shell/blob/master/README.md
 https://github.com/tmrts/boilr
 https://github.com/chubin/cheat.sh/blob/master/README.md#installation
 https://github.com/codefresh-io/cf-vault-plugin/blob/master/README.md
@@ -181,13 +180,10 @@ https://github.com/pindexis/marker/blob/master/README.md
 https://medium.com/@mitesh_shamra/setup-hashicorp-vault-using-ansible-fa8073a70a56
 https://medium.com/@SofianeHamlaoui/convert-iso-images-to-docker-images-4e1b1b637d75
 https://commandbox.ortusbooks.com/forgebox-enterprise/commands
-https://codefresh.io/docker-tutorial/announcing-docker-buildkit-support/
 https://awesomeopensource.com/projects/task-runner
 https://vsupalov.com/docker-env-vars/
 https://vskumar.blog/2018/10/05/33-devopskubernetes-how-to-do-minikube-installation-on-ubuntu-vm/
 https://www.davd.io/
 https://www.google.com/amp/s/techbeacon.com/security/10-top-open-source-tools-docker-security%3Famp
-https://docs.gitlab.com/ee/integration/vault.html
-https://gist.github.com/fnkr/a58b0cc741ffe4fb074b146476db4399
 https://hub.docker.com/u/pipelinecomponents
 https://project-awesome.org/jondot/awesome-devenv
