@@ -26,13 +26,13 @@ Utilize GitLab-CI variables in documentation
 
 * [:octicons-mark-github-16: GitHub](https://github.com/fralau/mkdocs_macros_plugin)
 
-* [docs](https://mkdocs-macros-plugin.readthedocs.io/en/latest)
+* [:octicons-book-16: Docs](https://mkdocs-macros-plugin.readthedocs.io/en/latest)
 
 ## mkdocs-simple-plugin
 
 * [:octicons-mark-github-16: GitHub](https://github.com/athackst/mkdocs-simple-plugin)
 
-* [documentation](http://www.lyonthackston.com/mkdocs-simple-plugin/)
+* [:octicons-book-16: Docs](http://www.lyonthackston.com/mkdocs-simple-plugin/)
 
 ## mkdocs-awesome-pages-plugin
 
