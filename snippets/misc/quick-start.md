@@ -1,5 +1,5 @@
 ``` yaml
 include:
-  - project: donaldrich/gitlab-ci-templates
-    file: default.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: templates/default.yml
 ```
