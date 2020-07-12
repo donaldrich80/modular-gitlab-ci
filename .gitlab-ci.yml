@@ -10,8 +10,7 @@ stages:
   - debug
   - lint
   - build
-  - deploy
   - documentation
-
+  - deploy
 #
 
