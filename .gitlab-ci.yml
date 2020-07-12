@@ -11,7 +11,7 @@ stages:
   - lint
   - build
   - deploy
-  - docs
+  - documentation
 
 #
 
