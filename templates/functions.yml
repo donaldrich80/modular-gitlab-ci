@@ -19,3 +19,12 @@ include:
     - docker image inspect donaldrich/function:$IMAGE_TAG --format='{{.Size}}' > $CI_PROJECT_DIR/snippets/image-size/$IMAGE_TAG.md || true
     - docker image inspect donaldrich/function:$IMAGE_TAG | jq . > $CI_PROJECT_DIR/snippets/image-info/$IMAGE_TAG.md
     - docker history donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/snippets/layers/$IMAGE_TAG.md || true
+
+stages:
+  - debug
+  - lint
+  - dependency
+  - build
+  - test
+  - push
+  - documentation
