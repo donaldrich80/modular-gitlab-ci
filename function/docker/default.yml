@@ -2,13 +2,6 @@ include:
   - local: function/docker/manifest.yml
   - local: function/docker/builder-scripts.yml
 
-.build:functions:
-  retry: 2
-  extends:
-    - .buildx:base
-    - .dockerhub:registry
-    - .build:monoarch:push
-
 .dockerhub:monoarch:load:
   extends:
     - .buildx:base

@@ -2,6 +2,14 @@ include:
   - local: function/notifications/pushover/repo-ci-pipeline.yml
   - local: function/docker/default.yml
 
+.build:functions:
+  retry: 2
+  interruptible: true
+  extends:
+    - .buildx:base
+    - .dockerhub:registry
+    - .build:monoarch:push
+
 .generate-function-doc:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   variables:
