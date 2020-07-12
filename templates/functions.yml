@@ -28,6 +28,12 @@ include:
     - docker image inspect donaldrich/function:$IMAGE_TAG | jq . > $CI_PROJECT_DIR/snippets/image-info/$IMAGE_TAG.md
     - docker history donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/snippets/layers/$IMAGE_TAG.md || true
 
+    
+cache:
+  # untracked: true
+  paths:
+    - docs/snippets/
+    
 stages:
   - debug
   - lint
