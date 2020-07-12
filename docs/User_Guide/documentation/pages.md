@@ -18,6 +18,13 @@ Include the following in `.gitlab-ci.yml`:
 
 * `mkdocs.yml` file
 
+* `documentation` stage:
+
+```yaml
+stages:
+  - documentation
+```
+
 ## Advanced
 
 Detailed reference here.

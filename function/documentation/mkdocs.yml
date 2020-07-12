@@ -1,15 +1,11 @@
 pages:
-  stage: .post
+  stage: documentation
   image:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
-  # before_script:
-  # - rm -r site
-  # - rm -r public
   script:
   - mkdocs build
   - mv site public
-  # - cp site public
   artifacts:
     paths:
     - public
