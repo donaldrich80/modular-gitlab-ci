@@ -14,13 +14,15 @@ include:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   variables:
     GIT_STRATEGY: none
+    VERSION_COMMAND: --version
+    HELP_COMMAND: --help
   retry: 2
   stage: documentation
   script:
     - apk add curl jq
     - docker pull donaldrich/function:$IMAGE_TAG
     - docker run --rm donaldrich/function:$IMAGE_TAG
-    - docker run --rm donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/docs/snippets/config/$IMAGE_TAG.md
+    - docker run --rm donaldrich/function:$IMAGE_TAG $HELP_COMMAND > $CI_PROJECT_DIR/docs/snippets/config/$IMAGE_TAG.md
     - docker run --rm donaldrich/function:$IMAGE_TAG $VERSION_COMMAND > $CI_PROJECT_DIR/docs/snippets/version/$IMAGE_TAG-docker.md || true
     - curl -u $GITHUB_ID:$GITHUB_SECRET https://api.github.com/repos/$REPO_URL > $CI_PROJECT_DIR/docs/snippets/github-info/$IMAGE_TAG.md || true
     - cat $CI_PROJECT_DIR/docs/snippets/github-info/$IMAGE_TAG.md | jq --raw-output ".description" > $CI_PROJECT_DIR/docs/snippets/description/$IMAGE_TAG.md || true
