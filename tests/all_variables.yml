@@ -1,5 +1,0 @@
-list-env-variables:
-  stage: build
-  script:
-    - export
-# test

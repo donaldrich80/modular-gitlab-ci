@@ -1,0 +1,7 @@
+print:variables:
+  stage: build
+  artifacts:
+    paths:
+      - env_vars.txt
+  script:
+    - export > env_vars.txt
