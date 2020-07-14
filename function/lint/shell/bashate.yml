@@ -18,25 +18,25 @@ bashate:
       when: on_success
     - when: never
 
-bashate-dir:
-  stage: lint
-  allow_failure: true
-  interruptible: true
-  image:
-    name: donaldrich/function:bashate
-    entrypoint: [""]
-  before_script:
-    - bashate --version
-  script:
-    # ignore line too long
-    - bashate --ignore E006 --verbose **/*/*.sh
-  rules:
-    - if: '$DISABLE_LINTING == "true"'
-      when: never
-    - exists:
-      - "**/*/*.sh"
-      when: on_success
-    - when: never
+# bashate-dir:
+#   stage: lint
+#   allow_failure: true
+#   interruptible: true
+#   image:
+#     name: donaldrich/function:bashate
+#     entrypoint: [""]
+#   before_script:
+#     - bashate --version
+#   script:
+#     # ignore line too long
+#     - bashate --ignore E006 --verbose **/*/*.sh
+#   rules:
+#     - if: '$DISABLE_LINTING == "true"'
+#       when: never
+#     - exists:
+#       - "**/*/*.sh"
+#       when: on_success
+#     - when: never
 
 bashate-bin:
   stage: lint
