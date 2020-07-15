@@ -31,10 +31,10 @@ include:
     - docker history donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/docs/snippets/layers/$IMAGE_TAG.md || true
 
 
-cache:
-  # untracked: true
-  paths:
-    - docs/snippets/
+# cache:
+#   # untracked: true
+#   paths:
+#     - docs/snippets/
 
 stages:
   - debug
