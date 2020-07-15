@@ -14,8 +14,8 @@ include:
   image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
   variables:
     GIT_STRATEGY: none
-    # VERSION_COMMAND: --version
-    # HELP_COMMAND: --help
+    VERSION_COMMAND: --version
+    HELP_COMMAND: --help
   retry: 2
   stage: documentation
   script:
