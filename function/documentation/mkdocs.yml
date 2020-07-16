@@ -11,6 +11,21 @@ pages:
     - public
   rules:
     - exists:
-      - "mkdocs.yml"
+      - mkdocs.yml
+      when: always
+    - when: never
+
+file-tree-pages:
+  image:
+    name: donaldrich/function:tree
+    entrypoint: [""]
+  stage: build
+  # variables:
+  #   GIT_STRATEGY: clone
+  script:
+    - tree --dirsfirst -I docs > docs/snippets/layout.md
+  rules:
+    - exists:
+      - mkdocs.yml
       when: always
     - when: never
