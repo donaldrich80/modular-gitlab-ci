@@ -23,6 +23,7 @@ file-tree-pages:
   # variables:
   #   GIT_STRATEGY: clone
   script:
+    - mkdir -p docs/snippets || echo "snippet dir already exists"
     - tree --dirsfirst -I docs > docs/snippets/layout.md
   rules:
     - exists:
