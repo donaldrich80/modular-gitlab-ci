@@ -5,6 +5,7 @@ pages:
     entrypoint: [""]
   script:
   - mkdocs build
+  - rm -r site/docs/snippets
   - mv site public
   artifacts:
     paths:
