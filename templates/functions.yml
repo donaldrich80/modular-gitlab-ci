@@ -15,7 +15,7 @@
 - echo $DOCKER_DRIVER
 
 include:
-  - local: function/notifications/pushover/repo-ci-pipeline.yml
+  - local: function/notifications/pushover/docker-build.yml
   - local: function/docker/default.yml
 
 .build:functions:

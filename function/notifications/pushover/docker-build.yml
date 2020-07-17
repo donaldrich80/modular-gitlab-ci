@@ -76,5 +76,5 @@ pushover:failure:loud:
       --form-string "user=$PUSHOVER_USER_TOKEN"
       --form-string "priority=$PUSHOVER_PRIORITY"
       --form-string "sound=$PUSHOVER_SOUND"
-      --form-string "message=$CI_PROJECT_NAME failed."
+      --form-string "message=$IMAGE_NAME:$IMAGE_TAG failed."
       https://api.pushover.net/1/messages.json
