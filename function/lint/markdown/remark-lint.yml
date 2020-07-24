@@ -9,6 +9,7 @@ remark-lint:
   script:
     - cd /
     - cp package.json $CI_PROJECT_DIR
+    - cp -r node_modules $CI_PROJECT_DIR
     - cd $CI_PROJECT_DIR
     # - npm install --save remark-cli remark-preset-lint-recommended
     - npm run lint-md
