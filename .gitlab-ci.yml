@@ -4,7 +4,7 @@ include:
 variables:
   PUSHOVER_ID: $CI_PROJECT_TITLE
   DISABLE_SAST: "true"
-  DISABLE_LINTING: "true"
+  # DISABLE_LINTING: "true"
 
 stages:
   - debug

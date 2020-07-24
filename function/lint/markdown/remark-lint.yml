@@ -3,11 +3,13 @@ remark-lint:
   interruptible: true
   stage: lint
   image:
-  #  name: donaldrich/function:remark-lint
-   name: node
+   name: donaldrich/function:remark-lint
+  #  name: node
    entrypoint: [""]
   script:
-    - npm install --save remark-cli remark-preset-lint-recommended
+    - cd /
+    - ls
+    # - npm install --save remark-cli remark-preset-lint-recommended
     - npm run lint-md
   rules:
     - if: '$DISABLE_LINTING == "true"'
