@@ -13,6 +13,9 @@ remark-lint:
     - cd $CI_PROJECT_DIR
     # - npm install --save remark-cli remark-preset-lint-recommended
     - npm run lint-md
+  after_script:
+    - rm package.json
+    - rm -r node_modules
   rules:
     - if: '$DISABLE_LINTING == "true"'
       when: never
