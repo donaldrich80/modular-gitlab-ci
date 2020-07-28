@@ -1,12 +1,12 @@
-tfsec:
+tflint:
   allow_failure: true
   interruptible: true
   stage: lint
   image:
-    name: donaldrich/function:tfsec
+    name: donaldrich/function:tflint
     entrypoint: [""]
   script:
-    - tfsec .
+    - tflint .
   rules:
     - if: '$DISABLE_LINTING == "true"'
       when: never
