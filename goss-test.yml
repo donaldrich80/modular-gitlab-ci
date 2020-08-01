@@ -1,22 +1,17 @@
-dgoss:
+dgoss-run:
   image:
     name: donaldrich/function:dgoss
     entrypoint: [""]
   stage: build
-  # variables:
-  #   GOSS_FILES_PATH: .misc/goss
-  #   GOSS_FILES_STRATEGY: cp
-  # variables:
-  #   GIT_STRATEGY: clone
+  variables:
+    GOSS_FILES_PATH: $IMAGE_TAG
+    GOSS_FILES_STRATEGY: cp
+    GIT_STRATEGY: none
   script:
-    - dgoss run donaldrich/kali-linux:latest
-    # - tree --dirsfirst -I docs > docs/.snippets/layout.md
+    - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
 #   rules:
 #     - exists:
 #       - mkdocs.yml
 #       when: always
 #     - when: never
-#h
-
-  # script:
-  #   - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA && dgoss run $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
