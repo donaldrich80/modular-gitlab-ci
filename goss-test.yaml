@@ -1,0 +1,17 @@
+dgoss:
+  image:
+    name: donaldrich/function:dgoss
+    entrypoint: [""]
+  stage: build
+  # variables:
+  #   GIT_STRATEGY: clone
+  script:
+    - dgoss run donaldrich/kali-linux:latest
+    # - tree --dirsfirst -I docs > docs/.snippets/layout.md
+#   rules:
+#     - exists:
+#       - mkdocs.yml
+#       when: always
+#     - when: never
+
+# dgoss run -e SOME_VAR=some-value mount/path/outer:/mount/path/inner image-under-test:1.

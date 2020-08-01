@@ -1,0 +1,17 @@
+user:
+  sshd:
+    title: UID must be between 50-100, GID doesn't matter. home is flexible
+    meta:
+      desc: Ensure sshd is enabled and running since it's needed for system management
+      sev: 5
+    exists: true
+    uid:
+      # Validate that UID is between 50 and 100
+      and:
+        gt: 50
+        lt: 100
+    home:
+      # Home can be any of the following
+      or:
+      - /var/empty/sshd
+      - /var/run/sshd
