@@ -6,7 +6,8 @@ dgoss-run:
   variables:
     GOSS_FILES_PATH: Dockerfiles/$IMAGE_TAG
     CONTAINER_LOG_OUTPUT: Dockerfiles/$IMAGE_TAG/goss.log
-    # GOSS_FILES_STRATEGY: cp
+    # reports/goss/docker.log
+    GOSS_FILES_STRATEGY: cp
     GIT_STRATEGY: none
   script:
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
@@ -24,7 +25,7 @@ dgoss-run:
   stage: validate
   variables:
     GOSS_FILES_PATH: Dockerfiles/$IMAGE_TAG
-    # GOSS_FILES_STRATEGY: cp
+    GOSS_FILES_STRATEGY: cp
     GIT_STRATEGY: none
   script:
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
