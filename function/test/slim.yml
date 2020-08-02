@@ -1,0 +1,24 @@
+docker-image:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  variables:
+    IMAGE_TAG: "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG"
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    # Build image as usual and check its size
+    - docker build -t "$IMAGE_TAG" .
+    - echo "Size before docker-slim:"
+    - docker images "$IMAGE_TAG" | awk '{print $NF}' | sed "1 d"
+    # Build docker-slim image and check its size
+    - docker run -e DOCKER_HOST=tcp://$(grep docker /etc/hosts | cut -f1):2375 dslim/docker-slim build "$IMAGE_TAG"
+    - docker tag "$CI_REGISTRY_IMAGE.slim" "$IMAGE_TAG-slim"
+    - echo "Size after docker-slim:"
+    - docker images "$IMAGE_TAG-slim" | awk '{print $NF}' | sed "1 d"
+    # Push both versions to the container registry
+    - docker push "$IMAGE_TAG"
+    - docker push "$IMAGE_TAG-slim"
+  only:
+    - master
