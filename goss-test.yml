@@ -8,11 +8,13 @@ dgoss-run:
     GOSS_FILE: goss.yaml
     CONTAINER_LOG_OUTPUT: goss.log
     # reports/goss/docker.log
-    GOSS_FILES_STRATEGY: cp
+    # GOSS_FILES_STRATEGY: cp
   script:
     - ls
     - docker pull donaldrich/kali-linux:latest
     - dgoss run donaldrich/kali-linux:latest
+    - cd tests
+    - ls
   # rules:
   #   - exists:
   #     - "**/*/goss.yml"
