@@ -10,6 +10,7 @@ dgoss-run:
     GOSS_FILES_STRATEGY: cp
     GIT_STRATEGY: none
   script:
+    - ls
     - docker pull donaldrich/kali-linux:latest
     - dgoss run donaldrich/kali-linux:latest
   # rules:
