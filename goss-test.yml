@@ -6,8 +6,7 @@ dgoss-run:
   variables:
     GOSS_FILES_PATH: tests
     GOSS_FILE: goss.yaml
-    CONTAINER_LOG_OUTPUT: goss.log
-    # reports/goss/docker.log
+    CONTAINER_LOG_OUTPUT: reports/goss.log
     GOSS_FILES_STRATEGY: cp
   script:
     - ls
