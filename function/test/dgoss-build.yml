@@ -18,10 +18,9 @@ dgoss-run:
   variables:
     GOSS_FILES_PATH: DOCKER_BUILD_DIR
     GOSS_FILE: goss.yaml
-    CONTAINER_LOG_OUTPUT: reports/$IMAGE_NAME/$IMAGE_TAG.log
+    CONTAINER_LOG_OUTPUT: reports/$IMAGE_NAME-$IMAGE_TAG.log
     GOSS_FILES_STRATEGY: cp
   artifacts:
-    # name: "goss"
     paths:
       - $CI_PROJECT_DIR/reports/
     # when: always
