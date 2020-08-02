@@ -14,6 +14,7 @@ dgoss-run:
       - $CI_PROJECT_DIR/reports/
     when: always
   script:
+    - mkdir -p reports
     - ls
     - docker pull donaldrich/kali-linux:latest
     - dgoss run donaldrich/kali-linux:latest
