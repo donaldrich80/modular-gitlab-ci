@@ -16,7 +16,7 @@ dgoss-run:
     entrypoint: [""]
   stage: validate
   variables:
-    GOSS_FILES_PATH: DOCKER_BUILD_DIR
+    GOSS_FILES_PATH: $DOCKER_BUILD_DIR
     GOSS_FILE: goss.yaml
     CONTAINER_LOG_OUTPUT: reports/$IMAGE_NAME-$IMAGE_TAG.log
     GOSS_FILES_STRATEGY: cp
@@ -29,7 +29,7 @@ dgoss-run:
     - mkdir -p reports
     - ls
   script:
-    - cat DOCKER_BUILD_DIR/goss.yaml
+    - cat $DOCKER_BUILD_DIR/goss.yaml
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
   rules:
