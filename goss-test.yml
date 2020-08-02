@@ -8,11 +8,15 @@ dgoss-run:
     GOSS_FILE: goss.yaml
     CONTAINER_LOG_OUTPUT: reports/goss.log
     GOSS_FILES_STRATEGY: cp
+  artifacts:
+    # name: "sniper"
+    paths:
+      - $CI_PROJECT_DIR/reports/
+    when: always
   script:
     - ls
     - docker pull donaldrich/kali-linux:latest
     - dgoss run donaldrich/kali-linux:latest
-    # - cd tests
     - ls
   # rules:
   #   - exists:
