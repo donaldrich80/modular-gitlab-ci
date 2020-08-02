@@ -4,7 +4,7 @@ dgoss-run:
     entrypoint: [""]
   stage: validate
   variables:
-    GOSS_FILES_PATH: $IMAGE_TAG
+    GOSS_FILES_PATH: Dockerfiles/$IMAGE_TAG
     GOSS_FILES_STRATEGY: cp
     GIT_STRATEGY: none
   script:
@@ -22,7 +22,7 @@ dgoss-run:
     entrypoint: [""]
   stage: validate
   variables:
-    GOSS_FILES_PATH: $IMAGE_TAG
+    GOSS_FILES_PATH: Dockerfiles/$IMAGE_TAG
     GOSS_FILES_STRATEGY: cp
     GIT_STRATEGY: none
   script:
