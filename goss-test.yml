@@ -6,10 +6,9 @@ dgoss-run:
   variables:
     GOSS_FILES_PATH: tests
     GOSS_FILE: goss.yaml
-    # CONTAINER_LOG_OUTPUT: Dockerfiles/$IMAGE_TAG/goss.log
+    CONTAINER_LOG_OUTPUT: goss.log
     # reports/goss/docker.log
     GOSS_FILES_STRATEGY: cp
-    # GIT_STRATEGY: none
   script:
     - ls
     - docker pull donaldrich/kali-linux:latest
