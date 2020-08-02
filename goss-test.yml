@@ -9,7 +9,6 @@ dgoss-run:
     GIT_STRATEGY: none
   script:
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
-    - ls
     - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
   # rules:
   #   - exists:
