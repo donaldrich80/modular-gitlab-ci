@@ -12,6 +12,8 @@ dgoss-run:
   script:
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    # - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    # - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
   # rules:
   #   - exists:
   #     - "**/*/goss.yml"

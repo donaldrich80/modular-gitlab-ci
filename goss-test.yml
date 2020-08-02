@@ -4,12 +4,14 @@ dgoss-run:
     entrypoint: [""]
   stage: build
   variables:
-    # GOSS_FILES_PATH: $IMAGE_TAG
+    GOSS_FILES_PATH: tests
+    # CONTAINER_LOG_OUTPUT: Dockerfiles/$IMAGE_TAG/goss.log
+    # reports/goss/docker.log
     GOSS_FILES_STRATEGY: cp
     GIT_STRATEGY: none
   script:
-    - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
-    - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    - docker pull donaldrich/kali-linux:latest
+    - dgoss run donaldrich/kali-linux:latest
   # rules:
   #   - exists:
   #     - "**/*/goss.yml"
