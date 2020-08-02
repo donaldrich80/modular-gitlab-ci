@@ -2,7 +2,7 @@ dgoss-run:
   image:
     name: donaldrich/function:dgoss
     entrypoint: [""]
-  stage: build
+  stage: validate
   variables:
     # GOSS_FILES_PATH: $IMAGE_TAG
     GOSS_FILES_STRATEGY: cp
@@ -16,3 +16,20 @@ dgoss-run:
   #     when: always
   #   - when: never
 
+.dgoss-template:
+  image:
+    name: donaldrich/function:dgoss
+    entrypoint: [""]
+  stage: validate
+  variables:
+    # GOSS_FILES_PATH: $IMAGE_TAG
+    GOSS_FILES_STRATEGY: cp
+    GIT_STRATEGY: none
+  script:
+    - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
+    - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
+  # rules:
+  #   - exists:
+  #     - "**/*/goss.yml"
+  #     when: always
+  #   - when: never
