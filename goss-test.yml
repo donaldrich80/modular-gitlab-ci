@@ -9,7 +9,7 @@ dgoss-run:
     CONTAINER_LOG_OUTPUT: reports/goss.log
     GOSS_FILES_STRATEGY: cp
   artifacts:
-    # name: "sniper"
+    # name: "goss"
     paths:
       - $CI_PROJECT_DIR/reports/
     when: always

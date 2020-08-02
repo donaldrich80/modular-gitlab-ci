@@ -1,6 +1,6 @@
 include:
   - local: templates/default.yml
-  - local: goss-test.yml
+  # - local: goss-test.yml
 
 variables:
   PUSHOVER_ID: $CI_PROJECT_TITLE

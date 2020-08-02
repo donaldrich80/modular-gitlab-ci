@@ -4,16 +4,21 @@ dgoss-run:
     entrypoint: [""]
   stage: validate
   variables:
-    GOSS_FILES_PATH: Dockerfiles/$IMAGE_TAG
-    # CONTAINER_LOG_OUTPUT: Dockerfiles/$IMAGE_TAG/goss.log
-    # reports/goss/docker.log
+    GOSS_FILES_PATH: DOCKER_BUILD_DIR
+    GOSS_FILE: goss.yaml
+    CONTAINER_LOG_OUTPUT: reports/$IMAGE_NAME/$IMAGE_TAG.log
     GOSS_FILES_STRATEGY: cp
-    GIT_STRATEGY: none
+  artifacts:
+    name: "goss"
+    paths:
+      - $CI_PROJECT_DIR/reports/
+    when: always
+  before_script:
+    - mkdir -p reports
+    - ls
   script:
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
-    # - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
-    # - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
   # rules:
   #   - exists:
   #     - "**/*/goss.yml"
