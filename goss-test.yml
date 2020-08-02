@@ -13,7 +13,7 @@ dgoss-run:
     - ls
     - docker pull donaldrich/kali-linux:latest
     - dgoss run donaldrich/kali-linux:latest
-    - cd tests
+    # - cd tests
     - ls
   # rules:
   #   - exists:
