@@ -29,6 +29,7 @@ dgoss-run:
     - mkdir -p reports
     - ls
   script:
+    - cat DOCKER_BUILD_DIR/goss.yaml
     - docker pull donaldrich/$IMAGE_NAME:$IMAGE_TAG
     - dgoss run donaldrich/$IMAGE_NAME:$IMAGE_TAG
   rules:
