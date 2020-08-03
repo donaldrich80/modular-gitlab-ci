@@ -1,7 +1,7 @@
 .pushover:notify:
-  image:
-    name: donaldrich/ubuntu-runner:latest
-    entrypoint: [""]
+  # image:
+  #   name: donaldrich/ubuntu-runner:latest
+  #   entrypoint: [""]
   stage: .post
   variables:
     GIT_STRATEGY: none
