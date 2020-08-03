@@ -1,5 +1,7 @@
 .vault:
-  image: donaldrich/hashicorp-runner:dev
+image:
+  name: donaldrich/hashicorp:vault
+  entrypoint: [""]
   stage: lint
   variables:
     GIT_STRATEGY: none

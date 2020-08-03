@@ -5,7 +5,9 @@
 - export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$IMAGE_NAME:$IMAGE_TAG /secret/gitlab-ci/docker-images)"
 
 healthcheck:start:
-  image: donaldrich/ubuntu-runner:latest
+  image:
+    name: donaldrich/ubuntu-runner:latest
+    entrypoint: [""]
   stage: .pre
   variables:
     GIT_STRATEGY: none
@@ -14,7 +16,9 @@ healthcheck:start:
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT/start
 
 healthcheck:end:
-  image: donaldrich/ubuntu-runner:latest
+  image:
+    name: donaldrich/ubuntu-runner:latest
+    entrypoint: [""]
   stage: .post
   variables:
     GIT_STRATEGY: none
@@ -24,7 +28,9 @@ healthcheck:end:
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT
 
 healthcheck:fail:
-  image: donaldrich/ubuntu-runner:latest
+  image:
+    name: donaldrich/ubuntu-runner:latest
+    entrypoint: [""]
   stage: .post
   variables:
     GIT_STRATEGY: none

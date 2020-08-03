@@ -9,7 +9,9 @@
 - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
 .ansible-runner:
-  image: donaldrich/ansible:latest
+  image:
+    name: donaldrich/ansible:latest
+    entrypoint: [""]
   before_script:
     - *ssh-provision
     - cp -r ~/secrets/ansible-inventory inventory
