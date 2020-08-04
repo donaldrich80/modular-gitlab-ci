@@ -5,9 +5,9 @@
 - export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$CI_PROJECT_NAME /secret/gitlab-ci/repos)"
 
 healthcheck:repo:start:
-  # image:
-  #   name: donaldrich/ubuntu-runner:latest
-  #   entrypoint: [""]
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   stage: .pre
   variables:
     GIT_STRATEGY: none
@@ -16,9 +16,9 @@ healthcheck:repo:start:
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT/start
 
 healthcheck:repo:end:
-  # image:
-  #   name: donaldrich/ubuntu-runner:latest
-  #   entrypoint: [""]
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   stage: .post
   variables:
     GIT_STRATEGY: none
@@ -28,9 +28,9 @@ healthcheck:repo:end:
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT
 
 healthcheck:repo:fail:
-  # image:
-  #   name: donaldrich/ubuntu-runner:latest
-  #   entrypoint: [""]
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   stage: .post
   variables:
     GIT_STRATEGY: none
