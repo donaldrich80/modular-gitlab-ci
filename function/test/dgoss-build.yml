@@ -11,9 +11,9 @@
 - echo $REPO_URL
 
 dgoss-run:
-  # image:
-  #   name: donaldrich/function:dgoss
-  #   entrypoint: [""]
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   stage: validate
   variables:
     GOSS_FILES_PATH: $DOCKER_BUILD_DIR
@@ -44,9 +44,9 @@ dgoss-run:
   #   - when: never
 
 .dgoss-template:
-  # image:
-  #   name: donaldrich/function:dgoss
-  #   entrypoint: [""]
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   stage: validate
   variables:
     GOSS_FILES_PATH: Dockerfiles/$IMAGE_TAG
