@@ -17,7 +17,7 @@
 
 .ssh-runner:
   image:
-    name: donaldrich/ubuntu-runner:latest
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
     entrypoint: [""]
   variables:
     GIT_STRATEGY: none
