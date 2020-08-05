@@ -27,7 +27,9 @@ include:
     - .build:monoarch:push
 
 .generate-function-doc:
-  image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   # variables:
   #   GIT_STRATEGY: none
     # VERSION_COMMAND: --version
