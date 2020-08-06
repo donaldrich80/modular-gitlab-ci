@@ -1,4 +1,4 @@
 include:
-  - local: docker/dockerfile_lint.yml
-  - local: docker/dockerfilelint.yml
-  - local: docker/hadolint.yml
+  - local: function/lint/docker/dockerfile_lint.yml
+  - local: function/lint/docker/dockerfilelint.yml
+  - local: function/lint/docker/hadolint.yml
