@@ -1,4 +1,7 @@
 hadolint:
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
   stage: lint
   allow_failure: true
   interruptible: true
