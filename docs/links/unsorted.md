@@ -1,4 +1,4 @@
-# Unsorted
+# Link Dump
 
 https://github.com/DRuggeri/netgear_exporter
 https://github.com/prometheus/snmp_exporter
@@ -78,7 +78,7 @@ https://github.com/filebrowser/filebrowser/issues/440
 https://github.com/linuxserver/reverse-proxy-confs
 https://gist.github.com/yegorg/36cf9710e8ef50fa07571db0f4b981f9
 https://github.com/docker/compose/issues/6617
-https://github.com/stephen-fox/chrome-docker?source=post_page---------------------------
+https://github.com/stephen-fox/chrome-docker
 https://github.com/ambroisemaupate/docker-server-env/blob/master/compose/example-gitlab-traefik/docker-compose.yml
 https://github.com/duplicati/duplicati/issues/1932
 https://github.com/skiesInSpace/ymlFile
@@ -185,3 +185,11 @@ https://www.davd.io/
 https://www.google.com/amp/s/techbeacon.com/security/10-top-open-source-tools-docker-security%3Famp
 https://hub.docker.com/u/pipelinecomponents
 https://project-awesome.org/jondot/awesome-devenv
+
+## Links
+
+<https://stackoverflow.com/questions/49978926/concatenate-multiple-markdown-files-using-pandoc-on-windows>
+
+https://daringfireball.net/projects/markdown/
+
+vuepress

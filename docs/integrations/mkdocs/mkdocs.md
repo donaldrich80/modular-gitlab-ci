@@ -1,13 +1,11 @@
 # Mkdocs
 
-[mkdocs](https://www.mkdocs.org)
+Mkdocs is used as the site generator to automatically generate the Pages  documentation for the repo.  There are a few options which can be chosen in terms of where the document markdowns are stored and how they are generated, but the most straightforward method is to create a `docs` folder.  Customization of these options is set by `mkdocs.yml`.
 
-## Links
+For more info about mkdocs, check out:
 
-<https://stackoverflow.com/questions/49978926/concatenate-multiple-markdown-files-using-pandoc-on-windows>
+* [mkdocs](https://www.mkdocs.org)
 
-<https://github.com/jgrassler/mkdocs-pando>
+To see a list of extensions and plugins used by this template (specifically the Docker container used), check out the extensions and plugins capabilities.
 
-https://daringfireball.net/projects/markdown/
-
-vuepress
+For general customization and guidelines for appearance (including the theme mkdocs-material), check out here.
