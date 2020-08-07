@@ -6,7 +6,7 @@
 
 healthcheck:start:
   image:
-    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .pre
   variables:
@@ -17,7 +17,7 @@ healthcheck:start:
 
 healthcheck:end:
   image:
-    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .post
   variables:
@@ -29,7 +29,7 @@ healthcheck:end:
 
 healthcheck:fail:
   image:
-    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .post
   variables:
