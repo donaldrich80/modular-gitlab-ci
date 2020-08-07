@@ -35,8 +35,8 @@ plugins:
       filename: .pages
       collapse_single_pages: true
   - markdownextradata: {}
-  - simple:
-      ignore_folders: ["tests","snippets","docs"]
+  # - simple:
+  #     ignore_folders: ["tests","snippets","docs"]
 
 extra:
   external_links:
