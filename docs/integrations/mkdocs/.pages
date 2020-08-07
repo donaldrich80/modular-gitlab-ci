@@ -1,3 +1,7 @@
 arrange:
   - mkdocs.md
+  - extensions.md
+  - plugins.md
+  - appearance.md
+  - extensions.md
   - ...

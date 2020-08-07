@@ -1,10 +1,10 @@
 ---
-title: DevOps
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-
+title: DevOps Links
 ---
 
 # DevOps
+
+Links to useful DevOps resources:
 
 [:octicons-bookmark-16: Tikam02/DevOps-Guide](https://github.com/Tikam02/DevOps-Guide)
 

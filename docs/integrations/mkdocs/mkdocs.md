@@ -6,6 +6,10 @@ For more info about mkdocs, check out:
 
 * [mkdocs](https://www.mkdocs.org)
 
-To see a list of extensions and plugins used by this template (specifically the Docker container used), check out the extensions and plugins capabilities.
+## Extensions and Plugins
 
-For general customization and guidelines for appearance (including the theme mkdocs-material), check out here.
+To see a list of extensions and plugins used by this template (specifically the Docker container used), check out the [plugins](integrations/mkdocs/plugins.md) and [extensions](integrations/mkdocs/extensions.md) capabilities.
+
+## Customization
+
+For general customization and guidelines for appearance (including the theme mkdocs-material), check out [here](integrations/mkdocs/appearances.md).

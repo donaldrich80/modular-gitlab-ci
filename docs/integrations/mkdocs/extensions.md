@@ -1,7 +1,5 @@
 ---
 title: Extensions
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
-
 ---
 
 # Extensions
