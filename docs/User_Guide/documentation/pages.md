@@ -1,6 +1,5 @@
 ---
 title: Pages
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
 source: function/documentation/mkdocs.yml
 ---
@@ -12,6 +11,7 @@ source: function/documentation/mkdocs.yml
 To automatically generate GitLab Pages Docs, create a `mkdocs.yml` at the root of the project and add the following to the `.gitlab-ci.yml`
 
 Include the following in `.gitlab-ci.yml`:
+
 --8<-- "docs/mkdocs.md"
 
 ## Requirements

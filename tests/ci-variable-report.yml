@@ -1,5 +1,5 @@
 print:variables:
-  stage: build
+  stage: .pre
   artifacts:
     paths:
       - env_vars.txt
