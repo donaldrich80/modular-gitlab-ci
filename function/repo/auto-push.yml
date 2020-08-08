@@ -13,7 +13,7 @@ update-repo:
     - git config --global user.email $GITLAB_USER_EMAIL
     - git config --global user.name $GITLAB_USER_NAME
     - git config --global user.username $GITLAB_USER_LOGIN
-    - git remote set-url --push origin https://$GITLAB_USER_LOGIN:$GIT_PASSWORD@$CI_SERVER_HOST/CI_PROJECT_PATH.git
+    - git remote set-url --push origin https://$GITLAB_USER_LOGIN:$GIT_PASSWORD@$CI_SERVER_HOST/$CI_PROJECT_PATH.git
     - git remote show origin
     - git add .
     - git commit -m "auto commit" || echo "no changes to repo"
