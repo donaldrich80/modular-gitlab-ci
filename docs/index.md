@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
+description: Modular GitLab-CI
 ---
 
 # Modular GitLab-CI
@@ -23,7 +23,7 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ## Quickstart
 
-Getting started guide [here](quickstart.md).
+Getting started guide [here](Getting_Started/quickstart.md).
 
 ## Detailed Guide
 
