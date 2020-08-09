@@ -18,6 +18,14 @@
 - docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 # docker run --rm --privileged multiarch/qemu-user-static:register --reset
 
+.registry-login: &registry-login
+# - export VAULT_ADDR=$VAULT_ADDR
+# - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-ci/login role=vault-reader jwt=$CI_JOB_JWT)"
+# - export DOCKERHUB_USER="$(vault kv get -field=DOCKERHUB_USER /secret/gitlab-ci/global)"
+# - export DOCKERHUB_PASS="$(vault kv get -field=DOCKERHUB_PASS /secret/gitlab-ci/global)"
+- echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USER" --password-stdin
+- echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" "$CI_REGISTRY" --password-stdin
+
 .buildx-prebuild: &buildx-prebuild
 # - export VAULT_ADDR=$VAULT_ADDR
 # - export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
@@ -30,29 +38,35 @@
     # - docker buildx create --driver docker-container --use
 
 .buildx:base:
+  # image:
+  #   name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+  #   entrypoint: [""]
   image:
-    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    name: donaldrich/docker:latest
     entrypoint: [""]
   stage: build
   before_script:
     - *buildx-prebuild
     - *var-print
-    # - *registry-login
+    - *registry-login
   interruptible: true
   services:
     - name: docker:stable-dind
       command: ["--experimental"]
 
 .buildx:multiarch:base:
+  # image:
+  #   name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+  #   entrypoint: [""]
   image:
-    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    name: donaldrich/docker:latest
     entrypoint: [""]
   stage: build
   before_script:
     - *var-print
     - *multiarch-prebuild
     - *buildx-prebuild
-    # - *registry-login
+    - *registry-login
   interruptible: true
   services:
     - name: docker:stable-dind
