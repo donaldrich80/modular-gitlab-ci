@@ -1,5 +1,5 @@
 ``` yaml
 include:
-  - project: donaldrich/gitlab-ci-templates
+  - project: donaldrich/modular-gitlab-ci
     file: function/lint/ansible.yml
 ```

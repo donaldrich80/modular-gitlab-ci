@@ -1,5 +1,5 @@
 ``` yaml
 include:
-  - project: donaldrich/gitlab-ci-templates
-    file: analysis/sast.yml
+  - project: donaldrich/modular-gitlab-ci
+    file: function/analysis/sast.yml
 ```

@@ -1,6 +1,5 @@
 ---
-title: Lint
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
+title: yaml
 path: tree/master
 source: function/lint/yaml
 ---
@@ -9,6 +8,6 @@ source: function/lint/yaml
 
 ## yamllint
 
-[github](https://github.com/adrienverge/yamllint)
+[:octicons-mark-github-16: GitHub](https://github.com/adrienverge/yamllint)
 
 <https://github.com/madmuffin1/ruamel.yaml-docker/blob/master/Dockerfile>

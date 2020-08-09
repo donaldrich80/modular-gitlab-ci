@@ -1,6 +1,5 @@
 ---
 title: Terraform
-description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
 source: function/lint/terraform
 ---
@@ -9,8 +8,8 @@ source: function/lint/terraform
 
 ## tfsec
 
-[github](https://github.com/liamg/tfsec)
+[:octicons-mark-github-16: GitHub](https://github.com/liamg/tfsec)
 
 ## tflint
 
-[github](https://github.com/terraform-linters/tflint)
+[:octicons-mark-github-16: GitHub](https://github.com/terraform-linters/tflint)
