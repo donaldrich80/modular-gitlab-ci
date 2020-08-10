@@ -23,4 +23,4 @@ update-repo:
     - git push origin HEAD:$CI_COMMIT_REF_NAME || echo "no changes to repo"
   rules:
   - changes:
-    - "**/*/*"
+    - "**/vars.yml"
