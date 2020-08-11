@@ -38,13 +38,16 @@
     # - docker buildx create --driver docker-container --use
 
 .buildx:base:
-  # image:
-  #   name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
-  #   entrypoint: [""]
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
   stage: build
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
+    DOCKER_BUILDKIT: 1
   before_script:
     - *buildx-prebuild
     - *var-print
@@ -55,13 +58,16 @@
       command: ["--experimental"]
 
 .buildx:multiarch:base:
-  # image:
-  #   name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
-  #   entrypoint: [""]
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
   stage: build
+  variables:
+    DOCKER_HOST: tcp://docker:2376
+    DOCKER_TLS_VERIFY: 1
+    DOCKER_CERT_PATH: /certs/client
+    DOCKER_TLS_CERTDIR: /certs
+    DOCKER_BUILDKIT: 1
   before_script:
     - *var-print
     - *multiarch-prebuild
