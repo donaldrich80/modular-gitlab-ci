@@ -18,10 +18,16 @@ title: Icons
 [:octicons-book-16: Docs]
 ```
 
-### :octicons-book-16: Plug-in
+### :octicons-plug-16: Plug-in
 
 ```
 [:octicons-plug-16: Plug-in]
+```
+
+### :octicons-browser-16: Site
+
+```
+[:octicons-plug-16: Site]
 ```
 
 ### :octicons-bookmark-16: Links
@@ -52,10 +58,16 @@ title: Icons
 [:fontawesome-solid-puzzle-piece:]
 ```
 
-### :fontawesome-brands-gitlab: Gitlab
+### :fontawesome-brands-gitlab: GitLab
 
 ```
-[fontawesome-brands-gitlab: Gitlab]
+[:fontawesome-brands-gitlab: GitLab]
+```
+
+### :fontawesome-solid-file-alt: 
+
+```
+[:fontawesome-solid-file-alt:]
 ```
 
 ### :fontawesome-brands-docker: Docker
