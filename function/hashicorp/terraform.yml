@@ -12,11 +12,12 @@ before_script:
 #   - echo "creds" | base64 -d > ./creds/serviceaccount.json
   - terraform init $TERRAFORM_PATH
 
-# stages:
-#   # - init
-#   - validate
-#   - plan
-#   - apply
+stages:
+  # - init
+  - validate
+  - plan
+  - apply
+  - destroy
 
 # init:
 #   stage: init
