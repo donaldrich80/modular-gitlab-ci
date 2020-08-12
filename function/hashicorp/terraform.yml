@@ -33,7 +33,7 @@ validate:
 plan:
   stage: plan
   script:
-    - terraform plan $TERRAFORM_PATH -out "planfile"
+    - terraform plan -out "planfile" $TERRAFORM_PATH
   dependencies:
     - validate
   artifacts:
@@ -43,7 +43,7 @@ plan:
 apply:
   stage: apply
   script:
-    - terraform apply -auto-approve $TERRAFORM_PATH "planfile"
+    - terraform apply -auto-approve "planfile" $TERRAFORM_PATH
   dependencies:
     - plan
   when: manual
@@ -51,7 +51,7 @@ apply:
 destroy:
   stage: destroy
   script:
-    - terraform destroy $TERRAFORM_PATH -auto-approve
+    - terraform destroy -auto-approve $TERRAFORM_PATH
   dependencies:
     - apply
   when: manual
