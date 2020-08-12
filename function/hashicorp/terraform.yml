@@ -1,5 +1,5 @@
 image:
-  name: donaldrich/hashicorp:terraform
+  name: donaldrich/terraform:latest
   entrypoint: [""]
 #   entrypoint:
 #     - '/usr/bin/env'
@@ -8,25 +8,32 @@ image:
 before_script:
   - rm -rf .terraform
   - terraform --version
-  - mkdir -p ./creds
-  - echo "creds" | base64 -d > ./creds/serviceaccount.json
+#   - mkdir -p ./creds
+#   - echo "creds" | base64 -d > ./creds/serviceaccount.json
   - terraform init
 
 stages:
-#     - terraform init
+  # - init
   - validate
   - plan
   - apply
 
+# init:
+#   stage: init
+#   script:
+#     - terraform init
+
 validate:
   stage: validate
+  # dependencies:
+  #   - init
   script:
-    - terraform validate
+    - terraform validate TERRAFORM_PATH
 
 plan:
   stage: plan
   script:
-    - terraform plan -out "planfile"
+    - terraform plan TERRAFORM_PATH -out "planfile"
   dependencies:
     - validate
   artifacts:
@@ -36,7 +43,15 @@ plan:
 apply:
   stage: apply
   script:
-    - terraform apply -input=false "planfile"
+    - terraform apply -auto-approve TERRAFORM_PATH "planfile"
   dependencies:
     - plan
+  when: manual
+
+destroy:
+  stage: destroy
+  script:
+    - terraform destroy TERRAFORM_PATH -auto-approve
+  dependencies:
+    - apply
   when: manual
