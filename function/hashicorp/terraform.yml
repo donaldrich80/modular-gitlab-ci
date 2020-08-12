@@ -10,7 +10,7 @@ before_script:
   - terraform --version
 #   - mkdir -p ./creds
 #   - echo "creds" | base64 -d > ./creds/serviceaccount.json
-  - terraform init
+  - terraform init $TERRAFORM_PATH
 
 # stages:
 #   # - init
