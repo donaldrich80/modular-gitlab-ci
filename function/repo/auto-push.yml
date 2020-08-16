@@ -2,7 +2,7 @@ update-repo:
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
-  stage: .pre
+  stage: pre
   variables:
     GIT_STRATEGY: fetch
   before_script:
@@ -18,7 +18,7 @@ push-repo:
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
-  stage: .post
+  stage: post
   variables:
     GIT_STRATEGY: fetch
   before_script:
