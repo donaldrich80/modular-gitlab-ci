@@ -21,3 +21,4 @@ update-repo:
   rules:
   - changes:
     - "**/vars.yml"
+    - ".meta/template/*"
