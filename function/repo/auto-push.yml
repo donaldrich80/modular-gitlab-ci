@@ -1,11 +1,8 @@
 update-repo:
-  # image:
-  #   name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
-  #   entrypoint: [""]
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
-  stage: .post
+  stage: .pre
   variables:
     GIT_STRATEGY: fetch
   before_script:
