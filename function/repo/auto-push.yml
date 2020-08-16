@@ -9,6 +9,21 @@ update-repo:
     - rm -r public/ || true
   script:
     - ./run-all.sh
+  rules:
+  - changes:
+    - "**/vars.yml"
+    - ".meta/template/*"
+
+push-repo:
+  image:
+    name: donaldrich/docker:latest
+    entrypoint: [""]
+  stage: .post
+  variables:
+    GIT_STRATEGY: fetch
+  before_script:
+    - rm -r public/ || true
+  script:
     - git config --global user.email $GITLAB_USER_EMAIL
     - git config --global user.name $GITLAB_USER_NAME
     - git config --global user.username $GITLAB_USER_LOGIN
