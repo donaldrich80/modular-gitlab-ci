@@ -11,7 +11,7 @@ update-repo:
     - ./run-all.sh
   rules:
   - changes:
-    - "**/vars.yml"
+    - "**/*.yml"
     - ".meta/template/*"
 
 push-repo:
@@ -35,5 +35,5 @@ push-repo:
     - git push origin HEAD:$CI_COMMIT_REF_NAME || echo "no changes to repo"
   rules:
   - changes:
-    - "**/vars.yml"
+    - "**/*.yml"
     - ".meta/template/*"
