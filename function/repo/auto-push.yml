@@ -4,15 +4,14 @@ update-repo:
     entrypoint: [""]
   stage: pre
   variables:
-    GIT_STRATEGY: fetch
+    GIT_STRATEGY: clone
   before_script:
     - rm -r public/ || true
   script:
     - ./run-all.sh
   rules:
   - changes:
-    - "**/vars.yml"
-    - ".meta/template/*"
+    - $CI_PROJECT_DIR/*
 
 push-repo:
   image:
@@ -20,7 +19,7 @@ push-repo:
     entrypoint: [""]
   stage: post
   variables:
-    GIT_STRATEGY: fetch
+    GIT_STRATEGY: clone
   before_script:
     - rm -r public/ || true
   script:
@@ -35,5 +34,4 @@ push-repo:
     - git push origin HEAD:$CI_COMMIT_REF_NAME || echo "no changes to repo"
   rules:
   - changes:
-    - "**/vars.yml"
-    - ".meta/template/*"
+    - $CI_PROJECT_DIR/*
