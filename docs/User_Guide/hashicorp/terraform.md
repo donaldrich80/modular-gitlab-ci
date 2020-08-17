@@ -37,15 +37,23 @@ include:
 
 ## Providers
 
-* [:octicons-plug-16: terraform-provider-dns](https://github.com/hashicorp/terraform-provider-dns)
+### :octicons-plug-16: DNS
 
-* [:octicons-plug-16: terraform-provider-proxmox](https://github.com/Telmate/terraform-provider-proxmox)
+* [:octicons-plug-16: GitHub](https://github.com/hashicorp/terraform-provider-dns)
 
-### :octicons-plug-16: terraform-provider-cloudflare
+### :octicons-plug-16: Proxmox
 
-* [:octicons-mark-github-16: GitHub](https://github.com/terraform-providers/terraform-provider-cloudflare)
+* [:octicons-plug-16: GitHub](https://github.com/Telmate/terraform-provider-proxmox)
 
-* [:octicons-plug-16: terraform-provider-gitlab](https://github.com/terraform-providers/terraform-provider-gitlab)
+### :octicons-plug-16: Cloudflare
+
+* [:octicons-mark-github-16: GitHub](https://github.com/cloudflare/terraform-provider-cloudflare)
+
+* [:octicons-mark-github-16: Docs](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs)
+
+### :octicons-plug-16: GitLab
+
+* [:octicons-plug-16: GitHub](https://github.com/terraform-providers/terraform-provider-gitlab)
 
 * [:octicons-plug-16: terraform-provider-keycloak](https://github.com/mrparkers/terraform-provider-keycloak)
 
