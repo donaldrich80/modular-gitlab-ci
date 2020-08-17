@@ -4,7 +4,7 @@ update-repo:
     entrypoint: [""]
   stage: pre
   variables:
-    GIT_STRATEGY: fetch
+    GIT_STRATEGY: clone
   before_script:
     - rm -r public/ || true
   script:
@@ -20,7 +20,7 @@ push-repo:
     entrypoint: [""]
   stage: post
   variables:
-    GIT_STRATEGY: fetch
+    GIT_STRATEGY: clone
   before_script:
     - rm -r public/ || true
   script:
