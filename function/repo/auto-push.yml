@@ -2,7 +2,7 @@ update-repo:
   image:
     name: donaldrich/docker:latest
     entrypoint: [""]
-  stage: pre
+  stage: post
   variables:
     GIT_STRATEGY: clone
   before_script:
