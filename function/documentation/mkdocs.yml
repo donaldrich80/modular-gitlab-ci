@@ -4,7 +4,7 @@ pages:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
   before_script:
-    - rm -r public
+    - rm -r public || echo "public doesn't exist"
   script:
     - mkdocs build
     - mv site public
