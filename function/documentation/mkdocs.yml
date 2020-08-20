@@ -3,16 +3,17 @@ pages:
   image:
     name: donaldrich/mkdocs:latest
     entrypoint: [""]
+  before_script:
+    - rm -r public
   script:
     - mkdocs build
-    - rm -r site/snippets || true
     - mv site public
   artifacts:
     paths:
     - public
   rules:
     - exists:
-      - mkdocs.yml 
+      - mkdocs.yml
       changes:
       - "docs/**/*"
       - "docs/*"
@@ -29,7 +30,7 @@ file-tree-pages:
     - tree --dirsfirst -I docs > .meta/snippets/layout.md
   rules:
     - exists:
-      - mkdocs.yml 
+      - mkdocs.yml
       changes:
       - "docs/**/*"
       - "docs/*"
