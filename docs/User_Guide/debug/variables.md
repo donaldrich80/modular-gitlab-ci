@@ -9,3 +9,12 @@ To generate a list of all gitlab-ci-variables (including their values), include 
 !!! danger
     This will reveal all your sensitive secret variables!  Do not use on a public repo!
 
+## CI Variable List
+
+To log a list of all gitlab-ci-variables (including their values), include this in your gitlab-ci.yml
+
+--8<-- "tests/ci-variable-list.md"
+
+!!! danger
+    This will reveal all your sensitive secret variables!  Do not use on a public repo!
+    

@@ -1,0 +1,10 @@
+print:variables:
+  image:
+    name: donaldrich/runner:latest
+    entrypoint: [""]
+  stage: .pre
+  # artifacts:
+  #   paths:
+  #     - env_vars.txt
+  script:
+    - export
