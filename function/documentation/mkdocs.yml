@@ -17,6 +17,7 @@ pages:
       changes:
       - "docs/**/*"
       - "docs/*"
+      - "mkdocs.yml"
       when: always
     - when: never
 
@@ -34,5 +35,6 @@ file-tree-pages:
       changes:
       - "docs/**/*"
       - "docs/*"
+      - "mkdocs.yml"
       when: always
     - when: never
