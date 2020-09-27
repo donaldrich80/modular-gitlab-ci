@@ -11,7 +11,9 @@ variables:
 stages:
   - debug
   - lint
+  - fetch-version
   - build
+  - release
   - documentation
   - deploy
 #
