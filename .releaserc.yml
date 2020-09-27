@@ -5,7 +5,7 @@ branches:
   #   prerelease: "alpha"
 preset: conventionalcommits
 tagFormat: v${version}
-repositoryUrl: https://gitlab.com/donaldrich/function-as-a-container
+repositoryUrl: https://gitlab.com/donaldrich/modular-gitlab-ci
 plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: conventionalcommits
@@ -36,8 +36,8 @@ plugins:
           - BREAKING
   - "@semantic-release/gitlab"
   - - "@semantic-release/changelog"
-    - changelogFile: .meta/CHANGELOG.md
+    - changelogFile: docs/about/CHANGELOG.md
   - - "@semantic-release/git"
     - assets:
-        - .meta/CHANGELOG.md
+        - docs/about/CHANGELOG.md
       message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"
