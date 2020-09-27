@@ -1,5 +1,6 @@
 include:
   - local: templates/default.yml
+  - local: function/repo/semantic-release.yml
   # - local: goss-test.yml
 
 variables:
