@@ -5,7 +5,6 @@ path: tree/master
 source: README.md
 ---
 
-
 # mdl
 
 [:octicons-mark-github-16: GitHub](https://github.com/markdownlint/markdownlint)

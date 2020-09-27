@@ -14,7 +14,7 @@ Receive pushover notification for pipeline or job events.
 ## Variables
 
 !!! note
-    This function uses [Hashicorp Vault](https://www.vaultproject.io/) to import Pushover credentials.  If you aren't using Vault integration, you must declare them.
+This function uses [Hashicorp Vault](https://www.vaultproject.io/) to import Pushover credentials. If you aren't using Vault integration, you must declare them.
 
 Need to declare:
 

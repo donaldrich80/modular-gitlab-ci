@@ -4,10 +4,9 @@
 
 | CI_PIPELINE_SOURCE | Description |
 | :----------------: | :---------: |
-| trigger | API Call |
-| push | git push |
-| web | dont know |
-
+|      trigger       |  API Call   |
+|        push        |  git push   |
+|        web         |  dont know  |
 
 ## Var list
 

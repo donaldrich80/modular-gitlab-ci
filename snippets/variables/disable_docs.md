@@ -1,4 +1,4 @@
-``` yaml
+```yaml
 variables:
   DISABLE_DOCS: "true"
 ```

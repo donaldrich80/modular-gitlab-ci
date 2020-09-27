@@ -16,9 +16,9 @@ Include the following in `.gitlab-ci.yml`:
 
 ## Requirements
 
-* `mkdocs.yml` file
+- `mkdocs.yml` file
 
-* `documentation` stage:
+- `documentation` stage:
 
 ```yaml
 stages:
@@ -33,6 +33,6 @@ Detailed reference here.
 
 GitLab-CI env variables can be passed to `mkdocs.yml` like so:
 
-``` yaml
+```yaml
 repo_name: !!python/object/apply:os.getenv ["CI_PROJECT_PATH"]
 ```

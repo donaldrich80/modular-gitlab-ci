@@ -18,6 +18,6 @@ PACKERFILE: the name and path of the packer template
 
 ## Reference
 
-* [:octicons-book-16: Docs](https://www.packer.io/docs)
+- [:octicons-book-16: Docs](https://www.packer.io/docs)
 
-* [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/packer)
+- [:octicons-mark-github-16: GitHub](https://github.com/hashicorp/packer)

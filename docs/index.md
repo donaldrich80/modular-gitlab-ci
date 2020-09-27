@@ -13,13 +13,13 @@ In many cases, including functionality is as easy as an include clause in a proj
 
 ## Benefits
 
-- [X] Reduced code repetition
-- [X] Faster pipeline development and runs
-- [X] Pipeline debugging options
-- [X] Increased consistency among projects
-- [X] Optimized performance
-- [X] Pipelines can be altered and adapted quickly
-- [X] Security (Vault Integration)
+- [x] Reduced code repetition
+- [x] Faster pipeline development and runs
+- [x] Pipeline debugging options
+- [x] Increased consistency among projects
+- [x] Optimized performance
+- [x] Pipelines can be altered and adapted quickly
+- [x] Security (Vault Integration)
 
 ## Quickstart
 
@@ -32,5 +32,3 @@ Check out more basic module examples [here](Getting_Started/examples.md).
 ## Reference
 
 Detailed usage descriptions [here](User_Guide/).
-
-

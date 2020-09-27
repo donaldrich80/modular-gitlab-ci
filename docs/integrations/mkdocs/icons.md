@@ -4,7 +4,7 @@ title: Icons
 
 ## Icon Lists
 
-[:octicons-bookmark-16:  materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
+[:octicons-bookmark-16: materialdesignicons](https://cdn.materialdesignicons.com/5.3.45/)
 
 [:octicons-bookmark-16: fontawesome](https://fontawesome.com/icons?d=gallery)
 
@@ -64,7 +64,7 @@ title: Icons
 [:fontawesome-brands-gitlab: GitLab]
 ```
 
-### :fontawesome-solid-file-alt: 
+### :fontawesome-solid-file-alt:
 
 ```
 [:fontawesome-solid-file-alt:]

@@ -17,7 +17,6 @@ push:
   extends:
     - .push:to:github
   needs: ["validate"]
-
 # validate:
 #   image:
 #     name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest

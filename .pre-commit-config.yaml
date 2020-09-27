@@ -4,8 +4,8 @@ repos:
     hooks:
       - id: check-added-large-files
       - id: check-executables-have-shebangs
-      - id: check-yaml
-        exclude: mkdocs.yml
+      # - id: check-yaml
+      #   exclude: mkdocs.yml
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
@@ -19,4 +19,3 @@ repos:
     hooks:
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
-

@@ -3,7 +3,6 @@
 # usage: A custom aliased command-line application
 
 tasks:
-
   gitleaks:
     usage: gitleaks de
     run: docker run -it --rm -v $PWD:/code donaldrich/function:gitleaks -v --repo-path=/code
