@@ -1,8 +1,8 @@
 .healthcheck-docker: &healthcheck-docker
-- export VAULT_ADDR=$VAULT_ADDR
-- export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
-- export HEALTHCHECK_URL="$(vault kv get -field=HEALTHCHECK_URL /secret/gitlab-ci/global)"
-- export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$IMAGE_NAME:$IMAGE_TAG /secret/gitlab-ci/docker-images)"
+  - export VAULT_ADDR=$VAULT_ADDR
+  - export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
+  - export HEALTHCHECK_URL="$(vault kv get -field=HEALTHCHECK_URL /secret/gitlab-ci/global)"
+  - export HEALTHCHECK_ENDPOINT="$(vault kv get -field=$IMAGE_NAME:$IMAGE_TAG /secret/gitlab-ci/docker-images)"
 
 healthcheck:start:
   image:
