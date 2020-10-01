@@ -2,7 +2,7 @@ fetch-semantic-version:
   image:
     name: donaldrich/function:semantic-release
     entrypoint: [""]
-  stage: fetch-version
+  stage: .pre
   only:
     refs:
       - master
@@ -16,7 +16,7 @@ fetch-semantic-version:
       - VERSION.txt
 
 generate-non-semantic-version:
-  stage: fetch-version
+  stage: .pre
   except:
     refs:
       - master
@@ -38,7 +38,7 @@ release:
   image:
     name: donaldrich/function:semantic-release
     entrypoint: [""]
-  stage: release
+  stage: deploy
   only:
     refs:
       - master
