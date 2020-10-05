@@ -17,14 +17,14 @@ validate:
   stage: validate
   script:
     - packer validate $PACKERFILE
- #   - find . -maxdepth 1 -name '*.json' -print0 | xargs -t0n1 packer validate
+  #   - find . -maxdepth 1 -name '*.json' -print0 | xargs -t0n1 packer validate
 
 build:
   stage: deploy
   environment: production
   script:
     - packer build $PACKERFILE
-#    - find . -maxdepth 1 -name '*.json' -print0 | xargs -t0n1 packer build
+  #    - find . -maxdepth 1 -name '*.json' -print0 | xargs -t0n1 packer build
   when: manual
   only:
     - master

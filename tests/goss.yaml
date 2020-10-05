@@ -1,9 +1,8 @@
-
 port:
   tcp:2222:
     listening: true
     ip:
-    - 0.0.0.0
+      - 0.0.0.0
 # service:
 #   sshd:
 #     enabled: true
@@ -28,15 +27,15 @@ command:
     exec: "ssh -V"
 ser:
   root:
-#     title: UID must be between 50-100, GID doesn't matter. home is flexible
-#     meta:
-#       desc: Ensure sshd is enabled and running since it's needed for system management
-#       sev: 5
+    #     title: UID must be between 50-100, GID doesn't matter. home is flexible
+    #     meta:
+    #       desc: Ensure sshd is enabled and running since it's needed for system management
+    #       sev: 5
     exists: true
     uid: 0
     gid: 0
-#     groups:
-#     - nogroup
+    #     groups:
+    #     - nogroup
     home: /root
     # shell: /usr/bin/zsh
 process:

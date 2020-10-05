@@ -3,7 +3,6 @@ title: Quickstart
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
 source: templates/default.yml
-
 ---
 
 # Quickstart
@@ -22,11 +21,11 @@ To get started, and this clause to your `.gitlab-ci.yml`:
 
 Includes:
 
-- [X] Auto-detect linting for common formats
-- [X] SAST Testing
-- [X] Healthcheck pings
-- [X] Pushover notifications on failure
-- [X] Automatic Gitlab Pages Deployment
+- [x] Auto-detect linting for common formats
+- [x] SAST Testing
+- [x] Healthcheck pings
+- [x] Pushover notifications on failure
+- [x] Automatic Gitlab Pages Deployment
 
 ### Disable SAST scan
 

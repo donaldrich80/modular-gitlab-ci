@@ -10,14 +10,14 @@ pages:
     - mv site public
   artifacts:
     paths:
-    - public
+      - public
   rules:
     - exists:
-      - mkdocs.yml
+        - mkdocs.yml
       changes:
-      - "docs/**/*"
-      - "docs/*"
-      - "mkdocs.yml"
+        - "docs/**/*"
+        - "docs/*"
+        - "mkdocs.yml"
       when: always
     - when: never
 
@@ -31,10 +31,10 @@ file-tree-pages:
     - tree --dirsfirst -I docs > .meta/snippets/layout.md
   rules:
     - exists:
-      - mkdocs.yml
+        - mkdocs.yml
       changes:
-      - "docs/**/*"
-      - "docs/*"
-      - "mkdocs.yml"
+        - "docs/**/*"
+        - "docs/*"
+        - "mkdocs.yml"
       when: always
     - when: never

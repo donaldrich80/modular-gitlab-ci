@@ -19,6 +19,6 @@ update-repo:
     # - git commit -m "auto commit [skip ci]" || echo "no changes to repo"
     - git push origin HEAD:$CI_COMMIT_REF_NAME || echo "no changes to repo"
   rules:
-  - changes:
-    - "**/*.yml"
-    - ".meta/template/*"
+    - changes:
+        - "**/*.yml"
+        - ".meta/template/*"

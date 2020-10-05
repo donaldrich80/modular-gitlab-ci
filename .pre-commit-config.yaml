@@ -1,0 +1,21 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-executables-have-shebangs
+      # - id: check-yaml
+      #   exclude: mkdocs.yml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+  - repo: https://github.com/prettier/prettier
+    rev: 2.1.2
+    hooks:
+      - id: prettier
+  - repo: https://gitlab.com/donaldrich/function-as-a-container
+    rev: v1.0.3
+    hooks:
+      - id: repo-scan-yelp
+      - id: repo-scan-gitleaks

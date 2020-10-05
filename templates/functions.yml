@@ -1,18 +1,18 @@
 .var-print: &var-print
-- echo $REGISTRY
-- echo $REGISTRY_IMAGE
-- echo $CI_REGISTRY_IMAGE
-- echo $IMAGE_TAG
-- echo $IMAGE_NAME
-- echo $CI_BUILD_ARCHS
-- echo $DOCKERFILE
-- echo $DOCKER_BUILD_DIR
-- echo $DOCKERHUB_USER
-- echo $REPO_URL
-- echo $DOCKER_HOST
-- echo $DOCKER_TLS_CERTDIR
-- echo $DOCKER_CLI_EXPERIMENTAL
-- echo $DOCKER_DRIVER
+  - echo $REGISTRY
+  - echo $REGISTRY_IMAGE
+  - echo $CI_REGISTRY_IMAGE
+  - echo $IMAGE_TAG
+  - echo $IMAGE_NAME
+  - echo $CI_BUILD_ARCHS
+  - echo $DOCKERFILE
+  - echo $DOCKER_BUILD_DIR
+  - echo $DOCKERHUB_USER
+  - echo $REPO_URL
+  - echo $DOCKER_HOST
+  - echo $DOCKER_TLS_CERTDIR
+  - echo $DOCKER_CLI_EXPERIMENTAL
+  - echo $DOCKER_DRIVER
 
 include:
   - local: function/notifications/pushover/docker-build.yml
@@ -32,8 +32,8 @@ include:
     entrypoint: [""]
   # variables:
   #   GIT_STRATEGY: none
-    # VERSION_COMMAND: --version
-    # HELP_COMMAND: --help
+  # VERSION_COMMAND: --version
+  # HELP_COMMAND: --help
   retry: 2
   before_script:
     - *var-print
@@ -48,7 +48,6 @@ include:
     - docker image inspect donaldrich/function:$IMAGE_TAG --format='{{.Size}}' > $CI_PROJECT_DIR/docs/.snippets/image-size/$IMAGE_TAG.md || true
     - docker image inspect donaldrich/function:$IMAGE_TAG | jq . > $CI_PROJECT_DIR/docs/.snippets/image-info/$IMAGE_TAG.md
     - docker history donaldrich/function:$IMAGE_TAG > $CI_PROJECT_DIR/docs/.snippets/layers/$IMAGE_TAG.md || true
-
 
 # cache:
 #   # untracked: true

@@ -10,7 +10,7 @@ variables:
   CI_BUILD_ARCHS: "linux/arm/v7,linux/arm64,linux/amd64"
 
 dockerhub-multiarch-git:
-#   when: manual
+  #   when: manual
   extends: .dockerhub-multiarch-git
   variables:
     IMAGE_TAG: latest
@@ -19,7 +19,7 @@ dockerhub-multiarch-git:
     IMAGE_NAME: image-name
 
 dockerhub-build-git:
-#   when: manual
+  #   when: manual
   extends: .dockerhub-build-git
   variables:
     IMAGE_TAG: latest

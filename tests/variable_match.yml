@@ -1,4 +1,3 @@
-
 .job-template: &job-template
   # rules:
   #   - if: '$TRIGGER_VAR1 != "ansible"'
@@ -27,11 +26,10 @@ Success:
     - if: '"$TRIGGER_VAR1" == "$TARGET_ALL"'
       when: always
 
-
 Success9:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 == $TARGET_VAR1'
+    - if: "$TRIGGER_VAR1 == $TARGET_VAR1"
       when: always
 
 Success3:
@@ -55,41 +53,38 @@ Success2:
 Success4:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_ALL == $TARGET_ALL'
+    - if: "$TRIGGER_ALL == $TARGET_ALL"
       when: always
 
 LOGICAL AND:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 == $TARGET_VAR1 && $TRIGGER_VAR2 == $TARGET_VAR2'
+    - if: "$TRIGGER_VAR1 == $TARGET_VAR1 && $TRIGGER_VAR2 == $TARGET_VAR2"
       when: always
 
 LOGICAL OR:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 == $TARGET_VAR1 || $TRIGGER_VAR2 == $TARGET_VAR2'
+    - if: "$TRIGGER_VAR1 == $TARGET_VAR1 || $TRIGGER_VAR2 == $TARGET_VAR2"
       when: always
 
 regex AND:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 =~ /^foo.*/ && $TRIGGER_VAR2 =~ /bar$/'
+    - if: "$TRIGGER_VAR1 =~ /^foo.*/ && $TRIGGER_VAR2 =~ /bar$/"
       when: always
 
 regex 1var AND:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 =~ /^foo.*/ && $TRIGGER_VAR1 =~ /bar$/'
+    - if: "$TRIGGER_VAR1 =~ /^foo.*/ && $TRIGGER_VAR1 =~ /bar$/"
       when: always
 
 variable alike 2/10:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 =~ /thing$/'
+    - if: "$TRIGGER_VAR1 =~ /thing$/"
       when: always
-
-
-
 
 variable not empty:
   <<: *job-template
@@ -106,17 +101,17 @@ variable empty:
 variable undefined:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 == null'
+    - if: "$TRIGGER_VAR1 == null"
       when: always
 
 no-var:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 !~ /^yoohoo.*/'
+    - if: "$TRIGGER_VAR1 !~ /^yoohoo.*/"
       when: never
 
 no-var 7/8:
   <<: *job-template
   rules:
-    - if: '$TRIGGER_VAR1 !~ /thing$/'
+    - if: "$TRIGGER_VAR1 !~ /thing$/"
       when: never

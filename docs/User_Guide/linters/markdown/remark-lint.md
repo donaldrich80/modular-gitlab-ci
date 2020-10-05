@@ -3,7 +3,6 @@ title: remark-lint
 description: Nullam urna elit, malesuada eget finibus ut, ac tortor.
 path: tree/master
 source: README.md
-
 ---
 
 # remark-lint

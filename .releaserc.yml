@@ -1,0 +1,43 @@
+branches:
+  - "master"
+  # - "+([0-9])?(.{+([0-9]),x}).x"
+  # - name: "alpha"
+  #   prerelease: "alpha"
+preset: conventionalcommits
+tagFormat: v${version}
+repositoryUrl: https://gitlab.com/donaldrich/modular-gitlab-ci
+plugins:
+  - - "@semantic-release/commit-analyzer"
+    - preset: conventionalcommits
+      releaseRules:
+        - type: docs
+          # scope: README
+          release: patch
+        - type: refactor
+          release: patch
+        - type: perf
+          scope: repo
+          release: minor
+        - type: chore
+          release: false
+        - scope: auto
+          release: false
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
+  - - "@semantic-release/release-notes-generator"
+    - preset: conventionalcommits
+      parserOpts:
+        noteKeywords:
+          - BREAKING CHANGE
+          - BREAKING CHANGES
+          - BREAKING
+  - "@semantic-release/gitlab"
+  - - "@semantic-release/changelog"
+    - changelogFile: docs/about/CHANGELOG.md
+  - - "@semantic-release/git"
+    - assets:
+        - docs/about/CHANGELOG.md
+      message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"

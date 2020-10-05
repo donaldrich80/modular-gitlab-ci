@@ -8,14 +8,14 @@ source: function/lint/terraform
 # Penetration Testing
 
 !!! danger
-    This is integrated as a method of performing penetration tests on internal networks and to assess external vulnerabilities on my personal public facing assets!  Any other use is not condoned or endorsed!
+This is integrated as a method of performing penetration tests on internal networks and to assess external vulnerabilities on my personal public facing assets! Any other use is not condoned or endorsed!
 
 ## Sniper
 
-``` yaml
+```yaml
 include:
-  - project: 'donaldrich/modular-gitlab-ci'
-  - file: '/pentest/sniper.yml'
+  - project: "donaldrich/modular-gitlab-ci"
+  - file: "/pentest/sniper.yml"
 
 variables:
   PENTEST_TARGET: 192.168.1.1/16
@@ -25,13 +25,13 @@ variables:
 
 Basic Usage:
 
-``` sh
+```sh
 sniper -c /path/to/sniper.conf -t <TARGET> -m <MODE> -w <WORKSPACE>
 ```
 
 All Options:
 
-``` sh
+```sh
 [*] NORMAL MODE
 sniper -t <TARGET>
 [*] SPECIFY CUSTOM CONFIG FILE

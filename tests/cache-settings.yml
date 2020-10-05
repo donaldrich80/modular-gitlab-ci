@@ -8,7 +8,7 @@ variables:
 #   GIT_CLONE_PATH: $CI_BUILDS_DIR/project-name
 # variables:
 #   ANSIBLE_CACHE: $CI_PROJECT_DIR/.ansible
-  # GIT_DEPTH: "1"
+# GIT_DEPTH: "1"
 cache:
   paths:
     - "$CI_PROJECT_DIR/pip-cache"
@@ -25,12 +25,10 @@ before_script:
 # Define a yaml template for running a build and then running your tests
 .cargo_test_template: &cargo_test
   script:
-  - rustc --version && cargo --version
-  - cargo build
-  - cargo test --verbose
-
+    - rustc --version && cargo --version
+    - cargo build
+    - cargo test --verbose
 # Set any required environment variables here
-
 
 # Do any pre-flight requirements here, such as updating $PATH installing dependencies
 # before_script:

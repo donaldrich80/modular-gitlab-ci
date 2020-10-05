@@ -10,21 +10,21 @@ Extensions used in this documentations.
 
 !!! info "Callout boxes"
 
-* [documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
+- [documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
 
 ??? example "Types of Callouts"
-    !!! note
-    !!! abstract
-    !!! info
-    !!! tip
-    !!! success
-    !!! question
-    !!! warning
-    !!! failure
-    !!! danger
-    !!! bug
-    !!! example
-    !!! quote
+!!! note
+!!! abstract
+!!! info
+!!! tip
+!!! success
+!!! question
+!!! warning
+!!! failure
+!!! danger
+!!! bug
+!!! example
+!!! quote
 
 ## Codehilite
 
@@ -32,19 +32,19 @@ Extensions used in this documentations.
 
 https://pygments.org/languages/
 
-* [:octicons-bookmark-16: mkdocs-material](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
+- [:octicons-bookmark-16: mkdocs-material](https://squidfunk.github.io/mkdocs-material/extensions/codehilite/)
 
 ## PyMdown Extensions
 
-* [:octicons-mark-github-16: GitHub](https://github.com/facelessuser/pymdown-extensions)
+- [:octicons-mark-github-16: GitHub](https://github.com/facelessuser/pymdown-extensions)
 
-* [:octicons-book-16: Docs](https://facelessuser.github.io/pymdown-extensions/)
+- [:octicons-book-16: Docs](https://facelessuser.github.io/pymdown-extensions/)
 
 ## awesome-pages
 
 !!! info "Navigation index built on folder structure"
 
-* [:octicons-mark-github-16: GitHub](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
+- [:octicons-mark-github-16: GitHub](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/)
 
 ## Magiclink
 
