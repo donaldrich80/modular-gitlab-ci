@@ -9,6 +9,7 @@ healthcheck:repo:start:
     name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .pre
+  retry: 2
   variables:
     GIT_STRATEGY: none
   script:
@@ -20,6 +21,7 @@ healthcheck:repo:end:
     name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .post
+  retry: 2
   variables:
     GIT_STRATEGY: none
   when: on_success
@@ -32,6 +34,7 @@ healthcheck:repo:fail:
     name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .post
+  retry: 2
   variables:
     GIT_STRATEGY: none
   when: on_failure
