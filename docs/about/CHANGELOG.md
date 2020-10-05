@@ -1,3 +1,10 @@
+### [1.0.2](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.1...v1.0.2) (2020-10-05)
+
+
+### Bug Fixes
+
+* pushover ([77333f1](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/77333f12fa1ea0657534c7ddac3f2df31e8fc173))
+
 ### [1.0.1](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.0...v1.0.1) (2020-09-28)
 
 ## 1.0.0 (2020-09-27)
