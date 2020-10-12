@@ -1,0 +1,7 @@
+### [1.0.3](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.2...v1.0.3) (2020-10-12)
+
+
+### Bug Fixes
+
+* healthchecks ([fed0dc7](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/fed0dc75219cbe432b4bb0c43bafc776f3b200c7))
+* semver ([82bf9c0](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/82bf9c0a5c1ac1acfa57f9f1ed24b41efff2089b))
