@@ -31,9 +31,9 @@ plugins:
   - search:
   - minify:
       minify_html: true
-  - awesome-pages:
-      filename: .pages
-      collapse_single_pages: true
+  # - awesome-pages:
+  #     filename: .pages
+  #     collapse_single_pages: true
   - markdownextradata: {}
   # - simple:
   #     ignore_folders: ["tests","snippets","docs"]
