@@ -1,8 +1,5 @@
 branches:
   - "master"
-  # - "+([0-9])?(.{+([0-9]),x}).x"
-  # - name: "alpha"
-  #   prerelease: "alpha"
 preset: conventionalcommits
 tagFormat: v${version}
 repositoryUrl: https://gitlab.com/donaldrich/modular-gitlab-ci
@@ -10,18 +7,22 @@ plugins:
   - - "@semantic-release/commit-analyzer"
     - preset: conventionalcommits
       releaseRules:
-        - type: docs
-          # scope: README
-          release: patch
-        - type: refactor
-          release: patch
-        - type: perf
-          scope: repo
+        - type: test
+          release: minor
+        - type: ci
           release: minor
         - type: chore
           release: false
-        - scope: auto
-          release: false
+        - type: feat
+          release: minor
+        - type: fix
+          release: patch
+        - type: change
+          release: patch
+        - type: remove
+          release: patch
+        - scope: improve
+          release: minor
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
@@ -29,6 +30,34 @@ plugins:
           - BREAKING
   - - "@semantic-release/release-notes-generator"
     - preset: conventionalcommits
+      presetConfig:
+        types:
+          - type: fix
+            section: Bug Fixes
+          - type: add
+            section: Added
+          - type: feat
+            section: Features
+          - type: change
+            section: Changed
+          - type: remove
+            section: Removed
+          - type: ci
+            section: Continuous Integration
+            hidden: true
+          - type: build
+            section: Build System
+            hidden: true
+          - type: test
+            section: Tests
+            hidden: true
+          - type: improve
+            section: Improvements
+          - type: chore
+            section: Maintenance
+            hidden: true
+          - type: docs
+            section: Documentation
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
@@ -40,4 +69,4 @@ plugins:
   - - "@semantic-release/git"
     - assets:
         - CHANGELOG
-      message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"
+#       message: "chore(release): version ${nextRelease.version}\n\n${nextRelease.notes}"
