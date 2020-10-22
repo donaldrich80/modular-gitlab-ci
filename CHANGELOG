@@ -1,3 +1,10 @@
+### [1.0.1](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.0...v1.0.1) (2020-10-22)
+
+
+### Bug Fixes
+
+* semver ([d212e02](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/d212e0226287d3c94976e36a22351f921d579f34))
+
 ## 1.0.0 (2020-10-21)
 
 
