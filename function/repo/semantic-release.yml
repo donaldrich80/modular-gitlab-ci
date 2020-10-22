@@ -1,6 +1,6 @@
 fetch-semantic-version:
   image:
-    name: donaldrich/function:semantic-release
+    name: donaldrich/semver:latest
     entrypoint: [""]
   stage: .pre
   only:
@@ -36,7 +36,7 @@ generate-non-semantic-version:
 
 release:
   image:
-    name: donaldrich/function:semantic-release
+    name: donaldrich/semver:latest
     entrypoint: [""]
   stage: deploy
   only:
