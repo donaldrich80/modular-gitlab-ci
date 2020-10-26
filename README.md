@@ -9,3 +9,4 @@ In many cases, including functionality is as easy as an include clause in a proj
 ## Documentation
 
 Check out the [documentation](https://donaldrich.gitlab.io/modular-gitlab-ci).
+
