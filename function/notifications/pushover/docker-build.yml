@@ -50,7 +50,7 @@ pushover:failure:loud:
   extends: .pushover:notify
   script:
     - export VAULT_ADDR=$VAULT_ADDR
-    - export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
+    - export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=gitlab-ci-ro jwt=$CI_JOB_JWT)"
     - export PUSHOVER_API_TOKEN="$(vault kv get -field=PUSHOVER_API_TOKEN /secret/$JWT_LOGIN/dotfiles)"
     - export PUSHOVER_USER_TOKEN="$(vault kv get -field=PUSHOVER_USER_TOKEN /secret/$JWT_LOGIN/dotfiles)"
     - >
@@ -68,8 +68,8 @@ pushover:failure:loud:
   script:
     - export VAULT_ADDR=$VAULT_ADDR
     - export VAULT_TOKEN="$(vault write -field=token auth/$JWT_LOGIN/login role=vault-reader jwt=$CI_JOB_JWT)"
-    - export PUSHOVER_API_TOKEN="$(vault kv get -field=PUSHOVER_API_TOKEN /secret/gitlab-ci/global)"
-    - export PUSHOVER_USER_TOKEN="$(vault kv get -field=PUSHOVER_USER_TOKEN /secret/gitlab-ci/global)"
+    - export PUSHOVER_API_TOKEN="$(vault kv get -field=PUSHOVER_API_TOKEN /kv/gitlab-ci/global)"
+    - export PUSHOVER_USER_TOKEN="$(vault kv get -field=PUSHOVER_USER_TOKEN /kv/gitlab-ci/global)"
     - >
       curl -s
       --form-string "url=$CI_PIPELINE_URL"
