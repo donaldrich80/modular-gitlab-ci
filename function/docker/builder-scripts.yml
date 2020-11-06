@@ -243,5 +243,3 @@
       --file $DOCKER_BUILD_DIR/$DOCKERFILE
       $DOCKER_BUILD_DIR
     - *var-print
-
-

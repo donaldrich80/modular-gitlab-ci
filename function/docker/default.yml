@@ -42,7 +42,6 @@ include:
     - .docker:manifest:base
     - .dockerhub:registry
 
-
 .self:registry:
   variables:
     REGISTRY: $CI_REGISTRY_IMAGE

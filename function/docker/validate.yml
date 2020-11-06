@@ -3,4 +3,3 @@ validate:docker-compose:
   image: donaldrich/docker-runner:latest
   script:
     - docker-compose -f docker-compose.yml config
-
