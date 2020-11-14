@@ -1,7 +1,7 @@
 .ssh-provision: &ssh-provision
   - export VAULT_ADDR=$VAULT_ADDR
   # - export VAULT_TOKEN=$VAULT_TOKEN
-  - export VAULT_TOKEN="$(vault write -field=token auth/gitlab-com/login role=vault-reader jwt=$CI_JOB_JWT)"
+  - export VAULT_TOKEN="$(vault write -field=token auth/$AUTH_PATH/login role=vault-reader jwt=$CI_JOB_JWT)"
   - export SECRET_REPO="$(vault kv get -field=SECRET_REPO /kv/gitlab-ci/global)"
   - export SSH_LOGIN_COMMAND="$(vault kv get -field=$CI_PROJECT_NAME /kv/gitlab-ci/ssh-login-command)"
   - export PROJECT_FOLDER="$(vault kv get -field=$CI_PROJECT_NAME /kv/gitlab-ci/project-folder)"
