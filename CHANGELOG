@@ -1,3 +1,10 @@
+### [1.0.5](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.4...v1.0.5) (2020-11-14)
+
+
+### Bug Fixes
+
+* ssh ([669e8f6](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/669e8f6b71f2a6b61e0be38b7eb0f4041ea23e46))
+
 ### [1.0.4](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.3...v1.0.4) (2020-11-14)
 
 
