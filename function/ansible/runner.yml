@@ -14,12 +14,13 @@
     entrypoint: [""]
   before_script:
     - *ssh-provision
-    - cp -r ~/secrets/ansible-inventory inventory
+    # - cp -r ~/secrets/ansible-inventory inventory
     - ansible-galaxy install --roles-path .ansible/roles -r requirements.yml
+    - ansible-galaxy collection install -r requirements.yml
     - ansible-config list
   after_script:
-    - rm -r ~/secrets
-    - rm -r ~/.ssh
+    - rm -r ~/secrets || true
+    - rm -r ~/.ssh || true
   artifacts:
     name: "$CI_JOB_NAME log"
     when: always
