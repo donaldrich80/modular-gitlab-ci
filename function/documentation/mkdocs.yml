@@ -5,6 +5,10 @@ pages:
     entrypoint: [""]
   before_script:
     - rm -r public || echo "public doesn't exist"
+    - rm docs/about/LICENCE || true
+    - rm docs/about/CHANGELOG || true
+    - cp LICENCE /docs/about
+    - cp CHANGELOG /docs/about
   script:
     - mkdocs build
     - mv site public
