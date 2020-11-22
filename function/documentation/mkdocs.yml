@@ -5,10 +5,10 @@ pages:
     entrypoint: [""]
   before_script:
     - rm -r public || echo "public doesn't exist"
-    - rm docs/about/LICENCE || true
-    - rm docs/about/CHANGELOG || true
-    - cp LICENCE /docs/about
-    - cp CHANGELOG /docs/about
+    - rm docs/about/LICENCE || echo "public doesn't exist"
+    - rm docs/about/CHANGELOG || echo "public doesn't exist"
+    - cp LICENCE /docs/about || echo "public doesn't exist"
+    - cp CHANGELOG /docs/about || echo "public doesn't exist"
   script:
     - mkdocs build
     - mv site public
@@ -25,20 +25,4 @@ pages:
       when: always
     - when: never
 
-file-tree-pages:
-  image:
-    name: donaldrich/mkdocs:latest
-    entrypoint: [""]
-  stage: build
-  script:
-    - mkdir -p .meta/snippets || echo "snippet dir already exists"
-    - tree --dirsfirst -I docs > .meta/snippets/layout.md
-  rules:
-    - exists:
-        - mkdocs.yml
-      changes:
-        - "docs/**/*"
-        - "docs/*"
-        - "mkdocs.yml"
-      when: always
-    - when: never
+    

@@ -1,0 +1,18 @@
+file-tree-pages:
+  image:
+    name: donaldrich/mkdocs:latest
+    entrypoint: [""]
+  stage: build
+  script:
+    - mkdir -p .meta/snippets || echo "snippet dir already exists"
+    - tree --dirsfirst -I docs > .meta/snippets/layout.md
+  rules:
+    - exists:
+        - mkdocs.yml
+      changes:
+        - "docs/**/*"
+        - "docs/*"
+        - "mkdocs.yml"
+      when: always
+    - when: never
+    
