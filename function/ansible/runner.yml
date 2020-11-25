@@ -3,8 +3,8 @@
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
   - cp -r ~/secrets/ssh/. ~/.ssh
-  - chmod 0600 -R ~/.ssh
-  - chmod 700 ~/.ssh
+  - sudo chmod 0600 -R ~/.ssh
+  - sudo chmod 700 ~/.ssh
   - eval $(ssh-agent -s)
   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
