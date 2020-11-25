@@ -1,3 +1,10 @@
+### [1.0.7](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.6...v1.0.7) (2020-11-25)
+
+
+### Bug Fixes
+
+* moved inventory mgmt to vault ([a04a4e3](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/a04a4e322dc4be207fd33cdee969a9ef9765ca59))
+
 ### [1.0.6](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.5...v1.0.6) (2020-11-25)
 
 
