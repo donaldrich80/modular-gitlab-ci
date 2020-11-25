@@ -1,3 +1,15 @@
+### [1.0.6](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.5...v1.0.6) (2020-11-25)
+
+
+### Bug Fixes
+
+* ansible runner .ssh prep sudo ([8ed9f15](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/8ed9f1590a092e9a7b20aba2febb34ec550e657d))
+
+
+### Documentation
+
+* minor fix ([99337cc](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/99337cc9a412a98d0f047b57b3a01334c1de9580))
+
 ### [1.0.5](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.4...v1.0.5) (2020-11-14)
 
 
