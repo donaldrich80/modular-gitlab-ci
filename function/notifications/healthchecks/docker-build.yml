@@ -9,6 +9,10 @@ healthcheck:start:
     name: donaldrich/runner:latest
     entrypoint: [""]
   stage: .pre
+  rules:
+    - if: '$DISABLE_HEALTHCHECKS == "true"'
+      when: never
+    - when: on_success
   variables:
     GIT_STRATEGY: none
   script:

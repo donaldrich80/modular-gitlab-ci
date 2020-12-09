@@ -10,6 +10,10 @@ healthcheck:repo:start:
     entrypoint: [""]
   stage: .pre
   retry: 2
+  rules:
+    - if: '$DISABLE_HEALTHCHECKS == "true"'
+      when: never
+    - when: on_success
   variables:
     GIT_STRATEGY: none
   script:
