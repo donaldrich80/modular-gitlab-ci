@@ -22,7 +22,11 @@ healthcheck:end:
   stage: .post
   variables:
     GIT_STRATEGY: none
-  when: on_success
+  # when: on_success
+  rules:
+    - if: '$DISABLE_HEALTHCHECKS == "true"'
+      when: never
+    - when: on_success
   script:
     - *healthcheck-docker
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT
@@ -34,7 +38,11 @@ healthcheck:fail:
   stage: .post
   variables:
     GIT_STRATEGY: none
-  when: on_failure
+  rules:
+    - if: '$DISABLE_HEALTHCHECKS == "true"'
+      when: never
+    - when: on_failure
+  # when: on_failure
   script:
     - *healthcheck-docker
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT/fail

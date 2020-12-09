@@ -4,4 +4,3 @@ gitleaks:
   #   name: image
   script:
     - gitleaks --verbose --redact --pretty
-

@@ -4,7 +4,7 @@ performance:
   variables:
     URL: https://url
     SITESPEED_VERSION: 11.2.0
-    SITESPEED_OPTIONS: ''
+    SITESPEED_OPTIONS: ""
   services:
     - docker:stable-dind
   script:
