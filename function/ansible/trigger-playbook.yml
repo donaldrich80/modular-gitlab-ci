@@ -1,4 +1,4 @@
-trigger-playbook:
+ansible:trigger-playbook:
   extends: .ansible-runner
   stage: run
   script:

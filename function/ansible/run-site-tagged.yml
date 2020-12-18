@@ -1,4 +1,4 @@
-trigger-site-tagged:
+ansible:trigger-site-tagged:
   extends: .ansible-runner
   stage: run
   script:

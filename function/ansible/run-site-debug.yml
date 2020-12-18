@@ -2,7 +2,7 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/ansible/runner.yml
 
-ansible:site-yml:
+ansible:run-site-yml:
   extends: .ansible-runner
   stage: run
   script:
