@@ -2,6 +2,10 @@
 title: DevOps Links
 ---
 
+# GitLab
+
+https://gitlab.com/examples16/trigger
+
 # DevOps
 
 Links to useful DevOps resources:
