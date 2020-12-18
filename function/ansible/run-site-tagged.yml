@@ -1,10 +1,10 @@
-ansible:trigger-playbook:
+ansible:trigger-site-tagged:
   extends: .ansible-runner
   stage: run
   script:
     - echo $CI_PIPELINE_SOURCE
     - echo $TRIGGER_VAR1
-    - ansible-playbook $TRIGGER_VAR1.yml
+    - ansible-playbook site.yml --tags=$TRIGGER_VAR1
   resource_group: production
   retry: 2
   artifacts:
