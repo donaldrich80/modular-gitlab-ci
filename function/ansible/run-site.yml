@@ -2,18 +2,43 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/ansible/runner.yml
 
-ansible:site-yml:
+
+
+ansible:run-site-yml:
+  extends: .ansible-runner
+  stage: run
+  script:
+    - ansible-playbook -vvv site.yml
+  resource_group: production
+  # allow_failure: true
+
+  # retry: 2
+  # artifacts:
+  #   paths:
+  #     - ansible.log
+  rules:
+    - if: '$ANSIBLE_DEBUG == "true"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+      when: never
+    - when: on_success
+
+ansible:site-yml-debug:
   extends: .ansible-runner
   stage: run
   script:
     - ansible-playbook site.yml
+  variables:
+    ANSIBLE_DEBUG: "1"
   resource_group: production
-  allow_failure: true
+  # allow_failure: true
   # retry: 2
-  artifacts:
-    paths:
-      - ansible.log
+  # artifacts:
+  #   paths:
+  #     - ansible.log
   rules:
+    - if: '$ANSIBLE_DEBUG == "true"'
+      when: on_success
     - if: '$CI_PIPELINE_SOURCE == "pipeline"'
       when: never
-    - when: on_success
+    # - when: on_success
