@@ -10,7 +10,7 @@ ansible:site-yml:
   resource_group: production
   allow_failure: true
   variables:
-    ANSIBLE_DEBUG: true
+    ANSIBLE_DEBUG: "1"
   # retry: 2
   artifacts:
     paths:
