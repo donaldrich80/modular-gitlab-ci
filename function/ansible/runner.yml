@@ -19,11 +19,11 @@
   after_script:
     - rm -r ~/secrets || true
     - rm -r ~/.ssh || true
-  artifacts:
-    name: "$CI_JOB_NAME log"
-    when: always
-    paths:
-      - $CI_PROJECT_DIR/ansible.log
+  # artifacts:
+  #   name: "$CI_JOB_NAME log"
+  #   when: always
+  #   paths:
+  #     - $CI_PROJECT_DIR/ansible.log
   variables:
     ANSIBLE_CONFIG: "ansible.cfg"
     ANSIBLE_LOG_PATH: "${CI_PROJECT_DIR}/ansible.log"
