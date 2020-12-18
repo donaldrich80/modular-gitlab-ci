@@ -17,10 +17,10 @@ ansible:run-site-yml:
   #   paths:
   #     - ansible.log
   rules:
-    - if: '$ANSIBLE_DEBUG == "true"'
+    - if: '$DEBUG_ANSIBLE == "true"'
       when: never
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
-      when: never
+    # - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    #   when: never
     - when: on_success
 
 ansible:site-yml-debug:
@@ -37,8 +37,8 @@ ansible:site-yml-debug:
   #   paths:
   #     - ansible.log
   rules:
-    - if: '$ANSIBLE_DEBUG == "true"'
+    - if: '$DEBUG_ANSIBLE == "true"'
       when: on_success
-    - if: '$CI_PIPELINE_SOURCE == "pipeline"'
-      when: never
-    # - when: on_success
+    # - if: '$CI_PIPELINE_SOURCE == "pipeline"'
+    #   when: never
+    - when: never
