@@ -2,13 +2,11 @@ include:
   - project: donaldrich/modular-gitlab-ci
     file: function/ansible/runner.yml
 
-
-
 ansible:run-site-yml:
   extends: .ansible-runner
   stage: run
   script:
-    - ansible-playbook -vvv site.yml
+    - ansible-playbook site.yml
   resource_group: production
   # allow_failure: true
 
@@ -27,7 +25,7 @@ ansible:site-yml-debug:
   extends: .ansible-runner
   stage: run
   script:
-    - ansible-playbook site.yml
+    - ansible-playbook $ANSIBLE_PREFIX site.yml
   variables:
     ANSIBLE_DEBUG: "1"
   resource_group: production
@@ -38,6 +36,9 @@ ansible:site-yml-debug:
   #     - ansible.log
   rules:
     - if: '$DEBUG_ANSIBLE == "true"'
+      variables:
+        ANSIBLE_DEBUG: "1"
+        ANSIBLE_PREFIX: "-vvv"
       when: on_success
     # - if: '$CI_PIPELINE_SOURCE == "pipeline"'
     #   when: never
