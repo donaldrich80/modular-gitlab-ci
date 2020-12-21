@@ -7,10 +7,11 @@ ansible:run-site-yml:
   stage: run
   script:
     - tusk install
+    - source <(python3 -m ara.setup.env)
     - tusk site
   resource_group: production
   variables:
-    ANSIBLE_CALLBACK_PLUGINS: "$(python3 -m ara.setup.callback_plugins)"
+    #ANSIBLE_CALLBACK_PLUGINS: "$(python3 -m ara.setup.callback_plugins)"
     ARA_API_CLIENT: "http"
     ARA_API_SERVER: $ARA_API_SERVER
   # allow_failure: true
