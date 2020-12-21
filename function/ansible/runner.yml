@@ -14,8 +14,6 @@
     entrypoint: [""]
   before_script:
     - *ssh-provision
-    - ansible-galaxy install --roles-path .ansible/roles -r requirements.yml
-    - ansible-galaxy collection install --collections-path .ansible/collections -r requirements.yml    
   after_script:
     - rm -r ~/secrets || true
     - rm -r ~/.ssh || true
