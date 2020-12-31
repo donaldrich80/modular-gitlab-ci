@@ -13,7 +13,8 @@ healthcheck:repo:start:
   rules:
     - if: '$DISABLE_HEALTHCHECKS == "true"'
       when: never
-    - when: on_success
+    - if: '$DISABLE_HEALTHCHECKS != "true"'
+      when: on_success
   variables:
     GIT_STRATEGY: none
   script:
@@ -32,7 +33,8 @@ healthcheck:repo:end:
   rules:
     - if: '$DISABLE_HEALTHCHECKS == "true"'
       when: never
-    - when: on_success
+    - if: '$DISABLE_HEALTHCHECKS != "true"'
+      when: on_success
   script:
     - *healthcheck-repo
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT
@@ -49,7 +51,8 @@ healthcheck:repo:fail:
   rules:
     - if: '$DISABLE_HEALTHCHECKS == "true"'
       when: never
-    - when: on_failure
+    - if: '$DISABLE_HEALTHCHECKS != "true"'
+      when: on_failure
   script:
     - *healthcheck-repo
     - curl --retry 3 $HEALTHCHECK_URL/$HEALTHCHECK_ENDPOINT/fail
