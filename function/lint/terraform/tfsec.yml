@@ -3,7 +3,7 @@ tfsec:
   interruptible: true
   stage: lint
   image:
-    name: donaldrich/function:tfsec
+    name: donaldrich/terraform:latest
     entrypoint: [""]
   script:
     - tfsec .
