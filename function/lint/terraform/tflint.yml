@@ -3,7 +3,7 @@ tflint:
   interruptible: true
   stage: lint
   image:
-    name: donaldrich/function:tflint
+    name: donaldrich/function:terraform
     entrypoint: [""]
   script:
     - tflint .
