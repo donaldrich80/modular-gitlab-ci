@@ -1,0 +1,2 @@
+include:
+  - template: Container-Scanning.gitlab-ci.yml
