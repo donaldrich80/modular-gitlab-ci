@@ -10,6 +10,8 @@ healthcheck:start:
     entrypoint: [""]
   stage: .pre
   rules:
+    - if: '$CI_COMMIT_BRANCH != "master"'
+      when: never
     - if: '$DISABLE_HEALTHCHECKS == "true"'
       when: never
     - if: '$DISABLE_HEALTHCHECKS != "true"'
@@ -29,6 +31,8 @@ healthcheck:end:
     GIT_STRATEGY: none
   # when: on_success
   rules:
+    - if: '$CI_COMMIT_BRANCH != "master"'
+      when: never
     - if: '$DISABLE_HEALTHCHECKS == "true"'
       when: never
     - if: '$DISABLE_HEALTHCHECKS != "true"'
@@ -45,6 +49,8 @@ healthcheck:fail:
   variables:
     GIT_STRATEGY: none
   rules:
+    - if: '$CI_COMMIT_BRANCH != "master"'
+      when: never
     - if: '$DISABLE_HEALTHCHECKS == "true"'
       when: never
     - if: '$DISABLE_HEALTHCHECKS != "true"'
