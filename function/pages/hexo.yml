@@ -1,0 +1,17 @@
+pages:
+  image: donaldrich/hexo:latest
+  before_script:
+    - npm install
+    - hexo generate
+  script:
+    - hexo generate
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  cache:
+    paths:
+      - node_modules/
