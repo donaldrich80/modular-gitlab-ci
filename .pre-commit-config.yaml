@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.4.0
     hooks:
       - id: check-added-large-files
       - id: check-executables-have-shebangs
@@ -11,11 +11,11 @@ repos:
       - id: mixed-line-ending
         args: ["--fix=lf"]
   - repo: https://github.com/prettier/prettier
-    rev: 2.1.2
+    rev: 2.2.1
     hooks:
       - id: prettier
   - repo: https://gitlab.com/donaldrich/function-as-a-container
-    rev: v1.0.3
+    rev: v2.7.0
     hooks:
       - id: repo-scan-yelp
       - id: repo-scan-gitleaks
