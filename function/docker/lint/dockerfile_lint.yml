@@ -1,0 +1,13 @@
+dockerfile_lint:
+  stage: lint
+  image: donaldrich/function:dockerfile-lint
+  allow_failure: true
+  interruptible: true
+  # before_script:
+  #   - hadolint --version
+  script:
+    - dockerfile_lint -f $DOCKER_BUILD_DIR/$DOCKERFILE
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - when: on_success

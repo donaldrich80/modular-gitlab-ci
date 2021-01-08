@@ -1,0 +1,15 @@
+hadolint:
+  image:
+    name: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/secrets/private/docker-runner:latest
+    entrypoint: [""]
+  stage: lint
+  allow_failure: true
+  interruptible: true
+  before_script:
+    - hadolint --version
+  script:
+    - hadolint $DOCKER_BUILD_DIR/$DOCKERFILE
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - when: on_success
