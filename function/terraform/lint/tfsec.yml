@@ -1,0 +1,16 @@
+tfsec:
+  allow_failure: true
+  interruptible: true
+  stage: lint
+  image:
+    name: donaldrich/terraform:latest
+    entrypoint: [""]
+  script:
+    - tfsec .
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - exists:
+        - "**/*/*.tf"
+      when: on_success
+    - when: never

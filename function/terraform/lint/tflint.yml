@@ -1,0 +1,16 @@
+tflint:
+  allow_failure: true
+  interruptible: true
+  stage: lint
+  image:
+    name: donaldrich/terraform:latest
+    entrypoint: [""]
+  script:
+    - tflint .
+  rules:
+    - if: '$DISABLE_LINTING == "true"'
+      when: never
+    - exists:
+        - "**/*/*.tf"
+      when: on_success
+    - when: never
