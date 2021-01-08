@@ -1,0 +1,32 @@
+# image: node:10.22.0
+pages:
+  cache:
+    paths:
+    - node_modules/
+  image: node:latest
+  script:
+    - yarn install # npm install
+    - yarn docs:build # npm run docs:build
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+
+# pages: # the job must be named pages
+#   image: node:latest
+#   stage: deploy
+#   script:
+#     - npm ci
+#     - npm run build
+#     # - mv public public-vue # GitLab Pages hooks on the public folder
+#     - mv dist public # rename the dist folder (result of npm run build)
+#     # optionally, you can activate gzip support with the following line:
+#     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
+#   artifacts:
+#     paths:
+#       - public # artifact path must be /public for GitLab Pages to pick it up
+#   only:
+#     - master
