@@ -1,3 +1,10 @@
+### [1.0.8](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.7...v1.0.8) (2021-01-08)
+
+
+### Bug Fixes
+
+* healthchecks only master ([6f3da1e](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/6f3da1ea6ebf4dcdb3f13b04cd5c9aa1fb3cee91))
+
 ### [1.0.7](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.0.6...v1.0.7) (2020-11-25)
 
 
