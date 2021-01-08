@@ -3,6 +3,6 @@ include:
   - local: function/lint/shell.yml
   - local: function/lint/markdown.yml
   - local: function/lint/json/jsonlint.yml
-  - local: function/lint/ansible/ansible-lint.yml
-  - local: function/lint/terraform/tfsec.yml
-  - local: function/lint/terraform/tflint.yml
+  # - local: function/lint/ansible/ansible-lint.yml
+  # - local: function/lint/terraform/tfsec.yml
+  # - local: function/lint/terraform/tflint.yml
