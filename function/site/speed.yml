@@ -1,0 +1,8 @@
+include:
+  template: Verify/Browser-Performance.gitlab-ci.yml
+
+performance:
+  stage: .post
+  variables:
+    URL: $CI_PAGES_URL
+
