@@ -1,3 +1,15 @@
+## [1.3.0](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.2.0...v1.3.0) (2021-01-23)
+
+
+### Features
+
+* vuepress ([af3b048](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/af3b04845625c11c8fbd09c4ae12175b5c1fd1f6))
+
+
+### Bug Fixes
+
+* default ([2cd7223](https://gitlab.com/donaldrich/modular-gitlab-ci/commit/2cd7223dd9d9e9cf2f45a4dff7cbd2e718737dc5))
+
 ## [1.2.0](https://gitlab.com/donaldrich/modular-gitlab-ci/compare/v1.1.0...v1.2.0) (2021-01-08)
 
 
