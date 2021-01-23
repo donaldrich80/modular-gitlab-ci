@@ -11,6 +11,7 @@ variables:
   DISABLE_HEALTHCHECKS: "true"
 
 stages:
+  - .pre
   - debug
   - lint
   - fetch-version

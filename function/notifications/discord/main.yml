@@ -1,0 +1,14 @@
+discord:success:
+  stage: .post
+  script:
+    - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
+    - chmod +x send.sh
+    - ./send.sh success $DISCORD_WEBHOOK_URL
+  when: on_success
+discord_failure:
+  stage: .post
+  script:
+    - wget https://raw.githubusercontent.com/DiscordHooks/gitlab-ci-discord-webhook/master/send.sh
+    - chmod +x send.sh
+    - ./send.sh failure $DISCORD_WEBHOOK_URL
+    when: on_failure
